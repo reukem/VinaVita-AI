@@ -1888,56 +1888,23 @@ body {
   }
 }
 
-/* Individual Flight Tracks: Staggered altitudes, flight speeds, and negative phase delays */
-.chim-lac-track.track-1 {
-  top: 5%;
-  animation-duration: 23s;
-  animation-delay: -4s;
-  z-index: 3;
-}
-
-.chim-lac-track.track-2 {
-  top: 15%;
-  animation-duration: 27s;
-  animation-delay: -15s;
-  z-index: 2;
-}
-
-.chim-lac-track.track-3 {
-  top: 25%;
-  animation-duration: 21s;
-  animation-delay: -9s;
-  z-index: 4;
-}
-
-.chim-lac-track.track-4 {
-  top: 2%;
-  animation-duration: 33s;
-  animation-delay: -21s;
-  z-index: 1;
-  opacity: 0.65;
-}
-
-.chim-lac-track.track-5 {
-  top: 11%;
-  animation-duration: 25s;
-  animation-delay: -18s;
-  z-index: 2;
-}
-
-.chim-lac-track.track-6 {
-  top: 32%;
-  animation-duration: 20s;
-  animation-delay: -11s;
-  z-index: 4;
-}
-
-.chim-lac-track.track-7 {
-  top: 19%;
-  animation-duration: 29s;
-  animation-delay: -2s;
-  z-index: 3;
-}
+/* Individual Flight Tracks: 16 Phased Flocks for Gap-Free Flight */
+.chim-lac-track.track-1  { top: 4%;  animation-duration: 24s; animation-delay: 0s;     z-index: 3; }
+.chim-lac-track.track-2  { top: 15%; animation-duration: 27s; animation-delay: -3s;    z-index: 2; }
+.chim-lac-track.track-3  { top: 26%; animation-duration: 22s; animation-delay: -2s;    z-index: 4; }
+.chim-lac-track.track-4  { top: 2%;  animation-duration: 28s; animation-delay: -5s;    z-index: 1; opacity: 0.75; }
+.chim-lac-track.track-5  { top: 11%; animation-duration: 24s; animation-delay: -6s;    z-index: 3; }
+.chim-lac-track.track-6  { top: 34%; animation-duration: 22s; animation-delay: -7.5s;  z-index: 4; }
+.chim-lac-track.track-7  { top: 19%; animation-duration: 27s; animation-delay: -10s;   z-index: 2; }
+.chim-lac-track.track-8  { top: 7%;  animation-duration: 28s; animation-delay: -12s;   z-index: 3; }
+.chim-lac-track.track-9  { top: 22%; animation-duration: 24s; animation-delay: -12s;   z-index: 4; }
+.chim-lac-track.track-10 { top: 38%; animation-duration: 22s; animation-delay: -13s;   z-index: 4; }
+.chim-lac-track.track-11 { top: 17%; animation-duration: 27s; animation-delay: -17s;   z-index: 2; }
+.chim-lac-track.track-12 { top: 5%;  animation-duration: 28s; animation-delay: -19s;   z-index: 1; opacity: 0.75; }
+.chim-lac-track.track-13 { top: 30%; animation-duration: 24s; animation-delay: -18s;   z-index: 4; }
+.chim-lac-track.track-14 { top: 13%; animation-duration: 22s; animation-delay: -18.5s; z-index: 3; }
+.chim-lac-track.track-15 { top: 23%; animation-duration: 28s; animation-delay: -26s;   z-index: 3; }
+.chim-lac-track.track-16 { top: 9%;  animation-duration: 27s; animation-delay: -24s;   z-index: 2; }
 
 /* Soaring Wave & Aerodynamic Pitch Physics */
 .chim-lac-soar {
@@ -1947,19 +1914,19 @@ body {
 }
 
 .chim-lac-soar.wave-1 {
-  animation: soarGlideWave1 5.5s ease-in-out infinite alternate;
+  animation: soarGlideWave1 5.2s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-2 {
-  animation: soarGlideWave2 6.8s ease-in-out infinite alternate;
+  animation: soarGlideWave2 6.5s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-3 {
-  animation: soarGlideWave3 4.8s ease-in-out infinite alternate;
+  animation: soarGlideWave3 4.6s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-4 {
-  animation: soarGlideWave4 7.5s ease-in-out infinite alternate;
+  animation: soarGlideWave4 7.2s ease-in-out infinite alternate;
 }
 
 @keyframes soarGlideWave1 {
@@ -2019,74 +1986,156 @@ body {
 /* Luminous Golden Stardust Slipstream (Vết Bụi Vàng Hoàng Kim Đuôi Cánh) */
 .chim-lac-trail {
   position: absolute;
-  right: 82%;
-  top: 50%;
-  width: 140px;
-  height: 16px;
-  transform: translateY(-50%);
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(245, 158, 11, 0.08) 25%,
-    rgba(251, 191, 36, 0.4) 80%,
-    rgba(254, 240, 138, 0.85) 100%
-  );
-  border-radius: 50%;
-  filter: blur(5px);
   pointer-events: none;
-  opacity: 0.8;
-  animation: trailGlowPulse 2.8s ease-in-out infinite alternate;
+  z-index: 0;
+  transform: translateY(-50%);
+  animation: trailGlowPulse 2.4s ease-in-out infinite alternate;
 }
 
-.chim-lac-trail.trail-pair {
-  width: 180px;
+/* Single Bird Trail: Anchored accurately at tail feathers (top: 70%, left-rear) */
+.chim-lac-trail.trail-single {
+  right: calc(100% - 15px);
+  top: 70%;
+  width: 195px;
   height: 22px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(245, 158, 11, 0.12) 20%,
-    rgba(251, 191, 36, 0.5) 75%,
-    rgba(254, 240, 138, 0.95) 100%
+    rgba(245, 158, 11, 0.08) 15%,
+    rgba(245, 158, 11, 0.45) 50%,
+    rgba(251, 191, 36, 0.85) 80%,
+    rgba(254, 240, 138, 0.98) 96%,
+    #ffffff 100%
   );
-  filter: blur(6px);
+  border-radius: 50% 12px 12px 50%;
+  filter: blur(3.5px);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.9), 0 0 40px rgba(251, 191, 36, 0.5);
+  opacity: 0.92;
 }
 
-.chim-lac-trail.trail-faint {
-  width: 100px;
-  height: 10px;
-  opacity: 0.5;
-  filter: blur(4px);
+/* Pair Birds Trail: Wide double plume (top: 48%) */
+.chim-lac-trail.trail-pair {
+  right: calc(100% - 25px);
+  top: 48%;
+  width: 250px;
+  height: 38px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(245, 158, 11, 0.1) 15%,
+    rgba(245, 158, 11, 0.55) 45%,
+    rgba(251, 191, 36, 0.9) 78%,
+    rgba(254, 240, 138, 1) 96%,
+    #ffffff 100%
+  );
+  border-radius: 50% 16px 16px 50%;
+  filter: blur(4.5px);
+  box-shadow: 0 0 28px rgba(245, 158, 11, 0.98), 0 0 55px rgba(251, 191, 36, 0.65);
+  opacity: 0.95;
+}
+
+/* High Horizon Distant Bird Trail */
+.chim-lac-trail.trail-distant {
+  right: calc(100% - 10px);
+  top: 70%;
+  width: 130px;
+  height: 14px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(245, 158, 11, 0.2) 30%,
+    rgba(251, 191, 36, 0.75) 75%,
+    rgba(254, 240, 138, 0.95) 96%,
+    #ffffff 100%
+  );
+  filter: blur(3px);
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.75);
+  opacity: 0.8;
+}
+
+/* Golden Stardust Particle Sparks */
+.trail-spark {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 15%, #fef08a 60%, #f59e0b 100%);
+  box-shadow: 0 0 8px #fbbf24, 0 0 16px #f59e0b;
+  pointer-events: none;
+}
+
+.trail-spark.s1 {
+  width: 4px;
+  height: 4px;
+  right: 25px;
+  top: 30%;
+  animation: sparkFlicker 1.5s ease-in-out infinite alternate;
+}
+
+.trail-spark.s2 {
+  width: 5px;
+  height: 5px;
+  right: 70px;
+  top: 65%;
+  animation: sparkFlicker 2.1s ease-in-out infinite 0.4s alternate;
+}
+
+.trail-spark.s3 {
+  width: 3.5px;
+  height: 3.5px;
+  right: 120px;
+  top: 40%;
+  animation: sparkFlicker 1.8s ease-in-out infinite 0.9s alternate;
+}
+
+.trail-spark.s4 {
+  width: 6px;
+  height: 6px;
+  right: 50px;
+  top: 50%;
+  animation: sparkFlicker 2.4s ease-in-out infinite 1.2s alternate;
+}
+
+@keyframes sparkFlicker {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.7) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.3) translateY(2px);
+  }
 }
 
 @keyframes trailGlowPulse {
   0% {
-    opacity: 0.55;
-    transform: translateY(-50%) scaleX(0.9) scaleY(0.9);
+    opacity: 0.75;
+    transform: translateY(-50%) scaleX(0.92) scaleY(0.92);
   }
   100% {
-    opacity: 0.9;
-    transform: translateY(-50%) scaleX(1.15) scaleY(1.1);
+    opacity: 1;
+    transform: translateY(-50%) scaleX(1.12) scaleY(1.08);
   }
 }
 
 /* Chim Lạc Graphics */
 .chim-lac-img {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 135px;
   height: auto;
-  filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.75)) drop-shadow(0 0 32px rgba(251, 191, 36, 0.35));
+  filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.85)) drop-shadow(0 0 35px rgba(251, 191, 36, 0.45));
   transition: transform 0.3s ease, filter 0.3s ease;
   user-select: none;
 }
 
 .chim-lac-img.img-pair {
   width: 185px;
-  filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.85)) drop-shadow(0 0 40px rgba(251, 191, 36, 0.45));
+  filter: drop-shadow(0 0 22px rgba(245, 158, 11, 0.95)) drop-shadow(0 0 45px rgba(251, 191, 36, 0.55));
 }
 
 .chim-lac-img.img-distant {
   width: 90px;
-  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.55));
+  filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.65));
 }
 
 /* Responsive scaling for mobile / tablets */
