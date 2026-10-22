@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VinaVita AI — Nền Tảng Pha Chế Dược Liệu & Mocktail Thảo Mộc Việt Nam (RBPC 2026)</title>
+  <meta name="description" content="Dự án tham dự RMIT Business Plan Competition 2026: Ứng dụng AI và Khoa học Thực phẩm để cá nhân hóa thức uống Dược Liệu Việt thay thế cồn và nước tăng lực.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="medicinal_database.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- VIETNAMESE HERITAGE & CYBER-BOTANICAL DUAL-GRID BACKGROUND SYSTEM -->
+  <div id="vietHeritageBg" class="viet-heritage-bg" aria-hidden="true">
+    <div class="heritage-grid-layer"></div>
+    <div class="heritage-scanline-layer"></div>
+    <div class="heritage-dongson-borders"></div>
+  </div>
+
+  <!-- AMBIENT FLOATING LUMINOUS ORBS -->
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+  <div class="ambient-orb orb-3"></div>
+
+  <!-- STICKY NAVIGATION BAR -->
+  <header class="site-nav">
+    <div class="container nav-wrap">
+      <a href="#" class="brand">
+        <div class="brand-crest">
+          <img src="assets/chim_lac_single.png" alt="Chim Lạc Biểu Tượng Đại Việt" class="brand-chim-lac-img">
+        </div>
+        <div>
+          <div class="brand-name">VinaVita <span>AI</span></div>
+          <div class="brand-tagline">Dược Liệu Việt • Quốc Hồn Trà &amp; AI Mixologist</div>
+        </div>
+        <div class="heritage-chop" title="Triết lý y học Tuệ Tĩnh: Nam Dược Trị Nam Nhân">
+          <span class="chop-line1">NAM DƯỢC</span>
+          <span class="chop-line2">TRỊ NAM NHÂN</span>
+        </div>
+      </a>
+
+      <nav class="tab-nav">
+        <button class="tab-btn active" data-target="viewMixologist">
+          <span>🍸</span> AI Mixologist
+        </button>
+        <button class="tab-btn" data-target="viewSignatures">
+          <span>⭐</span> Menu &amp; Gói Sachet Gen-Z
+        </button>
+        <button class="tab-btn" data-target="viewDatabase">
+          <span>📚</span> Bách Khoa Dược Liệu
+        </button>
+        <button class="tab-btn" data-target="viewAbout">
+          <span>🏛️</span> Dự Án &amp; Đội Ngũ
+        </button>
+      </nav>
+
+      <div class="header-meta">
+        <div class="rbpc-badge">RMIT RBPC 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="hero-section">
+    <!-- DYNAMIC ROTATING TRỐNG ĐỒNG ĐÔNG SƠN HERITAGE STAGE -->
+    <div class="heritage-hero-stage">
+      <div class="dong-son-halo-ring"></div>
+      <img src="assets/trong_dong_gold.png" alt="Mặt Trống Đồng Đông Sơn - 18 Chim Lạc Khắc Vàng" class="dong-son-spinning-drum">
+    </div>
+
+    <!-- SOARING CHIM LẠC FLOCK FLIGHT SYSTEM (ĐÀN CHIM LẠC THIÊN DI) -->
+    <div class="hero-chim-lac-container" aria-hidden="true">
+      <!-- 1. Chim Lạc Chúa Tiên Phong (Single - Mid Sky) -->
+      <div class="chim-lac-track track-1">
+        <div class="chim-lac-soar wave-1">
+          <div class="chim-lac-trail"></div>
+          <img src="assets/chim_lac_single.png" alt="Chim Lạc Tiên Phong" class="chim-lac-img">
+        </div>
+      </div>
+
+      <!-- 2. Song Lạc Hướng Dương (Pair - High Sky) -->
+      <div class="chim-lac-track track-2">
+        <div class="chim-lac-soar wave-2">
+          <div class="chim-lac-trail trail-pair"></div>
+          <img src="assets/chim_lac_pair.png" alt="Song Lạc Hướng Dương" class="chim-lac-img img-pair">
+        </div>
+      </div>
+
+      <!-- 3. Chim Lạc Hoàng Kim (Single - Upper-Mid Sky) -->
+      <div class="chim-lac-track track-3">
+        <div class="chim-lac-soar wave-3">
+          <div class="chim-lac-trail"></div>
+          <img src="assets/chim_lac_single.png" alt="Chim Lạc Hoàng Kim" class="chim-lac-img">
+        </div>
+      </div>
+
+      <!-- 4. Lạc Viễn Xứ (Single - Distant High Flight) -->
+      <div class="chim-lac-track track-4">
+        <div class="chim-lac-soar wave-4">
+          <div class="chim-lac-trail trail-faint"></div>
+          <img src="assets/chim_lac_single.png" alt="Chim Lạc Viễn Xứ" class="chim-lac-img img-distant">
+        </div>
+      </div>
+
+      <!-- 5. Song Lạc Hộ Vệ (Pair - Mid Sky) -->
+      <div class="chim-lac-track track-5">
+        <div class="chim-lac-soar wave-2">
+          <div class="chim-lac-trail trail-pair"></div>
+          <img src="assets/chim_lac_pair.png" alt="Song Lạc Hộ Vệ" class="chim-lac-img img-pair">
+        </div>
+      </div>
+
+      <!-- 6. Chim Lạc Trinh Sát (Single - Low Wave Sweep) -->
+      <div class="chim-lac-track track-6">
+        <div class="chim-lac-soar wave-1">
+          <div class="chim-lac-trail"></div>
+          <img src="assets/chim_lac_single.png" alt="Chim Lạc Trinh Sát" class="chim-lac-img">
+        </div>
+      </div>
+
+      <!-- 7. Chim Lạc Phi Thiên (Single - Sky Crosser) -->
+      <div class="chim-lac-track track-7">
+        <div class="chim-lac-soar wave-3">
+          <div class="chim-lac-trail"></div>
+          <img src="assets/chim_lac_single.png" alt="Chim Lạc Phi Thiên" class="chim-lac-img">
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="position:relative; z-index:2;">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>RMIT BUSINESS PLAN COMPETITION 2026 • AI FOR GOOD</span>
+      </div>
+      <h1 class="hero-title">
+        Hồi Sinh <span class="gradient-text">Dược Liệu Việt</span> Bằng Trí Tuệ Nhân Tạo
+      </h1>
+      <p class="hero-subtitle">
+        Chuyển hóa thảo mộc cổ truyền thành thức uống thư giãn xã hội <strong>0.0% Cồn</strong>. Không say xỉn, không độc gan, không ép tim; tối ưu hóa thụ thể GABA và triệt tiêu hoàn toàn vị đắng bằng Khoa học Thực phẩm.
+      </p>
+      
+      <!-- Tuệ Tĩnh Ancestral Motto Pill -->
+      <div class="heritage-motto-pill">
+        <span class="motto-lotus">🪷</span>
+        <span class="motto-text"><em>"Nam Dược Trị Nam Nhân"</em> — Thiền sư Tuệ Tĩnh • <strong>Dược Điển Đại Việt x Generative AI</strong></span>
+        <span class="motto-badge">Bản Sắc Việt</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- VIEW 1: AI MIXOLOGIST STUDIO (CORE PRODUCT) -->
+    <section id="viewMixologist" class="main-view active">
+      <div class="mixologist-grid">
+
+        <!-- Left Column: Input Form Studio -->
+        <div class="glass-panel">
+          <h2 class="panel-title"><span>🧪</span> Trạm Phối Trộn AI Mixologist</h2>
+          <p class="panel-desc">
+            Nhập trạng thái tinh thần, rào cản sức khỏe và gu vị giác để thuật toán đa mục tiêu tính toán công thức chiết xuất an toàn nhất.
+          </p>
+
+          <!-- Step 1: Mood & Occasion -->
+          <div class="control-group">
+            <label class="control-label">1. Nhu Cầu & Bối Cảnh Sử Dụng (Target Need)</label>
+            <div class="option-cards">
+              <div class="opt-card opt-mood selected" data-value="social">
+                <div class="opt-icon">🌟</div>
+                <div class="opt-name">Social Glow</div>
+                <div class="opt-detail">Thay thế bia rượu tiệc đêm, thư giãn vui vẻ 0% cồn</div>
+              </div>
+              <div class="opt-card opt-mood" data-value="unwind">
+                <div class="opt-icon">🌙</div>
+                <div class="opt-name">Night Unwind</div>
+                <div class="opt-detail">Xả stress thi cử 11h đêm, ngủ sâu tự nhiên</div>
+              </div>
+              <div class="opt-card opt-mood" data-value="focus">
+                <div class="opt-icon">⚡</div>
+                <div class="opt-name">Calm Focus</div>
+                <div class="opt-detail">Tập trung 4 tiếng bền bỉ, không ép tim như cà phê</div>
+              </div>
+              <div class="opt-card opt-mood" data-value="detox">
+                <div class="opt-icon">🍵</div>
+                <div class="opt-name">Liver Detox</div>
+                <div class="opt-detail">Thanh nhiệt mát gan sau chuỗi ngày thức khuya</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Health Guardrails (Real-Time Safety Engine) -->
+          <div class="control-group">
+            <label class="control-label">2. Rào Cản Sức Khỏe & Cơ Địa (Biotech Guardrails)</label>
+            <div class="guardrail-grid">
+              <label class="guardrail-item">
+                <input type="checkbox" class="guardrail-input" value="hypotension">
+                <span>Huyết áp thấp (Hypotension)</span>
+              </label>
+              <label class="guardrail-item">
+                <input type="checkbox" class="guardrail-input" value="gastritis">
+                <span>Đau dạ dày / Trào ngược</span>
+              </label>
+              <label class="guardrail-item">
+                <input type="checkbox" class="guardrail-input" value="pregnancy">
+                <span>Mang thai / Cho con bú</span>
+              </label>
+              <label class="guardrail-item">
+                <input type="checkbox" class="guardrail-input" value="driving">
+                <span>Cần lái xe / Không gây ngủ</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Real-Time Safety Alert Banner -->
+          <div id="safetyAlertBanner" class="safety-alert-banner">
+            <div class="safety-alert-icon">🛡️</div>
+            <div id="safetyAlertText" class="safety-alert-text">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Step 3: Flavor Preference -->
+          <div class="control-group">
+            <label class="control-label">3. Gu Vị Giác Mong Muốn (Flavor Profile)</label>
+            <div class="option-cards">
+              <div class="opt-card opt-flavor selected" data-value="citrus">
+                <div class="opt-icon">🍊</div>
+                <div class="opt-name">Chua Thanh</div>
+                <div class="opt-detail">Quất (Tắc) & Chanh dây</div>
+              </div>
+              <div class="opt-card opt-flavor" data-value="sweet">
+                <div class="opt-icon">🍯</div>
+                <div class="opt-name">Ngọt Dịu</div>
+                <div class="opt-detail">Cam Thảo & Cỏ Ngọt</div>
+              </div>
+              <div class="opt-card opt-flavor" data-value="floral">
+                <div class="opt-icon">🌸</div>
+                <div class="opt-name">Hương Hoa</div>
+                <div class="opt-detail">Bạch Cúc & Hoa Nhài</div>
+              </div>
+              <div class="opt-card opt-flavor" data-value="minty">
+                <div class="opt-icon">🍃</div>
+                <div class="opt-name">Mát Lạnh</div>
+                <div class="opt-detail">Bạc Hà Nam Tươi</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <button id="btnGenerate" class="btn-generate">
+            <span>🧪</span> Kích Hoạt AI Mixologist Tạo Công Thức
+          </button>
+        </div>
+
+        <!-- Right Column: Interactive Output Recipe Card -->
+        <div class="glass-panel recipe-container traditional-frame">
+          <!-- Placeholder State -->
+          <div id="recipePlaceholder" class="recipe-placeholder">
+            <div class="recipe-placeholder-icon">🌱</div>
+            <h3 style="font-family:var(--font-display); font-size:1.35rem; margin-bottom:8px;">Chưa Có Công Thức Nào Được Kích Hoạt</h3>
+            <p style="color:var(--text-muted); font-size:0.92rem; max-width:380px; margin:0 auto; line-height:1.6;">
+              Hãy chọn tâm trạng và rào cản sức khỏe ở cột bên trái, sau đó nhấn <strong>"Kích Hoạt AI Mixologist"</strong> để hệ thống bắt đầu phối trộn dược liệu!
+            </p>
+          </div>
+
+          <!-- Active Recipe Card Output -->
+          <div id="recipeCard" class="recipe-card traditional-frame" style="position:relative; overflow:hidden;">
+            <!-- Rotating Watermark Drum in Recipe Card Background -->
+            <img src="assets/trong_dong_gold.png" alt="Trống Đồng Cổ Truyền" class="recipe-watermark-drum">
+
+            <!-- Dynamic Hero Photo -->
+            <img id="resHeroImg" src="assets/mocktail_hero.jpg" alt="Artisan Botanical Tonic" class="recipe-hero-img" style="position:relative; z-index:1;">
+
+            <div class="recipe-header" style="position:relative; z-index:1;">
+              <span id="resBadge" class="recipe-badge">AI-OPTIMIZED GABA TONIC</span>
+              <h3 id="resTitle" class="recipe-title">Lạc Vibe Citrus Spritz</h3>
+              <div id="resSubtitle" class="recipe-subtitle">Giải pháp thay thế Bia & Rượu nhẹ trong các bữa tiệc đêm (0.0% Cồn)</div>
+            </div>
+
+            <!-- Quantitative Table -->
+            <table class="formula-table">
+              <thead>
+                <tr>
+                  <th>Dược Liệu Bản Địa</th>
+                  <th>Định Lượng</th>
+                  <th>Vai Trò Sinh Học & Vị Giác</th>
+                </tr>
+              </thead>
+              <tbody id="resFormulaBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+
+            <!-- Extraction Kinetics Box -->
+            <div class="brew-specs-box">
+              <div class="brew-spec-item">
+                <span>Nhiệt độ nước tối ưu:</span>
+                <strong id="resBrewTemp">85°C</strong>
+              </div>
+              <div class="brew-spec-item">
+                <span>Thời gian hãm chiết xuất:</span>
+                <strong id="resBrewTime">3 phút 30 giây</strong>
+              </div>
+              <div class="brew-spec-item">
+                <span>Cách thức thưởng thức:</span>
+                <strong id="resServing">Lắc cùng đá viên, thêm 1 nhánh bạc hà</strong>
+              </div>
+            </div>
+
+            <!-- Biochemical Rationale -->
+            <div class="biochem-box">
+              <strong>🔬 Cơ Chế Sinh Hóa & Khử Đắng:</strong>
+              <div id="resBiochem" style="margin-top:4px;">
+                Thuật toán tối ưu hóa tỷ lệ Vitexin (Lạc Tiên) và Saponin Adaptogen (Đinh Lăng) ở tỷ lệ 5:3, giúp hạ chỉ số căng thẳng thần kinh mà không gây ức chế phản xạ.
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-row">
+              <button class="btn-secondary" onclick="window.print()">📥 Tải Công Thức (PDF)</button>
+              <button class="btn-primary-action btn-order-trigger" data-drink="Công Thức AI Cá Nhân Hóa">📦 Đặt Gói Sachet Đong Sẵn (15k)</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW 2: SIGNATURE DRINKS ("FAVOURITE DRINKS" MENU) -->
+        <!-- VIEW: AI PHARMACIST CHATBOT (DIRECT DATABASE ACCESS & ADVICE) -->
+    
+
+    <section id="viewSignatures" class="main-view">
+      <!-- Chim Lạc Crest Divider -->
+      <div class="heritage-crest-divider">
+        <img src="assets/chim_lac_single.png" alt="Chim Lạc" class="crest-chim-lac flip-h">
+        <div class="crest-center-content">
+          <div class="crest-sub">TINH HOA BẢN ĐỊA</div>
+          <div class="crest-main">Trà Dược Liệu Đóng Gói Sachet Tiện Lợi</div>
+        </div>
+        <img src="assets/chim_lac_single.png" alt="Chim Lạc" class="crest-chim-lac">
+      </div>
+
+      <div style="margin-bottom:32px; text-align:center;">
+        <h2 style="font-family:var(--font-display); font-size:2.2rem; font-weight:800;">
+          Menu Thức Uống <span class="gradient-text">Được Yêu Thích Nhất</span>
+        </h2>
+        <p style="color:var(--text-muted); font-size:1rem; max-width:680px; margin:10px auto 0 auto; line-height:1.7;">
+          Dành cho người bận rộn: Các công thức chuẩn hóa đã được AI tinh chỉnh tỷ lệ sẵn, đóng gói thành túi lọc Sachet tiện lợi hoặc phục vụ trực tiếp tại quán Cafe đối tác.
+        </p>
+      </div>
+
+      <div id="signatureContainer" class="signature-grid">
+        <!-- Dynamically rendered from medicinal_database.js with botanical photos -->
+      </div>
+    </section>
+
+    <!-- VIEW 3: COMPREHENSIVE PHYTOCHEMICAL DATABASE -->
+    <section id="viewDatabase" class="main-view">
+      <!-- Chim Lạc Crest Divider -->
+      <div class="heritage-crest-divider">
+        <img src="assets/chim_lac_single.png" alt="Chim Lạc" class="crest-chim-lac flip-h">
+        <div class="crest-center-content">
+          <div class="crest-sub">KHO TÀNG DƯỢC ĐIỂN</div>
+          <div class="crest-main">Cơ Sở Dữ Liệu Hoạt Chất &amp; Vùng Dược Liệu Việt Nam</div>
+        </div>
+        <img src="assets/chim_lac_single.png" alt="Chim Lạc" class="crest-chim-lac">
+      </div>
+
+      <div style="margin-bottom:32px;">
+        <h2 style="font-family:var(--font-display); font-size:2.2rem; font-weight:800; margin-bottom:8px;">
+          Bách Khoa Dược Liệu Việt &amp; <span class="gradient-text">Hồ Sơ Hóa Thực Vật</span>
+        </h2>
+        <p style="color:var(--text-muted); font-size:1rem; line-height:1.7;">
+          Cơ sở dữ liệu khoa học được tổng hợp từ Dược điển Việt Nam và các công bố quốc tế về hoạt chất sinh học, liều dùng an toàn và quy tắc triệt tiêu vị đắng.
+        </p>
+      </div>
+
+      <div class="db-search-bar">
+        <input type="text" id="dbSearchInput" class="search-input" placeholder="🔍 Tìm kiếm theo tên cây (Lạc Tiên, Tâm Sen...), hoạt chất (Vitexin, Cynarin...) hoặc tác dụng dược lý...">
+      </div>
+
+      <div id="dbContainer" class="db-grid">
+        <!-- Dynamically populated with botanical photos -->
+      </div>
+    </section>
+
+    <!-- VIEW 4: ABOUT THE PROJECT & TEAM MANIFESTO -->
+    <section id="viewAbout" class="main-view">
+      <div class="glass-panel" style="margin-bottom:40px;">
+        <h2 style="font-family:var(--font-display); font-size:1.85rem; font-weight:800; margin-bottom:12px;">
+          Tuyên Ngôn Dự Án: <span class="gradient-text">AnThảo AI x RMIT RBPC 2026</span>
+        </h2>
+        <p style="color:var(--text-muted); line-height:1.75; margin-bottom:28px;">
+          Dự án được khởi xướng bởi 4 học sinh THPT đam mê Công nghệ và Khoa học Đời sống, hướng tới vòng tranh tài <strong>RMIT Business Plan Competition 2026</strong> dưới chủ đề <em>"AI for Good: Building What's Next"</em>. Thay vì dùng AI vì mục đích thương mại đơn thuần, chúng mình sử dụng thuật toán máy tính để giải mã kho tàng tri thức dược liệu cổ truyền của dân tộc vì lợi ích cộng đồng, mang lại giải pháp xả stress an toàn và lành mạnh cho thế hệ trẻ Việt Nam.
+        </p>
+
+        <!-- Heritage Showcase Card -->
+        <div class="heritage-showcase-panel">
+          <img src="assets/vietnamese_heritage_herbs.jpg" alt="Không Gian Nghiên Cứu Thảo Dược Đại Việt" class="heritage-showcase-img">
+          <div class="heritage-showcase-caption">
+            <div>
+              <div class="heritage-showcase-title">
+                <span>🪷</span> Không Gian Nghiên Cứu Dược Liệu &amp; Phòng Thí Nghiệm AI Đại Việt
+              </div>
+              <p class="heritage-showcase-desc">
+                Nơi 4.000 năm tri thức thảo dược dân tộc (Tâm Sen, Đinh Lăng, Lạc Tiên, Hoa Cúc, Bạc Hà) được giải mã cấu trúc hóa thực vật bởi Trí tuệ Nhân tạo thế hệ mới.
+              </p>
+            </div>
+            <div class="motto-badge">Bản Sắc Việt 2026</div>
+          </div>
+        </div>
+
+        <h3 style="color:var(--emerald-bright); font-size:1.15rem; font-weight:700; margin-bottom:16px;">👥 Cơ Cấu Đội Ngũ Tác Chiến (Team Structure)</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px; margin-bottom:34px;">
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:18px;">
+            <div style="font-size:0.75rem; color:var(--gold-warm); font-weight:800; letter-spacing:0.5px;">PROJECT &amp; BIOTECH LEAD</div>
+            <div style="font-size:1.15rem; font-weight:800; color:#fff; margin-top:4px;">Huỳnh Hữu Anh Khoa (Alex)</div>
+            <div style="font-size:0.84rem; color:var(--text-muted); margin-top:6px; line-height:1.5;">Định hướng Food Science RMIT • Khảo sát thị trường &amp; Thiết kế mô hình kinh doanh</div>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(52,211,153,0.35); border-radius:14px; padding:18px; box-shadow:0 0 16px rgba(16,185,129,0.15);">
+            <div style="font-size:0.75rem; color:var(--emerald-bright); font-weight:800; letter-spacing:0.5px;">AI &amp; LEAD SYSTEMS ARCHITECT</div>
+            <div style="font-size:1.15rem; font-weight:800; color:#fff; margin-top:4px;">Ngô Minh Thiên Bảo</div>
+            <div style="font-size:0.84rem; color:var(--text-muted); margin-top:6px; line-height:1.5;">Kiến trúc phần mềm AI Mixologist • Bộ lọc an toàn sinh học &amp; Trải nghiệm giao diện UI/UX</div>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:18px;">
+            <div style="font-size:0.75rem; color:var(--emerald-light); font-weight:800; letter-spacing:0.5px;">BIOTECH &amp; PHARMACOLOGY</div>
+            <div style="font-size:1.15rem; font-weight:800; color:#fff; margin-top:4px;">Quang Hiếu (Harry)</div>
+            <div style="font-size:0.84rem; color:var(--text-muted); margin-top:6px; line-height:1.5;">Nghiên cứu cơ sở dữ liệu Dược Liệu Việt • Bảng đối chiếu dược lý &amp; Tương tác thuốc</div>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:18px;">
+            <div style="font-size:0.75rem; color:#67e8f9; font-weight:800; letter-spacing:0.5px;">AI DATA &amp; FLOWCHART</div>
+            <div style="font-size:1.15rem; font-weight:800; color:#fff; margin-top:4px;">Dũng</div>
+            <div style="font-size:0.84rem; color:var(--text-muted); margin-top:6px; line-height:1.5;">Biểu đồ luồng dữ liệu Input/Output • Trực quan hóa số liệu khảo sát thị trường vào PDF</div>
+          </div>
+        </div>
+
+        <h3 style="color:var(--emerald-bright); font-size:1.15rem; font-weight:700; margin-bottom:14px;">📚 Tài Liệu Tham Khảo Học Thuật (RMIT Harvard Referencing Style)</h3>
+        <ul style="color:var(--text-muted); font-size:0.85rem; line-height:1.75; padding-left:22px;">
+          <li>Appel, K, Rose, T, Fiebich, B, Kammler, T, Hoffmann, C &amp; Weiss, G 2011, 'Modulation of the γ-aminobutyric acid (GABA) system by Passiflora incarnata L.', <em>Phytotherapy Research</em>, vol. 25, no. 6, pp. 838–843.</li>
+          <li>Breslin, PAS &amp; Beauchamp, GK 1997, 'Salt enhances flavour by suppressing bitterness', <em>Nature</em>, vol. 387, no. 6633, p. 563.</li>
+          <li>Đỗ, TL 2004, <em>Những cây thuốc và vị thuốc Việt Nam</em>, Nhà xuất bản Y học, Hà Nội.</li>
+          <li>Nguyễn, TTH, Nguyễn, QH &amp; Trần, VS 2020, 'Phytochemical constituents and biological activities of Passiflora foetida L. in Vietnam', <em>Vietnam Journal of Science and Technology</em>, vol. 58, no. 4, pp. 412–420.</li>
+          <li>World Health Organization (WHO) 2024, <em>Global status report on alcohol and health and treatment of substance use disorders</em>, World Health Organization, Geneva.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ORDER MODAL SIMULATION (GEN-Z COMBO 5 SACHETS & TRIAL CHECKOUT) -->
+  <div id="orderModal" class="modal-overlay">
+    <div class="modal-box">
+      <button id="modalClose" class="modal-close">&times;</button>
+      
+      <!-- Order Form State -->
+      <div id="orderFormState">
+        <div style="text-align:center; margin-bottom:18px;">
+          <div style="font-size:38px; margin-bottom:6px;">📦</div>
+          <h3 style="font-family:var(--font-display); font-size:1.4rem; font-weight:800; color:#fff;">Đặt Gói Sachet VinaVita Đong Sẵn</h3>
+          <p style="color:var(--text-muted); font-size:0.84rem; margin-top:4px;">Chuẩn hóa định lượng dược liệu OCOP Việt Nam • Tiện lợi cho Gen-Z</p>
+        </div>
+
+        <!-- Product Summary Box -->
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(52, 211, 153, 0.25); border-radius:14px; padding:16px; margin-bottom:18px; font-size:0.88rem;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+            <span style="color:var(--text-muted);">Sản phẩm:</span>
+            <strong id="modalItemName" style="color:var(--emerald-light);">Combo 5 Gói Sachet VinaVita</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+            <span style="color:var(--text-muted);">Quy cách đóng gói:</span>
+            <span>Hộp 5 túi Sachet màng nhôm bảo quản dược tính</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; border-top:1px solid rgba(255,255,255,0.08); padding-top:10px; align-items:center;">
+            <span style="color:var(--text-muted);">Đơn giá đề xuất:</span>
+            <strong id="modalPriceDisplay" style="color:var(--gold-warm); font-size:1.15rem;">68.000 VNĐ (~13.6k/gói)</strong>
+          </div>
+        </div>
+
+        <!-- Customer Inputs -->
+        <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:18px;">
+          <div>
+            <label style="font-size:0.78rem; color:var(--text-muted); display:block; margin-bottom:4px;">Họ tên người nhận (Thử nghiệm demo):</label>
+            <input type="text" id="orderCustName" style="width:100%; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:10px 14px; color:#fff; font-size:0.9rem;" value="Ngô Minh Thiên Bảo">
+          </div>
+          <div>
+            <label style="font-size:0.78rem; color:var(--text-muted); display:block; margin-bottom:4px;">Khu vực nhận hàng / Giao nhanh:</label>
+            <input type="text" id="orderCustAddress" style="width:100%; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:10px 14px; color:#fff; font-size:0.9rem;" value="Vinschool Central Park, TP. Hồ Chí Minh">
+          </div>
+        </div>
+
+        <button id="btnConfirmOrder" class="btn-primary-action" style="width:100%; padding:14px; font-size:0.95rem;">
+          🚀 Xác Nhận Đặt Thử Nghiệm (Combo 5 Gói)
+        </button>
+        <p style="font-size:0.75rem; color:var(--text-dim); text-align:center; margin-top:12px;">
+          *Mô phỏng đặt hàng thực tế phục vụ RMIT Business Plan Competition 2026.
+        </p>
+      </div>
+
+      <!-- Receipt Success State (Hidden by default) -->
+      <div id="orderSuccessState" style="display:none;">
+        <div class="order-receipt-box">
+          <div class="receipt-icon">🎉</div>
+          <div class="receipt-title">ĐẶT HÀNG THỬ NGHIỆM THÀNH CÔNG!</div>
+          <div style="font-size:0.85rem; color:var(--emerald-light); margin-bottom:12px;">
+            Mã đơn: <span id="receiptOrderId" class="receipt-id">#VV-2026-8839</span>
+          </div>
+          <div class="receipt-details">
+            <div class="receipt-row">
+              <span style="color:var(--text-muted);">Sản phẩm:</span>
+              <strong id="receiptItemName" style="color:#fff;">Combo 5 Gói Sachet VinaVita</strong>
+            </div>
+            <div class="receipt-row">
+              <span style="color:var(--text-muted);">Người nhận:</span>
+              <span id="receiptCustName" style="color:#fff;">Ngô Minh Thiên Bảo</span>
+            </div>
+            <div class="receipt-row">
+              <span style="color:var(--text-muted);">Địa chỉ:</span>
+              <span id="receiptCustAddress" style="color:#fff;">Vinschool Central Park, TP.HCM</span>
+            </div>
+            <div class="receipt-row">
+              <span style="color:var(--text-muted);">Dự kiến giao:</span>
+              <span style="color:var(--gold-warm); font-weight:700;">24 – 48 giờ (HTX OCOP)</span>
+            </div>
+          </div>
+          <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.5; margin-bottom:16px;">
+            Đơn hàng đã được ghi nhận vào hệ thống điều phối của VinaVita. Gói thảo mộc đong chuẩn tỷ lệ sinh học sẵn sàng được giao tới bạn.
+          </p>
+          <button id="btnDoneOrder" class="btn-primary-action" style="width:100%; padding:12px; font-size:0.9rem;">
+            Hoàn Tất &amp; Quay Lại
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>VinaVita AI</strong> — Vietnam Botanical Mocktail &amp; Herbal Wellness Platform</div>
+      <div style="margin-top:6px; color:var(--emerald-light);">Designed by Lead Systems Architect Ngô Minh Thiên Bảo &amp; The BioByte Team</div>
+      <div class="footer-disclaimer">
+        Dự án nghiên cứu phục vụ cuộc thi RMIT Business Plan Competition 2026. Các thông tin công thức dựa trên y học cổ truyền và dược lý học thực nghiệm, không nhằm mục đích thay thế chẩn đoán hoặc điều trị y tế chuyên sâu.
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- FLOATING CORNER AI PHARMACIST CHATBOT WIDGET -->
+  <div id="cornerChatWidget" class="corner-chat-widget">
+    <!-- Floating Action Button (FAB) -->
+    <button id="chatWidgetToggleBtn" class="chat-widget-fab" type="button" title="Trò chuyện cùng Dược Sĩ AI VinaVita">
+      <span class="fab-icon-open">🌿</span>
+      <span class="fab-icon-close" style="display:none;">✕</span>
+      <span class="fab-label">Dược Sĩ AI VinaVita</span>
+      <span class="fab-pulse"></span>
+    </button>
+
+    <!-- Floating Chat Box Popup Window -->
+    <div id="chatWidgetBox" class="chat-widget-box" style="display:none;">
+      <!-- Widget Header -->
+      <div class="chat-widget-header">
+        <div class="chat-widget-header-info">
+          <div class="widget-bot-avatar">🌿</div>
+          <div>
+            <div class="widget-bot-name">Dược Sĩ AI VinaVita</div>
+            <div class="widget-bot-status"><span class="status-indicator-dot"></span> Sẵn sàng tư vấn dược liệu 24/7</div>
+          </div>
+        </div>
+        <div class="chat-widget-header-actions">
+          <button id="chatWidgetMinimizeBtn" class="widget-action-btn" type="button" title="Thu nhỏ">&minus;</button>
+          <button id="chatWidgetCloseBtn" class="widget-action-btn" type="button" title="Đóng">&times;</button>
+        </div>
+      </div>
+
+      <!-- Quick Prompt Chips -->
+      <div class="chat-prompts-bar">
+        <div class="chat-prompts-label">💡 Gợi ý nhanh:</div>
+        <div class="chat-prompts-list">
+          <button class="chat-prompt-chip" type="button" data-query="Tâm sen có làm tụt huyết áp không? Người huyết áp thấp uống sao?">🌸 Tâm sen &amp; Huyết áp</button>
+          <button class="chat-prompt-chip" type="button" data-query="Cho tôi công thức thảo mộc thức khuya chạy deadline tỉnh táo không ép tim">⚡ Chạy deadline</button>
+          <button class="chat-prompt-chip" type="button" data-query="Mất ngủ và stress thi cử nên uống thảo mộc nào an toàn?">🌙 Ngủ sâu &amp; GABA</button>
+          <button class="chat-prompt-chip" type="button" data-query="Làm sao để khử vị đắng của dược liệu mà không dùng đường tinh luyện?">🍵 Khử vị đắng TAS2R</button>
+          <button class="chat-prompt-chip" type="button" data-query="Combo 5 gói Sachet VinaVita gồm những loại nào và giá bao nhiêu?">📦 Combo 5 Gói Sachet</button>
+          <button class="chat-prompt-chip" type="button" data-query="Đau dạ dày và trào ngược có uống được quất và chanh dây không?">🛡️ Đau dạ dày</button>
+        </div>
+      </div>
+
+      <!-- Chat Messages Scroll Area -->
+      <div class="chat-widget-body" id="chatMessages">
+        <div class="chat-msg bot">
+          <div class="msg-avatar">🌿</div>
+          <div class="msg-bubble">
+            <div class="msg-author">Dược Sĩ AI VinaVita</div>
+            <p>Xin chào! Mình là <strong>Dược Sĩ AI VinaVita</strong>. Mình kết nối trực tiếp với toàn bộ Bách khoa Dược liệu cổ truyền, phân tích hoạt chất sinh học (GABA, Flavonoid, Alkaloid, Saponin, L-Theanine) và rào cản sức khỏe.</p>
+            <p style="margin-top:6px;">Bạn có thể hỏi bất cứ điều gì: <em>"Tâm sen tác dụng gì?", "Công thức thức khuya chạy deadline?", "Đau dạ dày uống gì?", hoặc "Combo 5 gói sachet giá bao nhiêu?"</em>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Input Area -->
+      <div class="chat-widget-input-area">
+        <input type="text" id="chatInput" class="chat-widget-input" placeholder="Nhập câu hỏi (mất ngủ, deadline, dạ dày)..." autocomplete="off">
+        <button id="btnChatSend" class="chat-widget-send-btn" type="button">
+          <span>Gửi</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
