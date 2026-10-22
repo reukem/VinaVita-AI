@@ -1,0 +1,36 @@
+# Large Language Model Weights & Binaries (stored locally / HF)
+models/
+llama_bin/
+*.gguf
+*.bin
+*.exe
+*.dll
+
+# Python Environment & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Build Artifacts
+/dist
+/build
+*.zip
+*.tar.gz
+
+# Verification Screenshots
+flock_frame_*.png
+rendered_*.png
+verified_*.png
+grid_crop*.png
+crest_closeup.png
+
+# System & IDE
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+.vscode/
+.idea/
