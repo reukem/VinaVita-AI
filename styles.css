@@ -3373,148 +3373,189 @@ body {
 }
 
 /* Team Member Luxury Cards */
+/* Team Member Luxury Cards (Exact Image 2 Specification) */
 .team-card {
-  border-radius: 18px;
-  padding: 22px;
-  position: relative;
-  overflow: hidden;
+  border-radius: 18px !important;
+  padding: 24px 22px 22px 22px !important;
+  position: relative !important;
+  overflow: visible !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
 .team-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2.5px;
-  pointer-events: none;
-  z-index: 2;
+  display: none !important;
 }
 
 /* 1. Gold Theme: Alex (Project Lead) */
 .team-card.team-card-gold {
   background: 
-    radial-gradient(ellipse 90% 65% at 50% 12%, rgba(245, 158, 11, 0.18) 0%, rgba(217, 119, 6, 0.08) 35%, rgba(6, 44, 30, 0.9) 70%, rgba(3, 18, 12, 0.98) 100%),
+    radial-gradient(ellipse 90% 65% at 50% 12%, rgba(245, 158, 11, 0.14) 0%, rgba(217, 119, 6, 0.05) 35%, rgba(6, 44, 30, 0.9) 70%, rgba(3, 18, 12, 0.98) 100%),
     linear-gradient(90deg, rgba(4, 20, 14, 0.96) 0%, rgba(6, 44, 30, 0.92) 25%, rgba(13, 78, 54, 0.88) 50%, rgba(6, 44, 30, 0.92) 75%, rgba(4, 20, 14, 0.96) 100%) !important;
-  border: 1.5px solid rgba(245, 158, 11, 0.6) !important;
-  box-shadow: 
-    0 12px 35px rgba(0, 0, 0, 0.5), 
-    0 0 20px rgba(245, 158, 11, 0.22), 
-    inset 0 0 24px rgba(245, 158, 11, 0.12) !important;
-}
-
-.team-card.team-card-gold::before {
-  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.8), #fde68a, rgba(245, 158, 11, 0.8), transparent) !important;
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.8) !important;
+  border: 1.5px solid rgba(245, 158, 11, 0.45) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), inset 0 0 24px rgba(245, 158, 11, 0.08) !important;
 }
 
 .team-card.team-card-gold:hover {
   transform: translateY(-6px);
   border-color: #fbbf24 !important;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(245, 158, 11, 0.45) !important;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(245, 158, 11, 0.35) !important;
 }
 
-.team-card.team-card-gold .gold-corner-filigree,
-.team-card.team-card-gold .corner-filigree {
-  border-color: #fbbf24 !important;
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5) !important;
-}
-
-/* 2. Signature Emerald Green Theme: Ngô Minh Thiên Bảo (AI & Lead Systems Architect - Matches Website Theme) */
+/* 2. Signature Emerald Green Theme: Ngô Minh Thiên Bảo (AI & Lead Systems Architect) */
 .team-card.team-card-emerald,
 .team-card:not(.team-card-gold):not(.team-card-pharma):not(.team-card-cyan) {
   background: 
-    radial-gradient(ellipse 90% 65% at 50% 12%, rgba(16, 185, 129, 0.28) 0%, rgba(5, 150, 105, 0.14) 35%, rgba(6, 44, 30, 0.92) 70%, rgba(3, 18, 12, 0.98) 100%),
+    radial-gradient(ellipse 90% 65% at 50% 12%, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.08) 35%, rgba(6, 44, 30, 0.92) 70%, rgba(3, 18, 12, 0.98) 100%),
     linear-gradient(90deg, rgba(4, 20, 14, 0.96) 0%, rgba(6, 44, 30, 0.92) 25%, rgba(13, 78, 54, 0.88) 50%, rgba(6, 44, 30, 0.92) 75%, rgba(4, 20, 14, 0.96) 100%) !important;
-  border: 1.5px solid rgba(52, 211, 153, 0.75) !important;
-  box-shadow: 
-    0 12px 35px rgba(0, 0, 0, 0.5), 
-    0 0 25px rgba(16, 185, 129, 0.35), 
-    inset 0 0 26px rgba(16, 185, 129, 0.2) !important;
-}
-
-.team-card.team-card-emerald::before,
-.team-card:not(.team-card-gold):not(.team-card-pharma):not(.team-card-cyan)::before {
-  background: linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.85), #a7f3d0, rgba(52, 211, 153, 0.85), transparent) !important;
-  box-shadow: 0 0 12px rgba(16, 185, 129, 0.85) !important;
+  border: 1.5px solid rgba(52, 211, 153, 0.5) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), inset 0 0 26px rgba(16, 185, 129, 0.12) !important;
 }
 
 .team-card.team-card-emerald:hover,
 .team-card:not(.team-card-gold):not(.team-card-pharma):not(.team-card-cyan):hover {
   transform: translateY(-6px);
   border-color: #34d399 !important;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 35px rgba(16, 185, 129, 0.6) !important;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 35px rgba(16, 185, 129, 0.45) !important;
 }
 
-.team-card.team-card-emerald .gold-corner-filigree,
-.team-card.team-card-emerald .corner-filigree,
-.team-card.team-card-emerald .emerald-corner-filigree {
-  border-color: #34d399 !important;
-  box-shadow: 0 0 12px rgba(16, 185, 129, 0.6) !important;
-}
-
-/* 3. Biotech & Pharmacology Theme: Hieu (Biotech & Pharmacology - Mint/Teal) */
+/* 3. Biotech & Pharmacology Theme: Hiếu (Biotech & Pharmacology - Mint/Teal) */
 .team-card.team-card-pharma {
   background: 
-    radial-gradient(ellipse 90% 65% at 50% 12%, rgba(45, 212, 191, 0.2) 0%, rgba(20, 184, 166, 0.1) 35%, rgba(4, 38, 34, 0.92) 70%, rgba(2, 18, 16, 0.98) 100%),
+    radial-gradient(ellipse 90% 65% at 50% 12%, rgba(45, 212, 191, 0.16) 0%, rgba(20, 184, 166, 0.06) 35%, rgba(4, 38, 34, 0.92) 70%, rgba(2, 18, 16, 0.98) 100%),
     linear-gradient(90deg, rgba(3, 18, 16, 0.96) 0%, rgba(4, 36, 32, 0.92) 25%, rgba(8, 68, 60, 0.88) 50%, rgba(4, 36, 32, 0.92) 75%, rgba(3, 18, 16, 0.96) 100%) !important;
-  border: 1.5px solid rgba(45, 212, 191, 0.65) !important;
-  box-shadow: 
-    0 12px 35px rgba(0, 0, 0, 0.5), 
-    0 0 20px rgba(45, 212, 191, 0.25), 
-    inset 0 0 24px rgba(45, 212, 191, 0.15) !important;
-}
-
-.team-card.team-card-pharma::before {
-  background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.8), #99f6e4, rgba(45, 212, 191, 0.8), transparent) !important;
-  box-shadow: 0 0 10px rgba(45, 212, 191, 0.8) !important;
+  border: 1.5px solid rgba(45, 212, 191, 0.45) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), inset 0 0 24px rgba(45, 212, 191, 0.08) !important;
 }
 
 .team-card.team-card-pharma:hover {
   transform: translateY(-6px);
   border-color: #2dd4bf !important;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(45, 212, 191, 0.5) !important;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(45, 212, 191, 0.4) !important;
 }
 
-.team-card.team-card-pharma .pharma-corner-filigree,
-.team-card.team-card-pharma .gold-corner-filigree,
-.team-card.team-card-pharma .corner-filigree {
-  border-color: #2dd4bf !important;
-  box-shadow: 0 0 10px rgba(45, 212, 191, 0.55) !important;
-}
-
-/* 4. Cyan Theme: Dung (AI Data & Flowchart) */
+/* 4. Cyan Theme: Dũng (AI Data & Flowchart) */
 .team-card.team-card-cyan {
   background: 
-    radial-gradient(ellipse 90% 65% at 50% 12%, rgba(6, 182, 212, 0.2) 0%, rgba(56, 189, 248, 0.1) 35%, rgba(4, 30, 40, 0.92) 70%, rgba(2, 14, 20, 0.98) 100%),
+    radial-gradient(ellipse 90% 65% at 50% 12%, rgba(6, 182, 212, 0.16) 0%, rgba(56, 189, 248, 0.06) 35%, rgba(4, 30, 40, 0.92) 70%, rgba(2, 14, 20, 0.98) 100%),
     linear-gradient(90deg, rgba(3, 16, 24, 0.96) 0%, rgba(4, 30, 42, 0.92) 25%, rgba(8, 55, 75, 0.88) 50%, rgba(4, 30, 42, 0.92) 75%, rgba(3, 16, 24, 0.96) 100%) !important;
-  border: 1.5px solid rgba(6, 182, 212, 0.65) !important;
-  box-shadow: 
-    0 12px 35px rgba(0, 0, 0, 0.5), 
-    0 0 20px rgba(6, 182, 212, 0.28), 
-    inset 0 0 24px rgba(6, 182, 212, 0.16) !important;
-}
-
-.team-card.team-card-cyan::before {
-  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.8), #a5f3fc, rgba(6, 182, 212, 0.8), transparent) !important;
-  box-shadow: 0 0 10px rgba(6, 182, 212, 0.8) !important;
+  border: 1.5px solid rgba(6, 182, 212, 0.45) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), inset 0 0 24px rgba(6, 182, 212, 0.08) !important;
 }
 
 .team-card.team-card-cyan:hover {
   transform: translateY(-6px);
   border-color: #67e8f9 !important;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(6, 182, 212, 0.5) !important;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(6, 182, 212, 0.4) !important;
 }
 
-.team-card.team-card-cyan .gold-corner-filigree,
-.team-card.team-card-cyan .corner-filigree,
-.team-card.team-card-cyan .cyan-corner-filigree {
-  border-color: #67e8f9 !important;
-  box-shadow: 0 0 10px rgba(6, 182, 212, 0.55) !important;
+/* ==========================================================================
+   TEAM CARD CORNER FILIGREES (HUGGING CARD PERIMETER - EXACT IMAGE 2)
+   ========================================================================== */
+.team-card .gold-corner-filigree,
+.team-card .emerald-corner-filigree,
+.team-card .pharma-corner-filigree,
+.team-card .cyan-corner-filigree,
+.team-card .corner-filigree {
+  position: absolute !important;
+  width: 44px !important;
+  height: 44px !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
+
+.team-card .top-left {
+  top: -1.5px !important;
+  left: -1.5px !important;
+  border-top: 2.8px solid currentColor !important;
+  border-left: 2.8px solid currentColor !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-top-left-radius: 18px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.team-card .top-right {
+  top: -1.5px !important;
+  right: -1.5px !important;
+  border-top: 2.8px solid currentColor !important;
+  border-right: 2.8px solid currentColor !important;
+  border-left: none !important;
+  border-bottom: none !important;
+  border-top-right-radius: 18px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.team-card .bottom-left {
+  bottom: -1.5px !important;
+  left: -1.5px !important;
+  border-bottom: 2.8px solid currentColor !important;
+  border-left: 2.8px solid currentColor !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom-left-radius: 18px !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.team-card .bottom-right {
+  bottom: -1.5px !important;
+  right: -1.5px !important;
+  border-bottom: 2.8px solid currentColor !important;
+  border-right: 2.8px solid currentColor !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-bottom-right-radius: 18px !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+/* Card-Specific Filigree Colors & Pure Drop-Shadow Neon Glow */
+.team-card.team-card-gold .gold-corner-filigree,
+.team-card.team-card-gold .corner-filigree {
+  color: #fbbf24 !important;
+  border-color: #fbbf24 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.85)) drop-shadow(0 0 14px rgba(245, 158, 11, 0.45)) !important;
+}
+
+.team-card.team-card-emerald .emerald-corner-filigree,
+.team-card.team-card-emerald .corner-filigree,
+.team-card.team-card-emerald .gold-corner-filigree {
+  color: #34d399 !important;
+  border-color: #34d399 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 0 6px rgba(52, 211, 153, 0.9)) drop-shadow(0 0 14px rgba(16, 185, 129, 0.45)) !important;
+}
+
+.team-card.team-card-pharma .pharma-corner-filigree,
+.team-card.team-card-pharma .corner-filigree,
+.team-card.team-card-pharma .gold-corner-filigree {
+  color: #2dd4bf !important;
+  border-color: #2dd4bf !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 0 6px rgba(45, 212, 191, 0.9)) drop-shadow(0 0 14px rgba(20, 184, 166, 0.45)) !important;
+}
+
+.team-card.team-card-cyan .cyan-corner-filigree,
+.team-card.team-card-cyan .corner-filigree,
+.team-card.team-card-cyan .gold-corner-filigree {
+  color: #38bdf8 !important;
+  border-color: #38bdf8 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 14px rgba(6, 182, 212, 0.45)) !important;
+}
+
 
 .team-role-badge {
   display: inline-block;
