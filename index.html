@@ -165,7 +165,12 @@
       <div class="mixologist-grid">
 
         <!-- Left Column: Input Form Studio -->
-        <div class="glass-panel">
+        <div class="glass-panel" style="position:relative; overflow:hidden;">
+          <span class="gold-corner-filigree top-left" aria-hidden="true"></span>
+          <span class="gold-corner-filigree top-right" aria-hidden="true"></span>
+          <span class="gold-corner-filigree bottom-left" aria-hidden="true"></span>
+          <span class="gold-corner-filigree bottom-right" aria-hidden="true"></span>
+
           <h2 class="panel-title"><span>🧪</span> Trạm Phối Trộn AI Mixologist</h2>
           <p class="panel-desc">
             Nhập trạng thái tinh thần, rào cản sức khỏe và gu vị giác để thuật toán đa mục tiêu tính toán công thức chiết xuất an toàn nhất.
@@ -267,7 +272,12 @@
         </div>
 
         <!-- Right Column: Interactive Output Recipe Card -->
-        <div class="glass-panel recipe-container traditional-frame">
+        <div class="glass-panel recipe-container">
+          <span class="gold-corner-filigree top-left" aria-hidden="true"></span>
+          <span class="gold-corner-filigree top-right" aria-hidden="true"></span>
+          <span class="gold-corner-filigree bottom-left" aria-hidden="true"></span>
+          <span class="gold-corner-filigree bottom-right" aria-hidden="true"></span>
+
           <!-- Placeholder State -->
           <div id="recipePlaceholder" class="recipe-placeholder">
             <div class="recipe-placeholder-icon">🌱</div>
@@ -278,7 +288,7 @@
           </div>
 
           <!-- Active Recipe Card Output -->
-          <div id="recipeCard" class="recipe-card traditional-frame" style="position:relative; overflow:hidden;">
+          <div id="recipeCard" class="recipe-card" style="position:relative; overflow:hidden;">
             <!-- Rotating Watermark Drum in Recipe Card Background -->
             <img src="assets/trong_dong_gold.png" alt="Trống Đồng Cổ Truyền" class="recipe-watermark-drum">
 
@@ -408,105 +418,329 @@
         <div class="hero-sachet-grid">
           <!-- Box #01 -->
           <div class="hero-sachet-card sachet-box-1">
-            <div class="sachet-sku-badge">BOX #01 • SLEEP &amp; UNWIND</div>
-            <div class="sachet-card-body">
-              <div class="sachet-card-title">Citrus Twilight</div>
-              <div class="sachet-card-subtitle">Gói Ngủ Ngon &amp; Xả Stress Đêm (The "Sleep &amp; Unwind" Pack)</div>
-              <div class="sachet-target-desc">Dành cho học sinh, sinh viên xả stress sau 23h học thi, xoa dịu thần kinh và hỗ trợ giấc ngủ sinh học êm đềm (0.0% Cồn).</div>
-              <div class="sachet-gram-breakdown">
-                <div class="gram-pill">Lạc Tiên: <strong>2.5g</strong></div>
-                <div class="gram-pill">Hoa Cúc: <strong>1.0g</strong></div>
-                <div class="gram-pill">Tắc Sấy Lạnh: <strong>1.5g</strong> (pH 4.4)</div>
-                <div class="gram-pill">Cỏ Ngọt: <strong>0.3g</strong></div>
-                <div class="gram-pill">Muối Khoáng Na+: <strong>0.05g</strong></div>
+            <span class="gold-corner-filigree top-left" aria-hidden="true"></span>
+            <span class="gold-corner-filigree top-right" aria-hidden="true"></span>
+            <span class="gold-corner-filigree bottom-left" aria-hidden="true"></span>
+            <span class="gold-corner-filigree bottom-right" aria-hidden="true"></span>
+
+            <div>
+              <div class="recipe-visual-banner" style="position:relative; overflow:hidden; border-radius:14px; margin-bottom:16px; border:1.5px solid rgba(245,158,11,0.35); box-shadow:0 8px 24px rgba(0,0,0,0.5);">
+                <img src="assets/hoa_cuc.jpg" alt="Citrus Twilight Mocktail" class="recipe-hero-img" style="margin-bottom:0; height:180px; width:100%; object-fit:cover;">
               </div>
-              <div class="sachet-spec-line">💧 150 mL nước sôi 85°C • 5 phút • Rót qua 100g đá viên</div>
-              <div class="sachet-card-footer">
-                <div class="sachet-price-wrap">
-                  <span class="sachet-price-val">69.000 VNĐ</span>
-                  <span class="sachet-unit">/ Hộp 5 túi PLA (5.35g)</span>
-                </div>
-                <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #01 - Citrus Twilight (69.000đ)">
-                  🛒 Đặt Hộp #01
-                </button>
+              <span class="recipe-badge">🍸 HERO SKU #01 • SLEEP &amp; UNWIND</span>
+              <h3 class="recipe-title" style="font-size:1.55rem; margin-top:8px;">Citrus Twilight (VinaVita #01)</h3>
+              <div class="recipe-subtitle" style="font-size:0.9rem; margin-bottom:16px;">The 'Sleep &amp; Unwind' Pack • Gói Ngủ Ngon &amp; Xả Stress Đêm (0.0% Cồn)</div>
+
+              <table class="formula-table" style="margin-bottom:16px;">
+                <thead>
+                  <tr>
+                    <th>DƯỢC LIỆU BẢN ĐỊA</th>
+                    <th style="text-align:center;">ĐỊNH LƯỢNG</th>
+                    <th>VAI TRÒ SINH HỌC &amp; VỊ GIÁC</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">Lạc Tiên Khô</div>
+                      <div class="formula-herb-sci">Passiflora foetida</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">2.5g</td>
+                    <td style="color:#cbd5e1; font-size:0.82rem;">Vitexin hoạt hóa GABA_A, giải tỏa căng thẳng thần kinh sau 23h học thi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">Bạch Cúc Cố Đô</div>
+                      <div class="formula-herb-sci">Chrysanthemum morifolium</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">1.0g</td>
+                    <td style="color:#cbd5e1; font-size:0.82rem;">Apigenin giãn mạch, thanh can giáng hỏa, hương hoa thanh nhã</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">Tắc Sấy Lạnh</div>
+                      <div class="formula-herb-sci">Citrus japonica</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">1.5g</td>
+                    <td style="color:#cbd5e1; font-size:0.82rem;">Acid citric đưa pH về 4.4 triệt tiêu vị đắng gai lưỡi hTAS2R</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">Cỏ Ngọt &amp; Na+</div>
+                      <div class="formula-herb-sci">Stevia rebaudiana</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">0.35g</td>
+                    <td style="color:#cbd5e1; font-size:0.82rem;">Hậu vị ngọt sâu không đường (0g GI), ion Na+ ức chế đắng trung ương</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="brew-specs-box" style="margin-bottom:16px;">
+                <div class="brew-spec-item"><span>Nhiệt độ nước tối ưu:</span><strong>85°C</strong></div>
+                <div class="brew-spec-item"><span>Thời gian hãm chiết xuất:</span><strong>5 phút</strong></div>
+                <div class="brew-spec-item"><span>Cách thức thưởng thức:</span><strong>Rót qua 100g đá viên, thêm 1 lát tắc mỏng và nhánh bạc hà</strong></div>
               </div>
+
+              <div class="bitterness-masking-box" style="margin-bottom:18px; padding:12px 14px;">
+                <div class="bitterness-badge-title" style="font-size:0.75rem;"><span>🧪</span> CƠ CHẾ KHỬ ĐẮNG &amp; HOẠT HÓA GABA KÉP</div>
+                <div style="font-size:0.8rem; color:#d1fae5; line-height:1.45; margin-top:4px;">Axit hữu cơ đưa pH về 4.4 triệt tiêu vị đắng thảo mộc, hiệp đồng cùng Vitexin tạo giấc ngủ sinh học tự nhiên không gây mệt mỏi buổi sáng.</div>
+              </div>
+            </div>
+
+            <div class="sachet-card-footer" style="border-top:1px solid rgba(245,158,11,0.25); padding-top:16px;">
+              <div class="sachet-price-wrap">
+                <span class="sachet-price-val">69.000 VNĐ</span>
+                <span class="sachet-unit">/ Hộp 5 túi PLA (5.35g)</span>
+              </div>
+              <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #01 - Citrus Twilight (69.000đ)">
+                🛒 Đặt Hộp #01
+              </button>
             </div>
           </div>
 
           <!-- Box #02 -->
           <div class="hero-sachet-card sachet-box-2">
-            <div class="sachet-sku-badge">BOX #02 • DEADLINE &amp; EXAM</div>
-            <div class="sachet-card-body">
-              <div class="sachet-card-title">Calm Focus</div>
-              <div class="sachet-card-subtitle">Gói Chạy Deadline &amp; Ôn Thi (The "Deadline &amp; Exam" Pack)</div>
-              <div class="sachet-target-desc">Kích hoạt sóng não Alpha, duy trì sự tỉnh táo minh mẫn 4 tiếng mà không gây run tay, ép tim hay cồn cào dạ dày như caffeine.</div>
-              <div class="sachet-gram-breakdown">
-                <div class="gram-pill">Đinh Lăng Sâm Nam: <strong>3.0g</strong></div>
-                <div class="gram-pill">Sả Chanh Bản Địa: <strong>1.2g</strong></div>
-                <div class="gram-pill">Gừng Núi Kỳ Sơn: <strong>0.8g</strong></div>
-                <div class="gram-pill">La Hán Quả: <strong>0.5g</strong></div>
+            <span class="gold-corner-filigree top-left" aria-hidden="true"></span>
+            <span class="gold-corner-filigree top-right" aria-hidden="true"></span>
+            <span class="gold-corner-filigree bottom-left" aria-hidden="true"></span>
+            <span class="gold-corner-filigree bottom-right" aria-hidden="true"></span>
+
+            <div>
+              <div class="recipe-visual-banner" style="position:relative; overflow:hidden; border-radius:14px; margin-bottom:16px; border:1.5px solid rgba(245,158,11,0.35); box-shadow:0 8px 24px rgba(0,0,0,0.5);">
+                <img src="assets/dinh_lang.jpg" alt="Calm Focus Herbal Tonic" class="recipe-hero-img" style="margin-bottom:0; height:180px; width:100%; object-fit:cover;">
               </div>
-              <div class="sachet-spec-line">💧 180 mL nước 90°C • 3 phút • Dùng ấm hoặc lạnh</div>
-              <div class="sachet-card-footer">
-                <div class="sachet-price-wrap">
-                  <span class="sachet-price-val">69.000 VNĐ</span>
-                  <span class="sachet-unit">/ Hộp 5 túi PLA (5.5g)</span>
-                </div>
-                <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #02 - Calm Focus (69.000đ)">
-                  🛒 Đặt Hộp #02
-                </button>
+              <span class="recipe-badge">⚡ HERO SKU #02 • DEADLINE &amp; EXAM</span>
+              <h3 class="recipe-title" style="font-size:1.55rem; margin-top:8px;">Calm Focus (VinaVita #02)</h3>
+              <div class="recipe-subtitle" style="font-size:0.9rem; margin-bottom:16px;">The 'Deadline &amp; Exam' Pack • Gói Chạy Deadline &amp; Ôn Thi (Steady Alertness)</div>
+
+              <table class="formula-table" style="margin-bottom:16px;">
+                <thead>
+                  <tr>
+                    <th>DƯỢC LIỆU BẢN ĐỊA</th>
+                    <th style="text-align:center;">ĐỊNH LƯỢNG</th>
+                    <th>VAI TRÒ SINH HỌC &amp; VỊ GIÁC</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">Đinh Lăng Sâm Nam</div>
+                      <div class="formula-herb-sci">Polyscias fruticosa</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">3.0g</td>
+                    <td style="color:#cbd5e1; font-size:0.82rem;">Saponin Adaptogen tăng tưới máu não, kích hoạt sóng não Alpha tập trung</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">Sả Chanh Bản Địa</div>
+                      <div class="formula-herb-sci">Cymbopogon citratus</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">1.2g</td>
+                    <td style="color:#cbd5e1; font-size:0.82rem;">Citral &amp; Geraniol tạo hương thơm sảng khoái, kích thích tư duy sắc bén</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">Gừng Núi Kỳ Sơn</div>
+                      <div class="formula-herb-sci">Zingiber officinale</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">0.8g</td>
+                    <td style="color:#cbd5e1; font-size:0.82rem;">Gingerol làm ấm dạ dày, kháng viêm, chống hạ đường huyết khi thức khuya</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">La Hán Quả Cổ Truyền</div>
+                      <div class="formula-herb-sci">Siraitia grosvenorii</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">0.5g</td>
+                    <td style="color:#cbd5e1; font-size:0.82rem;">Mogroside V tạo vị ngọt thanh dịu mát, không tăng đường huyết</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="brew-specs-box" style="margin-bottom:16px;">
+                <div class="brew-spec-item"><span>Nhiệt độ nước tối ưu:</span><strong>90°C</strong></div>
+                <div class="brew-spec-item"><span>Thời gian hãm chiết xuất:</span><strong>3 phút 30 giây</strong></div>
+                <div class="brew-spec-item"><span>Cách thức thưởng thức:</span><strong>Dùng ấm hoặc lắc đá cùng 1 lát chanh tươi và nhánh sả đập dập</strong></div>
               </div>
+
+              <div class="bitterness-masking-box" style="margin-bottom:18px; padding:12px 14px;">
+                <div class="bitterness-badge-title" style="font-size:0.75rem;"><span>⚡</span> TẬP TRUNG 4H BỀN BỈ • KHÔNG ÉP TIM</div>
+                <div style="font-size:0.8rem; color:#d1fae5; line-height:1.45; margin-top:4px;">Không chứa caffeine tổng hợp: Hoàn toàn không gây run tay, không cồn cào dạ dày hay sụt năng lượng đột ngột (crash).</div>
+              </div>
+            </div>
+
+            <div class="sachet-card-footer" style="border-top:1px solid rgba(245,158,11,0.25); padding-top:16px;">
+              <div class="sachet-price-wrap">
+                <span class="sachet-price-val">69.000 VNĐ</span>
+                <span class="sachet-unit">/ Hộp 5 túi PLA (5.5g)</span>
+              </div>
+              <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #02 - Calm Focus (69.000đ)">
+                🛒 Đặt Hộp #02
+              </button>
             </div>
           </div>
 
-          <!-- Box #03 -->
+          <!-- Box #03 (EXACT USER SCREENSHOT MATCH) -->
           <div class="hero-sachet-card sachet-box-3">
-            <div class="sachet-sku-badge">BOX #03 • 0% PARTY &amp; CHILL</div>
-            <div class="sachet-card-body">
-              <div class="sachet-card-title">Berry Social Glow</div>
-              <div class="sachet-card-subtitle">Gói Tiệc Tùng 0% Cồn (The "0% Party &amp; Chill" Pack)</div>
-              <div class="sachet-target-desc">Sắc đỏ Ruby sang trọng, thư giãn tâm lý nhóm bạn, thay thế hoàn hảo bia rượu đêm tiệc, 100% tuân thủ Nghị định 168 lái xe.</div>
-              <div class="sachet-gram-breakdown">
-                <div class="gram-pill">Atiso Đỏ (Roselle): <strong>2.5g</strong></div>
-                <div class="gram-pill">Lạc Tiên Khô: <strong>1.5g</strong></div>
-                <div class="gram-pill">Quế Trà Bồng: <strong>0.8g</strong></div>
-                <div class="gram-pill">La Hán Quả: <strong>0.7g</strong></div>
+            <span class="gold-corner-filigree top-left" aria-hidden="true"></span>
+            <span class="gold-corner-filigree top-right" aria-hidden="true"></span>
+            <span class="gold-corner-filigree bottom-left" aria-hidden="true"></span>
+            <span class="gold-corner-filigree bottom-right" aria-hidden="true"></span>
+
+            <div>
+              <div class="recipe-visual-banner" style="position:relative; overflow:hidden; border-radius:14px; margin-bottom:16px; border:1.5px solid rgba(245,158,11,0.35); box-shadow:0 8px 24px rgba(0,0,0,0.5);">
+                <img src="assets/mocktail_hero.jpg" alt="Berry Social Glow Mocktail" class="recipe-hero-img" style="margin-bottom:0; height:180px; width:100%; object-fit:cover;">
               </div>
-              <div class="sachet-spec-line">💧 150 mL nước 85°C • 4 phút • Lắc đá cùng soda sủi bọt</div>
-              <div class="sachet-card-footer">
-                <div class="sachet-price-wrap">
-                  <span class="sachet-price-val">69.000 VNĐ</span>
-                  <span class="sachet-unit">/ Hộp 5 túi PLA (5.5g)</span>
-                </div>
-                <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #03 - Berry Social Glow (69.000đ)">
-                  🛒 Đặt Hộp #03
-                </button>
+              <span class="recipe-badge">🍷 HERO SKU #03 • 0% PARTY &amp; CHILL</span>
+              <h3 class="recipe-title" style="font-size:1.55rem; margin-top:8px;">Berry Social Glow Mocktail (VinaVita #03)</h3>
+              <div class="recipe-subtitle" style="font-size:0.9rem; margin-bottom:16px;">The '0% Party &amp; Chill' Pack • Gói Tiệc Tùng 0% Cồn (0.0% Alcohol Social Chill)</div>
+
+              <table class="formula-table" style="margin-bottom:16px;">
+                <thead>
+                  <tr>
+                    <th>DƯỢC LIỆU BẢN ĐỊA</th>
+                    <th style="text-align:center;">ĐỊNH LƯỢNG</th>
+                    <th>VAI TRÒ SINH HỌC &amp; VỊ GIÁC</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">Atiso Đỏ (Roselle Hibiscus)</div>
+                      <div class="formula-herb-sci">Hibiscus sabdariffa</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">2.5g</td>
+                    <td style="color:#cbd5e1; font-size:0.84rem;">Anthocyanin tạo sắc đỏ Ruby dạ tiệc, vị chua thanh tự nhiên</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">Lạc Tiên Khô</div>
+                      <div class="formula-herb-sci">Passiflora foetida</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">1.5g</td>
+                    <td style="color:#cbd5e1; font-size:0.84rem;">Vitexin kích hoạt GABA_A tạo cảm giác ấm áp, cởi mở hòa đồng xã hội</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">Quế Trà Bồng Bản Địa</div>
+                      <div class="formula-herb-sci">Cinnamomum loureiroi</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">0.8g</td>
+                    <td style="color:#cbd5e1; font-size:0.84rem;">Cinnamaldehyde tạo hương thơm nồng ấm quý phái như rượu vang Mulled Wine</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">La Hán Quả / Cỏ Ngọt</div>
+                      <div class="formula-herb-sci">Siraitia grosvenorii</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">0.7g</td>
+                    <td style="color:#cbd5e1; font-size:0.84rem;">Vị ngọt tròn đầy không năng lượng thừa, không cồn</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="brew-specs-box" style="margin-bottom:16px;">
+                <div class="brew-spec-item"><span>Nhiệt độ nước tối ưu:</span><strong>85°C</strong></div>
+                <div class="brew-spec-item"><span>Thời gian hãm chiết xuất:</span><strong>4 phút</strong></div>
+                <div class="brew-spec-item"><span>Cách thức thưởng thức:</span><strong>Lắc cùng đá viên, thêm chút soda bọt mịn và 1 nhánh hương thảo</strong></div>
               </div>
+
+              <div class="bitterness-masking-box" style="margin-bottom:18px; padding:12px 14px;">
+                <div class="bitterness-badge-title" style="font-size:0.75rem;"><span>🧪</span> CƠ CHẾ KHỬ ĐẮNG KÉP • DUAL-PATHWAY BITTERNESS MODULATION (0G REFINED SUGAR)</div>
+                <div style="font-size:0.82rem; color:#d1fae5; line-height:1.5; margin-top:6px;">Axit hữu cơ tự nhiên từ Atiso Đỏ đưa pH dịch chiết về 4.4 ức chế thụ thể đắng hTAS2R16, phối hợp cùng Mogroside tự nhiên tạo hậu vị ngọt sâu không cồn.</div>
+              </div>
+            </div>
+
+            <div class="sachet-card-footer" style="border-top:1px solid rgba(245,158,11,0.25); padding-top:16px;">
+              <div class="sachet-price-wrap">
+                <span class="sachet-price-val">69.000 VNĐ</span>
+                <span class="sachet-unit">/ Hộp 5 túi PLA (5.5g)</span>
+              </div>
+              <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #03 - Berry Social Glow (69.000đ)">
+                🛒 Đặt Hộp #03
+              </button>
             </div>
           </div>
 
           <!-- Box #04 Bonus Combo -->
           <div class="hero-sachet-card sachet-box-combo">
-            <div class="sachet-sku-badge combo-badge">BOX #04 • TRIAL COMBO</div>
-            <div class="sachet-card-body">
-              <div class="sachet-card-title">All-in-One Trial Pack</div>
-              <div class="sachet-card-subtitle">Combo Trải Nghiệm 3 Vị Hero (The "All-in-One" Sampler)</div>
-              <div class="sachet-target-desc">Lựa chọn lý tưởng cho khách hàng mới: Trải nghiệm trọn vẹn cả 3 khoảnh khắc cảm xúc (Học thi, Thư giãn ngủ đêm, Tiệc tùng).</div>
-              <div class="sachet-gram-breakdown">
-                <div class="gram-pill">2× Citrus Twilight (Ngủ ngon)</div>
-                <div class="gram-pill">2× Calm Focus (Tập trung)</div>
-                <div class="gram-pill">1× Berry Social Glow (Tiệc chill)</div>
+            <span class="gold-corner-filigree top-left" aria-hidden="true"></span>
+            <span class="gold-corner-filigree top-right" aria-hidden="true"></span>
+            <span class="gold-corner-filigree bottom-left" aria-hidden="true"></span>
+            <span class="gold-corner-filigree bottom-right" aria-hidden="true"></span>
+
+            <div>
+              <div class="recipe-visual-banner" style="position:relative; overflow:hidden; border-radius:14px; margin-bottom:16px; border:1.5px solid rgba(245,158,11,0.35); box-shadow:0 8px 24px rgba(0,0,0,0.5);">
+                <img src="assets/vietnamese_heritage_herbs.jpg" alt="All-in-One Trial Sampler" class="recipe-hero-img" style="margin-bottom:0; height:180px; width:100%; object-fit:cover;">
               </div>
-              <div class="sachet-spec-line">🎁 Tặng kèm thẻ hướng dẫn chánh niệm pha trà Gen-Z</div>
-              <div class="sachet-card-footer">
-                <div class="sachet-price-wrap">
-                  <span class="sachet-price-val">69.000 VNĐ</span>
-                  <span class="sachet-unit">/ Hộp 5 túi hỗn hợp</span>
-                </div>
-                <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #04 - All-in-One Trial Combo (69.000đ)">
-                  🛒 Đặt Hộp Combo
-                </button>
+              <span class="recipe-badge" style="background:rgba(168,85,247,0.2); border-color:#c084fc; color:#e9d5ff;">✨ HERO SKU #04 • TRIAL SAMPLER</span>
+              <h3 class="recipe-title" style="font-size:1.55rem; margin-top:8px;">All-in-One Trial Pack (VinaVita #04)</h3>
+              <div class="recipe-subtitle" style="font-size:0.9rem; margin-bottom:16px;">The 'All-in-One' Sampler • Combo Trải Nghiệm 3 Vị Hero (Multi-Mood Discovery)</div>
+
+              <table class="formula-table" style="margin-bottom:16px;">
+                <thead>
+                  <tr>
+                    <th>GÓI THÀNH PHẦN</th>
+                    <th style="text-align:center;">SỐ LƯỢNG</th>
+                    <th>CƠ CHẾ CẢM XÚC &amp; MỤC TIÊU</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">2× Citrus Twilight</div>
+                      <div class="formula-herb-sci">Gói Ngủ Ngon Đêm</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">10.7g</td>
+                    <td style="color:#cbd5e1; font-size:0.82rem;">Vitexin hoạt hóa GABA_A, giải tỏa stress sau 23h học thi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">2× Calm Focus</div>
+                      <div class="formula-herb-sci">Gói Chạy Deadline</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">11.0g</td>
+                    <td style="color:#cbd5e1; font-size:0.82rem;">Saponin Adaptogen kích hoạt sóng não Alpha, tỉnh táo 4h</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">1× Berry Social Glow</div>
+                      <div class="formula-herb-sci">Gói Tiệc Chill 0% Cồn</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">5.5g</td>
+                    <td style="color:#cbd5e1; font-size:0.82rem;">Thay thế bia rượu dạ tiệc, sắc đỏ Ruby sang trọng</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="formula-herb-name">Thẻ Hướng Dẫn Chánh Niệm</div>
+                      <div class="formula-herb-sci">Bản Sắc Việt 2026</div>
+                    </td>
+                    <td style="text-align:center; font-weight:800; color:#fff;">1 Thẻ</td>
+                    <td style="color:#cbd5e1; font-size:0.82rem;">Thang đo cảm xúc &amp; bí quyết pha chuẩn công thức nghệ nhân</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="brew-specs-box" style="margin-bottom:16px;">
+                <div class="brew-spec-item"><span>Quy cách:</span><strong>Hộp 5 túi lọc kim tự tháp PLA tự phân hủy</strong></div>
+                <div class="brew-spec-item"><span>Sử dụng:</span><strong>Linh hoạt theo nhịp sinh học: Sáng tập trung, Chiều tiệc, Đêm ngủ</strong></div>
+                <div class="brew-spec-item"><span>Quà tặng đính kèm:</span><strong>E-book "Cẩm Nang Dược Liệu Việt &amp; AI 2026"</strong></div>
               </div>
+
+              <div class="bitterness-masking-box" style="margin-bottom:18px; padding:12px 14px;">
+                <div class="bitterness-badge-title" style="font-size:0.75rem;"><span>🎁</span> BỘ KHỞI ĐẦU TOÀN DIỆN CHO GEN-Z</div>
+                <div style="font-size:0.8rem; color:#d1fae5; line-height:1.45; margin-top:4px;">Lựa chọn lý tưởng nhất để khách hàng mới khám phá toàn bộ triết lý Nam Dược Trị Nam Nhân giao thoa AI.</div>
+              </div>
+            </div>
+
+            <div class="sachet-card-footer" style="border-top:1px solid rgba(245,158,11,0.25); padding-top:16px;">
+              <div class="sachet-price-wrap">
+                <span class="sachet-price-val">69.000 VNĐ</span>
+                <span class="sachet-unit">/ Hộp 5 túi hỗn hợp</span>
+              </div>
+              <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #04 - All-in-One Trial Combo (69.000đ)">
+                🛒 Đặt Hộp Combo
+              </button>
             </div>
           </div>
         </div>
@@ -558,7 +792,12 @@
 
     <!-- VIEW 4: ABOUT THE PROJECT & TEAM MANIFESTO -->
     <section id="viewAbout" class="main-view">
-      <div class="glass-panel" style="margin-bottom:40px;">
+      <div class="glass-panel" style="margin-bottom:40px; position:relative; overflow:hidden;">
+        <span class="gold-corner-filigree top-left" aria-hidden="true"></span>
+        <span class="gold-corner-filigree top-right" aria-hidden="true"></span>
+        <span class="gold-corner-filigree bottom-left" aria-hidden="true"></span>
+        <span class="gold-corner-filigree bottom-right" aria-hidden="true"></span>
+
         <h2 style="font-family:var(--font-display); font-size:1.85rem; font-weight:800; margin-bottom:12px;">
           Tuyên Ngôn Dự Án: <span class="gradient-text">AnThảo AI x RMIT RBPC 2026</span>
         </h2>
@@ -583,29 +822,34 @@
         </div>
 
         <h3 style="color:var(--emerald-bright); font-size:1.15rem; font-weight:700; margin-bottom:16px;">👥 Cơ Cấu Đội Ngũ Tác Chiến (Team Structure)</h3>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px; margin-bottom:34px;">
-          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:18px;">
-            <div style="font-size:0.75rem; color:var(--gold-warm); font-weight:800; letter-spacing:0.5px;">PROJECT &amp; BIOTECH LEAD</div>
-            <div style="font-size:1.15rem; font-weight:800; color:#fff; margin-top:4px;">Huỳnh Hữu Anh Khoa (Alex)</div>
-            <div style="font-size:0.84rem; color:var(--text-muted); margin-top:6px; line-height:1.5;">Định hướng Food Science RMIT • Khảo sát thị trường &amp; Thiết kế mô hình kinh doanh</div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; margin-bottom:34px;">
+          
+          <!-- Alex: Project & Biotech Lead (Yellow/Gold Theme) -->
+          <div class="team-card team-card-gold">
+            <span class="team-role-badge team-role-lead">👑 PROJECT &amp; BIOTECH LEAD</span>
+            <div style="font-size:1.25rem; font-weight:800; color:#fff; margin-top:4px;">Huỳnh Hữu Anh Khoa (Alex)</div>
+            <div style="font-size:0.86rem; color:var(--text-muted); margin-top:8px; line-height:1.55;">Định hướng Food Science RMIT • Khảo sát thị trường &amp; Thiết kế mô hình kinh doanh B2B/B2C</div>
           </div>
 
-          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(52,211,153,0.35); border-radius:14px; padding:18px; box-shadow:0 0 16px rgba(16,185,129,0.15);">
-            <div style="font-size:0.75rem; color:var(--emerald-bright); font-weight:800; letter-spacing:0.5px;">AI &amp; LEAD SYSTEMS ARCHITECT</div>
-            <div style="font-size:1.15rem; font-weight:800; color:#fff; margin-top:4px;">Ngô Minh Thiên Bảo</div>
-            <div style="font-size:0.84rem; color:var(--text-muted); margin-top:6px; line-height:1.5;">Kiến trúc phần mềm AI Mixologist • Bộ lọc an toàn sinh học &amp; Trải nghiệm giao diện UI/UX</div>
+          <!-- Ngô Minh Thiên Bảo: AI & Lead Systems Architect (Emerald Green Theme like the Web UI) -->
+          <div class="team-card team-card-emerald">
+            <span class="team-role-badge team-role-arch">⚡ AI &amp; LEAD SYSTEMS ARCHITECT</span>
+            <div style="font-size:1.25rem; font-weight:800; color:#fff; margin-top:4px;">Ngô Minh Thiên Bảo</div>
+            <div style="font-size:0.86rem; color:var(--text-muted); margin-top:8px; line-height:1.55;">Kiến trúc phần mềm AI Mixologist • Bộ lọc an toàn sinh học đa mục tiêu &amp; UI/UX Design System</div>
           </div>
 
-          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:18px;">
-            <div style="font-size:0.75rem; color:var(--emerald-light); font-weight:800; letter-spacing:0.5px;">BIOTECH &amp; PHARMACOLOGY</div>
-            <div style="font-size:1.15rem; font-weight:800; color:#fff; margin-top:4px;">Quang Hiếu (Harry)</div>
-            <div style="font-size:0.84rem; color:var(--text-muted); margin-top:6px; line-height:1.5;">Nghiên cứu cơ sở dữ liệu Dược Liệu Việt • Bảng đối chiếu dược lý &amp; Tương tác thuốc</div>
+          <!-- Hieu: Biotech & Pharmacology (Biotech Mint/Teal Theme matching Title) -->
+          <div class="team-card team-card-pharma">
+            <span class="team-role-badge team-role-pharma">🔬 BIOTECH &amp; PHARMACOLOGY</span>
+            <div style="font-size:1.25rem; font-weight:800; color:#fff; margin-top:4px;">Quang Hiếu (Harry)</div>
+            <div style="font-size:0.86rem; color:var(--text-muted); margin-top:8px; line-height:1.55;">Nghiên cứu cơ sở dữ liệu Dược Liệu Việt • Bảng đối chiếu dược lý, độc tính &amp; tương tác thuốc</div>
           </div>
 
-          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:18px;">
-            <div style="font-size:0.75rem; color:#67e8f9; font-weight:800; letter-spacing:0.5px;">AI DATA &amp; FLOWCHART</div>
-            <div style="font-size:1.15rem; font-weight:800; color:#fff; margin-top:4px;">Dũng</div>
-            <div style="font-size:0.84rem; color:var(--text-muted); margin-top:6px; line-height:1.5;">Biểu đồ luồng dữ liệu Input/Output • Trực quan hóa số liệu khảo sát thị trường vào PDF</div>
+          <!-- Dung: AI Data & Flowchart (Cyber Cyan Theme matching Title) -->
+          <div class="team-card team-card-cyan">
+            <span class="team-role-badge team-role-data">📊 AI DATA &amp; FLOWCHART</span>
+            <div style="font-size:1.25rem; font-weight:800; color:#fff; margin-top:4px;">Dũng</div>
+            <div style="font-size:0.86rem; color:var(--text-muted); margin-top:8px; line-height:1.55;">Biểu đồ luồng dữ liệu Input/Output • Trực quan hóa số liệu khảo sát thị trường vào hồ sơ RBPC 2026</div>
           </div>
         </div>
 
@@ -625,6 +869,10 @@
   <!-- ORDER MODAL SIMULATION (GEN-Z COMBO 5 SACHETS & TRIAL CHECKOUT) -->
   <div id="orderModal" class="modal-overlay">
     <div class="modal-box">
+      <span class="gold-corner-filigree top-left" aria-hidden="true"></span>
+      <span class="gold-corner-filigree top-right" aria-hidden="true"></span>
+      <span class="gold-corner-filigree bottom-left" aria-hidden="true"></span>
+      <span class="gold-corner-filigree bottom-right" aria-hidden="true"></span>
       <button id="modalClose" class="modal-close">&times;</button>
       
       <!-- Order Form State -->
@@ -706,6 +954,21 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- HERB DOSSIER & DETAIL MODAL (RENOVATED EXPANDABLE SCIENTIFIC VIEW) -->
+  <div id="herbDetailModal" class="modal-overlay">
+    <div class="herb-modal-box">
+      <span class="gold-corner-filigree top-left" aria-hidden="true"></span>
+      <span class="gold-corner-filigree top-right" aria-hidden="true"></span>
+      <span class="gold-corner-filigree bottom-left" aria-hidden="true"></span>
+      <span class="gold-corner-filigree bottom-right" aria-hidden="true"></span>
+      <button id="herbModalClose" class="modal-close" style="top:20px; right:20px; z-index:10;" title="Đóng hồ sơ">&times;</button>
+      
+      <div id="herbModalDynamicContent">
+        <!-- Dynamically injected by openHerbDetailModal -->
+      </div>
     </div>
   </div>
 

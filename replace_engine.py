@@ -120,7 +120,7 @@ new_engine_code = """    async function handleSend(queryText) {
         return `
           <p><strong>🌿 VinaVita AI Pharmacist — Mô hình Trợ Lý Dược Sĩ Trí Tuệ Nhân Tạo (SLM)</strong></p>
           <p style="margin-top:6px; font-size:0.88rem; line-height:1.6;">
-            Mình là hệ thống AI chuyên biệt được thiết kế và huấn luyện bởi <strong>Lead Systems Architect Ngô Minh Thiên Bảo (Aki)</strong> cùng đội ngũ <strong>BioByte</strong> (Alex Huynh, Trương Quang Hiếu, Nguyễn Minh Dũng) phục vụ đề án tranh tài tại <strong>RMIT Business Plan Competition 2026</strong> (Chủ đề: <em>AI for Good</em>).
+            Mình là hệ thống AI chuyên biệt được thiết kế và huấn luyện bởi <strong>Lead Systems Architect Ngô Minh Thiên Bảo</strong> cùng đội ngũ <strong>BioByte</strong> (Alex Huynh, Trương Quang Hiếu, Nguyễn Minh Dũng) phục vụ đề án tranh tài tại <strong>RMIT Business Plan Competition 2026</strong> (Chủ đề: <em>AI for Good</em>).
           </p>
           <p style="margin-top:6px; font-size:0.86rem; color:var(--emerald-light);">
             Sứ mệnh của mình là ứng dụng công nghệ để hồi sinh dược liệu bản địa Việt Nam, triệt tiêu vị đắng bằng Khoa học Thực phẩm và mang lại thức uống thư giãn 0.0% Cồn an toàn cho giới trẻ.
