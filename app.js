@@ -20,6 +20,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Global Helper: Select Hero Sachet from Home Bar
+  window.selectHeroSachet = function(mood, flavor) {
+    const tabBtn = document.querySelector('.tab-btn[data-target="viewMixologist"]');
+    if (tabBtn) tabBtn.click();
+
+    const moodCard = document.querySelector(`.opt-mood[data-value="${mood}"]`);
+    if (moodCard) moodCard.click();
+
+    const flavorCard = document.querySelector(`.opt-flavor[data-value="${flavor}"]`);
+    if (flavorCard) flavorCard.click();
+
+    const studio = document.getElementById("viewMixologist");
+    if (studio) studio.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    const btnGen = document.getElementById("btnGenerate");
+    if (btnGen) setTimeout(() => btnGen.click(), 100);
+  };
+
   // State
   let selectedMood = "social";
   let selectedFlavor = "citrus";
