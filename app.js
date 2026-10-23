@@ -134,13 +134,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const listHtml = blockedActions.map(b => `
         <div class="safety-rule-row" style="margin-bottom:6px; font-size:0.86rem; line-height:1.5;">
           <span style="color:#fef08a; font-weight:700;">• ${b.rule}:</span>
-          <span style="color:var(--text-light);"> Đã khóa <strong>${b.blocked}</strong>. Thay thế an toàn bằng <em>${b.safe}</em>. (${b.why})</span>
+          <span style="color:var(--text-light);"> Đã tự động loại trừ <strong>${b.blocked}</strong> để bảo vệ sức khỏe của bạn. Gợi ý thay thế bằng thảo mộc an toàn: <em>${b.safe}</em>. (${b.why})</span>
         </div>
       `).join("");
 
       alertText.innerHTML = `
         <div style="margin-bottom:8px; font-weight:800; color:#fbbf24; letter-spacing:0.5px;">
-          ⚠️ BỘ LỌC AN TOÀN SINH HỌC KÍCH HOẠT (IF-THEN SAFETY GUARDRAILS):
+          🛡️ LƯU Ý AN TOÀN TỰ ĐỘNG TỪ HỆ THỐNG DƯỢC LIỆU:
         </div>
         <div>${listHtml}</div>
       `;
@@ -156,17 +156,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const recipeCard = document.getElementById("recipeCard");
 
   btnGenerate.addEventListener("click", () => {
-    btnGenerate.innerHTML = `<span>⏳</span> Đang mô hình hóa hoạt chất sinh học GABA...`;
+    btnGenerate.innerHTML = `<span>⏳</span> Đang chọn lọc thảo mộc an toàn cho bạn...`;
     btnGenerate.disabled = true;
 
     setTimeout(() => {
-      btnGenerate.innerHTML = `<span>🧬</span> Đang ức chế thụ thể đắng hTAS2R16 (pH 4.4)...`;
+      btnGenerate.innerHTML = `<span>🍃</span> Đang cân bằng vị thanh ngọt tự nhiên...`;
     }, 600);
 
     setTimeout(() => {
-      btnGenerate.innerHTML = `<span>✨</span> Hoàn tất công thức chuẩn hóa!`;
+      btnGenerate.innerHTML = `<span>✨</span> Đã xong ly trà gợi ý cho bạn!`;
       renderGeneratedRecipe();
-      btnGenerate.innerHTML = `<span>🧪</span> Kích Hoạt AI Mixologist Tạo Công Thức (Run AI Engine)`;
+      btnGenerate.innerHTML = `<span>✨</span> Pha Cho Tôi Một Ly (Gợi ý công thức ngay)`;
       btnGenerate.disabled = false;
     }, 1100);
   });
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
       brewTemp = "85°C (Bảo toàn Flavonoids & Apigenin)";
       brewTime = "5 phút (Túi lọc PLA kim tự tháp 5.35g)";
       serving = "Rót qua 100g đá viên, trang trí 1 lát tắc sấy lạnh (0.0% Cồn)";
-      biochem = "Cơ chế khử đắng kép (Dual-Pathway Bitterness Masking): Axit citric từ Tắc sấy lạnh đưa pH dịch chiết về mức tối ưu 4.4, trực tiếp ức chế thụ thể vị đắng hTAS2R16 trên gai vị giác (Sakurai et al. 2009; Sotoyama et al. 2017). Kết hợp 0.05g ion Na+ và Stevioside tạo hiệu ứng ức chế chéo trung ương (Breslin & Beauchamp 1997), loại bỏ hoàn toàn vị đắng ngái của thảo mộc mà không dùng đường tinh luyện. Vitexin hiệp đồng cùng Apigenin kích hoạt dòng ion Cl- qua thụ thể GABA_A, đưa sóng não về dải Alpha thư thái.";
+      biochem = "Công thức được cân chỉnh để vừa thơm ngon, vừa giúp bạn có giấc ngủ sâu trọn vẹn: Vị chua dịu tự nhiên từ Tắc sấy lạnh giúp cân bằng vị giác, loại bỏ cảm giác đắng ngái thường thấy của thuốc nam mà không cần đến một gam đường tinh luyện nào. Tinh chất Vitexin từ Lạc Tiên kết hợp cùng hoa Cúc giúp xoa dịu áp lực thần kinh sau một ngày dài học tập, đưa tâm trí bạn vào trạng thái thư thái tự nhiên nhất.";
       matchedSachet = {
         name: "Hộp 5 Túi Lọc Kim Tự Tháp #01 — Citrus Twilight",
         specs: "Túi lọc sinh học PLA 5.35g • 69.000 VNĐ / Hộp 5 gói (Tiết kiệm 49.3%)",
@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
       brewTemp = "90°C (Chiết xuất trọn vẹn Saponin)";
       brewTime = "3 phút";
       serving = "Dùng ấm hoặc rót qua đá viên";
-      biochem = "Không dựa vào caffeine gây co thắt mạch máu và tăng nhịp tim đột ngột; Saponin adaptogen kích hoạt tế bào sản sinh ATP nội sinh, kết hợp Citral và Gingerol kích thích thụ thể nhiệt TRPV1 giãn mạch nhẹ nhàng, duy trì sự tập trung minh mẫn suốt 4 tiếng học tập căng thẳng.";
+      biochem = "Giải pháp tỉnh táo lành mạnh cho các bạn học sinh, sinh viên: Thay vì dùng cà phê đặc hay nước tăng lực dễ gây run tay, ép tim và cồn cào dạ dày, công thức tận dụng hoạt chất Saponin tự nhiên từ lá Đinh Lăng (Sâm Nam) kết hợp hương thơm tươi mát của Sả Chanh và Gừng ấm. Bạn sẽ cảm nhận sự tỉnh táo bền bỉ, đầu óc minh mẫn để giải quyết deadline mà cơ thể vẫn nhẹ nhàng, khỏe khoắn.";
       matchedSachet = {
         name: "Hộp 5 Túi Lọc Kim Tự Tháp #02 — Calm Focus",
         specs: "Túi lọc sinh học PLA 5.5g • 69.000 VNĐ / Hộp 5 gói",
@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
       brewTemp = "85°C";
       brewTime = "4 phút";
       serving = "Lắc cùng đá viên, thêm chút soda bọt mịn và 1 nhánh hương thảo";
-      biochem = "Giải pháp thay thế rượu bia hoàn hảo: Tái tạo hương vị nồng ấm của Mulled Wine qua Quế Trà Bồng và Atiso Đỏ, trong khi Vitexin kích hoạt thụ thể GABA-A tạo cảm giác thư giãn xã hội mà nồng độ cồn trong máu tuyệt đối 0.00%, an toàn 100% theo Nghị định 168.";
+      biochem = "Ly mocktail hoàn hảo cho những buổi gặp gỡ bạn bè: Sắc đỏ Ruby quyến rũ từ Atiso Đỏ hòa quyện hương thơm trầm ấm của Quế Trà Bồng mang lại cảm giác sang trọng như một ly vang nóng. Bạn sẽ cảm thấy vui vẻ, tự tin hòa nhập vào cuộc trò chuyện mà hoàn toàn 0% cồn, không lo đau đầu, say xỉn hay ảnh hưởng sức khỏe.";
       matchedSachet = {
         name: "Hộp 5 Túi Lọc Kim Tự Tháp #03 — Berry Social Glow",
         specs: "Túi lọc sinh học PLA 5.5g • 69.000 VNĐ / Hộp 5 gói",
