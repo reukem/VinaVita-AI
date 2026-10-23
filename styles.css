@@ -1888,16 +1888,16 @@ body {
   }
 }
 
-/* Individual Flight Tracks: 9 Organically Dispersed Solos & Pairs (No Rigid Columns) */
-.chim-lac-track.track-1 { top: 4%;  animation-duration: 27.7s; animation-delay: -19.0s; z-index: 3; }
-.chim-lac-track.track-2 { top: 17%; animation-duration: 26.2s; animation-delay: -23.3s; z-index: 2; }
-.chim-lac-track.track-3 { top: 29%; animation-duration: 27.7s; animation-delay: -6.8s;  z-index: 4; }
-.chim-lac-track.track-4 { top: 2%;  animation-duration: 30.3s; animation-delay: -8.0s;  z-index: 1; opacity: 0.65; }
-.chim-lac-track.track-5 { top: 11%; animation-duration: 27.4s; animation-delay: -21.3s; z-index: 3; }
-.chim-lac-track.track-6 { top: 34%; animation-duration: 27.3s; animation-delay: -16.1s; z-index: 4; }
-.chim-lac-track.track-7 { top: 8%;  animation-duration: 31.0s; animation-delay: -14.7s; z-index: 2; }
-.chim-lac-track.track-8 { top: 22%; animation-duration: 26.8s; animation-delay: -18.1s; z-index: 3; }
-.chim-lac-track.track-9 { top: 14%; animation-duration: 29.2s; animation-delay: -14.9s; z-index: 3; }
+/* Individual Flight Tracks: Synchronized Golden Migratory Formation (Strictly Non-Colliding & Evenly Spaced) */
+.chim-lac-track.track-1 { top: 5%;  animation-duration: 33.0s; animation-delay: 0.0s;   z-index: 3; }
+.chim-lac-track.track-2 { top: 20%; animation-duration: 33.0s; animation-delay: -5.5s;  z-index: 2; }
+.chim-lac-track.track-3 { top: 9%;  animation-duration: 33.0s; animation-delay: -11.0s; z-index: 4; }
+.chim-lac-track.track-4 { top: 25%; animation-duration: 33.0s; animation-delay: -16.5s; z-index: 2; }
+.chim-lac-track.track-5 { top: 14%; animation-duration: 33.0s; animation-delay: -22.0s; z-index: 3; }
+.chim-lac-track.track-6 { top: 7%;  animation-duration: 33.0s; animation-delay: -27.5s; z-index: 3; }
+.chim-lac-track.track-7,
+.chim-lac-track.track-8,
+.chim-lac-track.track-9 { display: none; }
 
 /* Soaring Wave & Aerodynamic Pitch Physics */
 .chim-lac-soar {
@@ -2178,30 +2178,43 @@ body {
   user-select: none;
 }
 
-.chim-lac-img.img-pair {
-  width: 175px;
+.chim-lac-img.img-majestic {
+  width: 135px;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
+}
+
+.chim-lac-img.img-mid {
+  width: 115px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 6px rgba(245, 158, 11, 0.45));
 }
 
 .chim-lac-img.img-distant {
   width: 85px;
+  opacity: 0.75;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 4px rgba(245, 158, 11, 0.35));
+}
+
+.chim-lac-img.img-pair {
+  display: none;
 }
 
 /* Responsive scaling for mobile / tablets */
 @media (max-width: 768px) {
   .chim-lac-img {
-    width: 85px;
+    width: 80px;
   }
-  .chim-lac-img.img-pair {
-    width: 115px;
+  .chim-lac-img.img-majestic {
+    width: 88px;
+  }
+  .chim-lac-img.img-mid {
+    width: 72px;
   }
   .chim-lac-img.img-distant {
-    width: 60px;
+    width: 55px;
   }
   .chim-lac-trail {
-    width: 80px;
-    height: 10px;
+    width: 75px;
+    height: 9px;
   }
 }
 
