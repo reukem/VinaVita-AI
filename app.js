@@ -528,7 +528,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="herb-card-banner">
           <img src="${herb.image}" alt="${herb.name}" class="herb-img" loading="lazy">
           <span class="herb-badge-overlay">${herb.categoryLabel}</span>
-          <span class="herb-evidence-tag">🔬 Dược Điển VN V</span>
+          <span class="herb-evidence-tag">🔬 Evidence: Preclinical &amp; Traditional</span>
         </div>
 
         <!-- Card Body (Compact & Fixed Length) -->
@@ -602,7 +602,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="herb-modal-sci">${herb.sciName} • ${herb.enName}</div>
           <div class="herb-modal-tags">
             <span class="heritage-origin-tag"><span>📍</span> ${herb.heritageOrigin || 'Vùng Dược Liệu Bản Địa Đại Việt'}</span>
-            <span class="evidence-level-badge"><span>🔬</span> Tiền lâm sàng &amp; Dược điển Việt Nam V</span>
+            <span class="evidence-level-badge"><span>🔬</span> Evidence: Preclinical / Lab Study &amp; Dược Điển VN V</span>
           </div>
         </div>
       </div>
