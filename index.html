@@ -173,50 +173,54 @@
 
           <!-- Step 1: Mood & Occasion -->
           <div class="control-group">
-            <label class="control-label">1. Nhu Cầu & Bối Cảnh Sử Dụng (Target Need)</label>
+            <label class="control-label">1. Nhu Cầu &amp; Bối Cảnh Thư Giãn (Mood &amp; Wellness Goal)</label>
             <div class="option-cards">
               <div class="opt-card opt-mood selected" data-value="social">
                 <div class="opt-icon">🌟</div>
                 <div class="opt-name">Social Glow</div>
-                <div class="opt-detail">Thay thế bia rượu tiệc đêm, thư giãn vui vẻ 0% cồn</div>
+                <div class="opt-detail">Tiệc tùng &amp; Chill 0% cồn • <em>0.0% Alcohol Social Chill</em></div>
               </div>
               <div class="opt-card opt-mood" data-value="unwind">
                 <div class="opt-icon">🌙</div>
                 <div class="opt-name">Night Unwind</div>
-                <div class="opt-detail">Xả stress thi cử 11h đêm, ngủ sâu tự nhiên</div>
+                <div class="opt-detail">Xả stress thi cử sau 23h, ngủ sâu • <em>Sleep &amp; De-Stress</em></div>
               </div>
               <div class="opt-card opt-mood" data-value="focus">
                 <div class="opt-icon">⚡</div>
                 <div class="opt-name">Calm Focus</div>
-                <div class="opt-detail">Tập trung 4 tiếng bền bỉ, không ép tim như cà phê</div>
+                <div class="opt-detail">Tập trung 4h bền bỉ, không ép tim • <em>Steady Alertness</em></div>
               </div>
               <div class="opt-card opt-mood" data-value="detox">
                 <div class="opt-icon">🍵</div>
                 <div class="opt-name">Liver Detox</div>
-                <div class="opt-detail">Thanh nhiệt mát gan sau chuỗi ngày thức khuya</div>
+                <div class="opt-detail">Thanh can mát gan sau đêm trắng • <em>Hepatic Recovery</em></div>
               </div>
             </div>
           </div>
 
           <!-- Step 2: Health Guardrails (Real-Time Safety Engine) -->
           <div class="control-group">
-            <label class="control-label">2. Rào Cản Sức Khỏe & Cơ Địa (Biotech Guardrails)</label>
+            <label class="control-label">2. Rào Cản Sức Khỏe &amp; Cơ Địa (Biotech Guardrails)</label>
             <div class="guardrail-grid">
               <label class="guardrail-item">
                 <input type="checkbox" class="guardrail-input" value="hypotension">
-                <span>Huyết áp thấp (Hypotension)</span>
+                <span>📉 Huyết áp thấp <em>(Low Blood Pressure)</em></span>
+              </label>
+              <label class="guardrail-item">
+                <input type="checkbox" class="guardrail-input" value="hypertension">
+                <span>📈 Huyết áp cao <em>(High Blood Pressure)</em></span>
               </label>
               <label class="guardrail-item">
                 <input type="checkbox" class="guardrail-input" value="gastritis">
-                <span>Đau dạ dày / Trào ngược</span>
+                <span>🛡️ Đau dạ dày / Trào ngược <em>(Acid Reflux)</em></span>
               </label>
               <label class="guardrail-item">
                 <input type="checkbox" class="guardrail-input" value="pregnancy">
-                <span>Mang thai / Cho con bú</span>
+                <span>🤰 Mang thai / Cho con bú <em>(Pregnancy)</em></span>
               </label>
               <label class="guardrail-item">
                 <input type="checkbox" class="guardrail-input" value="driving">
-                <span>Cần lái xe / Không gây ngủ</span>
+                <span>🚗 Cần lái xe / Tỉnh táo <em>(High Vigilance)</em></span>
               </label>
             </div>
           </div>
@@ -235,30 +239,30 @@
             <div class="option-cards">
               <div class="opt-card opt-flavor selected" data-value="citrus">
                 <div class="opt-icon">🍊</div>
-                <div class="opt-name">Chua Thanh</div>
-                <div class="opt-detail">Quất (Tắc) & Chanh dây</div>
+                <div class="opt-name">Chua Thanh (Citrus-Bright)</div>
+                <div class="opt-detail">Quất (Tắc) &amp; Chanh dây tươi</div>
               </div>
               <div class="opt-card opt-flavor" data-value="sweet">
                 <div class="opt-icon">🍯</div>
-                <div class="opt-name">Ngọt Dịu</div>
-                <div class="opt-detail">Cam Thảo & Cỏ Ngọt</div>
+                <div class="opt-name">Ngọt Dịu (Mellow-Sweet)</div>
+                <div class="opt-detail">Cam Thảo &amp; Cỏ Ngọt 0-calorie</div>
               </div>
               <div class="opt-card opt-flavor" data-value="floral">
                 <div class="opt-icon">🌸</div>
-                <div class="opt-name">Hương Hoa</div>
-                <div class="opt-detail">Bạch Cúc & Hoa Nhài</div>
+                <div class="opt-name">Hương Hoa (Floral Breeze)</div>
+                <div class="opt-detail">Bạch Cúc &amp; Hoa Nhài Cổ</div>
               </div>
               <div class="opt-card opt-flavor" data-value="minty">
                 <div class="opt-icon">🍃</div>
-                <div class="opt-name">Mát Lạnh</div>
-                <div class="opt-detail">Bạc Hà Nam Tươi</div>
+                <div class="opt-name">Mát Lạnh (Cool-Minty)</div>
+                <div class="opt-detail">Bạc Hà Nam The Mát Tự Nhiên</div>
               </div>
             </div>
           </div>
 
           <!-- CTA Button -->
           <button id="btnGenerate" class="btn-generate">
-            <span>🧪</span> Kích Hoạt AI Mixologist Tạo Công Thức
+            <span>🧪</span> Kích Hoạt AI Mixologist Tạo Công Thức (Run AI Engine)
           </button>
         </div>
 
@@ -317,18 +321,47 @@
               </div>
             </div>
 
+            <!-- Dual-Pathway Bitterness Masking Card (Canva Page 7 Scientific Rationale) -->
+            <div class="bitterness-masking-box">
+              <div class="bitterness-badge-title">
+                <span>🧪</span> CƠ CHẾ KHỬ ĐẮNG KÉP • DUAL-PATHWAY BITTERNESS MODULATION (0g REFINED SUGAR)
+              </div>
+              <div class="bitterness-grid">
+                <div class="bitterness-item">
+                  <div class="bitterness-item-title">1. Ức Chế Thụ Thể hTAS2R16 (pH 4.2 – 4.5)</div>
+                  <div class="bitterness-item-desc">Axit citric tự nhiên từ Tắc sấy lạnh / Atiso Đỏ đưa pH dịch chiết về 4.4, trực tiếp ức chế thụ thể vị đắng hTAS2R16 trên gai vị giác <em>(Sakurai et al. 2009; Sotoyama et al. 2017)</em>.</div>
+                </div>
+                <div class="bitterness-item">
+                  <div class="bitterness-item-title">2. Khử Đắng Kênh Ion Na+ &amp; Cỏ Ngọt (GI = 0)</div>
+                  <div class="bitterness-item-desc">0.05g muối khoáng (Na+) ức chế dẫn truyền tín hiệu đắng chéo trung ương <em>(Breslin &amp; Beauchamp 1997)</em>, hiệp đồng cùng Stevioside tạo hậu vị thanh khiết.</div>
+                </div>
+              </div>
+            </div>
+
             <!-- Biochemical Rationale -->
             <div class="biochem-box">
-              <strong>🔬 Cơ Chế Sinh Hóa & Khử Đắng:</strong>
+              <strong>🔬 Cơ Chế Sinh Hóa Dược Lý (Biochemical &amp; Receptor Synergy):</strong>
               <div id="resBiochem" style="margin-top:4px;">
                 Thuật toán tối ưu hóa tỷ lệ Vitexin (Lạc Tiên) và Saponin Adaptogen (Đinh Lăng) ở tỷ lệ 5:3, giúp hạ chỉ số căng thẳng thần kinh mà không gây ức chế phản xạ.
               </div>
             </div>
 
+            <!-- Matched Hero Sachet Pre-Order Bar -->
+            <div id="resHeroSachetMatched" class="res-sachet-matched-bar">
+              <div class="res-sachet-info">
+                <div class="res-sachet-tag">📦 ĐÃ CÓ GÓI ĐÓNG SẴN CHÍNH THỨC (PILOT LINE)</div>
+                <div id="resSachetName" class="res-sachet-title">Hộp 5 Túi Lọc Kim Tự Tháp #01 — Citrus Twilight</div>
+                <div class="res-sachet-specs">Túi lọc sinh học PLA 5.35g • 69.000 VNĐ / Hộp 5 gói (Tiết kiệm 49.3%)</div>
+              </div>
+              <button id="resBtnOrderMatched" class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #01 - Citrus Twilight (69.000đ)">
+                🛒 Đặt Hộp 5 Gói – 69.000 VNĐ
+              </button>
+            </div>
+
             <!-- Action Buttons -->
             <div class="action-row">
               <button class="btn-secondary" onclick="window.print()">📥 Tải Công Thức (PDF)</button>
-              <button class="btn-primary-action btn-order-trigger" data-drink="Công Thức AI Cá Nhân Hóa">📦 Đặt Gói Sachet Đong Sẵn (15k)</button>
+              <button class="btn-primary-action btn-order-trigger" data-drink="Công Thức AI Cá Nhân Hóa (15k)">📦 Đặt Gói Đong Tươi (15k)</button>
             </div>
           </div>
         </div>
@@ -351,12 +384,140 @@
         <img src="assets/chim_lac_single.png" alt="Chim Lạc" class="crest-chim-lac">
       </div>
 
-      <div style="margin-bottom:32px; text-align:center;">
+      <div style="margin-bottom:28px; text-align:center;">
         <h2 style="font-family:var(--font-display); font-size:2.2rem; font-weight:800;">
-          Menu Thức Uống <span class="gradient-text">Được Yêu Thích Nhất</span>
+          Danh Mục Sản Phẩm &amp; Menu <span class="gradient-text">VinaVita Sachet</span>
         </h2>
         <p style="color:var(--text-muted); font-size:1rem; max-width:680px; margin:10px auto 0 auto; line-height:1.7;">
-          Dành cho người bận rộn: Các công thức chuẩn hóa đã được AI tinh chỉnh tỷ lệ sẵn, đóng gói thành túi lọc Sachet tiện lợi hoặc phục vụ trực tiếp tại quán Cafe đối tác.
+          Được bảo chứng bởi Dược điển Cổ truyền Tuệ Tĩnh &amp; Thuật toán Tối ưu hóa Sinh hóa: Đóng gói túi lọc kim tự tháp sinh học PLA 100% tự phân hủy, tiện lợi pha nhanh tại nhà hoặc trường học.
+        </p>
+      </div>
+
+      <!-- 3 HERO SACHET BOXES (CANVA PDF SLIDE 7-9 SPECIFICATION) -->
+      <div class="hero-sachet-showcase">
+        <div class="hero-sachet-header">
+          <div class="hero-sachet-pill">🔥 RMIT RBPC 2026 PILOT LINE • 69.000 VNĐ / HỘP 5 TÚI LỌC PLA (5.35g)</div>
+          <h3 class="hero-sachet-headline">Bộ Ba Gói Sachet Di Sản Chủ Lực <span class="gradient-text">(Hero Sachet SKUs)</span></h3>
+          <p class="hero-sachet-sub">
+            Túi lọc kim tự tháp màng sinh học PLA (Polylactic Acid từ bột ngô), bảo toàn trọn vẹn tinh dầu và hoạt chất Flavonoid/Saponin.
+            <br>
+            <strong>Giá B2C: 69.000 VNĐ / Hộp 5 gói</strong> (13.800 VNĐ/ly) • <strong>Giá sỉ B2B Study Café: 51.750 VNĐ</strong> (Chiết khấu 25%) • <strong>Biên lợi nhuận gộp: 49.3%</strong> (COGS: 35.000 VNĐ).
+          </p>
+        </div>
+
+        <div class="hero-sachet-grid">
+          <!-- Box #01 -->
+          <div class="hero-sachet-card sachet-box-1">
+            <div class="sachet-sku-badge">BOX #01 • SLEEP &amp; UNWIND</div>
+            <div class="sachet-card-body">
+              <div class="sachet-card-title">Citrus Twilight</div>
+              <div class="sachet-card-subtitle">Gói Ngủ Ngon &amp; Xả Stress Đêm (The "Sleep &amp; Unwind" Pack)</div>
+              <div class="sachet-target-desc">Dành cho học sinh, sinh viên xả stress sau 23h học thi, xoa dịu thần kinh và hỗ trợ giấc ngủ sinh học êm đềm (0.0% Cồn).</div>
+              <div class="sachet-gram-breakdown">
+                <div class="gram-pill">Lạc Tiên: <strong>2.5g</strong></div>
+                <div class="gram-pill">Hoa Cúc: <strong>1.0g</strong></div>
+                <div class="gram-pill">Tắc Sấy Lạnh: <strong>1.5g</strong> (pH 4.4)</div>
+                <div class="gram-pill">Cỏ Ngọt: <strong>0.3g</strong></div>
+                <div class="gram-pill">Muối Khoáng Na+: <strong>0.05g</strong></div>
+              </div>
+              <div class="sachet-spec-line">💧 150 mL nước sôi 85°C • 5 phút • Rót qua 100g đá viên</div>
+              <div class="sachet-card-footer">
+                <div class="sachet-price-wrap">
+                  <span class="sachet-price-val">69.000 VNĐ</span>
+                  <span class="sachet-unit">/ Hộp 5 túi PLA (5.35g)</span>
+                </div>
+                <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #01 - Citrus Twilight (69.000đ)">
+                  🛒 Đặt Hộp #01
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box #02 -->
+          <div class="hero-sachet-card sachet-box-2">
+            <div class="sachet-sku-badge">BOX #02 • DEADLINE &amp; EXAM</div>
+            <div class="sachet-card-body">
+              <div class="sachet-card-title">Calm Focus</div>
+              <div class="sachet-card-subtitle">Gói Chạy Deadline &amp; Ôn Thi (The "Deadline &amp; Exam" Pack)</div>
+              <div class="sachet-target-desc">Kích hoạt sóng não Alpha, duy trì sự tỉnh táo minh mẫn 4 tiếng mà không gây run tay, ép tim hay cồn cào dạ dày như caffeine.</div>
+              <div class="sachet-gram-breakdown">
+                <div class="gram-pill">Đinh Lăng Sâm Nam: <strong>3.0g</strong></div>
+                <div class="gram-pill">Sả Chanh Bản Địa: <strong>1.2g</strong></div>
+                <div class="gram-pill">Gừng Núi Kỳ Sơn: <strong>0.8g</strong></div>
+                <div class="gram-pill">La Hán Quả: <strong>0.5g</strong></div>
+              </div>
+              <div class="sachet-spec-line">💧 180 mL nước 90°C • 3 phút • Dùng ấm hoặc lạnh</div>
+              <div class="sachet-card-footer">
+                <div class="sachet-price-wrap">
+                  <span class="sachet-price-val">69.000 VNĐ</span>
+                  <span class="sachet-unit">/ Hộp 5 túi PLA (5.5g)</span>
+                </div>
+                <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #02 - Calm Focus (69.000đ)">
+                  🛒 Đặt Hộp #02
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box #03 -->
+          <div class="hero-sachet-card sachet-box-3">
+            <div class="sachet-sku-badge">BOX #03 • 0% PARTY &amp; CHILL</div>
+            <div class="sachet-card-body">
+              <div class="sachet-card-title">Berry Social Glow</div>
+              <div class="sachet-card-subtitle">Gói Tiệc Tùng 0% Cồn (The "0% Party &amp; Chill" Pack)</div>
+              <div class="sachet-target-desc">Sắc đỏ Ruby sang trọng, thư giãn tâm lý nhóm bạn, thay thế hoàn hảo bia rượu đêm tiệc, 100% tuân thủ Nghị định 168 lái xe.</div>
+              <div class="sachet-gram-breakdown">
+                <div class="gram-pill">Atiso Đỏ (Roselle): <strong>2.5g</strong></div>
+                <div class="gram-pill">Lạc Tiên Khô: <strong>1.5g</strong></div>
+                <div class="gram-pill">Quế Trà Bồng: <strong>0.8g</strong></div>
+                <div class="gram-pill">La Hán Quả: <strong>0.7g</strong></div>
+              </div>
+              <div class="sachet-spec-line">💧 150 mL nước 85°C • 4 phút • Lắc đá cùng soda sủi bọt</div>
+              <div class="sachet-card-footer">
+                <div class="sachet-price-wrap">
+                  <span class="sachet-price-val">69.000 VNĐ</span>
+                  <span class="sachet-unit">/ Hộp 5 túi PLA (5.5g)</span>
+                </div>
+                <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #03 - Berry Social Glow (69.000đ)">
+                  🛒 Đặt Hộp #03
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box #04 Bonus Combo -->
+          <div class="hero-sachet-card sachet-box-combo">
+            <div class="sachet-sku-badge combo-badge">BOX #04 • TRIAL COMBO</div>
+            <div class="sachet-card-body">
+              <div class="sachet-card-title">All-in-One Trial Pack</div>
+              <div class="sachet-card-subtitle">Combo Trải Nghiệm 3 Vị Hero (The "All-in-One" Sampler)</div>
+              <div class="sachet-target-desc">Lựa chọn lý tưởng cho khách hàng mới: Trải nghiệm trọn vẹn cả 3 khoảnh khắc cảm xúc (Học thi, Thư giãn ngủ đêm, Tiệc tùng).</div>
+              <div class="sachet-gram-breakdown">
+                <div class="gram-pill">2× Citrus Twilight (Ngủ ngon)</div>
+                <div class="gram-pill">2× Calm Focus (Tập trung)</div>
+                <div class="gram-pill">1× Berry Social Glow (Tiệc chill)</div>
+              </div>
+              <div class="sachet-spec-line">🎁 Tặng kèm thẻ hướng dẫn chánh niệm pha trà Gen-Z</div>
+              <div class="sachet-card-footer">
+                <div class="sachet-price-wrap">
+                  <span class="sachet-price-val">69.000 VNĐ</span>
+                  <span class="sachet-unit">/ Hộp 5 túi hỗn hợp</span>
+                </div>
+                <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #04 - All-in-One Trial Combo (69.000đ)">
+                  🛒 Đặt Hộp Combo
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin:48px 0 24px 0; text-align:center;">
+        <h3 style="font-family:var(--font-display); font-size:1.75rem; font-weight:700;">
+          Bộ Sưu Tập Menu Mở Rộng <span class="gradient-text">Phục Vụ Trực Tiếp &amp; Sachet Lẻ</span>
+        </h3>
+        <p style="color:var(--text-muted); font-size:0.92rem; max-width:600px; margin:6px auto 0 auto;">
+          Dành cho khách hàng muốn thưởng thức các hương vị đặc trưng cố đô hoặc đặt gói đong lẻ từng ly (15.000 – 18.000 VNĐ/gói).
         </p>
       </div>
 

@@ -2580,4 +2580,272 @@ body {
   font-weight: 800;
 }
 
+/* 12. Scientific Evidence Level Badge */
+.evidence-level-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #6ee7b7;
+  border-radius: 8px;
+  padding: 3px 9px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+/* 13. Dual-Pathway Bitterness Masking Box */
+.bitterness-masking-box {
+  margin: 16px 0;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.65) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border: 1px solid rgba(52, 211, 153, 0.45);
+  border-left: 4px solid #34d399;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.bitterness-badge-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #6ee7b7;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bitterness-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.bitterness-item {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bitterness-item-title {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #fef08a;
+  margin-bottom: 4px;
+}
+
+.bitterness-item-desc {
+  font-size: 0.8rem;
+  color: rgba(226, 232, 240, 0.9);
+  line-height: 1.5;
+}
+
+/* 14. Matched Hero Sachet Pre-Order Bar inside Recipe Card */
+.res-sachet-matched-bar {
+  margin-top: 18px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.16) 0%, rgba(16, 185, 129, 0.12) 100%);
+  border: 1.5px solid rgba(251, 191, 36, 0.55);
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.15);
+}
+
+.res-sachet-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fbbf24;
+  margin-bottom: 3px;
+}
+
+.res-sachet-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.res-sachet-specs {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* 15. 3 Hero Sachet Boxes Showcase (Canva PDF Slide 7-9) */
+.hero-sachet-showcase {
+  background: linear-gradient(180deg, rgba(10, 34, 23, 0.85) 0%, rgba(3, 13, 8, 0.95) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: 20px;
+  padding: 32px 28px;
+  margin-bottom: 36px;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-sachet-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.hero-sachet-pill {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(245, 158, 11, 0.18);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  color: #fef08a;
+  border-radius: 20px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.hero-sachet-headline {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.hero-sachet-sub {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 740px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.hero-sachet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.hero-sachet-card {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-sachet-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(251, 191, 36, 0.6);
+  box-shadow: 0 12px 35px rgba(245, 158, 11, 0.25);
+}
+
+.sachet-sku-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: #fbbf24;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+
+.sachet-sku-badge.combo-badge {
+  background: rgba(168, 85, 247, 0.25);
+  border-color: rgba(168, 85, 247, 0.55);
+  color: #d8b4fe;
+}
+
+.sachet-card-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.sachet-card-subtitle {
+  font-size: 0.86rem;
+  color: #6ee7b7;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.sachet-target-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.sachet-gram-breakdown {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.gram-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  color: #f1f5f9;
+}
+
+.gram-pill strong {
+  color: #fef08a;
+}
+
+.sachet-spec-line {
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sachet-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 14px;
+}
+
+.sachet-price-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.sachet-price-val {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fbbf24;
+}
+
+.sachet-unit {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+
 

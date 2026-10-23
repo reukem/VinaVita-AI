@@ -26,11 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const activeConditions = new Set();
 
   // Option Cards Selection
+  // Option Cards Selection
   document.querySelectorAll(".opt-mood").forEach(card => {
     card.addEventListener("click", () => {
       document.querySelectorAll(".opt-mood").forEach(c => c.classList.remove("selected"));
       card.classList.add("selected");
       selectedMood = card.dataset.value;
+      updateSafetyAlert();
     });
   });
 
@@ -59,28 +61,71 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function updateSafetyAlert() {
-    const excludedHerbs = [];
-    const warnings = [];
+    const blockedActions = [];
 
     if (activeConditions.has("hypotension")) {
-      excludedHerbs.push("Tâm Sen (Nelumbo nucifera)");
-      warnings.push("Huyết áp thấp: Tự động loại bỏ Tâm Sen để tránh làm tụt áp lực thành mạch đột ngột.");
+      blockedActions.push({
+        rule: "Huyết áp thấp (Hypotension)",
+        blocked: "Tâm Sen (Nelumbo nucifera) & Atiso Đỏ (Roselle)",
+        safe: "Lạc Tiên + Hoa Cúc",
+        why: "Ngừa hạ áp đột ngột do alkaloid Liensinine & anthocyanin gây giãn mạch quá mức."
+      });
+    }
+    if (activeConditions.has("hypertension")) {
+      blockedActions.push({
+        rule: "Huyết áp cao (Hypertension)",
+        blocked: "Cam Thảo Bắc (Licorice) & Gừng cay liều cao",
+        safe: "Cỏ Ngọt (Stevia) / La Hán Quả",
+        why: "Glycyrrhizin trong Cam Thảo gây giữ natri và bài tiết kali, làm tăng áp lực thành mạch."
+      });
     }
     if (activeConditions.has("gastritis")) {
-      excludedHerbs.push("Vỏ Quất / Chanh dây đậm đặc");
-      warnings.push("Đau dạ dày / Trào ngược: Điều chỉnh độ acid hữu cơ, ưu tiên Cam Thảo và Hoa Cúc bảo vệ niêm mạc.");
+      blockedActions.push({
+        rule: "Đau dạ dày / Trào ngược (Acid Reflux)",
+        blocked: "Quất Tươi & Atiso Đỏ đậm đặc (>50%) & Gừng cay",
+        safe: "Đệm pH 4.5 êm dịu, Hoa Cúc & Cỏ Ngọt",
+        why: "Giảm 50% acid citric hữu cơ để tránh kích ứng niêm mạc dạ dày (Sakurai et al. 2009)."
+      });
+    }
+    if (selectedMood === "unwind") {
+      blockedActions.push({
+        rule: "Chế độ Thư Giãn Đêm (Night Unwind)",
+        blocked: "Đinh Lăng Sâm Nam (Polyscias fruticosa)",
+        safe: "Lạc Tiên + Hoa Cúc / Tâm Sen sao vàng",
+        why: "Saponin triterpenoid kích thích tuần hoàn não và hưng phấn đại não, chỉ thích hợp cho học ban ngày."
+      });
     }
     if (activeConditions.has("pregnancy")) {
-      excludedHerbs.push("Lạc Tiên liều cao & Rễ Đinh Lăng");
-      warnings.push("Phụ nữ mang thai: Giới hạn các alkaloid có khả năng kích thích co bóp tử cung nhẹ.");
+      blockedActions.push({
+        rule: "Mang thai / Cho con bú (Pregnancy)",
+        blocked: "Lạc Tiên liều cao & Rễ Đinh Lăng",
+        safe: "Hoa Cúc nhẹ & Táo đỏ",
+        why: "Tránh các vết alkaloid Harman kích thích co bóp cơ trơn tử cung."
+      });
     }
     if (activeConditions.has("driving")) {
-      excludedHerbs.push("Tâm Sen liều an thần sâu");
-      warnings.push("Đang lái xe: Chỉ giữ các hoạt chất thư giãn GABA nhẹ nhàng, không gây buồn ngủ sâu.");
+      blockedActions.push({
+        rule: "Cần lái xe / Không gây ngủ (High Vigilance)",
+        blocked: "Tâm Sen liều an thần sâu & Lạc Tiên liều cao",
+        safe: "Đinh Lăng + Bạc Hà + Cỏ Ngọt",
+        why: "Đảm bảo tỉnh táo tập trung cao độ, 100% tuân thủ Nghị định 168/2024/NĐ-CP."
+      });
     }
 
-    if (excludedHerbs.length > 0) {
-      alertText.innerHTML = `<strong>⚠️ BỘ LỌC AN TOÀN SINH HỌC KÍCH HOẠT:</strong> Đã tự động loại trừ <strong>${excludedHerbs.join(", ")}</strong> khỏi thuật toán phối trộn. ${warnings.join(" ")}`;
+    if (blockedActions.length > 0) {
+      const listHtml = blockedActions.map(b => `
+        <div class="safety-rule-row" style="margin-bottom:6px; font-size:0.86rem; line-height:1.5;">
+          <span style="color:#fef08a; font-weight:700;">• ${b.rule}:</span>
+          <span style="color:var(--text-light);"> Đã khóa <strong>${b.blocked}</strong>. Thay thế an toàn bằng <em>${b.safe}</em>. (${b.why})</span>
+        </div>
+      `).join("");
+
+      alertText.innerHTML = `
+        <div style="margin-bottom:8px; font-weight:800; color:#fbbf24; letter-spacing:0.5px;">
+          ⚠️ BỘ LỌC AN TOÀN SINH HỌC KÍCH HOẠT (IF-THEN SAFETY GUARDRAILS):
+        </div>
+        <div>${listHtml}</div>
+      `;
       alertBanner.classList.add("active");
     } else {
       alertBanner.classList.remove("active");
@@ -97,93 +142,210 @@ document.addEventListener("DOMContentLoaded", () => {
     btnGenerate.disabled = true;
 
     setTimeout(() => {
-      btnGenerate.innerHTML = `<span>🧬</span> Đang ức chế thụ thể đắng TAS2R...`;
+      btnGenerate.innerHTML = `<span>🧬</span> Đang ức chế thụ thể đắng hTAS2R16 (pH 4.4)...`;
     }, 600);
 
     setTimeout(() => {
-      btnGenerate.innerHTML = `<span>✨</span> Hoàn tất công thức!`;
+      btnGenerate.innerHTML = `<span>✨</span> Hoàn tất công thức chuẩn hóa!`;
       renderGeneratedRecipe();
-      btnGenerate.innerHTML = `<span>🧪</span> Kích Hoạt AI Mixologist Tạo Công Thức`;
+      btnGenerate.innerHTML = `<span>🧪</span> Kích Hoạt AI Mixologist Tạo Công Thức (Run AI Engine)`;
       btnGenerate.disabled = false;
-    }, 1200);
+    }, 1100);
   });
 
   function renderGeneratedRecipe() {
     recipePlaceholder.style.display = "none";
     recipeCard.classList.add("active");
 
-    let title = "Saigon Botanical Tonic";
-    let subtitle = "Công thức thư giãn thần kinh không cồn";
-    let badge = "AI-OPTIMIZED GABA TONIC";
+    const hasLowBP = activeConditions.has("hypotension");
+    const hasHighBP = activeConditions.has("hypertension");
+    const hasGastritis = activeConditions.has("gastritis");
+    const hasPregnancy = activeConditions.has("pregnancy");
+    const hasDriving = activeConditions.has("driving");
+
+    let title = "Citrus Twilight Mocktail (VinaVita #01 — pH 4.4)";
+    let subtitle = "The 'Sleep & Unwind' Pack • Gói Ngủ Ngon & Xả Stress Đêm (0.0% Alcohol | 0g Refined Sugar)";
+    let badge = "⭐ HERO SKU #01 • SLEEP & UNWIND";
     let heroImg = "assets/mocktail_hero.jpg";
     let formula = [];
     let brewTemp = "85°C";
-    let brewTime = "3 phút 30 giây";
-    let serving = "Lắc cùng đá viên, thêm 1 nhánh bạc hà tươi và lát tắc mỏng";
+    let brewTime = "5 phút";
+    let serving = "Rót qua 100g đá viên, trang trí 1 lát quất/tắc sấy lạnh (0.0% Cồn)";
     let biochem = "";
 
-    const hasLowBP = activeConditions.has("hypotension");
+    let matchedSachet = {
+      name: "Hộp 5 Túi Lọc Kim Tự Tháp #01 — Citrus Twilight",
+      specs: "Túi lọc sinh học PLA 5.35g • 69.000 VNĐ / Hộp 5 gói (Tiết kiệm 49.3%)",
+      orderData: "Hộp 5 Gói Sachet #01 - Citrus Twilight (69.000đ)"
+    };
 
-    if (selectedMood === "social") {
-      title = selectedFlavor === "citrus" ? "Lạc Vibe Citrus Spritz" : "AnThảo Golden Velvet";
-      subtitle = "Giải pháp thay thế Bia & Rượu nhẹ trong các bữa tiệc đêm (0.0% Cồn)";
-      badge = "TIỆC TÙNG & CHILL TỰ DO";
+    if (selectedMood === "unwind") {
+      // EXACT CANVA SLIDE 6-7 & 15-SECOND VIDEO PRESET:
+      // Night Unwind + Low Blood Pressure + Citrus-Bright -> Citrus Twilight Mocktail (VinaVita #01 — pH 4.4)
+      title = "Citrus Twilight Mocktail (VinaVita #01 — pH 4.4)";
+      subtitle = "The 'Sleep & Unwind' Pack • Gói Ngủ Ngon & Xả Stress Đêm (0.0% Alcohol | 0g Refined Sugar)";
+      badge = "⭐ HERO SKU #01 • SLEEP & UNWIND";
       heroImg = "assets/mocktail_hero.jpg";
       formula = [
-        { name: "Lạc Tiên (Passiflora)", sci: "Passiflora foetida", amount: "5.0g", note: "Vitexin kích hoạt GABA_A tạo cảm giác ấm áp, thư thái xã hội" },
-        { name: "Đinh Lăng Nam", sci: "Polyscias fruticosa", amount: "3.0g", note: "Saponin adaptogen tăng tuần hoàn oxy não bộ, tăng sự tự tin" },
-        { name: selectedFlavor === "citrus" ? "Quất Tươi (Tắc)" : "Cam Thảo Bắc", sci: selectedFlavor === "citrus" ? "Citrus japonica" : "Glycyrrhiza uralensis", amount: selectedFlavor === "citrus" ? "2 quả thái lát" : "2.0g", note: selectedFlavor === "citrus" ? "Acid citric bẻ gãy vị đắng tannin, tinh dầu Limonene sảng khoái" : "Glycyrrhizin làm dịu cổ họng và tạo hậu vị ngọt sâu" },
-        { name: "Bạc Hà Nam", sci: "Mentha arvensis", amount: "2.0g", note: "Menthol the mát, tạo cảm giác sảng khoái như cocktail Mojito" }
+        { 
+          name: "Lạc Tiên (Aerial parts)", 
+          sci: "Passiflora foetida", 
+          amount: "2.5g", 
+          note: "Vitexin kích hoạt thụ thể GABA_A hạ Cortisol (Tan et al. 2024; Appel et al. 2011)" 
+        },
+        { 
+          name: hasLowBP ? "Hoa Cúc Vàng (Khóa Tâm Sen)" : "Hoa Cúc Vàng & Tâm Sen nhẹ", 
+          sci: "Chrysanthemum indicum", 
+          amount: "1.0g", 
+          note: hasLowBP 
+            ? "Apigenin làm dịu trục HPA thần kinh; Khóa hoàn toàn Tâm Sen để bảo vệ an toàn huyết áp" 
+            : "Apigenin hiệp đồng cùng alkaloid thảo mộc xoa dịu thần kinh thị giác" 
+        },
+        { 
+          name: hasGastritis ? "Tắc Sấy Lạnh (Giảm 50% đệm pH 4.5)" : "Tắc Sấy Lạnh / Kumquat", 
+          sci: "Citrus japonica", 
+          amount: hasGastritis ? "0.8g" : "1.5g", 
+          note: "Axit citric tự nhiên hạ pH về 4.4 — Khóa trực tiếp thụ thể vị đắng hTAS2R16 trên gai lưỡi (Sakurai et al. 2009)" 
+        },
+        { 
+          name: "Cỏ Ngọt Tự Nhiên (Stevia)", 
+          sci: "Stevia rebaudiana", 
+          amount: "0.3g", 
+          note: "Stevioside ngọt thanh tự nhiên 0-calorie, GI=0, không gây tăng đường huyết đêm" 
+        },
+        { 
+          name: "Muối Khoáng Tinh Khiết (Na+)", 
+          sci: "Mineral Salt Na+", 
+          amount: "0.05g", 
+          note: "Ion Na+ khử đắng chéo trung ương (Breslin & Beauchamp 1997), tạo hậu vị mượt mà" 
+        }
       ];
-      brewTemp = "85°C (bảo tồn Flavonoids)";
-      brewTime = "3 phút";
-      biochem = "Thuật toán tối ưu hóa tỷ lệ Vitexin (từ Lạc Tiên) và Saponin Adaptogen (từ Đinh Lăng) ở tỷ lệ 5:3, giúp hạ chỉ số căng thẳng xã hội mà không ức chế phản xạ thần kinh vận động. Nồng độ cồn trong máu tuyệt đối 0.00% an toàn theo Nghị định 168.";
-    } else if (selectedMood === "unwind") {
-      title = hasLowBP ? "Hương Thảo Dạ Khúc (No-Lotus)" : "Lotus Twilight Elixir";
-      subtitle = "Giảm căng thẳng thi cử lúc 11h đêm & Đưa vào giấc ngủ sâu";
-      badge = "NGỦ SÂU & GIẢM STRESS";
-      heroImg = hasLowBP ? "assets/hoa_cuc.jpg" : "assets/tam_sen.jpg";
-      formula = [
-        hasLowBP 
-          ? { name: "Hoa Cúc Trắng", sci: "Chrysanthemum indicum", amount: "4.0g", note: "Thay thế Tâm Sen để bảo vệ an toàn huyết áp; Apigenin xoa dịu thần kinh thị giác" }
-          : { name: "Tâm Sen (Liên Tâm)", sci: "Embryo Nelumbinis", amount: "2.0g", note: "Alkaloid Liensinine giải trừ tâm hỏa, chậm nhịp tim hồi hộp" },
-        { name: "Lạc Tiên Khô", sci: "Passiflora foetida", amount: "4.0g", note: "Điều hòa giấc ngủ sinh học, hạ cortisol" },
-        { name: "Cam Thảo Bắc", sci: "Glycyrrhiza uralensis", amount: "1.5g", note: "Trung hòa vị đắng của thảo mộc, bọc lót niêm mạc dạ dày" },
-        { name: "Cỏ Ngọt Tự Nhiên", sci: "Stevia rebaudiana", amount: "0.8g", note: "Tạo vị ngọt thanh khiết 0 calorie không gây tích mỡ đêm" }
-      ];
-      brewTemp = "80°C";
-      brewTime = "4 phút";
-      serving = "Uống ấm từng ngụm nhỏ trước giờ ngủ 30 phút";
-      biochem = "Cơ chế hiệp đồng giữa Apigenin và Liensinine giúp đưa tần số sóng não từ Beta (căng thẳng học tập) về Alpha/Theta (trạng thái thiền định thư thái), rút ngắn thời gian đi vào giấc ngủ (Sleep Onset Latency) trung bình 42% theo tài liệu tiền lâm sàng.";
+      brewTemp = "85°C (Bảo toàn Flavonoids & Apigenin)";
+      brewTime = "5 phút (Túi lọc PLA kim tự tháp 5.35g)";
+      serving = "Rót qua 100g đá viên, trang trí 1 lát tắc sấy lạnh (0.0% Cồn)";
+      biochem = "Cơ chế khử đắng kép (Dual-Pathway Bitterness Masking): Axit citric từ Tắc sấy lạnh đưa pH dịch chiết về mức tối ưu 4.4, trực tiếp ức chế thụ thể vị đắng hTAS2R16 trên gai vị giác (Sakurai et al. 2009; Sotoyama et al. 2017). Kết hợp 0.05g ion Na+ và Stevioside tạo hiệu ứng ức chế chéo trung ương (Breslin & Beauchamp 1997), loại bỏ hoàn toàn vị đắng ngái của thảo mộc mà không dùng đường tinh luyện. Vitexin hiệp đồng cùng Apigenin kích hoạt dòng ion Cl- qua thụ thể GABA_A, đưa sóng não về dải Alpha thư thái.";
+      matchedSachet = {
+        name: "Hộp 5 Túi Lọc Kim Tự Tháp #01 — Citrus Twilight",
+        specs: "Túi lọc sinh học PLA 5.35g • 69.000 VNĐ / Hộp 5 gói (Tiết kiệm 49.3%)",
+        orderData: "Hộp 5 Gói Sachet #01 - Citrus Twilight (69.000đ)"
+      };
+
     } else if (selectedMood === "focus") {
-      title = "Verdant Focus Brew";
-      subtitle = "Tập trung cao độ 4 tiếng, thay thế Cà phê & Redbull, không ép tim";
-      badge = "TỈNH TÁO BỀN VỮNG";
+      title = "Calm Focus Sâm Nam Brew (VinaVita #02)";
+      subtitle = "The 'Deadline & Exam' Pack • Gói Chạy Deadline & Ôn Thi (Tập trung 4h không ép tim)";
+      badge = "⚡ HERO SKU #02 • DEADLINE & EXAM";
       heroImg = "assets/dinh_lang.jpg";
       formula = [
-        { name: "Đinh Lăng Sâm Nam", sci: "Polyscias fruticosa", amount: "6.0g", note: "Tăng lưu lượng dưỡng khí lên thùy trán, duy trì sự tỉnh táo liên tục" },
-        { name: "Bạc Hà Nam", sci: "Mentha arvensis", amount: "3.0g", note: "Kích hoạt thụ thể lạnh TRPM8 xua tan cơn buồn ngủ tức thì" },
-        { name: "Quất Tươi (Tắc)", sci: "Citrus japonica", amount: "1 quả", note: "Vitamin C tự nhiên chống stress oxy hóa tế bào" },
-        { name: "Cỏ Ngọt", sci: "Stevia rebaudiana", amount: "1.0g", note: "Độ ngọt mát tự nhiên duy trì đường huyết ổn định" }
+        { 
+          name: "Đinh Lăng Sâm Nam", 
+          sci: "Polyscias fruticosa", 
+          amount: "3.0g", 
+          note: "Saponin triterpenoid tăng lưu lượng oxy lên não bộ, duy trì sự tỉnh táo thùy trán" 
+        },
+        { 
+          name: "Sả Chanh Bản Địa", 
+          sci: "Cymbopogon citratus", 
+          amount: "1.2g", 
+          note: "Citral xua tan căng thẳng, sảng khoái giác quan" 
+        },
+        { 
+          name: hasGastritis || hasHighBP ? "Gừng Núi (Giảm liều)" : "Gừng Núi Kỳ Sơn", 
+          sci: "Zingiber officinale", 
+          amount: hasGastritis || hasHighBP ? "0.3g" : "0.8g", 
+          note: "Gingerol làm ấm tỳ vị, kích thích tuần hoàn ngoại vi" 
+        },
+        { 
+          name: "La Hán Quả / Cỏ Ngọt", 
+          sci: "Siraitia grosvenorii", 
+          amount: "0.5g", 
+          note: "Mogroside V ngọt mát 0-calorie, hoàn toàn an toàn cho huyết áp và đường huyết" 
+        }
       ];
-      brewTemp = "90°C";
-      brewTime = "2 phút 30 giây";
-      serving = "Uống lạnh cùng đá viên hoặc bọt soda sủi bọt";
-      biochem = "Không dựa vào caffeine gây co thắt động mạch và làm tăng nhịp tim đột ngột; năng lượng bền vững được tạo ra từ chuỗi polysaccharide và saponin kích thích sản sinh ATP nội sinh.";
+      brewTemp = "90°C (Chiết xuất trọn vẹn Saponin)";
+      brewTime = "3 phút";
+      serving = "Dùng ấm hoặc rót qua đá viên";
+      biochem = "Không dựa vào caffeine gây co thắt mạch máu và tăng nhịp tim đột ngột; Saponin adaptogen kích hoạt tế bào sản sinh ATP nội sinh, kết hợp Citral và Gingerol kích thích thụ thể nhiệt TRPV1 giãn mạch nhẹ nhàng, duy trì sự tập trung minh mẫn suốt 4 tiếng học tập căng thẳng.";
+      matchedSachet = {
+        name: "Hộp 5 Túi Lọc Kim Tự Tháp #02 — Calm Focus",
+        specs: "Túi lọc sinh học PLA 5.5g • 69.000 VNĐ / Hộp 5 gói",
+        orderData: "Hộp 5 Gói Sachet #02 - Calm Focus (69.000đ)"
+      };
+
+    } else if (selectedMood === "social") {
+      title = "Berry Social Glow Mocktail (VinaVita #03)";
+      subtitle = "The '0% Party & Chill' Pack • Gói Tiệc Tùng 0% Cồn (0.0% Alcohol Social Chill)";
+      badge = "🍷 HERO SKU #03 • 0% PARTY & CHILL";
+      heroImg = "assets/mocktail_hero.jpg";
+      formula = [
+        { 
+          name: hasLowBP ? "Hoa Cúc Trắng (Thay Atiso Đỏ)" : "Atiso Đỏ (Roselle Hibiscus)", 
+          sci: hasLowBP ? "Chrysanthemum indicum" : "Hibiscus sabdariffa", 
+          amount: "2.5g", 
+          note: hasLowBP ? "Bảo vệ huyết áp thấp, Apigenin thư giãn êm dịu" : "Anthocyanin tạo sắc đỏ Ruby dạ tiệc, vị chua thanh tự nhiên" 
+        },
+        { 
+          name: "Lạc Tiên Khô", 
+          sci: "Passiflora foetida", 
+          amount: "1.5g", 
+          note: "Vitexin kích hoạt GABA_A tạo cảm giác ấm áp, cởi mở hòa đồng xã hội" 
+        },
+        { 
+          name: "Quế Trà Bồng Bản Địa", 
+          sci: "Cinnamomum loureiroi", 
+          amount: "0.8g", 
+          note: "Cinnamaldehyde tạo hương thơm nồng ấm quý phái như rượu vang Mulled Wine" 
+        },
+        { 
+          name: "La Hán Quả / Cỏ Ngọt", 
+          sci: "Siraitia grosvenorii", 
+          amount: "0.7g", 
+          note: "Vị ngọt tròn đầy không năng lượng thừa, không cồn" 
+        }
+      ];
+      brewTemp = "85°C";
+      brewTime = "4 phút";
+      serving = "Lắc cùng đá viên, thêm chút soda bọt mịn và 1 nhánh hương thảo";
+      biochem = "Giải pháp thay thế rượu bia hoàn hảo: Tái tạo hương vị nồng ấm của Mulled Wine qua Quế Trà Bồng và Atiso Đỏ, trong khi Vitexin kích hoạt thụ thể GABA-A tạo cảm giác thư giãn xã hội mà nồng độ cồn trong máu tuyệt đối 0.00%, an toàn 100% theo Nghị định 168.";
+      matchedSachet = {
+        name: "Hộp 5 Túi Lọc Kim Tự Tháp #03 — Berry Social Glow",
+        specs: "Túi lọc sinh học PLA 5.5g • 69.000 VNĐ / Hộp 5 gói",
+        orderData: "Hộp 5 Gói Sachet #03 - Berry Social Glow (69.000đ)"
+      };
+
     } else { // detox
-      title = "Highland Liver Rescue";
-      subtitle = "Thanh nhiệt mát gan, giải độc cơ thể sau chuỗi ngày thức đêm";
-      badge = "THANH NHIỆT GIẢI ĐỘC";
+      title = "Highland Liver Rescue (VinaVita Detox)";
+      subtitle = "Gói Thanh Can Mát Gan Sau Chuỗi Ngày Thức Trắng Đêm";
+      badge = "🍵 THANH NHIỆT MÁT GAN";
       heroImg = "assets/atiso.jpg";
       formula = [
-        { name: "Actisô Đà Lạt", sci: "Cynara scolymus", amount: "6.0g", note: "Cynarin kích thích chức năng bài tiết mật và tái tạo tế bào gan" },
-        { name: "Hoa Cúc Trắng", sci: "Chrysanthemum indicum", amount: "4.0g", note: "Thanh can hỏa, sáng mắt, giải độc da mặt" },
-        { name: "Cam Thảo", sci: "Glycyrrhiza uralensis", amount: "2.0g", note: "Hòa vị, dẫn hoạt chất làm mát toàn bộ hệ tiêu hóa" }
+        { 
+          name: "Actisô Đà Lạt", 
+          sci: "Cynara scolymus", 
+          amount: "5.0g", 
+          note: "Cynarin kích thích chức năng bài tiết mật và tái tạo tế bào gan" 
+        },
+        { 
+          name: "Hoa Cúc Vàng", 
+          sci: "Chrysanthemum indicum", 
+          amount: "3.0g", 
+          note: "Thanh can hỏa, sáng mắt, tiêu trừ mụn nhiệt sau thức khuya" 
+        },
+        { 
+          name: hasHighBP ? "Cỏ Ngọt (Thay Cam Thảo)" : "Cam Thảo Bắc", 
+          sci: hasHighBP ? "Stevia rebaudiana" : "Glycyrrhiza uralensis", 
+          amount: hasHighBP ? "0.5g" : "1.5g", 
+          note: hasHighBP ? "Vị ngọt dịu không ảnh hưởng huyết áp" : "Hòa vị, dẫn hoạt chất làm mát toàn bộ hệ tiêu hóa" 
+        }
       ];
       brewTemp = "92°C";
       brewTime = "5 phút";
       serving = "Có thể uống ấm hoặc uống lạnh cả ngày thay nước lọc";
       biochem = "Tối đa hóa nồng độ Cynarin và acid hữu cơ thực vật hỗ trợ hệ enzyme Cytochrome P450 tại gan đào thải nhanh độc tố sinh ra trong quá trình thức khuya dài ngày.";
+      matchedSachet = {
+        name: "Hộp 5 Túi Lọc Kim Tự Tháp #04 — All-in-One Trial Pack",
+        specs: "Hộp 5 túi hỗn hợp đủ 3 vị Hero • 69.000 VNĐ / Hộp (Kèm sổ tay chánh niệm)",
+        orderData: "Hộp 5 Gói Sachet #04 - All-in-One Trial Combo (69.000đ)"
+      };
     }
 
     // Populate UI
@@ -213,6 +375,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("resBrewTime").textContent = brewTime;
     document.getElementById("resServing").textContent = serving;
     document.getElementById("resBiochem").textContent = biochem;
+
+    // Update Matched Hero Sachet Box
+    const sachetNameEl = document.getElementById("resSachetName");
+    const btnOrderMatched = document.getElementById("resBtnOrderMatched");
+    if (sachetNameEl && btnOrderMatched) {
+      sachetNameEl.textContent = matchedSachet.name;
+      btnOrderMatched.setAttribute("data-drink", matchedSachet.orderData);
+    }
   }
 
   // Render Signature Drinks
@@ -276,7 +446,10 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="herb-header">
             <div class="herb-name">${herb.name}</div>
             <div class="herb-sci">${herb.sciName} • ${herb.enName}</div>
-            <div class="heritage-origin-tag"><span>📍</span> ${herb.heritageOrigin || 'Vùng Dược Liệu Bản Địa Đại Việt'}</div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:6px;">
+              <div class="heritage-origin-tag"><span>📍</span> ${herb.heritageOrigin || 'Vùng Dược Liệu Bản Địa Đại Việt'}</div>
+              <div class="evidence-level-badge"><span>🔬</span> Tiền lâm sàng &amp; Dược điển Việt Nam</div>
+            </div>
           </div>
           <div class="herb-prop"><strong>Bộ phận dùng:</strong> ${herb.partUsed}</div>
           <div class="herb-prop"><strong>Hoạt chất sinh học:</strong> ${compoundsList}</div>
