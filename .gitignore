@@ -34,3 +34,5 @@ Thumbs.db
 *.log
 .vscode/
 .idea/
+flock_organic_*.png
+flock_16_frame*.png
