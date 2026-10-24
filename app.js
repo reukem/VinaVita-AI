@@ -880,7 +880,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Dual-Mode Architecture: Connect to Local Neural SLM Server (15s timeout)
       let serverAnswer = null;
-      let serverModel = "Qwen2.5-1.5B Neural SLM";
+      let serverModel = "Gemini 2.5 Flash";
+
       try {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 15000);
