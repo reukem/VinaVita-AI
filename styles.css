@@ -736,7 +736,7 @@ body {
 .recipe-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 540px;
   position: relative;
   overflow: hidden;
@@ -2372,46 +2372,129 @@ body {
 }
 
 /* ==============================================================================
-   DYNAMIC TRỐNG ĐỒNG & CHIM LẠC HERITAGE SYSTEM (ĐẠI VIỆT IMPERIAL AESTHETICS)
-   Designed for RMIT Business Plan Competition 2026 (RBPC 2026)
+   DYNAMIC TRỐNG ĐỒNG & CHIM LẠC HERITAGE SYSTEM (ĐẠI VIỆT IMPERIAL AESTHETICS V2.0)
+   Engineered for RMIT Business Plan Competition 2026 (RBPC 2026)
    ============================================================================== */
 
-/* 1. Dynamic Rotating Dong Son Bronze Drum */
+/* Navbar Live Receptor & pH Status Pill */
+.receptor-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(52, 211, 153, 0.45);
+  color: #a7f3d0;
+  padding: 6px 13px;
+  border-radius: 20px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+  white-space: nowrap;
+}
+
+.receptor-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  animation: pulse 2s infinite;
+}
+
+@media (max-width: 1120px) {
+  .receptor-nav-pill {
+    display: none;
+  }
+}
+
+/* 1. 4-Layer Sacred Đông Sơn Celestial Astrolabe */
 .heritage-hero-stage {
   position: absolute;
-  top: 52%;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 760px;
-  height: 760px;
+  width: 820px;
+  height: 820px;
   pointer-events: none;
   z-index: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (max-width: 768px) {
   .heritage-hero-stage {
-    width: 380px;
-    height: 380px;
+    width: 400px;
+    height: 400px;
   }
 }
 
+/* Layer 1: Imperial Jade & Gold Ambient Solar Corona */
+.dong-son-solar-corona {
+  position: absolute;
+  inset: -60px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(245, 158, 11, 0.16) 0%,
+    rgba(16, 185, 129, 0.18) 38%,
+    rgba(245, 158, 11, 0.08) 58%,
+    transparent 74%
+  );
+  filter: blur(18px);
+  animation: coronaPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes coronaPulse {
+  0% { transform: scale(0.96); opacity: 0.8; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Layer 2: Outer Counter-Rotating Sacred Geometry SVG Compass Ring */
+.dong-son-outer-astrolabe {
+  position: absolute;
+  inset: -44px;
+  width: calc(100% + 88px);
+  height: calc(100% + 88px);
+  animation: spinHaloRing 135s linear infinite;
+  filter: drop-shadow(0 0 18px rgba(245, 158, 11, 0.5));
+  opacity: 0.82;
+}
+
+/* Layer 3: Primary Golden Đông Sơn Drum (Seamless Radial Feathering + Authentic Counter-Clockwise Solar Orbit) */
 .dong-son-spinning-drum {
-  width: 100%;
-  height: 100%;
+  width: 94%;
+  height: 94%;
   object-fit: contain;
-  opacity: 0.22;
-  filter: drop-shadow(0 0 35px rgba(245, 158, 11, 0.5)) drop-shadow(0 0 80px rgba(16, 185, 129, 0.3));
-  animation: spinDongSonDrum 75s linear infinite;
+  opacity: 0.33;
+  filter: drop-shadow(0 0 38px rgba(245, 158, 11, 0.65)) drop-shadow(0 0 85px rgba(16, 185, 129, 0.35)) contrast(1.08);
+  animation: spinDongSonDrum 85s linear infinite reverse;
   transform-origin: center center;
   transition: opacity 0.5s ease, filter 0.5s ease;
+  /* Radial mask removes the right-side PNG crop edge and softens the center behind typography */
+  mask-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.45) 18%,
+    rgba(0, 0, 0, 1) 34%,
+    rgba(0, 0, 0, 1) 66%,
+    transparent 71%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.45) 18%,
+    rgba(0, 0, 0, 1) 34%,
+    rgba(0, 0, 0, 1) 66%,
+    transparent 71%
+  );
 }
 
 .hero-section:hover .dong-son-spinning-drum {
-  opacity: 0.32;
-  filter: drop-shadow(0 0 45px rgba(245, 158, 11, 0.7)) drop-shadow(0 0 95px rgba(16, 185, 129, 0.45));
+  opacity: 0.42;
+  filter: drop-shadow(0 0 48px rgba(251, 191, 36, 0.8)) drop-shadow(0 0 95px rgba(16, 185, 129, 0.5)) contrast(1.12);
 }
 
 @keyframes spinDongSonDrum {
@@ -2419,14 +2502,47 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* Secondary Outer Counter-Rotating Halo */
+/* Layer 4: Inner 14-Ray Đông Sơn Solar Core & Readability Sanctuary */
+.dong-son-center-sanctuary {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(3, 18, 12, 0.72) 0%,
+    rgba(4, 26, 17, 0.52) 55%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dong-son-inner-sun {
+  width: 250px;
+  height: 250px;
+  opacity: 0.48;
+  animation: spinDongSonDrum 60s linear infinite;
+  filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.5));
+}
+
+/* Secondary Concentric Halo Rings */
 .dong-son-halo-ring {
   position: absolute;
-  inset: -35px;
+  inset: -18px;
   border-radius: 50%;
-  border: 1.5px dashed rgba(245, 158, 11, 0.35);
-  box-shadow: 0 0 60px rgba(245, 158, 11, 0.2), inset 0 0 60px rgba(16, 185, 129, 0.15);
+  border: 1.5px dashed rgba(245, 158, 11, 0.42);
+  box-shadow: 0 0 65px rgba(245, 158, 11, 0.22), inset 0 0 65px rgba(16, 185, 129, 0.18);
   animation: spinHaloRing 110s linear infinite reverse;
+}
+
+.dong-son-halo-ring-inner {
+  position: absolute;
+  inset: 58px;
+  border-radius: 50%;
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.15);
 }
 
 @keyframes spinHaloRing {
@@ -2435,9 +2551,9 @@ body {
 }
 
 /* ==========================================================================
-   2. SACRED CHIM LẠC MIGRATORY FLIGHT SYSTEM (ĐÀN CHIM LẠC THIÊN DI)
-   Continuous, majestic flight from left to right with aerodynamic wave soaring,
-   pitch roll, and luminous golden stardust slipstream VFX.
+   2. SACRED CHIM LẠC MIGRATORY FLIGHT SYSTEM V2.0 (DUAL-ENGINE: CANVAS + WING RIGS)
+   Continuous, majestic flight with 3D wing-flapping articulation, non-colliding
+   sky corridors framing the Hero text, and 60-FPS golden silk slipstreams.
    ========================================================================== */
 
 .hero-chim-lac-container {
@@ -2446,9 +2562,31 @@ body {
   pointer-events: none;
   overflow: hidden;
   z-index: 1;
+  /* Soft central readability veil so birds crossing behind the central Hero title never clash with text */
+  mask-image: radial-gradient(
+    ellipse 38% 24% at 50% 23%,
+    rgba(0, 0, 0, 0.16) 0%,
+    rgba(0, 0, 0, 0.48) 58%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 38% 24% at 50% 23%,
+    rgba(0, 0, 0, 0.16) 0%,
+    rgba(0, 0, 0, 0.48) 58%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
-/* Base Flight Track: Moves continuously from offscreen left (-340px) to offscreen right (100vw + 340px) */
+.chim-lac-star-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Base Flight Track: Moves continuously from offscreen left (-360px) to offscreen right (100vw + 360px) */
 .chim-lac-track {
   position: absolute;
   left: 0;
@@ -2457,33 +2595,37 @@ body {
   animation-name: flyFlockAcross;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  z-index: 2;
 }
 
 @keyframes flyFlockAcross {
   0% {
-    transform: translate3d(-340px, 0, 0);
+    transform: translate3d(-360px, 14px, 0);
     opacity: 0;
   }
-  2.5% {
+  3% {
     opacity: 1;
   }
-  97.5% {
+  50% {
+    transform: translate3d(calc(50vw - 10px), -18px, 0);
+  }
+  97% {
     opacity: 1;
   }
   100% {
-    transform: translate3d(calc(100vw + 340px), 0, 0);
+    transform: translate3d(calc(100vw + 360px), 10px, 0);
     opacity: 0;
   }
 }
 
-/* Individual Flight Tracks: Synchronized Golden Migratory Formation (Strictly Non-Colliding & Evenly Spaced) */
-.chim-lac-track.track-1 { top: 5%;  animation-duration: 33.0s; animation-delay: 0.0s;   z-index: 3; }
-.chim-lac-track.track-2 { top: 20%; animation-duration: 33.0s; animation-delay: -5.5s;  z-index: 2; }
-.chim-lac-track.track-3 { top: 9%;  animation-duration: 33.0s; animation-delay: -11.0s; z-index: 4; }
-.chim-lac-track.track-4 { top: 25%; animation-duration: 33.0s; animation-delay: -16.5s; z-index: 2; }
-.chim-lac-track.track-5 { top: 14%; animation-duration: 33.0s; animation-delay: -22.0s; z-index: 3; }
-.chim-lac-track.track-6 { top: 7%;  animation-duration: 33.0s; animation-delay: -27.5s; z-index: 3; }
-.chim-lac-track.track-7,
+/* Sacred Non-Colliding Sky Corridors (Framing the Upper Canopy & Lower Golden Arc of the Hero Stage) */
+.chim-lac-track.track-1 { top: 2.5%;  animation-duration: 31.0s; animation-delay: -3.2s;  z-index: 4; }
+.chim-lac-track.track-2 { top: 6.8%;  animation-duration: 34.0s; animation-delay: -9.8s;  z-index: 3; }
+.chim-lac-track.track-3 { top: 1.8%;  animation-duration: 38.0s; animation-delay: -16.5s; z-index: 2; }
+.chim-lac-track.track-4 { top: 43.5%; animation-duration: 32.5s; animation-delay: -21.0s; z-index: 3; }
+.chim-lac-track.track-5 { top: 4.5%;  animation-duration: 33.5s; animation-delay: -25.8s; z-index: 4; }
+.chim-lac-track.track-6 { top: 38.5%; animation-duration: 35.0s; animation-delay: -13.2s; z-index: 2; }
+.chim-lac-track.track-7 { top: 10.2%; animation-duration: 37.0s; animation-delay: -29.5s; z-index: 2; }
 .chim-lac-track.track-8,
 .chim-lac-track.track-9 { display: none; }
 
@@ -2495,85 +2637,104 @@ body {
 }
 
 .chim-lac-soar.wave-1 {
-  animation: soarGlideWave1 5.4s ease-in-out infinite alternate;
+  animation: soarGlideWave1 5.2s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-2 {
-  animation: soarGlideWave2 6.6s ease-in-out infinite alternate;
+  animation: soarGlideWave2 6.4s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-3 {
-  animation: soarGlideWave3 4.8s ease-in-out infinite alternate;
+  animation: soarGlideWave3 4.6s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-4 {
-  animation: soarGlideWave4 7.4s ease-in-out infinite alternate;
+  animation: soarGlideWave4 7.0s ease-in-out infinite alternate;
 }
 
 @keyframes soarGlideWave1 {
-  0% {
-    transform: translateY(0px) rotate(-3.5deg) scaleY(0.96);
-  }
-  35% {
-    transform: translateY(-26px) rotate(1.5deg) scaleY(1.04);
-  }
-  70% {
-    transform: translateY(-8px) rotate(-1deg) scaleY(0.98);
-  }
-  100% {
-    transform: translateY(14px) rotate(3deg) scaleY(1.02);
-  }
+  0%   { transform: translateY(0px) rotate(-5deg) scaleY(0.97); }
+  35%  { transform: translateY(-22px) rotate(1.5deg) scaleY(1.03); }
+  70%  { transform: translateY(-6px) rotate(-2deg) scaleY(0.99); }
+  100% { transform: translateY(12px) rotate(2.5deg) scaleY(1.02); }
 }
 
 @keyframes soarGlideWave2 {
-  0% {
-    transform: translateY(0px) rotate(2.5deg) scaleY(1.02);
-  }
-  40% {
-    transform: translateY(-32px) rotate(-2deg) scaleY(0.95);
-  }
-  75% {
-    transform: translateY(-10px) rotate(1deg) scaleY(1.03);
-  }
-  100% {
-    transform: translateY(16px) rotate(-1.5deg) scaleY(0.97);
-  }
+  0%   { transform: translateY(0px) rotate(2deg) scaleY(1.02); }
+  40%  { transform: translateY(-26px) rotate(-4deg) scaleY(0.95); }
+  75%  { transform: translateY(-8px) rotate(1deg) scaleY(1.03); }
+  100% { transform: translateY(14px) rotate(-2deg) scaleY(0.98); }
 }
 
 @keyframes soarGlideWave3 {
-  0% {
-    transform: translateY(0px) rotate(-1deg) scaleY(0.98);
-  }
-  50% {
-    transform: translateY(-22px) rotate(2.5deg) scaleY(1.04);
-  }
-  100% {
-    transform: translateY(10px) rotate(-2deg) scaleY(0.96);
-  }
+  0%   { transform: translateY(0px) rotate(-2deg) scaleY(0.98); }
+  50%  { transform: translateY(-18px) rotate(2deg) scaleY(1.04); }
+  100% { transform: translateY(8px) rotate(-3deg) scaleY(0.96); }
 }
 
 @keyframes soarGlideWave4 {
+  0%   { transform: translateY(0px) rotate(-3deg) scaleY(1); }
+  50%  { transform: translateY(-16px) rotate(2deg) scaleY(1.03); }
+  100% { transform: translateY(10px) rotate(-1.5deg) scaleY(0.98); }
+}
+
+/* 3D Wing-Beating Articulation Rig (.chim-lac-wing-rig & .chim-lac-wing-echo) */
+.chim-lac-wing-rig {
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+}
+
+.chim-lac-wing-echo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 1;
+  transform-origin: 54% 58%;
+  opacity: 0.42;
+  filter: drop-shadow(0 0 12px rgba(254, 240, 138, 0.85)) brightness(1.25);
+}
+
+.chim-lac-wing-echo.flap-1 {
+  animation: wingStrokeBeat 1.55s ease-in-out infinite alternate;
+}
+
+.chim-lac-wing-echo.flap-2 {
+  animation: wingStrokeBeat 1.85s ease-in-out infinite 0.35s alternate;
+}
+
+.chim-lac-wing-echo.flap-3 {
+  animation: wingStrokeBeat 1.35s ease-in-out infinite 0.7s alternate;
+}
+
+@keyframes wingStrokeBeat {
   0% {
-    transform: translateY(0px) rotate(-2deg) scaleY(1);
+    transform: translateY(-4px) scaleY(1.16) rotate(-4deg);
+    opacity: 0.48;
   }
   50% {
-    transform: translateY(-18px) rotate(1.5deg) scaleY(1.02);
+    transform: translateY(0px) scaleY(1.0) rotate(0deg);
+    opacity: 0.22;
   }
   100% {
-    transform: translateY(8px) rotate(-1deg) scaleY(0.99);
+    transform: translateY(5px) scaleY(0.78) rotate(5deg);
+    opacity: 0.44;
   }
 }
 
-/* Luminous Golden Stardust Slipstream (Vết Bụi Vàng Hoàng Kim Đuôi Cánh) */
+/* Luminous Golden Stardust Slipstream (Aligned with Carved Tail Angle) */
 .chim-lac-trail {
   position: absolute;
   pointer-events: none;
-  z-index: 1; /* strictly BEHIND the bird (.chim-lac-img is z-index: 2) */
-  transform: translateY(-50%);
+  z-index: 1;
+  transform-origin: right center;
+  transform: translateY(-50%) rotate(3deg);
   will-change: opacity, transform, filter;
 }
 
-/* Three breathing/fluctuating rhythms (Glow up, glow down gently, then continue to glow) */
 .chim-lac-trail.pulse-1 {
   animation: celestialFluctuate1 3.8s ease-in-out infinite;
 }
@@ -2585,225 +2746,469 @@ body {
 }
 
 @keyframes celestialFluctuate1 {
-  0% {
-    opacity: 0.12;
-    transform: translateY(-50%) scaleX(0.75) scaleY(0.75);
-    filter: blur(4px);
-  }
-  32% {
-    opacity: 0.52;
-    transform: translateY(-50%) scaleX(1.05) scaleY(1.0);
-    filter: blur(2.5px);
-  }
-  58% {
-    opacity: 0.20;
-    transform: translateY(-50%) scaleX(0.8) scaleY(0.8);
-    filter: blur(3.5px);
-  }
-  82% {
-    opacity: 0.60;
-    transform: translateY(-50%) scaleX(1.15) scaleY(1.05);
-    filter: blur(2px);
-  }
-  100% {
-    opacity: 0.12;
-    transform: translateY(-50%) scaleX(0.75) scaleY(0.75);
-    filter: blur(4px);
-  }
+  0%   { opacity: 0.22; transform: translateY(-50%) rotate(2deg) scaleX(0.82); filter: blur(3px); }
+  50%  { opacity: 0.68; transform: translateY(-50%) rotate(4deg) scaleX(1.15);  filter: blur(1.5px); }
+  100% { opacity: 0.22; transform: translateY(-50%) rotate(2deg) scaleX(0.82); filter: blur(3px); }
 }
 
 @keyframes celestialFluctuate2 {
-  0% {
-    opacity: 0.18;
-    transform: translateY(-50%) scaleX(0.85);
-    filter: blur(3.5px);
-  }
-  26% {
-    opacity: 0.58;
-    transform: translateY(-50%) scaleX(1.12);
-    filter: blur(2px);
-  }
-  52% {
-    opacity: 0.15;
-    transform: translateY(-50%) scaleX(0.75);
-    filter: blur(4px);
-  }
-  78% {
-    opacity: 0.50;
-    transform: translateY(-50%) scaleX(1.02);
-    filter: blur(2.5px);
-  }
-  100% {
-    opacity: 0.18;
-    transform: translateY(-50%) scaleX(0.85);
-    filter: blur(3.5px);
-  }
+  0%   { opacity: 0.25; transform: translateY(-50%) rotate(2deg) scaleX(0.88); filter: blur(3px); }
+  50%  { opacity: 0.72; transform: translateY(-50%) rotate(4deg) scaleX(1.18);  filter: blur(1.5px); }
+  100% { opacity: 0.25; transform: translateY(-50%) rotate(2deg) scaleX(0.88); filter: blur(3px); }
 }
 
 @keyframes celestialFluctuate3 {
+  0%   { opacity: 0.20; transform: translateY(-50%) rotate(1deg) scaleX(0.80); filter: blur(3px); }
+  50%  { opacity: 0.62; transform: translateY(-50%) rotate(3deg) scaleX(1.12);  filter: blur(2px); }
+  100% { opacity: 0.20; transform: translateY(-50%) rotate(1deg) scaleX(0.80); filter: blur(3px); }
+}
+
+/* GPU-Compositor-Locked Dual-Filament Golden Silk SVG Slipstreams */
+.chim-lac-silk-svg {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.55));
+  transform-origin: right center;
+  animation: silkRibbonWave 2.4s ease-in-out infinite alternate;
+}
+
+.chim-lac-silk-svg.silk-single {
+  right: 95%;
+  top: 66%;
+  width: 195px;
+  height: 48px;
+}
+
+.chim-lac-silk-svg.silk-pair-lead {
+  right: 67%;
+  top: 68%;
+  width: 185px;
+  height: 46px;
+}
+
+.chim-lac-silk-svg.silk-pair-rear {
+  right: 97%;
+  top: 36%;
+  width: 145px;
+  height: 36px;
+  opacity: 0.85;
+}
+
+@keyframes silkRibbonWave {
   0% {
-    opacity: 0.15;
-    transform: translateY(-50%) scaleX(0.8);
-    filter: blur(3.5px);
+    transform: translateY(-50%) rotate(1.5deg) scaleY(0.92);
   }
-  38% {
-    opacity: 0.55;
-    transform: translateY(-50%) scaleX(1.1);
-    filter: blur(2px);
-  }
-  68% {
-    opacity: 0.22;
-    transform: translateY(-50%) scaleX(0.82);
-    filter: blur(3px);
+  50% {
+    transform: translateY(-50%) rotate(4deg) scaleY(1.08);
   }
   100% {
-    opacity: 0.15;
-    transform: translateY(-50%) scaleX(0.8);
-    filter: blur(3.5px);
+    transform: translateY(-50%) rotate(2.5deg) scaleY(0.95);
   }
 }
 
-/* Single Bird Trail: Anchored strictly behind tail feathers (top: 70%, right: 100%) */
+/* Single Bird Trail: Anchored cleanly behind tail feathers */
 .chim-lac-trail.trail-single {
-  right: 100%;
-  top: 70%;
-  width: 145px;
-  height: 12px;
+  right: 94%;
+  top: 66%;
+  width: 165px;
+  height: 11px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(245, 158, 11, 0.0) 15%,
-    rgba(245, 158, 11, 0.12) 45%,
-    rgba(251, 191, 36, 0.28) 75%,
-    rgba(254, 240, 138, 0.45) 98%,
+    rgba(16, 185, 129, 0.08) 20%,
+    rgba(245, 158, 11, 0.22) 52%,
+    rgba(251, 191, 36, 0.45) 82%,
+    rgba(254, 240, 138, 0.75) 97%,
     transparent 100%
   );
   border-radius: 50% 8px 8px 50%;
-  box-shadow: 0 0 8px rgba(245, 158, 11, 0.25);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
 }
 
-/* Pair Birds Trail: Anchored strictly behind pair tails (top: 48%, right: 100%) */
+/* Pair Birds Trail */
 .chim-lac-trail.trail-pair {
-  right: 100%;
-  top: 48%;
-  width: 180px;
-  height: 18px;
+  right: 86%;
+  top: 56%;
+  width: 210px;
+  height: 16px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(245, 158, 11, 0.0) 15%,
-    rgba(245, 158, 11, 0.15) 45%,
-    rgba(251, 191, 36, 0.32) 75%,
-    rgba(254, 240, 138, 0.5) 98%,
+    rgba(16, 185, 129, 0.1) 18%,
+    rgba(245, 158, 11, 0.26) 50%,
+    rgba(251, 191, 36, 0.5) 80%,
+    rgba(254, 240, 138, 0.8) 97%,
     transparent 100%
   );
   border-radius: 50% 10px 10px 50%;
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.28);
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.4);
 }
 
 /* High Horizon Distant Bird Trail */
 .chim-lac-trail.trail-distant {
-  right: 100%;
-  top: 70%;
-  width: 95px;
-  height: 8px;
+  right: 90%;
+  top: 66%;
+  width: 110px;
+  height: 7px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(245, 158, 11, 0.06) 40%,
-    rgba(251, 191, 36, 0.2) 80%,
-    rgba(254, 240, 138, 0.35) 98%,
+    rgba(245, 158, 11, 0.12) 40%,
+    rgba(251, 191, 36, 0.32) 80%,
+    rgba(254, 240, 138, 0.55) 98%,
     transparent 100%
   );
-  box-shadow: 0 0 6px rgba(245, 158, 11, 0.18);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.25);
 }
 
 /* Delicate Golden Stardust Sparks */
 .trail-spark {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, rgba(251, 191, 36, 0.4) 60%, transparent 100%);
-  box-shadow: 0 0 4px rgba(245, 158, 11, 0.5);
+  background: radial-gradient(circle, #ffffff 15%, #fde047 55%, transparent 100%);
+  box-shadow: 0 0 6px #fbbf24, 0 0 12px rgba(245, 158, 11, 0.7);
   pointer-events: none;
 }
 
 .trail-spark.s1 {
-  width: 3px;
-  height: 3px;
-  right: 20px;
-  top: 30%;
-  animation: sparkFlicker 1.8s ease-in-out infinite alternate;
+  width: 4px;
+  height: 4px;
+  right: 18px;
+  top: 25%;
+  animation: sparkFlicker 1.4s ease-in-out infinite alternate;
 }
 
 .trail-spark.s2 {
-  width: 2.5px;
-  height: 2.5px;
-  right: 55px;
-  top: 65%;
-  animation: sparkFlicker 2.4s ease-in-out infinite 0.5s alternate;
+  width: 3px;
+  height: 3px;
+  right: 52px;
+  top: 68%;
+  animation: sparkFlicker 2.0s ease-in-out infinite 0.4s alternate;
+}
+
+.trail-spark.s3 {
+  width: 3.5px;
+  height: 3.5px;
+  right: 92px;
+  top: 42%;
+  animation: sparkFlicker 1.7s ease-in-out infinite 0.8s alternate;
 }
 
 @keyframes sparkFlicker {
   0% {
-    opacity: 0.15;
-    transform: scale(0.6) translateY(-1px);
+    opacity: 0.2;
+    transform: scale(0.6) translateY(-2px);
   }
   100% {
-    opacity: 0.6;
-    transform: scale(1.1) translateY(1px);
+    opacity: 0.95;
+    transform: scale(1.35) translateY(2px);
   }
 }
 
 /* Chim Lạc Graphics: Crisp, detailed, layered on top of VFX */
 .chim-lac-img {
   position: relative;
-  z-index: 2; /* strictly above .chim-lac-trail */
+  z-index: 2;
   display: block;
-  width: 135px;
+  width: 132px;
   height: auto;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 6px rgba(245, 158, 11, 0.45));
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 10px rgba(245, 158, 11, 0.6));
   transition: transform 0.3s ease, filter 0.3s ease;
   user-select: none;
 }
 
 .chim-lac-img.img-majestic {
-  width: 135px;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
+  width: 138px;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 12px rgba(251, 191, 36, 0.7));
+}
+
+.chim-lac-img.img-pair-sovereign {
+  width: 168px;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 12px rgba(251, 191, 36, 0.68));
+}
+
+.chim-lac-img.img-pair-distant {
+  width: 118px;
+  opacity: 0.82;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 7px rgba(245, 158, 11, 0.45));
 }
 
 .chim-lac-img.img-mid {
-  width: 115px;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 6px rgba(245, 158, 11, 0.45));
+  width: 112px;
+  filter: drop-shadow(0 2px 7px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
 }
 
 .chim-lac-img.img-distant {
-  width: 85px;
-  opacity: 0.75;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 4px rgba(245, 158, 11, 0.35));
-}
-
-.chim-lac-img.img-pair {
-  display: none;
+  width: 82px;
+  opacity: 0.78;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 6px rgba(245, 158, 11, 0.4));
 }
 
 /* Responsive scaling for mobile / tablets */
 @media (max-width: 768px) {
-  .chim-lac-img {
-    width: 80px;
+  .chim-lac-img,
+  .chim-lac-img.img-majestic,
+  .chim-lac-img.img-pair-sovereign {
+    width: 84px;
   }
-  .chim-lac-img.img-majestic {
-    width: 88px;
-  }
-  .chim-lac-img.img-mid {
-    width: 72px;
+  .chim-lac-img.img-mid,
+  .chim-lac-img.img-pair-distant {
+    width: 68px;
   }
   .chim-lac-img.img-distant {
-    width: 55px;
+    width: 52px;
   }
   .chim-lac-trail {
     width: 75px;
-    height: 9px;
+    height: 8px;
   }
+}
+
+/* ==========================================================================
+   2B. HERO TELEMETRY PROOF RIBBON, SACHET THUMBNAILS & 5-STAGE PIPELINE HUD
+   ========================================================================== */
+.hero-telemetry-ribbon {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 1040px;
+  margin: 22px auto 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 860px) {
+  .hero-telemetry-ribbon {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.telemetry-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(4, 28, 18, 0.85) 0%, rgba(8, 48, 32, 0.75) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: 14px;
+  padding: 10px 14px;
+  text-align: left;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.38), inset 0 0 14px rgba(16, 185, 129, 0.12);
+  transition: all 0.25s ease;
+}
+
+.telemetry-chip:hover {
+  transform: translateY(-2px);
+  border-color: #fbbf24;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5), 0 0 16px rgba(245, 158, 11, 0.28);
+}
+
+.telemetry-icon {
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
+}
+
+.telemetry-val {
+  font-family: var(--font-display);
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: #fef08a;
+  line-height: 1.25;
+}
+
+.telemetry-lbl {
+  font-size: 0.72rem;
+  color: #cbd5e1;
+  margin-top: 2px;
+}
+
+.sachet-pill-thumb {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1.5px solid rgba(245, 158, 11, 0.55);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  flex-shrink: 0;
+}
+
+/* 5-Stage Hybrid AI Architecture Strip above Studio */
+.hybrid-pipeline-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 4px;
+  background: linear-gradient(90deg, rgba(4, 22, 14, 0.92) 0%, rgba(8, 44, 28, 0.88) 50%, rgba(4, 22, 14, 0.92) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: 16px;
+  padding: 10px 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), inset 0 0 18px rgba(16, 185, 129, 0.14);
+}
+
+@media (max-width: 1180px) {
+  .hybrid-pipeline-strip {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+  }
+}
+
+.pipeline-step {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.pipe-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+  color: #03120b;
+  font-size: 0.66rem;
+  font-weight: 900;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.pipe-text {
+  font-size: 0.71rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.pipe-arrow {
+  color: #fbbf24;
+  font-size: 0.74rem;
+  opacity: 0.75;
+}
+
+/* Upgraded Placeholder Bio-Receptor Command Chamber */
+.placeholder-drum-medallion {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 16px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-drum-spin {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.48;
+  animation: spinDongSonDrum 50s linear infinite reverse;
+  filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.6));
+  mask-image: radial-gradient(circle, #000 0%, #000 65%, transparent 72%);
+  -webkit-mask-image: radial-gradient(circle, #000 0%, #000 65%, transparent 72%);
+}
+
+.placeholder-drum-medallion .recipe-placeholder-icon {
+  margin: 0;
+  width: 72px;
+  height: 72px;
+  font-size: 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.placeholder-status-pill {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: #fde047;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.placeholder-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.ph-spec-box {
+  background: rgba(3, 18, 12, 0.68);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  border-left: 3px solid #fbbf24;
+  border-radius: 10px;
+  padding: 9px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ph-spec-lbl {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.ph-spec-val {
+  font-size: 0.8rem;
+  color: #a7f3d0;
+}
+
+.placeholder-quick-presets {
+  background: rgba(4, 24, 16, 0.65);
+  border: 1px dashed rgba(245, 158, 11, 0.4);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.quick-preset-title {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #fef08a;
+  margin-bottom: 8px;
+}
+
+.quick-preset-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.quick-preset-chip {
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(52, 211, 153, 0.45);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 6px 11px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-preset-chip:hover {
+  background: #fbbf24;
+  border-color: #fbbf24;
+  color: #03120b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.45);
 }
 
 /* 3. Brand Chim Lạc Emblem in Navbar */
@@ -3773,75 +4178,84 @@ body {
 }
 
 .sachet-home-pill {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 12px 16px;
-  background: rgba(2, 44, 29, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 10px 12px;
+  align-items: start;
+  padding: 14px 16px;
+  background: rgba(2, 44, 29, 0.72);
+  border: 1px solid rgba(245, 158, 11, 0.28);
   border-radius: 14px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
+  text-align: left;
 }
 
 .sachet-home-pill:hover {
   transform: translateY(-3px);
-  border-color: rgba(245, 158, 11, 0.6);
-  background: rgba(4, 52, 35, 0.85);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4), 0 0 16px rgba(245, 158, 11, 0.2);
+  border-color: rgba(245, 158, 11, 0.65);
+  background: rgba(4, 52, 35, 0.88);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4), 0 0 16px rgba(245, 158, 11, 0.22);
 }
 
 .sachet-home-pill .pill-dot {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   flex-shrink: 0;
   box-shadow: 0 0 10px currentColor;
 }
 
 .sachet-home-pill .pill-content {
-  flex: 1;
+  min-width: 0;
 }
 
 .sachet-home-pill .pill-name {
   font-family: var(--font-display);
   font-size: 0.92rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #fff;
   display: flex;
   align-items: center;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 6px;
+  line-height: 1.3;
 }
 
 .sachet-home-pill .pill-badge-mini {
-  font-size: 0.7rem;
-  padding: 2px 7px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.08);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.14);
+  color: #fde047;
+  border: 1px solid rgba(245, 158, 11, 0.38);
+  white-space: nowrap;
 }
 
 .sachet-home-pill .pill-herbs {
-  font-size: 0.78rem;
+  font-size: 0.77rem;
   color: #cbd5e1;
-  margin-top: 4px;
+  margin-top: 5px;
+  line-height: 1.45;
 }
 
 .sachet-home-pill .pill-action-btn {
-  background: rgba(245, 158, 11, 0.15);
-  border: 1px solid rgba(245, 158, 11, 0.4);
-  color: #fbbf24;
+  grid-column: 1 / -1;
+  width: 100%;
+  background: rgba(245, 158, 11, 0.14);
+  border: 1px solid rgba(245, 158, 11, 0.42);
+  color: #fde047;
   font-size: 0.76rem;
-  font-weight: 700;
-  padding: 6px 12px;
-  border-radius: 8px;
+  font-weight: 800;
+  padding: 7px 12px;
+  border-radius: 9px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
+  text-align: center;
 }
 
 .sachet-home-pill:hover .pill-action-btn {
