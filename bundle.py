@@ -50,8 +50,7 @@ bundled = re.sub(r'<script\s+src="medicinal_database\.js"[^>]*></script>', '', b
 bundled = re.sub(r'<script\s+src="app\.js"[^>]*></script>', lambda _: script_block, bundled)
 
 out_paths = [
-    r"C:\Users\THIS PC\Downloads\VinaVita-AI-Mixologist.html",
-    r"C:\Users\THIS PC\Downloads\AnThao-AI-Mixologist.html"
+    r"C:\Users\THIS PC\Downloads\VinaVita-AI-Mixologist.html"
 ]
 
 for out_path in out_paths:

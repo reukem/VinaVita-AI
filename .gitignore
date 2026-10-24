@@ -36,3 +36,12 @@ Thumbs.db
 .idea/
 flock_organic_*.png
 flock_16_frame*.png
+about_full_story.png
+about_rendered.png
+hero_argon_upgrade.png
+mixologist_argon_upgrade.png
+vinavita_chatbot_slm_upgrade.png
+vinavita_cloud_gemini_verified.png
+
+# Internal database / reference files
+lucy_database/
