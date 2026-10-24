@@ -58,83 +58,188 @@
       </nav>
 
       <div class="header-meta">
+        <div class="receptor-nav-pill" id="navAiNodePill" title="Trạng thái Node AI Đám Mây đang hoạt động (Nhấn để mở Dược Sĩ AI)" style="cursor:pointer;" onclick="window.openChatWidget && window.openChatWidget()">
+          <span class="receptor-dot" id="navAiNodeDot"></span>
+          <span id="navAiNodeText">Gemini 2.5 Flash</span>
+        </div>
         <div class="rbpc-badge">RMIT RBPC 2026</div>
       </div>
     </div>
   </header>
 
   <!-- HERO BANNER -->
-  <section class="hero-section">
-    <!-- DYNAMIC ROTATING TRỐNG ĐỒNG ĐÔNG SƠN HERITAGE STAGE -->
-    <div class="heritage-hero-stage">
+  <section class="hero-section" id="heroStageSection">
+    <!-- 4-LAYER SACRED ĐÔNG SƠN CELESTIAL ASTROLABE (TRỐNG ĐỒNG NGỌC LŨ ĐA TẦNG) -->
+    <div class="heritage-hero-stage" id="dongSonAstrolabe" aria-hidden="true">
+      <!-- Layer 1: Imperial Jade & Gold Ambient Solar Corona -->
+      <div class="dong-son-solar-corona"></div>
       <div class="dong-son-halo-ring"></div>
+      <div class="dong-son-halo-ring-inner"></div>
+
+      <!-- Layer 2: Outer Counter-Rotating Sacred Geometry SVG Compass Ring -->
+      <svg class="dong-son-outer-astrolabe" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="astrolabeGold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fef08a" stop-opacity="0.95"/>
+            <stop offset="50%" stop-color="#fbbf24" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#d97706" stop-opacity="0.6"/>
+          </linearGradient>
+          <linearGradient id="astrolabeJade" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#34d399" stop-opacity="0.75"/>
+            <stop offset="100%" stop-color="#10b981" stop-opacity="0.25"/>
+          </linearGradient>
+        </defs>
+        <!-- Outer Sacred Rim -->
+        <circle cx="500" cy="500" r="486" fill="none" stroke="url(#astrolabeGold)" stroke-width="1.6" stroke-dasharray="18 6 4 6" opacity="0.75"/>
+        <circle cx="500" cy="500" r="474" fill="none" stroke="url(#astrolabeJade)" stroke-width="1.2" stroke-dasharray="4 8" opacity="0.65"/>
+        <circle cx="500" cy="500" r="460" fill="none" stroke="url(#astrolabeGold)" stroke-width="2.2" opacity="0.55"/>
+        <circle cx="500" cy="500" r="438" fill="none" stroke="url(#astrolabeGold)" stroke-width="1.2" stroke-dasharray="2 10" opacity="0.7"/>
+        <!-- Đông Sơn Sawtooth Sun-Ray Crown (Hoa Văn Răng Cưa Hoàng Kim) -->
+        <circle cx="500" cy="500" r="449" fill="none" stroke="url(#astrolabeGold)" stroke-width="12" stroke-dasharray="3.5 8.8" opacity="0.38"/>
+        <!-- 4 Cardinal Đại Việt Solar Lotus Beacons (Đông - Tây - Nam - Bắc) -->
+        <g fill="url(#astrolabeGold)" stroke="#fef08a" stroke-width="1.2">
+          <polygon points="500,4 509,24 500,36 491,24" />
+          <polygon points="500,996 509,976 500,964 491,976" />
+          <polygon points="4,500 24,491 36,500 24,509" />
+          <polygon points="996,500 976,491 964,500 976,509" />
+          <polygon points="149,149 168,156 164,168 156,168" opacity="0.75"/>
+          <polygon points="851,149 832,156 836,168 844,168" opacity="0.75"/>
+          <polygon points="149,851 168,844 164,832 156,832" opacity="0.75"/>
+          <polygon points="851,851 832,844 836,832 844,832" opacity="0.75"/>
+        </g>
+      </svg>
+
+      <!-- Layer 3: Primary Golden Đông Sơn Drum (18 Chim Lạc Khắc Vàng - Seamless Radial Mask) -->
       <img src="assets/trong_dong_gold.png" alt="Mặt Trống Đồng Đông Sơn - 18 Chim Lạc Khắc Vàng" class="dong-son-spinning-drum">
+
+      <!-- Layer 4: Inner 14-Ray Đông Sơn Solar Star & Central Readability Sanctuary -->
+      <div class="dong-son-center-sanctuary">
+        <svg class="dong-son-inner-sun" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="150" cy="150" r="138" fill="none" stroke="rgba(251,191,36,0.45)" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <circle cx="150" cy="150" r="118" fill="none" stroke="rgba(52,211,153,0.35)" stroke-width="1.2"/>
+          <circle cx="150" cy="150" r="34" fill="rgba(245,158,11,0.18)" stroke="rgba(254,240,138,0.65)" stroke-width="1.8"/>
+          <g stroke="rgba(254,240,138,0.6)" fill="rgba(245,158,11,0.22)" stroke-width="1.2">
+            <polygon points="150,150 162,146 245,150 162,154"/>
+            <polygon points="150,150 161,156 235,191 157,162"/>
+            <polygon points="150,150 156,161 209,224 150,164"/>
+            <polygon points="150,150 150,164 171,242 144,162"/>
+            <polygon points="150,150 144,162 129,242 139,158"/>
+            <polygon points="150,150 139,158 91,224 137,151"/>
+            <polygon points="150,150 137,151 65,191 139,144"/>
+            <polygon points="150,150 138,146 55,150 138,154"/>
+            <polygon points="150,150 139,144 65,109 143,138"/>
+            <polygon points="150,150 144,139 91,76 150,136"/>
+            <polygon points="150,150 150,136 129,58 156,138"/>
+            <polygon points="150,150 156,138 171,58 161,142"/>
+            <polygon points="150,150 161,142 209,76 163,149"/>
+            <polygon points="150,150 163,149 235,109 161,156"/>
+          </g>
+        </svg>
+      </div>
     </div>
 
-    <!-- SOARING CHIM LẠC FLOCK FLIGHT SYSTEM (6 CÁNH CHIM ĐỘC BẢN THIÊN DI HOÀNG KIM) -->
-    <div class="hero-chim-lac-container" aria-hidden="true">
-      <!-- 1. Chúa Lạc Thiên Không (Single - High Celestial) -->
-      <div class="chim-lac-track track-1">
+    <!-- SOARING CHIM LẠC FLOCK FLIGHT SYSTEM (DUAL-ENGINE: 60FPS GOLDEN SILK CANVAS + ARTICULATED WING RIGS) -->
+    <div class="hero-chim-lac-container" id="heroChimLacStage" aria-hidden="true">
+      <!-- Real-Time 60-FPS Golden Silk Slipstream & Stardust Canvas -->
+      <canvas id="chimLacStarCanvas" class="chim-lac-star-canvas"></canvas>
+
+      <!-- 1. Chúa Lạc Thiên Không (Majestic Vanguard - Upper Celestial Canopy) -->
+      <div class="chim-lac-track track-1" data-bird-scale="1.05">
         <div class="chim-lac-soar wave-1">
           <div class="chim-lac-trail trail-single pulse-1">
             <span class="trail-spark s1"></span>
             <span class="trail-spark s2"></span>
+            <span class="trail-spark s3"></span>
           </div>
-          <img src="assets/chim_lac_single.png" alt="Chúa Lạc Thiên Không" class="chim-lac-img img-majestic">
+          <div class="chim-lac-wing-rig">
+            <img src="assets/chim_lac_single.png" alt="" class="chim-lac-wing-echo flap-1">
+            <img src="assets/chim_lac_single.png" alt="Chúa Lạc Thiên Không" class="chim-lac-img img-majestic">
+          </div>
         </div>
       </div>
 
-      <!-- 2. Lạc Tiên Phong (Single - Mid Sky) -->
-      <div class="chim-lac-track track-2">
+      <!-- 2. Song Lạc Hoàng Kim (Sacred Pair - High Sovereign Orbit) -->
+      <div class="chim-lac-track track-2" data-bird-scale="1.15">
         <div class="chim-lac-soar wave-2">
-          <div class="chim-lac-trail trail-single pulse-2">
+          <div class="chim-lac-trail trail-pair pulse-2">
             <span class="trail-spark s1"></span>
             <span class="trail-spark s2"></span>
+            <span class="trail-spark s3"></span>
           </div>
-          <img src="assets/chim_lac_single.png" alt="Lạc Tiên Phong" class="chim-lac-img img-mid">
+          <div class="chim-lac-wing-rig">
+            <img src="assets/chim_lac_pair.png" alt="" class="chim-lac-wing-echo flap-2">
+            <img src="assets/chim_lac_pair.png" alt="Song Lạc Hoàng Kim" class="chim-lac-img img-pair-sovereign">
+          </div>
         </div>
       </div>
 
-      <!-- 3. Lạc Viễn Xứ (Single - High Celestial Horizon) -->
-      <div class="chim-lac-track track-3">
+      <!-- 3. Lạc Viễn Xứ (Distant Horizon Glider - Upper Rim) -->
+      <div class="chim-lac-track track-3" data-bird-scale="0.72">
         <div class="chim-lac-soar wave-3">
           <div class="chim-lac-trail trail-distant pulse-3">
             <span class="trail-spark s1"></span>
           </div>
-          <img src="assets/chim_lac_single.png" alt="Lạc Viễn Xứ" class="chim-lac-img img-distant">
+          <div class="chim-lac-wing-rig">
+            <img src="assets/chim_lac_single.png" alt="" class="chim-lac-wing-echo flap-3">
+            <img src="assets/chim_lac_single.png" alt="Lạc Viễn Xứ" class="chim-lac-img img-distant">
+          </div>
         </div>
       </div>
 
-      <!-- 4. Lạc Hoàng Kim (Single - Lower-Mid Sky) -->
-      <div class="chim-lac-track track-4">
+      <!-- 4. Lạc Hoàng Kim (Lower-Flank Golden Arc - Sweeps Below Headline) -->
+      <div class="chim-lac-track track-4" data-bird-scale="0.95">
         <div class="chim-lac-soar wave-4">
           <div class="chim-lac-trail trail-single pulse-1">
             <span class="trail-spark s1"></span>
             <span class="trail-spark s2"></span>
           </div>
-          <img src="assets/chim_lac_single.png" alt="Lạc Hoàng Kim" class="chim-lac-img img-mid">
+          <div class="chim-lac-wing-rig">
+            <img src="assets/chim_lac_single.png" alt="" class="chim-lac-wing-echo flap-2">
+            <img src="assets/chim_lac_single.png" alt="Lạc Hoàng Kim" class="chim-lac-img img-mid">
+          </div>
         </div>
       </div>
 
-      <!-- 5. Lạc Hướng Dương (Single - Upper-Mid Sky) -->
-      <div class="chim-lac-track track-5">
+      <!-- 5. Lạc Hướng Dương (High Sun-Seeker - Upper Celestial Arc) -->
+      <div class="chim-lac-track track-5" data-bird-scale="1.08">
         <div class="chim-lac-soar wave-2">
           <div class="chim-lac-trail trail-single pulse-2">
             <span class="trail-spark s1"></span>
             <span class="trail-spark s2"></span>
+            <span class="trail-spark s3"></span>
           </div>
-          <img src="assets/chim_lac_single.png" alt="Lạc Hướng Dương" class="chim-lac-img img-majestic">
+          <div class="chim-lac-wing-rig">
+            <img src="assets/chim_lac_single.png" alt="" class="chim-lac-wing-echo flap-1">
+            <img src="assets/chim_lac_single.png" alt="Lạc Hướng Dương" class="chim-lac-img img-majestic">
+          </div>
         </div>
       </div>
 
-      <!-- 6. Lạc Phi Thiên (Single - Celestial Sky) -->
-      <div class="chim-lac-track track-6">
+      <!-- 6. Lạc Phi Thiên (Mid-Sky Escort - Flank Corridor) -->
+      <div class="chim-lac-track track-6" data-bird-scale="0.88">
         <div class="chim-lac-soar wave-1">
           <div class="chim-lac-trail trail-single pulse-3">
             <span class="trail-spark s1"></span>
             <span class="trail-spark s2"></span>
           </div>
-          <img src="assets/chim_lac_single.png" alt="Lạc Phi Thiên" class="chim-lac-img img-mid">
+          <div class="chim-lac-wing-rig">
+            <img src="assets/chim_lac_single.png" alt="" class="chim-lac-wing-echo flap-3">
+            <img src="assets/chim_lac_single.png" alt="Lạc Phi Thiên" class="chim-lac-img img-mid">
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Song Lạc Viễn Cố Đô (Distant Pair - High Horizon) -->
+      <div class="chim-lac-track track-7" data-bird-scale="0.78">
+        <div class="chim-lac-soar wave-3">
+          <div class="chim-lac-trail trail-distant pulse-1">
+            <span class="trail-spark s1"></span>
+            <span class="trail-spark s2"></span>
+          </div>
+          <div class="chim-lac-wing-rig">
+            <img src="assets/chim_lac_pair.png" alt="" class="chim-lac-wing-echo flap-1">
+            <img src="assets/chim_lac_pair.png" alt="Song Lạc Viễn Cố Đô" class="chim-lac-img img-pair-distant">
+          </div>
         </div>
       </div>
     </div>
@@ -158,37 +263,78 @@
         <span class="motto-badge">Bản Sắc Việt</span>
       </div>
 
+      <!-- RMIT RBPC 2026 SCIENTIFIC & COMMERCIAL PROOF STRIP -->
+      <div class="hero-telemetry-ribbon">
+        <div class="telemetry-chip">
+          <span class="telemetry-icon">🛡️</span>
+          <div>
+            <div class="telemetry-val">100% IF-THEN Safety</div>
+            <div class="telemetry-lbl">Khóa dược liệu kỵ cơ địa</div>
+          </div>
+        </div>
+        <div class="telemetry-chip">
+          <span class="telemetry-icon">🧪</span>
+          <div>
+            <div class="telemetry-val">pH 4.2–4.5 • hTAS2R16</div>
+            <div class="telemetry-lbl">Khử đắng kép • 0g Đường</div>
+          </div>
+        </div>
+        <div class="telemetry-chip">
+          <span class="telemetry-icon">🌱</span>
+          <div>
+            <div class="telemetry-val">Túi Lọc PLA 5.3g</div>
+            <div class="telemetry-lbl">Bột ngô sinh học • 3 phút 85°C</div>
+          </div>
+        </div>
+        <div class="telemetry-chip">
+          <span class="telemetry-icon">💎</span>
+          <div>
+            <div class="telemetry-val">69.000 VNĐ / Hộp</div>
+            <div class="telemetry-lbl">13.800đ/ly • 49.3% Gross Margin</div>
+          </div>
+        </div>
+      </div>
+
       <!-- 3 HERO SACHETS HOME SPOTLIGHT (RMIT RBPC 2026 PILOT SPECIFICATION) -->
       <div class="hero-sachets-home-bar">
         <div class="sachets-bar-header">
           <span class="sachets-bar-tag">BỘ 3 GÓI SACHET DI SẢN CHỦ LỰC • RMIT RBPC 2026 PILOT LINE</span>
-          <span class="sachets-bar-desc">Túi lọc kim tự tháp PLA 5.35g • 69.000 VNĐ / Hộp 5 gói (13.800đ/ly) • Hãm 3 phút 85°C</span>
+          <span class="sachets-bar-desc">Túi lọc kim tự tháp PLA 5.3g • 69.000 VNĐ / Hộp 5 gói (13.800đ/ly) • Hãm 3 phút 85°C</span>
         </div>
         <div class="sachets-bar-cards">
           <!-- Card 1: Citrus Twilight -->
           <div class="sachet-home-pill pill-citrus" onclick="window.selectHeroSachet('unwind', 'citrus')" title="Nhấp để phối trộn ngay Citrus Twilight">
-            <div class="pill-dot" style="background:#fbbf24; color:#fbbf24;"></div>
+            <img src="assets/hoa_cuc.jpg" alt="Citrus Twilight" class="sachet-pill-thumb">
             <div class="pill-content">
-              <div class="pill-name">01. Citrus Twilight <span class="pill-badge-mini">Night Unwind</span></div>
-              <div class="pill-herbs">Lạc Tiên (2.5g) • Bạch Cúc • Tắc sấy lạnh • Cỏ Ngọt &amp; Na+</div>
+              <div class="pill-name">
+                <span class="pill-dot" style="background:#fbbf24; color:#fbbf24;"></span>
+                01. Citrus Twilight <span class="pill-badge-mini">Night Unwind • pH 4.3</span>
+              </div>
+              <div class="pill-herbs">Lạc Tiên (1.8g) • Hoa Cúc (1.5g) • Tắc sấy lạnh (1.5g) • Cỏ Ngọt (0.5g)</div>
             </div>
             <button class="pill-action-btn" type="button">Pha Thử ➔</button>
           </div>
           <!-- Card 2: Calm Focus -->
           <div class="sachet-home-pill pill-focus" onclick="window.selectHeroSachet('focus', 'minty')" title="Nhấp để phối trộn ngay Calm Focus">
-            <div class="pill-dot" style="background:#34d399; color:#34d399;"></div>
+            <img src="assets/dinh_lang.jpg" alt="Calm Focus" class="sachet-pill-thumb">
             <div class="pill-content">
-              <div class="pill-name">02. Calm Focus <span class="pill-badge-mini">Deadline &amp; Study</span></div>
-              <div class="pill-herbs">Đinh Lăng Sâm Nam (2.0g) • Sả chanh • Gừng già • La Hán Quả</div>
+              <div class="pill-name">
+                <span class="pill-dot" style="background:#34d399; color:#34d399;"></span>
+                02. Calm Focus <span class="pill-badge-mini">Deadline • 0mg Caffeine</span>
+              </div>
+              <div class="pill-herbs">Lá Đinh Lăng (2.0g) • Sả (1.5g) • Gừng ấm (0.8g) • La Hán Quả (1.0g)</div>
             </div>
             <button class="pill-action-btn" type="button">Pha Thử ➔</button>
           </div>
           <!-- Card 3: Berry Social Glow -->
           <div class="sachet-home-pill pill-berry" onclick="window.selectHeroSachet('social', 'sweet')" title="Nhấp để phối trộn ngay Berry Social Glow">
-            <div class="pill-dot" style="background:#f43f5e; color:#f43f5e;"></div>
+            <img src="assets/mocktail_hero.jpg" alt="Berry Social Glow" class="sachet-pill-thumb">
             <div class="pill-content">
-              <div class="pill-name">03. Berry Social Glow <span class="pill-badge-mini">0.0% Cồn Party</span></div>
-              <div class="pill-herbs">Atiso Đỏ Hibiscus (2.5g) • Lạc Tiên • Quế thanh • La Hán Quả</div>
+              <div class="pill-name">
+                <span class="pill-dot" style="background:#f43f5e; color:#f43f5e;"></span>
+                03. Berry Social Glow <span class="pill-badge-mini">0.0% Cồn • pH 4.2</span>
+              </div>
+              <div class="pill-herbs">Atiso Đỏ (2.2g) • Lạc Tiên (1.3g) • Quế thanh (0.8g) • La Hán Quả (1.0g)</div>
             </div>
             <button class="pill-action-btn" type="button">Pha Thử ➔</button>
           </div>
@@ -201,6 +347,34 @@
 
     <!-- VIEW 1: AI MIXOLOGIST STUDIO (CORE PRODUCT) -->
     <section id="viewMixologist" class="main-view active">
+      <!-- 5-STAGE HYBRID AI ARCHITECTURE PIPELINE BAR (PROPOSAL PAGE 6) -->
+      <div class="hybrid-pipeline-strip">
+        <div class="pipeline-step active">
+          <span class="pipe-num">01</span>
+          <span class="pipe-text">Check-in 30s (Tâm trạng &amp; Cơ địa)</span>
+        </div>
+        <span class="pipe-arrow">➔</span>
+        <div class="pipeline-step active">
+          <span class="pipe-num">02</span>
+          <span class="pipe-text">Bộ Lọc IF-THEN Tất Định (Khóa chất kỵ)</span>
+        </div>
+        <span class="pipe-arrow">➔</span>
+        <div class="pipeline-step active">
+          <span class="pipe-num">03</span>
+          <span class="pipe-text">Khử Đắng pH 4.2–4.5 (hTAS2R16)</span>
+        </div>
+        <span class="pipe-arrow">➔</span>
+        <div class="pipeline-step active">
+          <span class="pipe-num">04</span>
+          <span class="pipe-text">Nhãn Bằng Chứng Dược Điển</span>
+        </div>
+        <span class="pipe-arrow">➔</span>
+        <div class="pipeline-step active">
+          <span class="pipe-num">05</span>
+          <span class="pipe-text">Đơn Bào Chế &amp; Hộp Sachet 69k</span>
+        </div>
+      </div>
+
       <div class="mixologist-grid">
 
         <!-- Left Column: Input Form Studio -->
@@ -317,13 +491,43 @@
           <span class="gold-corner-filigree bottom-left" aria-hidden="true"></span>
           <span class="gold-corner-filigree bottom-right" aria-hidden="true"></span>
 
-          <!-- Placeholder State -->
+          <!-- Placeholder State (Upgraded Imperial Bio-Receptor Chamber) -->
           <div id="recipePlaceholder" class="recipe-placeholder">
-            <div class="recipe-placeholder-icon">🌱</div>
-            <h3 style="font-family:var(--font-display); font-size:1.35rem; margin-bottom:8px;">Ly Thảo Mộc Của Bạn Đang Chờ...</h3>
-            <p style="color:var(--text-muted); font-size:0.92rem; max-width:380px; margin:0 auto; line-height:1.6;">
-              Hãy lựa chọn nhanh các tiêu chí ở cột bên trái rồi bấm nút, hệ thống AI Mixologist sẽ gợi ý công thức vừa vặn và an toàn nhất cho riêng bạn ngay nhé!
+            <div class="placeholder-drum-medallion">
+              <img src="assets/trong_dong_gold.png" alt="Trống Đồng Đông Sơn" class="placeholder-drum-spin">
+              <div class="recipe-placeholder-icon">🌱</div>
+            </div>
+            <div class="placeholder-status-pill">⚡ BUỒNG BÀO CHẾ SINH HỌC &amp; ĐỐI CHIẾU DƯỢC ĐIỂN</div>
+            <h3 style="font-family:var(--font-display); font-size:1.45rem; font-weight:800; color:#fff; margin-bottom:8px;">Ly Thảo Mộc Của Bạn Đang Chờ...</h3>
+            <p style="color:var(--text-muted); font-size:0.92rem; max-width:420px; margin:0 auto 18px auto; line-height:1.6;">
+              Hãy lựa chọn nhanh các tiêu chí ở cột bên trái rồi bấm nút, hệ thống AI Mixologist sẽ tự động lọc thảo mộc kỵ, cân bằng độ chua pH 4.2–4.5 để khử vị đắng và gợi ý công thức an toàn nhất cho riêng bạn!
             </p>
+            <div class="placeholder-specs-grid">
+              <div class="ph-spec-box">
+                <span class="ph-spec-lbl">Cơ chế khử đắng</span>
+                <strong class="ph-spec-val">Khóa thụ thể hTAS2R16 (pH 4.3)</strong>
+              </div>
+              <div class="ph-spec-box">
+                <span class="ph-spec-lbl">Độ an toàn dược lý</span>
+                <strong class="ph-spec-val">100% IF-THEN Contraindication</strong>
+              </div>
+              <div class="ph-spec-box">
+                <span class="ph-spec-lbl">Chuẩn đóng gói</span>
+                <strong class="ph-spec-val">Túi lọc PLA bột ngô 5.3g (85°C)</strong>
+              </div>
+              <div class="ph-spec-box">
+                <span class="ph-spec-lbl">Cam kết sức khỏe</span>
+                <strong class="ph-spec-val">0.0% Cồn • 0g Đường tinh luyện</strong>
+              </div>
+            </div>
+            <div class="placeholder-quick-presets">
+              <span class="quick-preset-title">Thử nhanh 3 kịch bản mẫu từ Proposal:</span>
+              <div class="quick-preset-btns">
+                <button type="button" class="quick-preset-chip" onclick="window.selectHeroSachet('unwind', 'citrus')">🌙 #01 Citrus Twilight (Ngủ sâu)</button>
+                <button type="button" class="quick-preset-chip" onclick="window.selectHeroSachet('focus', 'minty')">⚡ #02 Calm Focus (Chạy deadline)</button>
+                <button type="button" class="quick-preset-chip" onclick="window.selectHeroSachet('social', 'sweet')">🍷 #03 Berry Social Glow (Tiệc 0% cồn)</button>
+              </div>
+            </div>
           </div>
 
           <!-- Active Recipe Card Output -->
@@ -335,9 +539,12 @@
             <img id="resHeroImg" src="assets/mocktail_hero.jpg" alt="Artisan Botanical Tonic" class="recipe-hero-img" style="position:relative; z-index:1;">
 
             <div class="recipe-header" style="position:relative; z-index:1;">
-              <span id="resBadge" class="recipe-badge">⭐ GỢI Ý CÔNG THỨC DÀNH CHO BẠN</span>
-              <h3 id="resTitle" class="recipe-title">Lạc Vibe Citrus Spritz</h3>
-              <div id="resSubtitle" class="recipe-subtitle">Giải pháp thay thế Bia & Rượu nhẹ trong các bữa tiệc đêm (0.0% Cồn)</div>
+              <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px;">
+                <span id="resBadge" class="recipe-badge" style="margin-bottom:0;">⭐ GỢI Ý CÔNG THỨC DÀNH CHO BẠN</span>
+                <span class="evidence-level-badge">🔬 [Preclinical: Tan 2024] • [Đỗ Tất Lợi 2004]</span>
+              </div>
+              <h3 id="resTitle" class="recipe-title"><span id="resRecipeTitle">Lạc Vibe Citrus Spritz</span></h3>
+              <div id="resSubtitle" class="recipe-subtitle">Giải pháp thay thế Bia &amp; Rượu nhẹ trong các bữa tiệc đêm (0.0% Cồn)</div>
             </div>
 
             <!-- Quantitative Table -->
@@ -960,11 +1167,11 @@
           </div>
           <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
             <span style="color:var(--text-muted);">Quy cách đóng gói:</span>
-            <span>Hộp 5 túi Sachet màng nhôm bảo quản dược tính</span>
+            <span>Hộp 5 túi lọc kim tự tháp sinh học PLA (5.3g/gói)</span>
           </div>
           <div style="display:flex; justify-content:space-between; border-top:1px solid rgba(255,255,255,0.08); padding-top:10px; align-items:center;">
             <span style="color:var(--text-muted);">Đơn giá đề xuất:</span>
-            <strong id="modalPriceDisplay" style="color:var(--gold-warm); font-size:1.15rem;">68.000 VNĐ (~13.6k/gói)</strong>
+            <strong id="modalPriceDisplay" style="color:var(--gold-warm); font-size:1.15rem;">69.000 VNĐ (~13.8k/ly)</strong>
           </div>
         </div>
 
@@ -1044,8 +1251,8 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <div><strong>VinaVita AI</strong> — Vietnam Botanical Mocktail &amp; Herbal Wellness Platform</div>
-      <div style="margin-top:6px; color:var(--emerald-light);">Designed by Lead Systems Architect Ngô Minh Thiên Bảo &amp; The BioByte Team</div>
+      <div><strong>VinaVita AI</strong> — Nền Tảng Pha Chế Dược Liệu &amp; Mocktail Thảo Mộc Việt Nam (0.0% Cồn)</div>
+      <div style="margin-top:6px; color:var(--emerald-light);">Đồng sáng lập bởi Huỳnh Hữu Anh Khoa (CEO), Ngô Minh Thiên Bảo (Lead Systems Architect), Trương Quang Hiếu &amp; Nguyễn Minh Dũng • Team Thinking Space (RMIT RBPC 2026)</div>
       <div class="footer-disclaimer">
         Dự án nghiên cứu phục vụ cuộc thi RMIT Business Plan Competition 2026. Các thông tin công thức dựa trên y học cổ truyền và dược lý học thực nghiệm, không nhằm mục đích thay thế chẩn đoán hoặc điều trị y tế chuyên sâu.
       </div>
@@ -1071,7 +1278,10 @@
           <div class="widget-bot-avatar">🌿</div>
           <div>
             <div class="widget-bot-name">Dược Sĩ AI VinaVita</div>
-            <div class="widget-bot-status"><span class="status-indicator-dot"></span> Sẵn sàng tư vấn dược liệu 24/7</div>
+            <div class="widget-bot-status" id="chatEngineStatusBadge">
+              <span class="status-indicator-dot" id="chatEngineStatusDot"></span>
+              <span id="chatEngineStatusText">🟢 Cloud Neural AI Online (Gemini 2.5 Flash + Dược Điển RAG)</span>
+            </div>
           </div>
         </div>
         <div class="chat-widget-header-actions">
