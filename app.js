@@ -1166,4 +1166,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-});
+
+  initChimLacCelestialCanvas();
+
