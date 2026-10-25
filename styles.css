@@ -406,25 +406,35 @@ body {
 .hero-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(16, 185, 129, 0.14);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  padding: 7px 18px;
-  border-radius: 30px;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(6, 44, 28, 0.95) 0%, rgba(4, 26, 17, 0.95) 100%);
+  border: 1.5px solid #34d399;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.55), 0 0 16px rgba(52, 211, 153, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  padding: 8px 22px;
+  border-radius: 9999px;
   font-size: 0.82rem;
-  color: var(--emerald-bright);
-  font-weight: 700;
+  font-weight: 800;
+  color: #ecfdf5;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   margin-bottom: 24px;
-  backdrop-filter: blur(10px);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-pill:hover {
+  border-color: #fbbf24;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.7), 0 0 22px rgba(251, 191, 36, 0.45);
+  transform: translateY(-2px);
 }
 
 .pulse-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--emerald-neon);
+  width: 9px;
+  height: 9px;
+  background: #34d399;
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--emerald-neon);
-  animation: pulse 2s infinite;
+  box-shadow: 0 0 12px #34d399, 0 0 4px #fff;
+  animation: pulse 1.8s infinite;
 }
 
 @keyframes pulse {
@@ -435,38 +445,48 @@ body {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: 3.25rem;
+  font-size: 3.4rem;
   font-weight: 800;
-  line-height: 1.24;
+  line-height: 1.22;
   letter-spacing: -0.025em;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+  color: #ffffff;
   text-rendering: optimizeLegibility;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 2px 6px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.85);
 }
 
 .hero-title .gradient-text {
-  background: linear-gradient(135deg, #a7f3d0 0%, #34d399 50%, #10b981 100%);
+  background: linear-gradient(120deg, #ffffff 0%, #fef08a 22%, #6ee7b7 52%, #34d399 78%, #a7f3d0 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 18px rgba(16, 185, 129, 0.5));
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  text-shadow: none !important;
+  filter: drop-shadow(0 0 18px rgba(52, 211, 153, 0.55));
+  animation: shineGradient 6s ease-in-out infinite alternate;
+}
+
+@keyframes shineGradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 .hero-subtitle {
   font-size: 1.15rem;
-  font-weight: 600;
-  color: #f8fafc;
+  font-weight: 500;
+  color: #f1f5f9;
   max-width: 860px;
-  margin: 14px auto 0 auto;
+  margin: 16px auto 0 auto;
   line-height: 1.82;
   letter-spacing: 0.01em;
-  background: linear-gradient(180deg, rgba(3, 18, 12, 0.88) 0%, rgba(2, 12, 8, 0.94) 100%);
-  border: 1px solid rgba(16, 185, 129, 0.35);
+  background: rgba(3, 18, 12, 0.88);
+  border: 1px solid rgba(52, 211, 153, 0.35);
   border-radius: 18px;
   padding: 18px 30px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 25px rgba(16, 185, 129, 0.15);
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .hero-subtitle strong {

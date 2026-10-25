@@ -1393,7 +1393,7 @@ document.addEventListener("DOMContentLoaded", () => {
           statusDot.style.boxShadow = "0 0 8px #10b981";
         }
         if (statusText) {
-          statusText.textContent = "🟢 Cloud Neural AI Online (Gemini 2.5 Flash + Dược Điển RAG)";
+          statusText.textContent = "🟢 Cloud Neural AI Online (Gemini 2.5 Flash + Dược Điển RAG) • AI có thể mắc lỗi, kiểm tra lại thông tin";
         }
         if (navAiNodeDot) {
           navAiNodeDot.style.background = "#10b981";
@@ -1409,7 +1409,7 @@ document.addEventListener("DOMContentLoaded", () => {
           statusDot.style.boxShadow = "0 0 8px #06b6d4";
         }
         if (statusText) {
-          statusText.textContent = "🟢 Cloud Neural AI Online (ChatGPT / GPT-OSS + Dược Điển RAG)";
+          statusText.textContent = "🟢 Cloud Neural AI Online (ChatGPT / GPT-OSS + Dược Điển RAG) • AI có thể mắc lỗi, kiểm tra lại thông tin";
         }
         if (navAiNodeDot) {
           navAiNodeDot.style.background = "#06b6d4";
@@ -1425,7 +1425,7 @@ document.addEventListener("DOMContentLoaded", () => {
           statusDot.style.boxShadow = "0 0 8px #fbbf24";
         }
         if (statusText) {
-          statusText.textContent = "⚡ Offline Clinical RAG Mode (No Internet)";
+          statusText.textContent = "⚡ Offline Clinical RAG Mode • AI có thể mắc lỗi, kiểm tra lại thông tin";
         }
         if (navAiNodeDot) {
           navAiNodeDot.style.background = "#fbbf24";
