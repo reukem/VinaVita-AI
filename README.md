@@ -61,7 +61,7 @@ Dự án ra đời nhằm giải quyết vấn đề lạm dụng đồ uống c
 
 ### 1. Trạm Phối Trộn AI Mixologist (AI Mixologist Studio)
 * Thuật toán đa mục tiêu (5-Stage Hybrid Pipeline: *Intent Parsing → RAG Vector Retrieval → Hard Rule Engine → Multi-Objective Flavor Solver → Explainable Card*) tính toán tỷ lệ chiết xuất dựa trên:
-  * **Tâm trạng & Nhu cầu**: *Social Glow* (Tiệc tùng vui vẻ), *Night Unwind* (Ngủ sâu xả stress), *Calm Focus* (Tập trung bền bỉ), *Digest & Detox* (Thanh nhiệt giải độc).
+  * **Tâm trạng & Nhu cầu**: *Social Glow* (Tiệc tùng vui vẻ), *Night Unwind* (Ngủ sâu xả stress), *Deadline Survivor* (Tập trung bền bỉ không ép tim), *Digest & Detox* (Thanh nhiệt giải độc).
   * **Hồ sơ vị giác**: *Thảo mộc thanh khiết*, *Hoa trái ngọt ngào*, *Cam chanh thanh mát*, *Gia vị cay ấm*.
   * **Rào cản sức khỏe**: Thai phụ, người cao huyết áp, người mất ngủ kinh niên, người mẫn cảm caffeine.
 

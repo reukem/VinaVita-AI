@@ -254,9 +254,9 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
     } else if (selectedMood === "focus") {
-      title = "Calm Focus Sâm Nam Brew (VinaVita #02)";
-      subtitle = "The 'Deadline & Exam' Pack • Gói Chạy Deadline & Ôn Thi (Tập trung 4h không ép tim)";
-      badge = "⚡ HERO SKU #02 • DEADLINE & EXAM";
+      title = "Deadline Survivor Sâm Nam Brew (VinaVita #02)";
+      subtitle = "The 'Deadline Survivor' Pack • Gói Chạy Deadline & Ôn Thi (Tập trung 4h không ép tim)";
+      badge = "⚡ HERO SKU #02 • DEADLINE SURVIVOR";
       heroImg = "assets/dinh_lang.jpg";
       formula = [
         { 
@@ -289,9 +289,9 @@ document.addEventListener("DOMContentLoaded", () => {
       serving = "Dùng ấm hoặc rót qua đá viên";
       biochem = "Giải pháp tỉnh táo lành mạnh cho các bạn học sinh, sinh viên: Thay vì dùng cà phê đặc hay nước tăng lực dễ gây run tay, ép tim và cồn cào dạ dày, công thức tận dụng hoạt chất Saponin tự nhiên từ lá Đinh Lăng (Sâm Nam) kết hợp hương thơm tươi mát của Sả Chanh và Gừng ấm. Bạn sẽ cảm nhận sự tỉnh táo bền bỉ, đầu óc minh mẫn để giải quyết deadline mà cơ thể vẫn nhẹ nhàng, khỏe khoắn.";
       matchedSachet = {
-        name: "Hộp 5 Túi Lọc Kim Tự Tháp #02 — Calm Focus",
+        name: "Hộp 5 Túi Lọc Kim Tự Tháp #02 — Deadline Survivor",
         specs: "Túi lọc sinh học PLA 5.5g • 69.000 VNĐ / Hộp 5 gói",
-        orderData: "Hộp 5 Gói Sachet #02 - Calm Focus (69.000đ)"
+        orderData: "Hộp 5 Gói Sachet #02 - Deadline Survivor (69.000đ)"
       };
 
     } else if (selectedMood === "social") {
@@ -1087,7 +1087,7 @@ You are exclusively Dược Sĩ AI VinaVita (VinaVita AI Pharmacist), an intelli
 Core Knowledge Base (VinaVita RMIT RBPC 2026):
 1. Product Line (3 Hero Sachets in biodegradable corn-starch PLA pyramid tea bags, 5.3g/sachet, brewed 3-5 mins at 85°C, pH 4.2-4.5 buffered via Kumquat/Hibiscus organic acids + 0.05g Na+ mineral salt to suppress hTAS2R16 bitter receptors by 62-75%, 0g refined sugar, 0.0% alcohol):
    - #01 Citrus Twilight (Deep Sleep & Night Unwind, pH 4.3): Lạc Tiên (1.8g, Vitexin/Chrysin GABA-A modulation) + Hoa Cúc Vàng (1.5g, Apigenin lowers Cortisol 28-35%) + Tắc sấy lạnh (1.5g) + Cỏ Ngọt (0.5g, Stevioside GI=0).
-   - #02 Calm Focus (Deadline & Study Alertness, 0mg Caffeine): Lá Đinh Lăng (2.0g, triterpene saponins boost cerebral perfusion without tachycardia/jitteriness) + Sả (1.5g, Citral) + Gừng ấm (0.8g, Gingerol) + La Hán Quả (1.0g, Mogroside V GI=0).
+   - #02 Deadline Survivor (Calm Focus - Deadline & Study Alertness, 0mg Caffeine): Lá Đinh Lăng (2.0g, triterpene saponins boost cerebral perfusion without tachycardia/jitteriness) + Sả (1.5g, Citral) + Gừng ấm (0.8g, Gingerol) + La Hán Quả (1.0g, Mogroside V GI=0).
    - #03 Berry Social Glow (0.0% ABV Party Mocktail, pH 4.2): Atiso Đỏ / Hibiscus (2.2g, Anthocyanin ruby color) + Lạc Tiên (1.3g) + Quế Thanh Trà Bồng (0.8g) + La Hán Quả (1.0g).
 2. Unit Economics & Pricing:
    - 69,000 VND per 5-sachet box (13,800 VND/cup) or 15,000 VND per single trial sachet.
@@ -1096,7 +1096,7 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
    - Hypotension (Huyết áp thấp): Lock out Tâm Sen (Liensinine lowers BP further) & high-dose Hibiscus.
    - Hypertension (Cao huyết áp): Lock out Cam Thảo (0g Glycyrrhizin prevents Na+ retention); use Cỏ Ngọt / La Hán Quả.
    - Gastritis / GERD (Đau dạ dày / Trào ngược): Reduce sour/spicy herbs (Tắc, Atiso đỏ, Gừng) by 50% to buffer pH >= 4.5; drink warm 30 mins after meals.
-   - Caffeine Tachycardia (Tim đập nhanh khi uống cà phê): 100% 0mg Caffeine (#02 Calm Focus with Lá Đinh Lăng).
+   - Caffeine Tachycardia (Tim đập nhanh khi uống cà phê): 100% 0mg Caffeine (#02 Deadline Survivor with Lá Đinh Lăng).
    - Pregnancy (Mang thai): Avoid high-dose Lạc Tiên, Rễ Đinh Lăng, Tâm Sen in first trimester; use mild Hoa Cúc + Táo Đỏ.
 4. Conversational Style:
    - Reply naturally, warmly, and intelligently in the SAME language the user writes in (Vietnamese or English).
@@ -1496,7 +1496,7 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
               • <strong>Giá bán niêm yết:</strong> <strong>69.000 VNĐ / Hộp 5 gói</strong> (tương đương <strong>13.800 VNĐ/ly</strong> — rẻ hơn 65% so với trà sữa/cà phê chuỗi, với biên lợi nhuận gộp 49.3%), hoặc <strong>15.000 VNĐ / gói lẻ dùng thử</strong>.<br>
               • <strong>3 Dòng Sản Phẩm Chủ Lực (Hero SKUs):</strong><br>
               &nbsp;&nbsp;1️⃣ <strong>#01 Citrus Twilight (pH 4.3 — Ngủ sâu &amp; Xả stress đêm):</strong> Lạc Tiên (1.8g) + Hoa Cúc (1.5g) + Tắc sấy lạnh (1.5g) + Cỏ Ngọt (0.5g).<br>
-              &nbsp;&nbsp;2️⃣ <strong>#02 Calm Focus (0mg Caffeine — Chạy deadline không ép tim):</strong> Lá Đinh Lăng (2.0g) + Sả (1.5g) + Gừng ấm (0.8g) + La Hán Quả (1.0g).<br>
+              &nbsp;&nbsp;2️⃣ <strong>#02 Deadline Survivor (0mg Caffeine — Chạy deadline không ép tim):</strong> Lá Đinh Lăng (2.0g) + Sả (1.5g) + Gừng ấm (0.8g) + La Hán Quả (1.0g).<br>
               &nbsp;&nbsp;3️⃣ <strong>#03 Berry Social Glow (pH 4.2 — Tiệc tùng 0.0% Cồn):</strong> Atiso Đỏ (2.2g) + Lạc Tiên (1.3g) + Quế thanh (0.8g) + La Hán Quả (1.0g).
             </div>
             <button class="chat-action-btn" type="button" onclick="window.openOrderModal('Combo Hộp 5 Gói Sachet VinaVita (69.000đ)')">
@@ -1612,13 +1612,13 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
           recFlavor = hasGas ? "sweet" : "minty";
           recTitle = "Phác Đồ Kép Ngày & Đêm Cho Học Sinh / Sinh Viên Cày Deadline";
           recItems = [
-            `<strong>⚡ Ca 1 — Trong lúc học / Chạy Deadline (Gói #02 Calm Focus):</strong> Dùng <strong>Lá Đinh Lăng Sâm Nam (2.0g)</strong> chứa <em>Saponin triterpenoid</em> tăng lưu lượng oxy lên thùy trán + <strong>Sả chanh (1.5g)</strong> + <strong>${hasGas || hasHighBP ? "Gừng ấm giảm liều (0.3g)" : "Gừng ấm (0.8g)"}</strong> + <strong>La Hán Quả (1.0g)</strong>. Giúp tỉnh táo bền bỉ 4 giờ mà <strong>0mg Caffeine, không ép tim, không run tay</strong>.`,
+            `<strong>⚡ Ca 1 — Trong lúc học / Chạy Deadline (Gói #02 Deadline Survivor):</strong> Dùng <strong>Lá Đinh Lăng Sâm Nam (2.0g)</strong> chứa <em>Saponin triterpenoid</em> tăng lưu lượng oxy lên thùy trán + <strong>Sả chanh (1.5g)</strong> + <strong>${hasGas || hasHighBP ? "Gừng ấm giảm liều (0.3g)" : "Gừng ấm (0.8g)"}</strong> + <strong>La Hán Quả (1.0g)</strong>. Giúp tỉnh táo bền bỉ 4 giờ mà <strong>0mg Caffeine, không ép tim, không run tay</strong>.`,
             `<strong>🌙 Ca 2 — Trước khi đi ngủ 45 phút (Gói #01 Citrus Twilight đã lọc bệnh nền):</strong> Ngưng dùng Đinh Lăng vào buổi tối; chuyển sang <strong>${hasPreg ? "Hoa Cúc Vàng nhẹ (1.5g) + Táo Đỏ (2.0g)" : "Lạc Tiên (1.8g, hoạt chất Vitexin gắn GABA_A) + Hoa Cúc Vàng (1.5g, Apigenin hạ 28–35% Cortisol)"}</strong> ${hasLowBP ? "<em>(Đã khóa hoàn toàn Tâm Sen để bảo vệ huyết áp thấp)</em>" : ""} + <strong>${hasGas ? "Tắc sấy lạnh giảm 50% (0.8g, đệm pH 4.5 êm dịu dạ dày)" : "Tắc sấy lạnh (1.5g, pH 4.3 khóa thụ thể đắng hTAS2R16)"}</strong> + <strong>Cỏ Ngọt (0.4g, GI=0)</strong>.`
           ];
         } else if (activeGoals.has("focus") || activeConds.has("driving") || activeConds.has("tachycardia_caffeine")) {
           recMood = "focus";
           recFlavor = hasGas ? "sweet" : "minty";
-          recTitle = "Đơn Phối Chế Tỉnh Táo Không Ép Tim — VinaVita #02 Calm Focus";
+          recTitle = "Đơn Phối Chế Tỉnh Táo Không Ép Tim — VinaVita #02 Deadline Survivor";
           recItems = [
             `<strong>Lá Đinh Lăng Sâm Nam (2.0g – 3.0g):</strong> Hoạt chất <em>Saponin triterpenoid</em> &amp; 20 acid amin tăng cường tuần hoàn máu não, duy trì sự minh mẫn mà không kích thích giao cảm gây tim đập nhanh.`,
             `<strong>Sả Chanh (1.2g) &amp; Bạc Hà (1.0g):</strong> Tinh dầu <em>Citral</em> và <em>Menthol</em> kích hoạt thụ thể lạnh <strong>TRPM8</strong> giúp bừng tỉnh tức thì.`,

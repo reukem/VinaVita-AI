@@ -70,7 +70,7 @@ KNOWLEDGE_CORPUS = {
     "lac tien": "Lạc tiên (Passiflora foetida, 8-15g khô hoặc 1.8-2.5g trong túi lọc phối hợp) chứa Flavonoid Vitexin & Isovitexin gắn thụ thể GABA_A giúp giảm lo âu, ngủ sâu. CHỐNG CHỈ ĐỊNH: Phụ nữ mang thai 3 tháng đầu không dùng liều cao vì vết Harman alkaloids kích thích co bóp cơ trơn tử cung.",
     "da day": "Người bị viêm loét dạ dày, đau bao tử hoặc trào ngược thực quản (GERD) KHÔNG NÊN uống Quất/Tắc tươi hoặc Atiso đỏ đậm đặc lúc đói vì acid citric nồng độ cao (pH 2.3-3.2) kích ứng ổ loét. Hệ thống VinaVita tự động giảm 50% lượng acid hữu cơ (đệm pH 4.5 êm dịu) và khuyên dùng Hoa Cúc + Cam Thảo + Gừng ấm để bảo vệ niêm mạc.",
     "apigenin": "Hoa cúc vàng (Chrysanthemum indicum) chứa Flavonoid Apigenin gắn chọn lọc vào vị trí benzodiazepine trên thụ thể GABA_A, điều hòa trục HPA giúp hạ 28-35% nồng độ hormone stress Cortisol, làm dịu mỏi mắt và giúp ngủ sâu tự nhiên.",
-    "deadline": "Gói Hero SKU #02 Calm Focus (Chạy deadline & Ôn thi không ép tim): Lá Đinh Lăng Sâm Nam (2.0g, chứa Saponin triterpenoid tăng tuần hoàn oxy thùy trán) + Sả chanh (1.5g, Citral sảng khoái) + Gừng ấm (0.8g, Gingerol) + La Hán Quả (1.0g, Mogroside V ngọt mát 0 calo). Hãm 90°C trong 3 phút, 0mg Caffeine, không gây tim đập nhanh hay run tay.",
+    "deadline": "Gói Hero SKU #02 Deadline Survivor (Chạy deadline & Ôn thi không ép tim): Lá Đinh Lăng Sâm Nam (2.0g, chứa Saponin triterpenoid tăng tuần hoàn oxy thùy trán) + Sả chanh (1.5g, Citral sảng khoái) + Gừng ấm (0.8g, Gingerol) + La Hán Quả (1.0g, Mogroside V ngọt mát 0 calo). Hãm 90°C trong 3 phút, 0mg Caffeine, không gây tim đập nhanh hay run tay.",
     "mat ngu": "Gói Hero SKU #01 Citrus Twilight (Ngủ sâu & Xả stress đêm, pH 4.3): Lạc Tiên (1.8g, Vitexin hoạt hóa GABA_A) + Hoa Cúc (1.5g, Apigenin hạ Cortisol) + Tắc sấy lạnh (1.5g, khóa thụ thể đắng hTAS2R16 ở pH 4.3) + Cỏ Ngọt (0.5g, 0g đường). Nếu người dùng bị huyết áp thấp, hệ thống tự động khóa Tâm Sen.",
     "social": "Gói Hero SKU #03 Berry Social Glow (Tiệc tùng 0.0% Cồn, pH 4.2): Atiso Đỏ / Bụp Giấm (2.2g, Anthocyanin tạo sắc đỏ Ruby như rượu vang) + Lạc Tiên (1.3g) + Quế thanh Trà Bồng (0.8g, Cinnamaldehyde ấm áp) + La Hán Quả (1.0g). Giúp thư giãn hòa đồng xã hội mà 0.0% cồn, không hại gan.",
     "sachet_price": "Sản phẩm thương mại VinaVita (RMIT RBPC 2026 Pilot Line): Đóng gói dạng Túi lọc Kim tự tháp sinh học PLA từ tinh bột ngô (5.3g/gói, phân hủy sinh học 100%, không vi nhựa). Giá bán: 69.000 VNĐ / Hộp 5 gói (~13.800 VNĐ/ly), biên lợi nhuận gộp 49.3%, hoặc 15.000 VNĐ / gói dùng thử.",
@@ -99,7 +99,7 @@ def retrieve_rag_context(query: str) -> str:
         retrieved.append(KNOWLEDGE_CORPUS["da day"])
     if any(k in q_low for k in ["apigenin", "hoa cúc", "cortisol", "gaba"]):
         retrieved.append(KNOWLEDGE_CORPUS["apigenin"])
-    if any(k in q_low for k in ["deadline", "thức khuya", "tỉnh táo", "ép tim", "đinh lăng", "sâm nam", "trà xanh", "calm focus", "ôn thi"]):
+    if any(k in q_low for k in ["deadline", "thức khuya", "tỉnh táo", "ép tim", "đinh lăng", "sâm nam", "trà xanh", "calm focus", "deadline survivor", "ôn thi"]):
         retrieved.append(KNOWLEDGE_CORPUS["deadline"])
     if any(k in q_low for k in ["mất ngủ", "stress", "thi cử", "căng thẳng", "khó ngủ", "ngủ sâu", "citrus twilight"]):
         retrieved.append(KNOWLEDGE_CORPUS["mat ngu"])
