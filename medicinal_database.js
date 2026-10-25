@@ -186,10 +186,10 @@ const MEDICINAL_DATABASE = [
       }
     ],
     "bioAction": "Đóng vai trò là 'Sứ giả' trong bài thuốc cổ truyền: hòa hoãn tính dược, bảo vệ dạ dày, và là chất khử vị đắng tự nhiên số 1 giúp ức chế gai vị giác đắng TAS2R.",
-    "safeDailyDose": "2 - 6g (khô)",
+    "safeDailyDose": "Theo EMA/HMPC (Revision 1): Glycyrrhizin 64–96 mg/ngày, tối đa tuyệt đối 160 mg/ngày (nguồn thứ cấp thường giới hạn ≤ 100 mg/ngày). Khuyến nghị ẩm thực VinaVita: ≤ 1.5g rễ khô.",
     "contraindications": [
-      "Người tăng huyết áp nặng (Glycyrrhizin dùng lâu dài giữ natri, tăng huyết áp)",
-      "Người phù nề, suy thận"
+      "Chống chỉ định tuyệt đối cho người tăng huyết áp, bệnh thận, suy tim sung huyết",
+      "Uống thường xuyên kéo dài gây giữ natri, bài tiết kali dẫn đến tăng huyết áp và hạ kali máu nguy hiểm"
     ],
     "tasteProfile": {
       "bitterness": 0,
@@ -208,7 +208,8 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "All Mocktails (Base Sweetener)",
-    "mindfulReminder": "Hòa hợp là đỉnh cao của sự thấu hiểu; giữ cho mình sự bao dung và ngọt lành trong từng lời nói như vị ngọt sâu lắng của rễ cam thảo."
+    "mindfulReminder": "Hòa hợp là đỉnh cao của sự thấu hiểu; giữ cho mình sự bao dung và ngọt lành trong từng lời nói như vị ngọt sâu lắng của rễ cam thảo.",
+    "officialSource": "EMA/HMPC, Glycyrrhiza glabra L. and/or G. inflata Bat. and/or G. uralensis Fisch., radix (EMA/HMPC/571119/2010); Báo cáo ca: https://pmc.ncbi.nlm.nih.gov/articles/PMC4480140"
   },
   {
     "id": "co_ngot",
@@ -273,10 +274,11 @@ const MEDICINAL_DATABASE = [
       }
     ],
     "bioAction": "Tăng cường chức năng thải độc của gan sau những chuỗi ngày thức khuya, ăn đồ cay nóng hoặc sau các bữa tiệc; làm mát cơ thể, giảm mụn nhọt.",
-    "safeDailyDose": "5 - 10g (khô)",
+    "safeDailyDose": "Lá sấy khô làm trà hãm (Liều người không xác nhận được từ bản tóm tắt EMA; khuyến nghị ẩm thực 1.5–3g/ngày).",
     "contraindications": [
-      "Người bị tắc ống dẫn mật hoặc sỏi mật lớn",
-      "Người tỳ vị hàn trệ, dễ đầy hơi lạnh bụng"
+      "Chỉ dùng cho người từ 12 tuổi trở lên",
+      "Không dùng khi có bệnh gan và tắc nghẽn đường mật",
+      "Tác dụng phụ thường gặp: tiêu chảy nhẹ, buồn nôn, ợ nóng"
     ],
     "tasteProfile": {
       "bitterness": 3,
@@ -294,13 +296,14 @@ const MEDICINAL_DATABASE = [
       "bac_ha"
     ],
     "popularDrink": "Liver Rescue Botanical",
-    "mindfulReminder": "Thanh lọc cơ thể cũng là lúc thanh lọc tâm trí; hãy buông bỏ những muộn phiền tích tụ để tái sinh nguồn năng lượng tươi mát như sương sớm Đà Lạt."
+    "mindfulReminder": "Thanh lọc cơ thể cũng là lúc thanh lọc tâm trí; hãy buông bỏ những muộn phiền tích tụ để tái sinh nguồn năng lượng tươi mát như sương sớm Đà Lạt.",
+    "officialSource": "EMA/HMPC, Cynarae folium, bản tóm tắt: https://www.ema.europa.eu/en/medicines/herbal/cynarae-folium"
   },
   {
     "id": "hoa_cuc",
     "heritageOrigin": "Làng Dược Thảo Cúc Tiến Vua Nghĩa Trai (Hưng Yên)",
-    "name": "Hoa Cúc Trắng (Bạch Cúc)",
-    "sciName": "Chrysanthemum indicum L.",
+    "name": "Hoa Cúc Vàng (Cúc Hoa)",
+    "sciName": "Chrysanthemum morifolium / C. indicum",
     "enName": "White Chrysanthemum",
     "image": "assets/hoa_cuc.jpg",
     "category": "an_than",
@@ -319,10 +322,9 @@ const MEDICINAL_DATABASE = [
       }
     ],
     "bioAction": "Làm dịu căng thẳng thần kinh thị giác (rất cần cho học sinh và lập trình viên ngồi máy tính cả ngày), giảm đau đầu chóng mặt do căng thẳng.",
-    "safeDailyDose": "5 - 10g (khô)",
+    "safeDailyDose": "Trà hoa cúc hãm: 1,5g – 3,0g nụ hoa khô/ngày (không có liều người đáng tin; nghiên cứu trên chuột về tác dụng gây ngủ: PMC3038564).",
     "contraindications": [
-      "Người dị ứng với họ Cúc (Asteraceae)",
-      "Người huyết áp quá thấp nên uống lượng vừa phải"
+      "Người có tiền sử dị ứng với các loài thực vật họ Cúc (Asteraceae) có thể bị phản ứng quá mẫn"
     ],
     "tasteProfile": {
       "bitterness": 1,
@@ -340,7 +342,8 @@ const MEDICINAL_DATABASE = [
       "cam_thao"
     ],
     "popularDrink": "Scholar Eye Calm",
-    "mindfulReminder": "Đôi mắt nhìn cuộc đời với lòng trắc ẩn sẽ luôn tìm thấy vẻ đẹp an lành. Hãy cho mắt nghỉ ngơi sau chuỗi giờ căng thẳng cùng màn hình máy tính."
+    "mindfulReminder": "Đôi mắt nhìn cuộc đời với lòng trắc ẩn sẽ luôn tìm thấy vẻ đẹp an lành. Hãy cho mắt nghỉ ngơi sau chuỗi giờ căng thẳng cùng màn hình máy tính.",
+    "officialSource": "PMC3038564 (2011): https://pmc.ncbi.nlm.nih.gov/articles/PMC3038564"
   },
   {
     "id": "quat_tac",
@@ -441,7 +444,7 @@ const MEDICINAL_DATABASE = [
     "id": "bac_ha",
     "heritageOrigin": "Thung Lũng Thảo Mộc Sa Pa & Nam Định",
     "name": "Bạc Hà Nam",
-    "sciName": "Mentha arvensis L.",
+    "sciName": "Mentha × piperita L.",
     "enName": "Field Mint",
     "image": "assets/bac_ha.jpg",
     "category": "huong_vi",
@@ -455,10 +458,11 @@ const MEDICINAL_DATABASE = [
       }
     ],
     "bioAction": "Đem lại hậu vị sảng khoái mát lạnh, kích thích tiêu hóa, thông thoáng đường thở và giải tỏa căng thẳng sau giờ làm việc mệt mỏi.",
-    "safeDailyDose": "3 - 6g (khô)",
+    "safeDailyDose": "Trà lá khô: 1,0–2,0 g mỗi lần, 3 lần/ngày, hãm bằng nước sôi (EMA/HMPC Revision 1). Liều bản cũ 2008 (4,5–9 g/ngày chia 3 lần) đã được thay thế.",
     "contraindications": [
-      "Trẻ sơ sinh và trẻ nhỏ dưới 2 tuổi (tinh dầu menthol có thể ức chế hô hấp)",
-      "Người đang bị tiêu chảy nặng"
+      "Trào ngược dạ dày thực quản (GERD) nên tránh vì menthol làm giãn cơ thắt thực quản",
+      "Người có bệnh về đường mật, sỏi mật cần thận trọng",
+      "Không dùng tinh dầu đậm đặc cho trẻ sơ sinh và trẻ nhỏ"
     ],
     "tasteProfile": {
       "bitterness": 0,
@@ -476,13 +480,14 @@ const MEDICINAL_DATABASE = [
       "tra_xanh"
     ],
     "popularDrink": "Saigon Green Mojito 0.0",
-    "mindfulReminder": "Một hơi thở sâu đưa làn gió mát vào lồng ngực, đánh thức sự tỉnh táo thuần khiết để nhìn nhận mọi việc một cách sáng suốt và nhẹ nhàng."
+    "mindfulReminder": "Một hơi thở sâu đưa làn gió mát vào lồng ngực, đánh thức sự tỉnh táo thuần khiết để nhìn nhận mọi việc một cách sáng suốt và nhẹ nhàng.",
+    "officialSource": "EMA/HMPC, European Union herbal monograph on Mentha x piperita L., folium, Final – Revision 1: https://ema.europa.eu/en/documents/herbal-monograph/european-union-herbal-monograph-mentha-x-piperita-l-folium-revision-1_en.pdf"
   },
   {
     "id": "gung_ta",
     "heritageOrigin": "Gừng Núi Đá Kỳ Sơn (Nghệ An) & Hòa Bình",
-    "name": "Gừng Ta (Sinh Khương)",
-    "sciName": "Zingiber officinale Rosc.",
+    "name": "Gừng (Gừng Núi)",
+    "sciName": "Zingiber officinale Roscoe",
     "enName": "Vietnamese Organic Ginger",
     "image": "assets/gung_ta.jpg",
     "category": "dieu_vi",
@@ -506,10 +511,11 @@ const MEDICINAL_DATABASE = [
       }
     ],
     "bioAction": "Làm ấm tỳ vị, đánh tan cảm giác ớn lạnh bụng khi uống nước đá, kích hoạt tuần hoàn máu não và giảm cảm giác buồn nôn, hồi hộp.",
-    "safeDailyDose": "3 - 8g (tươi) hoặc 1 - 3g (khô)",
+    "safeDailyDose": "Bột thân rễ 0,18–1 g, 3 lần/ngày (dùng truyền thống); cồn thuốc 1:10: 1,5–3 ml, 3 lần/ngày. Đi xa: thêm liều sau 4 giờ, tối đa 2,5 g/ngày (người lớn), 1,5 g/ngày (trẻ em).",
     "contraindications": [
-      "Người đang xuất huyết nội tạng hoặc trĩ chảy máu cấp",
-      "Người sốt cao do say nắng (hỏa vượng)"
+      "Thai kỳ cần có bác sĩ đồng ý (EMA/HMPC 2012 về ức chế thromboxane synthetase)",
+      "Thận trọng khi dùng đồng thời thuốc chống đông máu",
+      "Người viêm loét dạ dày tá tràng thể nhiệt"
     ],
     "tasteProfile": {
       "bitterness": 0,
@@ -528,12 +534,14 @@ const MEDICINAL_DATABASE = [
       "tam_sen"
     ],
     "popularDrink": "Mekong Warming Mule",
-    "mindfulReminder": "Hơi ấm từ đất mẹ xua tan mọi giá lạnh; sưởi ấm dạ dày và trái tim để luôn vững vàng trước những giông bão cuộc đời."
+    "mindfulReminder": "Hơi ấm từ đất mẹ xua tan mọi giá lạnh; sưởi ấm dạ dày và trái tim để luôn vững vàng trước những giông bão cuộc đời.",
+    "officialSource": "EMA/HMPC, European Union herbal monograph on Zingiber officinale Roscoe, rhizoma, EMA/HMPC/885789/2022, Revision 1 (tháng 5/2025): https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-zingiber-officinale-roscoe-rhizoma-revision-1_en.pdf",
+    "clinicalDoseNote": "Tiêu đề nghiên cứu gừng (Viljoen 2014 và tiêu đề đã đổi) chưa được xác nhận; ghi nhận trạng thái 'chưa kiểm chứng'."
   },
   {
     "id": "sa_chanh",
     "heritageOrigin": "Vùng Nông Nghiệp Hữu Cơ Tây Nam Bộ",
-    "name": "Sả Chanh (Hương Mậu)",
+    "name": "Sả Chanh Bản Địa",
     "sciName": "Cymbopogon citratus (DC.) Stapf",
     "enName": "Lemongrass",
     "image": "assets/sa_chanh.jpg",
@@ -558,9 +566,10 @@ const MEDICINAL_DATABASE = [
       }
     ],
     "bioAction": "Mang lại tầng hương Citrus thanh thoát quý phái, xua tan cảm giác ngột ngạt căng thẳng trong phòng máy lạnh, hỗ trợ thanh lọc đường tiết niệu.",
-    "safeDailyDose": "5 - 10g (thân tươi)",
+    "safeDailyDose": "Hướng dẫn ANVISA (Brazil 2021): 1–3 g lá trong 150 ml nước sôi, uống 2–3 lần/ngày, hãm 5–10 phút.",
     "contraindications": [
-      "Phụ nữ mang thai (tránh dùng liều tinh dầu đậm đặc kích thích co bóp tử cung)"
+      "Tinh dầu sả tuyệt đối không uống nguyên chất",
+      "Thận trọng tác động trên thận khi dùng liều cao và thời gian kéo dài"
     ],
     "tasteProfile": {
       "bitterness": 0,
@@ -579,7 +588,8 @@ const MEDICINAL_DATABASE = [
       "co_ngot"
     ],
     "popularDrink": "Indochine Citrus Fizz",
-    "mindfulReminder": "Hương thơm mộc mạc của quê nhà nhắc ta nhớ về những điều bình dị thiêng liêng nhất, giải tỏa mọi căng thẳng nơi đô thị ồn ào."
+    "mindfulReminder": "Hương thơm mộc mạc của quê nhà nhắc ta nhớ về những điều bình dị thiêng liêng nhất, giải tỏa mọi căng thẳng nơi đô thị ồn ào.",
+    "officialSource": "Trích dẫn ANVISA (2021) qua Periódicos UFC: https://periodicos.ufc.br/medicinaeplantae/article/download/95312/251548/371600 . Nghiên cứu chuột 1986 (PMID: 3762195) không xác nhận tác dụng hạ sốt qua đường uống ở người."
   },
   {
     "id": "tao_do",
@@ -687,7 +697,7 @@ const MEDICINAL_DATABASE = [
   {
     "id": "tra_xanh",
     "heritageOrigin": "Đệ Nhất Danh Trà Tân Cương (Thái Nguyên) & Suối Giàng",
-    "name": "Trà Xanh (Lục Trà Bản Địa)",
+    "name": "Trà Xanh",
     "sciName": "Camellia sinensis (L.) Kuntze",
     "enName": "Vietnamese Heritage Green Tea",
     "image": "assets/tra_xanh.jpg",
@@ -712,10 +722,10 @@ const MEDICINAL_DATABASE = [
       }
     ],
     "bioAction": "Tạo trạng thái 'Tỉnh Thức Trong Bình An' (Calm Alertness), gia tăng tập trung sâu cho não bộ trong 4-6 tiếng liên tục mà không có hiện tượng tụt năng lượng đột ngột (crash).",
-    "safeDailyDose": "5 - 10g búp khô (khoảng 300 - 500ml nước trà)",
+    "safeDailyDose": "Trà pha truyền thống: 90–300 mg EGCG/ngày (an toàn theo EFSA 2018). Người uống nhiều tới 866 mg/ngày. Viên bổ sung: ≥800 mg EGCG/ngày có liên quan đến tăng men gan trong thử nghiệm người; không xác định được mức an toàn.",
     "contraindications": [
-      "Người đang đói cồn cào (tránh say trà cồn cào ruột)",
-      "Tránh uống đặc sát giờ ngủ đêm"
+      "Tránh dùng viên nén EGCG liều cao (≥800 mg/ngày) do rủi ro tổn thương gan",
+      "Trà uống thông thường được EFSA coi là an toàn; người nhạy cảm caffeine tránh uống đậm đặc trước giờ ngủ"
     ],
     "tasteProfile": {
       "bitterness": 2,
@@ -734,7 +744,8 @@ const MEDICINAL_DATABASE = [
       "hoa_nhai"
     ],
     "popularDrink": "Zen Theanine Elixir",
-    "mindfulReminder": "Uống một ngụm trà sớm, lắng nghe hơi thở vào - ra; để L-Theanine làm dịu những suy nghĩ miên man, giữ tâm sáng như mặt hồ mùa thu."
+    "mindfulReminder": "Uống một ngụm trà sớm, lắng nghe hơi thở vào - ra; để L-Theanine làm dịu những suy nghĩ miên man, giữ tâm sáng như mặt hồ mùa thu.",
+    "officialSource": "EFSA ANS Panel, Scientific opinion on the safety of green tea catechins, EFSA Journal (2018): https://www.efsa.europa.eu/en/efsajournal/pub/5239"
   },
   {
     "id": "ha_thu_o",
@@ -1091,301 +1102,837 @@ const MEDICINAL_DATABASE = [
     ],
     "popularDrink": "Immortal Vitality Brew",
     "mindfulReminder": "Uống từng ngụm chậm rãi, tiếp nhận năng lượng dẻo dai từ rễ sâm rừng già để bước tiếp chặng đường dài mà không kiệt sức."
+  },
+  {
+    "id": "la_han_qua",
+    "name": "La Hán Quả",
+    "sciName": "Siraitia grosvenorii",
+    "enName": "Monk Fruit / Luo Han Guo",
+    "category": "flavor",
+    "categoryLabel": "Chất Ngọt Tự Nhiên (0-Calorie) & Khử Đắng",
+    "heritageOrigin": "Vùng núi cao phía Bắc Việt Nam (OCOP)",
+    "tasteProfile": "Vị ngọt thanh dịu đậm, hậu vị mát lành, quy kinh phế & tỳ",
+    "traditionalTaste": "Vị ngọt đậm, tính mát; quy kinh phế và tỳ",
+    "activeCompounds": "Mogroside V (ngọt gấp 300 lần đường mía, 0-calorie)",
+    "keyCompounds": [
+      {
+        "name": "Mogroside V",
+        "class": "Triterpene Glycoside",
+        "action": "Ngọt gấp 300 lần đường mía, 0-calorie, GI=0, khử đắng thảo mộc trung ương"
+      },
+      {
+        "name": "Mogroside IV",
+        "class": "Cucurbitane Glycoside",
+        "action": "Chống oxy hóa tế bào, bảo vệ phế quản và thanh quản"
+      }
+    ],
+    "biologicalRole": "Tạo vị ngọt sâu tự nhiên, khử đắng thảo mộc trung ương mà hoàn toàn không tăng đường huyết (GI=0)",
+    "preclinicalEvidence": "Chống oxy hóa, kháng viêm đường hô hấp, ức chế tín hiệu đắng (Tan et al. 2024)",
+    "contraindications": "An toàn cao cho mọi đối tượng, người tỳ vị hư hàn nặng nên dùng lượng vừa phải",
+    "safeCulinaryDose": "1.0g – 2.0g sấy khô",
+    "safeDailyDose": "1.0g – 2.0g sấy khô (Tối đa 3.0g/ngày)",
+    "origin": "Vùng núi cao phía Bắc Việt Nam (OCOP)",
+    "image": "assets/vietnamese_heritage_herbs.jpg"
+  },
+  {
+    "id": "atiso_do",
+    "name": "Atiso Đỏ (Bụp Giấm / Roselle)",
+    "sciName": "Hibiscus sabdariffa",
+    "enName": "Roselle Hibiscus / Red Sorrel",
+    "category": "flavor",
+    "categoryLabel": "Axit Hữu Cơ Ức Chế hTAS2R16 & Sắc Tố Ruby",
+    "heritageOrigin": "Vùng Trồng Dược Liệu Bình Thuận & Đà Lạt (OCOP)",
+    "tasteProfile": "Vị chua thanh mát, sắc đỏ Ruby tự nhiên, quy kinh can & đại tràng",
+    "traditionalTaste": "Vị chua thanh mát, tính bình; quy kinh can và đại tràng",
+    "activeCompounds": "Anthocyanin, Axit Hibiscic, Axit Citric, Vitamin C",
+    "keyCompounds": [
+      {
+        "name": "Anthocyanin (Delphinidin-3-sambubioside)",
+        "class": "Flavonoid Pigment",
+        "action": "Tạo sắc đỏ Ruby quý phái, chống oxy hóa cực mạnh, bảo vệ nội mô mạch máu"
+      },
+      {
+        "name": "Hibiscic Acid & Citric Acid",
+        "class": "Organic Acid",
+        "action": "Đưa pH về 4.2–4.5 trực tiếp ức chế thụ thể thụ cảm vị đắng hTAS2R16"
+      }
+    ],
+    "biologicalRole": "Tạo sắc đỏ Ruby tự nhiên cho mocktail; axit hữu cơ đưa pH về 4.2–4.5 trực tiếp ức chế thụ thể vị đắng hTAS2R16",
+    "preclinicalEvidence": "Hạ mỡ máu, bảo vệ gan, giảm huyết áp nhẹ qua giãn mạch ngoại vi (Sotoyama et al. 2017)",
+    "contraindications": "Người huyết áp thấp nặng (Hypotension) hoặc viêm loét dạ dày cấp nên giảm liều",
+    "safeCulinaryDose": "1.0g – 2.2g đài hoa khô",
+    "safeDailyDose": "1.0g – 2.2g đài hoa khô (EFSA/EMA ngưỡng ẩm thực an toàn)",
+    "origin": "Bình Thuận, Đà Lạt (OCOP)",
+    "image": "assets/atiso.jpg"
+  },
+  {
+    "id": "que_tra_bong",
+    "name": "Quế Trà Bồng (Cinnamon)",
+    "sciName": "Cinnamomum cassia / C. loureiroi",
+    "enName": "Tra Bong Heritage Cinnamon",
+    "category": "flavor",
+    "categoryLabel": "Nốt Hương Ấm Mulled Wine & Tuần Hoàn",
+    "heritageOrigin": "Trà Bồng, Quảng Ngãi (Di Sản Chỉ Dẫn Địa Lý Quốc Gia)",
+    "tasteProfile": "Vị cay ngọt nồng ấm, hậu vị đậm đà, quy kinh thận, tỳ, tâm, can",
+    "traditionalTaste": "Vị cay ngọt nồng, tính ấm; quy kinh thận, tỳ, tâm, can",
+    "activeCompounds": "Cinnamaldehyde (hàm lượng tinh dầu cao)",
+    "keyCompounds": [
+      {
+        "name": "Cinnamaldehyde",
+        "class": "Phenylpropanoid",
+        "action": "Tạo nốt hương ấm quý phái phong cách rượu vang Mulled Wine (0% cồn), che mùi ngái"
+      },
+      {
+        "name": "Coumarin (ngưỡng an toàn TDI)",
+        "class": "Benzopyrone",
+        "action": "Kiểm soát liều nghiêm ngặt theo khuyến nghị BfR Đức (TDI 0.1 mg/kg/ngày)"
+      }
+    ],
+    "biologicalRole": "Tạo nốt hương ấm quý phái phong cách rượu vang Mulled Wine (0% cồn), che giấu mùi ngái thảo dược",
+    "preclinicalEvidence": "Kích thích tuần hoàn máu, hỗ trợ chuyển hóa glucose tế bào, kháng khuẩn tự nhiên",
+    "contraindications": [
+      "Người có bệnh gan, người đang dùng statin hoặc paracetamol nên dùng quế Ceylon (C. verum) vì hàm lượng coumarin rất thấp",
+      "Phụ nữ mang thai không dùng liều cao"
+    ],
+    "safeCulinaryDose": "0.5g – 1.0g vỏ quế tán thô",
+    "origin": "Trà Bồng, Quảng Ngãi (Di sản chỉ dẫn địa lý)",
+    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "safeDailyDose": "Không có liều dược liệu chính thức. Ngưỡng an toàn dựa trên TDI coumarin 0,1 mg/kg thể trọng/ngày (EFSA 2004). Người 60 kg: khoảng 6 mg coumarin/ngày. Quế Cassia chứa coumarin khoảng 2.100–4.400 mg/kg (BfR). Khuyến nghị ẩm thực VinaVita: 0.5g – 0.8g trong sachet 5.3g.",
+    "officialSource": "BfR (Đức), High daily intakes of cinnamon: health risk cannot be ruled out: https://www.BFR.bund.de/cm/349/high_daily_intakes_of_cinnamon_health_risk_cannot_be_ruled_out.pdf"
+  },
+  {
+    "id": "nghe",
+    "name": "Nghệ Vàng",
+    "sciName": "Curcuma longa L.",
+    "enName": "Nghệ Vàng",
+    "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
+    "category": "tieu_hoa",
+    "categoryLabel": "Tiêu hóa & Chống viêm",
+    "partUsed": "Thân rễ (Rhizoma Curcumae longae)",
+    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "keyCompounds": [
+      {
+        "name": "Hoạt chất chuẩn hóa",
+        "class": "Phytochemical",
+        "action": "Tác dụng sinh học theo Dược điển"
+      }
+    ],
+    "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
+    "safeDailyDose": "Bột thân rễ 0,5–1 g, 2–3 lần/ngày; cồn thuốc 1:10: 0,5–1 ml, 3 lần/ngày; cao khô: 100–200 mg, 2 lần/ngày (EMA/HMPC 2018 Revision 1; bản cũ 2009 ghi 1,5–3 g/ngày).",
+    "officialSource": "EMA/HMPC, European Union herbal monograph on Curcuma longa L., rhizoma (Revision 1, 2018): https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-curcuma-longa-l-rhizoma-revision-1_en.pdf",
+    "contraindications": [
+      "Chống chỉ định tuyệt đối khi tắc đường mật hoặc có sỏi mật",
+      "Thận trọng khi dùng cùng thuốc chống đông"
+    ],
+    "tasteProfile": {
+      "bitterness": 2,
+      "astringency": 2,
+      "sweetness": 1,
+      "aroma": "Thơm thảo mộc tự nhiên"
+    },
+    "maskingRules": [
+      "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
+      "Kết hợp Cỏ Ngọt hoặc La Hán Quả tạo vị ngọt thanh không đường"
+    ],
+    "recommendedPairings": [
+      "co_ngot",
+      "quat_tac",
+      "hoa_cuc"
+    ],
+    "popularDrink": "VinaVita Wellness Infusion",
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+  },
+  {
+    "id": "rau_ma",
+    "name": "Rau Má Bản Địa",
+    "sciName": "Centella asiatica (L.) Urb.",
+    "enName": "Rau Má Bản Địa",
+    "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
+    "category": "thanh_nhiet",
+    "categoryLabel": "Thanh nhiệt & Giải độc",
+    "partUsed": "Toàn cây (Herba Centellae)",
+    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "keyCompounds": [
+      {
+        "name": "Hoạt chất chuẩn hóa",
+        "class": "Phytochemical",
+        "action": "Tác dụng sinh học theo Dược điển"
+      }
+    ],
+    "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
+    "safeDailyDose": "Monograph EMA (Revision 1, 2022) CHỈ dành cho dùng ngoài da trong bệnh da và vết thương nhỏ. Liều uống KHÔNG được xác nhận (EMA nêu lo ngại về độc tính trên gan và khả năng sinh sản khi dùng đường uống; con số cũ 0,5–1 g/ngày từ 2010 đã bãi bỏ, không dùng).",
+    "officialSource": "EMA/HMPC, European Union herbal monograph on Centella asiatica (L.) Urb., herba, Revision 1 (2022): https://www.ema.europa.eu/en/documents/herbal-monograph/european-union-herbal-monograph-centella-asiatica-l-urb-herba-revision-1_en.pdf",
+    "contraindications": [
+      "Dùng ngoài da theo monograph; dùng đường uống cần thận trọng và không có liều chuẩn từ EMA",
+      "Phụ nữ mang thai và người có tiền sử bệnh gan cần tránh uống liều cao"
+    ],
+    "tasteProfile": {
+      "bitterness": 2,
+      "astringency": 2,
+      "sweetness": 1,
+      "aroma": "Thơm thảo mộc tự nhiên"
+    },
+    "maskingRules": [
+      "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
+      "Kết hợp Cỏ Ngọt hoặc La Hán Quả tạo vị ngọt thanh không đường"
+    ],
+    "recommendedPairings": [
+      "co_ngot",
+      "quat_tac",
+      "hoa_cuc"
+    ],
+    "popularDrink": "VinaVita Wellness Infusion",
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+  },
+  {
+    "id": "kim_ngan_hoa",
+    "name": "Kim Ngân Hoa",
+    "sciName": "Lonicera japonica Thunb.",
+    "enName": "Kim Ngân Hoa",
+    "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
+    "category": "thanh_nhiet",
+    "categoryLabel": "Thanh nhiệt & Kháng khuẩn",
+    "partUsed": "Nụ hoa (Flos Lonicerae)",
+    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "keyCompounds": [
+      {
+        "name": "Hoạt chất chuẩn hóa",
+        "class": "Phytochemical",
+        "action": "Tác dụng sinh học theo Dược điển"
+      }
+    ],
+    "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
+    "safeDailyDose": "Không có liều người từ monograph chính thức. Tiêu chuẩn chất lượng USP: Caffeoylquinic acid ≥ 3,8%. Khuyến nghị trà hãm dân gian: 2.0g – 4.0g nụ hoa khô.",
+    "officialSource": "USP, Lonicera japonica Flower, Final Authorized Version 1.0: https://hmc.usp.org/node/3554 ; Systematic Pharmacology Review (2015): https://pmc.ncbi.nlm.nih.gov/articles/PMC4519546/",
+    "contraindications": [
+      "Người thể tạng tỳ vị hư hàn, hay đau bụng tiêu chảy nên thận trọng theo Y học cổ truyền"
+    ],
+    "tasteProfile": {
+      "bitterness": 2,
+      "astringency": 2,
+      "sweetness": 1,
+      "aroma": "Thơm thảo mộc tự nhiên"
+    },
+    "maskingRules": [
+      "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
+      "Kết hợp Cỏ Ngọt hoặc La Hán Quả tạo vị ngọt thanh không đường"
+    ],
+    "recommendedPairings": [
+      "co_ngot",
+      "quat_tac",
+      "hoa_cuc"
+    ],
+    "popularDrink": "VinaVita Wellness Infusion",
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+  },
+  {
+    "id": "xuyen_tam_lien",
+    "name": "Xuyên Tâm Liên",
+    "sciName": "Andrographis paniculata Nees",
+    "enName": "Xuyên Tâm Liên",
+    "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
+    "category": "khang_khuan",
+    "categoryLabel": "Kháng viêm & Hô hấp",
+    "partUsed": "Lá và phần trên mặt đất",
+    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "keyCompounds": [
+      {
+        "name": "Hoạt chất chuẩn hóa",
+        "class": "Phytochemical",
+        "action": "Tác dụng sinh học theo Dược điển"
+      }
+    ],
+    "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
+    "safeDailyDose": "Không có liều chính thức. EMA (2013) kết luận không lập được monograph cho lá, không có liều tham khảo từ EU (đã xóa con số '5–10 mg/kg andrographolide' trên vital.ly do nguồn thứ cấp không rõ ràng).",
+    "officialSource": "EMA/HMPC, Public statement on Andrographis paniculata Nees, folium, EMA/HMPC/709282/2012 (2013): https://www.ema.europa.eu/en/documents/public-statement/final-public-statement-andrographis-paniculata-nees-folium-first-version_en.pdf",
+    "contraindications": [
+      "Chống chỉ định tuyệt đối cho phụ nữ có thai và đang cho con bú",
+      "Có thể gây dị ứng, ngứa, hoặc phản ứng quá mẫn ở người cơ địa nhạy cảm"
+    ],
+    "tasteProfile": {
+      "bitterness": 2,
+      "astringency": 2,
+      "sweetness": 1,
+      "aroma": "Thơm thảo mộc tự nhiên"
+    },
+    "maskingRules": [
+      "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
+      "Kết hợp Cỏ Ngọt hoặc La Hán Quả tạo vị ngọt thanh không đường"
+    ],
+    "recommendedPairings": [
+      "co_ngot",
+      "quat_tac",
+      "hoa_cuc"
+    ],
+    "popularDrink": "VinaVita Wellness Infusion",
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+  },
+  {
+    "id": "tia_to",
+    "name": "Tía Tô Bản Địa",
+    "sciName": "Perilla frutescens (L.) Britton",
+    "enName": "Tía Tô Bản Địa",
+    "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
+    "category": "giai_cam",
+    "categoryLabel": "Giải cảm & Chống dị ứng",
+    "partUsed": "Lá (Folium Perillae)",
+    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "keyCompounds": [
+      {
+        "name": "Hoạt chất chuẩn hóa",
+        "class": "Phytochemical",
+        "action": "Tác dụng sinh học theo Dược điển"
+      }
+    ],
+    "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
+    "safeDailyDose": "Không có liều người chính thức. Natural Medicines (qua vital.ly) ghi 'có thể an toàn tối đa 12 tháng', nhưng chưa có liều phù hợp chuẩn hóa.",
+    "officialSource": "Drugs.com: https://www.drugs.com/npp/perilla.html ; Vital.ly: https://vital.ly/trc/Perilla/monograph=1024",
+    "contraindications": [
+      "Phụ nữ mang thai và cho con bú chưa có đủ dữ liệu an toàn",
+      "Người đang sốt cao do âm hư hỏa vượng"
+    ],
+    "tasteProfile": {
+      "bitterness": 2,
+      "astringency": 2,
+      "sweetness": 1,
+      "aroma": "Thơm thảo mộc tự nhiên"
+    },
+    "maskingRules": [
+      "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
+      "Kết hợp Cỏ Ngọt hoặc La Hán Quả tạo vị ngọt thanh không đường"
+    ],
+    "recommendedPairings": [
+      "co_ngot",
+      "quat_tac",
+      "hoa_cuc"
+    ],
+    "popularDrink": "VinaVita Wellness Infusion",
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+  },
+  {
+    "id": "muop_dang",
+    "name": "Mướp Đắng (Khổ Qua)",
+    "sciName": "Momordica charantia L.",
+    "enName": "Mướp Đắng (Khổ Qua)",
+    "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
+    "category": "chuyen_hoa",
+    "categoryLabel": "Đường huyết & Chuyển hóa",
+    "partUsed": "Quả (Fructus Momordicae charantiae)",
+    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "keyCompounds": [
+      {
+        "name": "Hoạt chất chuẩn hóa",
+        "class": "Phytochemical",
+        "action": "Tác dụng sinh học theo Dược điển"
+      }
+    ],
+    "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
+    "safeDailyDose": "Thử nghiệm lâm sàng RCT dùng 500, 1.000 và 2.000 mg/ngày trong 4 tuần (so với metformin 1.000 mg/ngày). Chỉ nhóm 2.000 mg/ngày làm giảm fructosamine đáng kể.",
+    "officialSource": "PMID: 21211558, J Ethnopharmacol 2011: https://pubmed.ncbi.nlm.nih.gov/21211558/ ; Tổng quan PMID: 19825210, Br J Nutr 2009 (dữ liệu lâm sàng còn hạn chế).",
+    "contraindications": [
+      "Có thể gây hạ đường huyết quá mức khi phối hợp cùng thuốc điều trị tiểu đường",
+      "Tránh dùng trong thai kỳ (nghiên cứu thứ cấp ghi nhận nguy cơ sảy thai)"
+    ],
+    "tasteProfile": {
+      "bitterness": 2,
+      "astringency": 2,
+      "sweetness": 1,
+      "aroma": "Thơm thảo mộc tự nhiên"
+    },
+    "maskingRules": [
+      "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
+      "Kết hợp Cỏ Ngọt hoặc La Hán Quả tạo vị ngọt thanh không đường"
+    ],
+    "recommendedPairings": [
+      "co_ngot",
+      "quat_tac",
+      "hoa_cuc"
+    ],
+    "popularDrink": "VinaVita Wellness Infusion",
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+  },
+  {
+    "id": "voi",
+    "name": "Nụ Vối Bản Địa",
+    "sciName": "Cleistocalyx operculatus (Roxb.) Merr. & Perry",
+    "enName": "Nụ Vối Bản Địa",
+    "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
+    "category": "tieu_hoa",
+    "categoryLabel": "Tiêu hóa & Chống oxy hóa",
+    "partUsed": "Nụ hoa và lá",
+    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "keyCompounds": [
+      {
+        "name": "Hoạt chất chuẩn hóa",
+        "class": "Phytochemical",
+        "action": "Tác dụng sinh học theo Dược điển"
+      }
+    ],
+    "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
+    "safeDailyDose": "Không có liều người chính thức. Cần chuẩn hóa, nghiên cứu độc tính và thử nghiệm lâm sàng bài bản.",
+    "officialSource": "Quyen & Quoc (2026), Cleistocalyx operculatus: phytochemistry, biological activities, and potential applications, Scientia Agropecuaria 17(3): 663–684: https://revistas.unitru.edu.pe/index.php/scientiaagrop/es/article/download/7887/7694/31304",
+    "contraindications": [
+      "Dữ liệu an toàn sử dụng dài hạn còn thiếu, uống điều độ như nước hãm dân gian"
+    ],
+    "tasteProfile": {
+      "bitterness": 2,
+      "astringency": 2,
+      "sweetness": 1,
+      "aroma": "Thơm thảo mộc tự nhiên"
+    },
+    "maskingRules": [
+      "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
+      "Kết hợp Cỏ Ngọt hoặc La Hán Quả tạo vị ngọt thanh không đường"
+    ],
+    "recommendedPairings": [
+      "co_ngot",
+      "quat_tac",
+      "hoa_cuc"
+    ],
+    "popularDrink": "VinaVita Wellness Infusion",
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+  },
+  {
+    "id": "hoac_huong",
+    "name": "Hoắc Hương",
+    "sciName": "Pogostemon cablin (Blanco) Benth.",
+    "enName": "Hoắc Hương",
+    "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
+    "category": "tieu_hoa",
+    "categoryLabel": "Kiện tỳ & Tinh dầu",
+    "partUsed": "Lá và cành non",
+    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "keyCompounds": [
+      {
+        "name": "Hoạt chất chuẩn hóa",
+        "class": "Phytochemical",
+        "action": "Tác dụng sinh học theo Dược điển"
+      }
+    ],
+    "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
+    "safeDailyDose": "Không có liều người đáng tin (các con số trên Examine dựa trên liều chuột, không dùng).",
+    "officialSource": "Chen et al., Pharmacological activities and mechanisms of action of Pogostemon cablin Benth: a review, Chin Med 2021; PMID: 33413544; DOI: 10.1186/s13020-020-00413-y.",
+    "contraindications": [
+      "Tinh dầu hoắc hương có thể gây dị ứng da",
+      "Chưa đủ dữ liệu an toàn cho phụ nữ có thai và cho con bú"
+    ],
+    "tasteProfile": {
+      "bitterness": 2,
+      "astringency": 2,
+      "sweetness": 1,
+      "aroma": "Thơm thảo mộc tự nhiên"
+    },
+    "maskingRules": [
+      "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
+      "Kết hợp Cỏ Ngọt hoặc La Hán Quả tạo vị ngọt thanh không đường"
+    ],
+    "recommendedPairings": [
+      "co_ngot",
+      "quat_tac",
+      "hoa_cuc"
+    ],
+    "popularDrink": "VinaVita Wellness Infusion",
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+  },
+  {
+    "id": "day_thia_canh",
+    "name": "Dây Thìa Canh",
+    "sciName": "Gymnema sylvestre (Retz.) R.Br. ex Schult.",
+    "enName": "Dây Thìa Canh",
+    "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
+    "category": "chuyen_hoa",
+    "categoryLabel": "Ổn định đường huyết",
+    "partUsed": "Dây và lá",
+    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "keyCompounds": [
+      {
+        "name": "Hoạt chất chuẩn hóa",
+        "class": "Phytochemical",
+        "action": "Tác dụng sinh học theo Dược điển"
+      }
+    ],
+    "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
+    "safeDailyDose": "Thử nghiệm trên 27 bệnh nhân đái tháo đường týp 1 dùng 400 mg/ngày dịch chiết GS4: nhu cầu insulin giảm, đường huyết đói và HbA1c cải thiện rõ rệt.",
+    "officialSource": "PMID: 2259216, J Ethnopharmacol 1990: https://pubmed.ncbi.nlm.nih.gov/2259216/ (nghiên cứu gốc xác nhận liều GS4 400 mg/ngày trên 27 bệnh nhân IDDM; đã xóa trích dẫn nhầm của Rau má).",
+    "contraindications": [
+      "Có thể gây hạ đường huyết quá mức khi dùng đồng thời với insulin hoặc thuốc hạ đường huyết",
+      "Chưa đủ dữ liệu an toàn cho phụ nữ mang thai"
+    ],
+    "tasteProfile": {
+      "bitterness": 2,
+      "astringency": 2,
+      "sweetness": 1,
+      "aroma": "Thơm thảo mộc tự nhiên"
+    },
+    "maskingRules": [
+      "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
+      "Kết hợp Cỏ Ngọt hoặc La Hán Quả tạo vị ngọt thanh không đường"
+    ],
+    "recommendedPairings": [
+      "co_ngot",
+      "quat_tac",
+      "hoa_cuc"
+    ],
+    "popularDrink": "VinaVita Wellness Infusion",
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+  },
+  {
+    "id": "sai_dat",
+    "name": "Sài Đất Bản Địa",
+    "sciName": "Sphagneticola calendulacea (L.) Pruski",
+    "enName": "Sài Đất Bản Địa",
+    "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
+    "category": "thanh_nhiet",
+    "categoryLabel": "Thanh nhiệt & Tiêu độc",
+    "partUsed": "Toàn cây trên mặt đất",
+    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "keyCompounds": [
+      {
+        "name": "Hoạt chất chuẩn hóa",
+        "class": "Phytochemical",
+        "action": "Tác dụng sinh học theo Dược điển"
+      }
+    ],
+    "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
+    "safeDailyDose": "Không có liều người chính thức. Nghiên cứu bảo vệ gan trên chuột CCl4 (J Appl Pharm Sci 2011) và độc tính mạn trên chuột với S. trilobata (Pharmacogn J 2017).",
+    "officialSource": "J Appl Pharm Sci (2011): https://www.japsonline.com/admin/php/uploads/272_pdf.pdf ; Pharmacogn J (2017): https://phcogj.com/sites/default/files/10.5530pj.2017.3.55.pdf",
+    "contraindications": [
+      "Dữ liệu an toàn ở người còn thiếu, khuyến cáo dùng hãm ngắn ngày theo kinh nghiệm dân gian"
+    ],
+    "tasteProfile": {
+      "bitterness": 2,
+      "astringency": 2,
+      "sweetness": 1,
+      "aroma": "Thơm thảo mộc tự nhiên"
+    },
+    "maskingRules": [
+      "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
+      "Kết hợp Cỏ Ngọt hoặc La Hán Quả tạo vị ngọt thanh không đường"
+    ],
+    "recommendedPairings": [
+      "co_ngot",
+      "quat_tac",
+      "hoa_cuc"
+    ],
+    "popularDrink": "VinaVita Wellness Infusion",
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+  },
+  {
+    "id": "kim_tien_thao",
+    "name": "Kim Tiền Thảo",
+    "sciName": "Desmodium styracifolium (Osbeck) Merr.",
+    "enName": "Kim Tiền Thảo",
+    "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
+    "category": "tiet_nieu",
+    "categoryLabel": "Tiết niệu & Bài thạch",
+    "partUsed": "Toàn cây trên mặt đất",
+    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "keyCompounds": [
+      {
+        "name": "Hoạt chất chuẩn hóa",
+        "class": "Phytochemical",
+        "action": "Tác dụng sinh học theo Dược điển"
+      }
+    ],
+    "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
+    "safeDailyDose": "Viên tổng flavone chuẩn hóa: 0,6 g (3 viên 0,2 g, mỗi viên 133 mg flavonoid tổng), 3 lần/ngày trong 28 ngày (đây là viên kê đơn, không phải nước sắc từ cây).",
+    "officialSource": "Wang D et al., Desmodium styracifolium Total Flavone Capsules for Urolithiasis: A Phase 3 Randomized Clinical Trial, JAMA Netw Open (09/2026): https://www.emjreviews.com/urology/news/chinese-herbal-extract-increases-ureteral-stone-expulsion/ ; PMC13453747.",
+    "contraindications": [
+      "Thử nghiệm pha III (606 người lớn): Tỷ lệ tống sỏi niệu quản 5–10 mm đạt 44,6–45% vs 33,8–34% giả dược (không cải thiện có ý nghĩa quãng đường di chuyển sỏi)",
+      "Đau quặn thận hoặc tiểu ra máu cần đi khám cấp cứu, không tự ý điều trị",
+      "Chống chỉ định cho phụ nữ mang thai, đang cho con bú, hoặc ứ nước thận nặng"
+    ],
+    "tasteProfile": {
+      "bitterness": 2,
+      "astringency": 2,
+      "sweetness": 1,
+      "aroma": "Thơm thảo mộc tự nhiên"
+    },
+    "maskingRules": [
+      "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
+      "Kết hợp Cỏ Ngọt hoặc La Hán Quả tạo vị ngọt thanh không đường"
+    ],
+    "recommendedPairings": [
+      "co_ngot",
+      "quat_tac",
+      "hoa_cuc"
+    ],
+    "popularDrink": "VinaVita Wellness Infusion",
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+  },
+  {
+    "id": "che_day",
+    "name": "Chè Dây Rừng",
+    "sciName": "Ampelopsis grossedentata (Hand.-Mazz.) W.T.Wang",
+    "enName": "Chè Dây Rừng",
+    "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
+    "category": "tieu_hoa",
+    "categoryLabel": "Bảo vệ dạ dày & Chống viêm",
+    "partUsed": "Lá và cành non",
+    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "keyCompounds": [
+      {
+        "name": "Hoạt chất chuẩn hóa",
+        "class": "Phytochemical",
+        "action": "Tác dụng sinh học theo Dược điển"
+      }
+    ],
+    "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
+    "safeDailyDose": "Không có liều chính thức cho dạng trà nước sắc. Thử nghiệm Dihydromyricetin (DHM) dạng viên nén dùng 300–1.000 mg/ngày.",
+    "officialSource": "NIH LiverTox, Dihydromyricetin: https://www.ncbi.nlm.nih.gov/books/NBK594407/",
+    "contraindications": [
+      "LiverTox ghi nhận chưa có ca tổn thương gan rõ ràng với DHM trong thử nghiệm lâm sàng, tuy nhiên vẫn cần thận trọng với dạng viên tinh chế nồng độ cao"
+    ],
+    "tasteProfile": {
+      "bitterness": 2,
+      "astringency": 2,
+      "sweetness": 1,
+      "aroma": "Thơm thảo mộc tự nhiên"
+    },
+    "maskingRules": [
+      "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
+      "Kết hợp Cỏ Ngọt hoặc La Hán Quả tạo vị ngọt thanh không đường"
+    ],
+    "recommendedPairings": [
+      "co_ngot",
+      "quat_tac",
+      "hoa_cuc"
+    ],
+    "popularDrink": "VinaVita Wellness Infusion",
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+  },
+  {
+    "id": "huong_nhu",
+    "name": "Hương Nhu Tía",
+    "sciName": "Ocimum gratissimum L.",
+    "enName": "Hương Nhu Tía",
+    "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
+    "category": "giai_cam",
+    "categoryLabel": "Giải cảm & Kháng khuẩn",
+    "partUsed": "Toàn cây trên mặt đất",
+    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "keyCompounds": [
+      {
+        "name": "Hoạt chất chuẩn hóa",
+        "class": "Phytochemical",
+        "action": "Tác dụng sinh học theo Dược điển"
+      }
+    ],
+    "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
+    "safeDailyDose": "Không có liều người chính thức. Cần thử nghiệm lâm sàng để xác định liều an toàn (Heliyon 2021). Độc tính cấp chuột LD50 > 5.000 mg/kg; thử nghiệm chuột đực (PMC6558029) cho thấy phân đoạn chiết không độc mà còn tăng cường sinh sản (bằng chứng an toàn).",
+    "officialSource": "Heliyon (2021), PMC8642617: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8642617/ ; PMC3140126; PMC6558029.",
+    "contraindications": [
+      "Tinh dầu chứa hàm lượng cao Eugenol, tuyệt đối không được uống nguyên chất",
+      "Khuyến cáo hạn chế hoặc theo dõi khi sử dụng lâu dài"
+    ],
+    "tasteProfile": {
+      "bitterness": 2,
+      "astringency": 2,
+      "sweetness": 1,
+      "aroma": "Thơm thảo mộc tự nhiên"
+    },
+    "maskingRules": [
+      "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
+      "Kết hợp Cỏ Ngọt hoặc La Hán Quả tạo vị ngọt thanh không đường"
+    ],
+    "recommendedPairings": [
+      "co_ngot",
+      "quat_tac",
+      "hoa_cuc"
+    ],
+    "popularDrink": "VinaVita Wellness Infusion",
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
   }
 ];
 
 // Preset Signature Drinks ("Favourite Drinks") curated by VinaVita AI Engine
 const SIGNATURE_DRINKS = [
   {
-    "id": "sig_social_glow",
-    "name": "Saigon Sunset (Dạ Tiệc Thăng Long)",
-    "subtitle": "Thay thế Bia & Rượu nhẹ trong các bữa tiệc đêm (0.0% Cồn)",
-    "badge": "🏮 DI SẢN DẠ TIỆC 0% CỒN",
+    "id": "sig_citrus_twilight",
+    "name": "Citrus Twilight Mocktail (VinaVita #01)",
+    "subtitle": "The 'Sleep & Unwind' Pack • Gói Ngủ Ngon & Xả Stress Đêm (0.0% Alcohol | 0g Refined Sugar)",
+    "badge": "⭐ HERO SKU #01 • SLEEP & UNWIND",
     "image": "assets/mocktail_hero.jpg",
-    "targetMood": "Tiệc tùng & Thư giãn không say (0% Cồn)",
+    "targetMood": "Thư giãn đêm & xả stress thi cử (0.0% Cồn)",
     "formula": [
       {
         "herbId": "lac_tien",
-        "amount": "5g",
-        "note": "Hoạt chất Vitexin kích hoạt GABA thư giãn xã hội"
+        "name": "Lạc Tiên (Aerial parts)",
+        "sci": "Passiflora foetida",
+        "amount": "1.8g",
+        "note": "Vitexin kích hoạt thụ thể GABA_A hạ Cortisol (Tan et al. 2024; Appel et al. 2011)"
       },
       {
-        "herbId": "dinh_lang",
-        "amount": "3g",
-        "note": "Adaptogen tăng tuần hoàn máu, tạo cảm giác vui vẻ"
+        "herbId": "hoa_cuc",
+        "name": "Hoa Cúc Vàng Bản Địa",
+        "sci": "Chrysanthemum indicum",
+        "amount": "1.5g",
+        "note": "Apigenin làm dịu trục thần kinh HPA; an toàn thay thế Tâm Sen cho người huyết áp thấp"
       },
       {
         "herbId": "quat_tac",
-        "amount": "2 quả tươi",
-        "note": "Acid citric khử đắng & Limonene thơm phấn chấn"
+        "name": "Tắc Sấy Lạnh / Kumquat (pH 4.3)",
+        "sci": "Citrus japonica",
+        "amount": "1.5g",
+        "note": "Axit citric tự nhiên đưa pH về 4.3, ức chế trực tiếp thụ thể vị đắng hTAS2R16 (Sakurai et al. 2009)"
       },
       {
-        "herbId": "cam_thao",
+        "herbId": "co_ngot",
+        "name": "Cỏ Ngọt Tự Nhiên (Stevia)",
+        "sci": "Stevia rebaudiana",
+        "amount": "0.45g",
+        "note": "Stevioside ngọt thanh tự nhiên 0-calorie, GI=0, không gây tăng đường huyết đêm"
+      },
+      {
+        "herbId": "muoi_khoang",
+        "name": "Muối Khoáng Tinh Khiết (Na+)",
+        "sci": "Mineral Salt Na+",
+        "amount": "0.05g",
+        "note": "Ion Na+ khử đắng chéo trung ương (Breslin & Beauchamp 1997), tạo hậu vị êm mượt"
+      }
+    ],
+    "brewSpecs": {
+      "waterTemp": "85°C (Bảo toàn Flavonoids & Apigenin)",
+      "steepingTime": "3 – 5 phút (Túi lọc PLA kim tự tháp 5.3g)",
+      "servingStyle": "Rót qua 100g đá viên, trang trí 1 lát tắc sấy lạnh (0.0% Cồn)"
+    },
+    "biochemicalSummary": "Tận dụng cơ chế ức chế thụ thể vị đắng hTAS2R16 qua pH 4.3 kết hợp kích hoạt GABA_A từ Lạc Tiên và Hoa Cúc. Đạt chuẩn 5.3g pre-portioned sachet, tuyệt đối không caffeine, không cồn, không đường tinh luyện.",
+    "sachetPrice": "69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)"
+  },
+  {
+    "id": "sig_deadline_survivor",
+    "name": "Deadline Survivor Sâm Nam Brew (VinaVita #02)",
+    "subtitle": "The 'Deadline & Exam' Pack • Gói Chạy Deadline & Ôn Thi (Tập trung 4h không ép tim)",
+    "badge": "⚡ HERO SKU #02 • DEADLINE & EXAM",
+    "image": "assets/dinh_lang.jpg",
+    "targetMood": "Tỉnh táo tập trung học thi, không bồn chồn run tay",
+    "formula": [
+      {
+        "herbId": "dinh_lang",
+        "name": "Lá Đinh Lăng Sâm Nam",
+        "sci": "Polyscias fruticosa",
+        "amount": "2.0g",
+        "note": "Saponin triterpenoid tăng lưu lượng máu và oxy lên thùy trán, duy trì tập trung bền bỉ"
+      },
+      {
+        "herbId": "sa_chanh",
+        "name": "Sả Chanh Bản Địa",
+        "sci": "Cymbopogon citratus",
         "amount": "1.5g",
-        "note": "Dịu dạ dày, tạo vị ngọt êm sâu"
+        "note": "Citral tạo hương thơm tươi mát giải tỏa mệt mỏi giác quan"
+      },
+      {
+        "herbId": "gung_ta",
+        "name": "Gừng Núi Kỳ Sơn",
+        "sci": "Zingiber officinale",
+        "amount": "0.8g",
+        "note": "Gingerol làm ấm tỳ vị, kích thích vi tuần hoàn ngoại vi"
+      },
+      {
+        "herbId": "la_han_qua",
+        "name": "La Hán Quả / Cỏ Ngọt",
+        "sci": "Siraitia grosvenorii",
+        "amount": "1.0g",
+        "note": "Mogroside V ngọt mát 0-calorie, hoàn toàn an toàn cho huyết áp và đường huyết"
+      }
+    ],
+    "brewSpecs": {
+      "waterTemp": "90°C (Chiết xuất trọn vẹn Saponin)",
+      "steepingTime": "3 phút (Túi lọc sinh học 5.3g)",
+      "servingStyle": "Dùng ấm hoặc rót qua đá viên tùy sở thích"
+    },
+    "biochemicalSummary": "Giải pháp thay thế nước tăng lực & cà phê đặc: Cung cấp tỉnh táo bền bỉ từ Saponin Sâm Nam không gây ép tim, cồn cào dạ dày hay hạ đường huyết crash về đêm. Đạt chuẩn 5.3g sachet.",
+    "sachetPrice": "69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)"
+  },
+  {
+    "id": "sig_berry_social_glow",
+    "name": "Berry Social Glow Mocktail (VinaVita #03)",
+    "subtitle": "The '0% Party & Social Chill' Pack • Gói Tiệc Tùng 0% Cồn (0.0% Alcohol Social Chill)",
+    "badge": "🍷 HERO SKU #03 • 0% PARTY & CHILL",
+    "image": "assets/berry_mocktail_hero.jpg",
+    "targetMood": "Giao lưu bạn bè, tiệc đêm 0.0% cồn tuân thủ Nghị định 168",
+    "formula": [
+      {
+        "herbId": "atiso_do",
+        "name": "Atiso Đỏ (Roselle Hibiscus)",
+        "sci": "Hibiscus sabdariffa",
+        "amount": "2.2g",
+        "note": "Anthocyanin tạo sắc đỏ Ruby dạ tiệc; Axit hữu cơ đưa pH về 4.2 ức chế vị đắng"
+      },
+      {
+        "herbId": "lac_tien",
+        "name": "Lạc Tiên Khô Bản Địa",
+        "sci": "Passiflora foetida",
+        "amount": "1.3g",
+        "note": "Vitexin tạo cảm giác ấm áp, cởi mở hòa đồng tự nhiên trong giao tiếp"
+      },
+      {
+        "herbId": "que_tra_bong",
+        "name": "Quế Trà Bồng Bản Địa",
+        "sci": "Cinnamomum loureiroi",
+        "amount": "0.8g",
+        "note": "Cinnamaldehyde tạo hương thơm nồng ấm quý phái như rượu vang Mulled Wine"
+      },
+      {
+        "herbId": "la_han_qua",
+        "name": "La Hán Quả Tự Nhiên",
+        "sci": "Siraitia grosvenorii",
+        "amount": "1.0g",
+        "note": "Vị ngọt tròn đầy không năng lượng thừa, không cồn"
       }
     ],
     "brewSpecs": {
       "waterTemp": "85°C",
-      "steepingTime": "3 phút 30 giây",
-      "servingStyle": "Lắc cùng đá viên, thêm 1 lát tắc mỏng và nhánh bạc hà"
+      "steepingTime": "4 phút (Túi lọc sinh học 5.3g)",
+      "servingStyle": "Lắc cùng đá viên, thêm chút soda bọt mịn và 1 nhánh hương thảo"
     },
-    "biochemicalSummary": "Công thức tối ưu hóa thụ thể GABA_A và dopamine tự nhiên, mang lại cảm giác ấm áp, tự tin và giải tỏa âu lo khi giao tiếp xã hội mà nồng độ cồn trong máu vẫn tuyệt đối bằng 0.00%!",
-    "sachetPrice": "16.000 VNĐ / gói sachet"
+    "biochemicalSummary": "Ly mocktail sắc đỏ Ruby dạ tiệc hòa quyện hương quế nồng ấm, 100% tuân thủ Nghị định 168/2024/NĐ-CP (0.00% cồn), an toàn tuyệt đối khi lái xe về nhà sau tiệc.",
+    "sachetPrice": "69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)"
   },
   {
-    "id": "sig_night_unwind",
-    "name": "Lotus Twilight (An Thần Hương Sen Cố Đô)",
-    "subtitle": "Dành cho học sinh & văn phòng xả stress lúc 11h đêm",
-    "badge": "🪷 AN THẦN HƯƠNG SEN CỐ ĐÔ",
-    "image": "assets/tam_sen.jpg",
-    "targetMood": "Giải tỏa áp lực thi cử & Giấc ngủ sâu tự nhiên",
-    "formula": [
-      {
-        "herbId": "tam_sen",
-        "amount": "2g",
-        "note": "Liensinine hạ hỏa, làm chậm nhịp tim hồi hộp"
-      },
-      {
-        "herbId": "lac_tien",
-        "amount": "4g",
-        "note": "Kháng âu lo thần kinh, dịu phản xạ căng thẳng"
-      },
-      {
-        "herbId": "hoa_cuc",
-        "amount": "3g",
-        "note": "Apigenin thư giãn não bộ và làm dịu nhức mỏi mắt"
-      },
-      {
-        "herbId": "co_ngot",
-        "amount": "1g",
-        "note": "Vị ngọt thanh khiết 0 calorie không gây mỡ bụng"
-      }
-    ],
-    "brewSpecs": {
-      "waterTemp": "80°C",
-      "steepingTime": "4 phút",
-      "servingStyle": "Uống ấm trước giờ ngủ 30 phút, không thêm đá"
-    },
-    "biochemicalSummary": "Sự kết hợp giữa Bisbenzylisoquinoline và Flavonoid Apigenin giúp giảm nồng độ hormone cortisol gây căng thẳng, đưa sóng não từ trạng thái Beta (căng thẳng) về Alpha/Theta (thư giãn sâu).",
-    "sachetPrice": "18.000 VNĐ / gói sachet"
-  },
-  {
-    "id": "sig_zen_theanine",
-    "name": "Zen Theanine Elixir (Trần Triều Tĩnh Trí)",
-    "subtitle": "Tập trung sâu 6 tiếng, giải tỏa bồn chồn lo âu trước giờ thi",
-    "badge": "🍵 TĨNH TRÍ ĐẠI VIỆT",
-    "image": "assets/tra_xanh.jpg",
-    "targetMood": "Trạng thái 'Calm Alertness' - Tỉnh táo trong an yên",
-    "formula": [
-      {
-        "herbId": "tra_xanh",
-        "amount": "5g",
-        "note": "L-Theanine kích hoạt sóng não Alpha, EGCG bảo vệ nơ-ron"
-      },
-      {
-        "herbId": "hoa_nhai",
-        "amount": "3g",
-        "note": "Linalool hạ Cortisol và xua tan căng thẳng tâm lý"
-      },
-      {
-        "herbId": "bac_ha",
-        "amount": "2g",
-        "note": "Kích hoạt thụ thể lạnh TRPM8 sảng khoái thanh mát"
-      },
-      {
-        "herbId": "co_ngot",
-        "amount": "1g",
-        "note": "Tạo vị ngọt thanh khiết dịu dàng"
-      }
-    ],
-    "brewSpecs": {
-      "waterTemp": "82°C",
-      "steepingTime": "3 phút",
-      "servingStyle": "Uống ấm chậm rãi khi bắt đầu buổi học tập nghiên cứu"
-    },
-    "biochemicalSummary": "Tỷ lệ hoàng kim giữa L-Theanine và caffeine phức hợp tạo trạng thái tập trung sâu bền bỉ (flow state), triệt tiêu hoàn toàn chứng hồi hộp ép tim thường gặp ở cà phê và nước tăng lực.",
-    "sachetPrice": "17.000 VNĐ / gói sachet"
-  },
-  {
-    "id": "sig_immortal_vitality",
-    "name": "Immortal Vitality Brew (Hoàng Liên Bổ Huyết)",
-    "subtitle": "Hồi phục nguyên khí, chống kiệt sức sau những đêm thức trắng",
-    "badge": "👑 BỔ KHÍ DƯỠNG HUYẾT",
-    "image": "assets/ha_thu_o.jpg",
-    "targetMood": "Phục hồi sinh lực toàn diện & Chống suy nhược",
-    "formula": [
-      {
-        "herbId": "ha_thu_o",
-        "amount": "5g",
-        "note": "TSG bảo vệ tế bào não, bồi bổ can thận dưỡng huyết"
-      },
-      {
-        "herbId": "cat_sam",
-        "amount": "5g",
-        "note": "Tăng cường sức bền thể chất và phục hồi tân dịch"
-      },
-      {
-        "herbId": "tao_do",
-        "amount": "2 quả",
-        "note": "Jujuboside dưỡng tâm an thần, tăng sinh ATP"
-      },
-      {
-        "herbId": "ky_tu",
-        "amount": "4g",
-        "note": "Zeaxanthin sáng mắt, phục hồi vi tuần hoàn"
-      }
-    ],
-    "brewSpecs": {
-      "waterTemp": "95°C",
-      "steepingTime": "5 phút",
-      "servingStyle": "Uống ấm sau bữa ăn hoặc khi cơ thể cảm thấy mệt mỏi kiệt sức"
-    },
-    "biochemicalSummary": "Kết tinh tri thức Tuệ Tĩnh: sự hòa quyện giữa các chuỗi Stilbene glycoside, Isoflavone và Polysaccharide tái tạo hồng cầu, phục hồi tổn thương oxy hóa và tái cấp năng lượng từ cấp độ ty thể.",
-    "sachetPrice": "19.000 VNĐ / gói sachet"
-  },
-  {
-    "id": "sig_clear_flow",
-    "name": "Verdant Focus (Sâm Nam Minh Mẫn)",
-    "subtitle": "Tỉnh táo êm dịu, không ép tim, thay thế Redbull & Cà phê",
-    "badge": "⚡ SÂM NAM TRÁNG TRÍ",
-    "image": "assets/dinh_lang.jpg",
-    "targetMood": "Tập trung cao độ 4 tiếng liên tục",
-    "formula": [
-      {
-        "herbId": "dinh_lang",
-        "amount": "6g",
-        "note": "Saponin tăng dưỡng khí lên não bộ, chống mỏi mệt"
-      },
-      {
-        "herbId": "bac_ha",
-        "amount": "3g",
-        "note": "Kích thích thụ thể TRPM8 mang lại sự tỉnh táo mát lạnh"
-      },
-      {
-        "herbId": "quat_tac",
-        "amount": "1 quả",
-        "note": "Vitamin C và acid hữu cơ chống oxy hóa tế bào"
-      },
-      {
-        "herbId": "cam_thao",
-        "amount": "1g",
-        "note": "Giữ vị ngọt tự nhiên ở cổ họng"
-      }
-    ],
-    "brewSpecs": {
-      "waterTemp": "90°C",
-      "steepingTime": "2 phút 30 giây",
-      "servingStyle": "Đổ qua đá lạnh, thêm chút bọt soda sủi tăm"
-    },
-    "biochemicalSummary": "Thay vì dùng caffeine liều cao làm co thắt mạch máu và tăng nhịp tim đột ngột, Đinh Lăng cung cấp nguồn năng lượng tế bào bền vững (ATP) thông qua các chuỗi saponin thực vật.",
-    "sachetPrice": "15.000 VNĐ / gói sachet"
-  },
-  {
-    "id": "sig_liver_detox",
-    "name": "Highland Breeze (Thanh Can Lạc Hồng)",
-    "subtitle": "Thanh nhiệt, giải độc cơ thể sau chuỗi ngày thức đêm",
-    "badge": "🍵 THANH NHIỆT LẠC HỒNG",
+    "id": "sig_highland_liver_rescue",
+    "name": "Highland Liver Rescue (VinaVita Detox)",
+    "subtitle": "Gói Thanh Can Mát Gan Sau Chuỗi Ngày Thức Trắng Đêm (0.0% Cồn | 0g Đường)",
+    "badge": "🍵 THANH NHIỆT MÁT GAN",
     "image": "assets/atiso.jpg",
-    "targetMood": "Mát gan, thanh lọc cơ thể, tiêu trừ mụn nhọt",
+    "targetMood": "Thanh nhiệt mát gan, hồi phục thể trạng sau mùa thi",
     "formula": [
       {
         "herbId": "atiso",
-        "amount": "6g",
-        "note": "Cynarin kích thích chức năng bài tiết mật và phục hồi gan"
+        "name": "Actisô Đà Lạt Tuyển Chọn",
+        "sci": "Cynara scolymus",
+        "amount": "2.0g",
+        "note": "Cynarin kích thích bài tiết mật và hỗ trợ chức năng giải độc gan"
       },
       {
         "herbId": "hoa_cuc",
-        "amount": "4g",
-        "note": "Thanh can hỏa, giải độc da mặt"
+        "name": "Hoa Cúc Vàng Bản Địa",
+        "sci": "Chrysanthemum indicum",
+        "amount": "1.5g",
+        "note": "Thanh can hỏa, sáng mắt, tiêu trừ mụn nhiệt sau thức khuya"
       },
       {
-        "herbId": "cam_thao",
-        "amount": "2g",
-        "note": "Hòa vị, dẫn hoạt chất làm mát toàn thân"
+        "herbId": "co_muc",
+        "name": "Cỏ Mực Bản Địa",
+        "sci": "Eclipta prostrata",
+        "amount": "1.0g",
+        "note": "Làm mát huyết, thanh can nhiệt theo Dược điển Việt Nam (Đỗ Tất Lợi 2004)"
+      },
+      {
+        "herbId": "co_ngot",
+        "name": "Cỏ Ngọt Tự Nhiên (Stevia)",
+        "sci": "Stevia rebaudiana",
+        "amount": "0.8g",
+        "note": "Vị ngọt dịu thanh mát không gây tăng đường huyết, an toàn cho huyết áp"
       }
     ],
     "brewSpecs": {
       "waterTemp": "92°C",
-      "steepingTime": "5 phút",
-      "servingStyle": "Có thể uống cả ngày thay nước lọc"
+      "steepingTime": "5 phút (Túi lọc sinh học 5.3g)",
+      "servingStyle": "Uống ấm hoặc uống mát cả ngày thanh lọc cơ thể"
     },
-    "biochemicalSummary": "Phục hồi chức năng chuyển hóa gan mật thông qua hợp chất Cynarin và các chất chống oxy hóa tự nhiên, giúp đào thải nhanh các gốc tự do tích tụ do thức đêm.",
-    "sachetPrice": "16.000 VNĐ / gói sachet"
-  },
-  {
-    "id": "sig_scholar_eye",
-    "name": "Scholar Eye Calm (Thanh Can Minh Mục Đỗ Đạt)",
-    "subtitle": "Dành riêng cho học sinh & coder cày màn hình máy tính xuyên đêm",
-    "badge": "📜 MINH MỤC ĐỖ ĐẠT",
-    "image": "assets/ky_tu.jpg",
-    "targetMood": "Giảm khô mỏi mắt & Dưỡng tâm an thần sâu",
-    "formula": [
-      {
-        "herbId": "ky_tu",
-        "amount": "6g",
-        "note": "Zeaxanthin bảo vệ điểm vàng võng mạc khỏi ánh sáng xanh"
-      },
-      {
-        "herbId": "hoa_cuc",
-        "amount": "4g",
-        "note": "Apigenin làm dịu căng thẳng thần kinh thị giác"
-      },
-      {
-        "herbId": "tao_do",
-        "amount": "2 quả",
-        "note": "Jujuboside dưỡng tâm huyết, bồi bổ tế bào não mỏi mệt"
-      },
-      {
-        "herbId": "tam_sen",
-        "amount": "1.5g",
-        "note": "Hạ hỏa, ổn định nhịp tim hồi hộp"
-      }
-    ],
-    "brewSpecs": {
-      "waterTemp": "85°C",
-      "steepingTime": "4 phút 30 giây",
-      "servingStyle": "Uống ấm khi học tập, có thể ăn cả quả kỷ tử và táo đỏ"
-    },
-    "biochemicalSummary": "Sức mạnh chống oxy hóa từ Carotenoid tự nhiên kết hợp Flavonoid giúp khôi phục lưu lượng máu đến hốc mắt, giảm 80% triệu chứng mỏi điều tiết và nhức thái dương.",
-    "sachetPrice": "18.000 VNĐ / gói sachet"
-  },
-  {
-    "id": "sig_mekong_mule",
-    "name": "Mekong Warming Mule (Khí Huyết Bừng Tỉnh Phương Nam)",
-    "subtitle": "Ấm bụng, sảng khoái, đánh tan uể oải phòng điều hòa",
-    "badge": "🌾 KHÍ HUYẾT PHƯƠNG NAM",
-    "image": "assets/gung_ta.jpg",
-    "targetMood": "Khởi động ngày mới tràn đầy nhiệt huyết",
-    "formula": [
-      {
-        "herbId": "gung_ta",
-        "amount": "4g",
-        "note": "Gingerol kích thích tuần hoàn ngoại vi, làm ấm tỳ vị"
-      },
-      {
-        "herbId": "sa_chanh",
-        "amount": "4g",
-        "note": "Citral xua tan căng thẳng, thanh lọc hệ tiêu hóa"
-      },
-      {
-        "herbId": "quat_tac",
-        "amount": "2 quả",
-        "note": "Citric acid & Limonene kích thích vị giác sảng khoái"
-      },
-      {
-        "herbId": "cam_thao",
-        "amount": "1.5g",
-        "note": "Tạo hậu ngọt sâu êm ái, bảo vệ niêm mạc dạ dày"
-      }
-    ],
-    "brewSpecs": {
-      "waterTemp": "90°C",
-      "steepingTime": "3 phút",
-      "servingStyle": "Lắc cùng đá viên, thêm chút soda bọt mịn và lát gừng tươi"
-    },
-    "biochemicalSummary": "Kích hoạt thụ thể nhiệt TRPV1 giúp mạch máu giãn nở êm dịu, tăng lưu thông dưỡng khí lên đại não mà không gây kích ứng hệ thần kinh thực vật.",
-    "sachetPrice": "16.000 VNĐ / gói sachet"
+    "biochemicalSummary": "Tối đa hóa nồng độ Cynarin và acid hữu cơ thực vật hỗ trợ hệ enzyme Cytochrome P450 tại gan đào thải độc tố sinh ra sau các đêm thức trắng làm bài.",
+    "sachetPrice": "69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)"
   }
 ];
 
