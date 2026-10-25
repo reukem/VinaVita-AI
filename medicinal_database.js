@@ -1132,7 +1132,7 @@ const MEDICINAL_DATABASE = [
     "safeCulinaryDose": "1.0g – 2.0g sấy khô",
     "safeDailyDose": "1.0g – 2.0g sấy khô (Tối đa 3.0g/ngày)",
     "origin": "Vùng núi cao phía Bắc Việt Nam (OCOP)",
-    "image": "assets/vietnamese_heritage_herbs.jpg"
+    "image": "assets/la_han_qua.jpg"
   },
   {
     "id": "atiso_do",
@@ -1163,7 +1163,7 @@ const MEDICINAL_DATABASE = [
     "safeCulinaryDose": "1.0g – 2.2g đài hoa khô",
     "safeDailyDose": "1.0g – 2.2g đài hoa khô (EFSA/EMA ngưỡng ẩm thực an toàn)",
     "origin": "Bình Thuận, Đà Lạt (OCOP)",
-    "image": "assets/atiso.jpg"
+    "image": "assets/atiso_do.jpg"
   },
   {
     "id": "que_tra_bong",
@@ -1196,7 +1196,7 @@ const MEDICINAL_DATABASE = [
     ],
     "safeCulinaryDose": "0.5g – 1.0g vỏ quế tán thô",
     "origin": "Trà Bồng, Quảng Ngãi (Di sản chỉ dẫn địa lý)",
-    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "image": "assets/que_tra_bong.jpg",
     "safeDailyDose": "Không có liều dược liệu chính thức. Ngưỡng an toàn dựa trên TDI coumarin 0,1 mg/kg thể trọng/ngày (EFSA 2004). Người 60 kg: khoảng 6 mg coumarin/ngày. Quế Cassia chứa coumarin khoảng 2.100–4.400 mg/kg (BfR). Khuyến nghị ẩm thực VinaVita: 0.5g – 0.8g trong sachet 5.3g.",
     "officialSource": "BfR (Đức), High daily intakes of cinnamon: health risk cannot be ruled out: https://www.BFR.bund.de/cm/349/high_daily_intakes_of_cinnamon_health_risk_cannot_be_ruled_out.pdf"
   },
@@ -1209,7 +1209,7 @@ const MEDICINAL_DATABASE = [
     "category": "tieu_hoa",
     "categoryLabel": "Tiêu hóa & Chống viêm",
     "partUsed": "Thân rễ (Rhizoma Curcumae longae)",
-    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "image": "assets/nghe.jpg",
     "keyCompounds": [
       {
         "name": "Hoạt chất chuẩn hóa",
@@ -1251,7 +1251,7 @@ const MEDICINAL_DATABASE = [
     "category": "thanh_nhiet",
     "categoryLabel": "Thanh nhiệt & Giải độc",
     "partUsed": "Toàn cây (Herba Centellae)",
-    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "image": "assets/rau_ma.jpg",
     "keyCompounds": [
       {
         "name": "Hoạt chất chuẩn hóa",
@@ -1293,7 +1293,7 @@ const MEDICINAL_DATABASE = [
     "category": "thanh_nhiet",
     "categoryLabel": "Thanh nhiệt & Kháng khuẩn",
     "partUsed": "Nụ hoa (Flos Lonicerae)",
-    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "image": "assets/kim_ngan_hoa.jpg",
     "keyCompounds": [
       {
         "name": "Hoạt chất chuẩn hóa",
@@ -1376,7 +1376,7 @@ const MEDICINAL_DATABASE = [
     "category": "giai_cam",
     "categoryLabel": "Giải cảm & Chống dị ứng",
     "partUsed": "Lá (Folium Perillae)",
-    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "image": "assets/tia_to.jpg",
     "keyCompounds": [
       {
         "name": "Hoạt chất chuẩn hóa",
@@ -1418,7 +1418,7 @@ const MEDICINAL_DATABASE = [
     "category": "chuyen_hoa",
     "categoryLabel": "Đường huyết & Chuyển hóa",
     "partUsed": "Quả (Fructus Momordicae charantiae)",
-    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "image": "assets/muop_dang.jpg",
     "keyCompounds": [
       {
         "name": "Hoạt chất chuẩn hóa",
@@ -1460,7 +1460,7 @@ const MEDICINAL_DATABASE = [
     "category": "tieu_hoa",
     "categoryLabel": "Tiêu hóa & Chống oxy hóa",
     "partUsed": "Nụ hoa và lá",
-    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "image": "assets/voi.jpg",
     "keyCompounds": [
       {
         "name": "Hoạt chất chuẩn hóa",
@@ -1669,7 +1669,7 @@ const MEDICINAL_DATABASE = [
     "category": "tieu_hoa",
     "categoryLabel": "Bảo vệ dạ dày & Chống viêm",
     "partUsed": "Lá và cành non",
-    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "image": "assets/che_day.jpg",
     "keyCompounds": [
       {
         "name": "Hoạt chất chuẩn hóa",
