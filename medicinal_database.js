@@ -1501,7 +1501,7 @@ const MEDICINAL_DATABASE = [
     "category": "tieu_hoa",
     "categoryLabel": "Kiện tỳ & Tinh dầu",
     "partUsed": "Lá và cành non",
-    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "image": "assets/hoac_huong.jpg",
     "keyCompounds": [
       {
         "name": "Hoạt chất chuẩn hóa",
