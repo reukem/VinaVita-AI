@@ -1710,7 +1710,7 @@ const MEDICINAL_DATABASE = [
     "category": "giai_cam",
     "categoryLabel": "Giải cảm & Kháng khuẩn",
     "partUsed": "Toàn cây trên mặt đất",
-    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "image": "assets/huong_nhu.jpg",
     "keyCompounds": [
       {
         "name": "Hoạt chất chuẩn hóa",
