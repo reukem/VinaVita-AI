@@ -1334,7 +1334,7 @@ const MEDICINAL_DATABASE = [
     "category": "khang_khuan",
     "categoryLabel": "Kháng viêm & Hô hấp",
     "partUsed": "Lá và phần trên mặt đất",
-    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "image": "assets/xuyen_tam_lien.jpg",
     "keyCompounds": [
       {
         "name": "Hoạt chất chuẩn hóa",
