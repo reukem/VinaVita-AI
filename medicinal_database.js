@@ -1585,7 +1585,7 @@ const MEDICINAL_DATABASE = [
     "category": "thanh_nhiet",
     "categoryLabel": "Thanh nhiệt & Tiêu độc",
     "partUsed": "Toàn cây trên mặt đất",
-    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "image": "assets/sai_dat.jpg",
     "keyCompounds": [
       {
         "name": "Hoạt chất chuẩn hóa",
