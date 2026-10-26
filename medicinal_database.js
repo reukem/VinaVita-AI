@@ -1543,7 +1543,7 @@ const MEDICINAL_DATABASE = [
     "category": "chuyen_hoa",
     "categoryLabel": "Ổn định đường huyết",
     "partUsed": "Dây và lá",
-    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "image": "assets/day_thia_canh.jpg",
     "keyCompounds": [
       {
         "name": "Hoạt chất chuẩn hóa",
