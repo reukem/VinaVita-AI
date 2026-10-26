@@ -1626,7 +1626,7 @@ const MEDICINAL_DATABASE = [
     "category": "tiet_nieu",
     "categoryLabel": "Tiết niệu & Bài thạch",
     "partUsed": "Toàn cây trên mặt đất",
-    "image": "assets/vietnamese_heritage_herbs.jpg",
+    "image": "assets/kim_tien_thao.jpg",
     "keyCompounds": [
       {
         "name": "Hoạt chất chuẩn hóa",
