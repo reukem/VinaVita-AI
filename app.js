@@ -1645,7 +1645,7 @@ You are exclusively Dược Sĩ AI VinaVita (VinaVita AI Pharmacist), an intelli
 Core Knowledge Base (VinaVita RMIT RBPC 2026):
 1. Product Line (3 Hero Sachets in biodegradable corn-starch PLA pyramid tea bags, 5.3g/sachet, brewed 3-5 mins at 85°C, pH 4.2-4.5 buffered via Kumquat/Hibiscus organic acids + 0.05g Na+ mineral salt to suppress hTAS2R16 bitter receptors by 62-75%, 0g refined sugar, 0.0% alcohol):
    - #01 Citrus Twilight (Deep Sleep & Night Unwind, pH 4.3): Lạc Tiên (1.8g, Vitexin/Chrysin GABA-A modulation) + Hoa Cúc Vàng (1.5g, Apigenin lowers Cortisol 28-35%) + Tắc sấy lạnh (1.5g) + Cỏ Ngọt (0.5g, Stevioside GI=0).
-   - #02 Deadline Survivor (Calm Focus - Deadline & Study Alertness, 0mg Caffeine): Lá Đinh Lăng (2.0g, triterpene saponins boost cerebral perfusion without tachycardia/jitteriness) + Sả (1.5g, Citral) + Gừng ấm (0.8g, Gingerol) + La Hán Quả (1.0g, Mogroside V GI=0).
+   - #02 Deadline Survivor (Calm Focus - Deadline & Study Alertness, 0mg Caffeine, 5.3g): Dried Dinh Lang leaf / Lá Đinh Lăng (2.5g) + Lemongrass / Sả (1.2g) + Ginger / Gừng (1.3g) + Monk Fruit / La Hán Quả (0.3g). Steep 1 sachet in 150ml warm water (85°C) for 3-5 mins.
    - #03 Berry Social Glow (0.0% ABV Party Mocktail, pH 4.2): Atiso Đỏ / Hibiscus (2.2g, Anthocyanin ruby color) + Lạc Tiên (1.3g) + Quế Thanh Trà Bồng (0.8g) + La Hán Quả (1.0g).
 2. Unit Economics & Pricing:
    - 69,000 VND per 5-sachet box (13,800 VND/cup) or 15,000 VND per single trial sachet.
@@ -2054,7 +2054,7 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
               • <strong>Giá bán niêm yết:</strong> <strong>69.000 VNĐ / Hộp 5 gói</strong> (tương đương <strong>13.800 VNĐ/ly</strong> — rẻ hơn 65% so với trà sữa/cà phê chuỗi, với biên lợi nhuận gộp 49.3%), hoặc <strong>15.000 VNĐ / gói lẻ dùng thử</strong>.<br>
               • <strong>3 Dòng Sản Phẩm Chủ Lực (Hero SKUs):</strong><br>
               &nbsp;&nbsp;1️⃣ <strong>#01 Citrus Twilight (pH 4.3 — Ngủ sâu &amp; Xả stress đêm):</strong> Lạc Tiên (1.8g) + Hoa Cúc (1.5g) + Tắc sấy lạnh (1.5g) + Cỏ Ngọt (0.5g).<br>
-              &nbsp;&nbsp;2️⃣ <strong>#02 Deadline Survivor (0mg Caffeine — Chạy deadline không ép tim):</strong> Lá Đinh Lăng (2.0g) + Sả (1.5g) + Gừng ấm (0.8g) + La Hán Quả (1.0g).<br>
+              &nbsp;&nbsp;2️⃣ <strong>#02 Deadline Survivor (0mg Caffeine — Chạy deadline không ép tim, 5.3g):</strong> Lá Đinh Lăng (2.5g) + Sả (1.2g) + Gừng (1.3g) + La Hán Quả (0.3g).<br>
               &nbsp;&nbsp;3️⃣ <strong>#03 Berry Social Glow (pH 4.2 — Tiệc tùng 0.0% Cồn):</strong> Atiso Đỏ (2.2g) + Lạc Tiên (1.3g) + Quế thanh (0.8g) + La Hán Quả (1.0g).
             </div>
             <button class="chat-action-btn" type="button" onclick="window.openOrderModal('Combo Hộp 5 Gói Sachet VinaVita (69.000đ)')">
@@ -2170,7 +2170,7 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
           recFlavor = hasGas ? "sweet" : "minty";
           recTitle = "Phác Đồ Kép Ngày & Đêm Cho Học Sinh / Sinh Viên Cày Deadline";
           recItems = [
-            `<strong>⚡ Ca 1 — Trong lúc học / Chạy Deadline (Gói #02 Deadline Survivor):</strong> Dùng <strong>Lá Đinh Lăng Sâm Nam (2.0g)</strong> chứa <em>Saponin triterpenoid</em> tăng lưu lượng oxy lên thùy trán + <strong>Sả chanh (1.5g)</strong> + <strong>${hasGas || hasHighBP ? "Gừng ấm giảm liều (0.3g)" : "Gừng ấm (0.8g)"}</strong> + <strong>La Hán Quả (1.0g)</strong>. Giúp tỉnh táo bền bỉ 4 giờ mà <strong>0mg Caffeine, không ép tim, không run tay</strong>.`,
+            `<strong>⚡ Ca 1 — Trong lúc học / Chạy Deadline (Gói #02 Deadline Survivor):</strong> Dùng <strong>Lá Đinh Lăng Sâm Nam (2.5g)</strong> chứa <em>Saponin triterpenoid</em> tăng lưu lượng oxy lên thùy trán + <strong>Sả chanh (1.2g)</strong> + <strong>${hasGas || hasHighBP ? "Gừng ấm giảm liều (0.5g)" : "Gừng ấm (1.3g)"}</strong> + <strong>La Hán Quả (0.3g)</strong>. Giúp tỉnh táo bền bỉ 4 giờ mà <strong>0mg Caffeine, không ép tim, không run tay</strong>.`,
             `<strong>🌙 Ca 2 — Trước khi đi ngủ 45 phút (Gói #01 Citrus Twilight đã lọc bệnh nền):</strong> Ngưng dùng Đinh Lăng vào buổi tối; chuyển sang <strong>${hasPreg ? "Hoa Cúc Vàng nhẹ (1.5g) + Táo Đỏ (2.0g)" : "Lạc Tiên (1.8g, hoạt chất Vitexin gắn GABA_A) + Hoa Cúc Vàng (1.5g, Apigenin hạ 28–35% Cortisol)"}</strong> ${hasLowBP ? "<em>(Đã khóa hoàn toàn Tâm Sen để bảo vệ huyết áp thấp)</em>" : ""} + <strong>${hasGas ? "Tắc sấy lạnh giảm 50% (0.8g, đệm pH 4.5 êm dịu dạ dày)" : "Tắc sấy lạnh (1.5g, pH 4.3 khóa thụ thể đắng hTAS2R16)"}</strong> + <strong>Cỏ Ngọt (0.4g, GI=0)</strong>.`
           ];
         } else if (activeGoals.has("focus") || activeConds.has("driving") || activeConds.has("tachycardia_caffeine")) {
