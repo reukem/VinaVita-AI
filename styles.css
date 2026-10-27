@@ -253,42 +253,41 @@ body {
   flex-shrink: 0;
 }
 
-.brand-crest {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  border-radius: 12px;
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(52, 211, 153, 0.28);
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.18);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.brand:hover .brand-crest {
-  background: rgba(16, 185, 129, 0.16);
-  border-color: rgba(52, 211, 153, 0.55);
-  box-shadow: 0 0 22px rgba(52, 211, 153, 0.4);
-  transform: translateY(-1px);
-}
-
-.brand-mortar-logo {
-  width: 32px;
-  height: 32px;
-  -webkit-mask: url('assets/vinavita_mortar_logo.png') no-repeat center / contain;
-  mask: url('assets/vinavita_mortar_logo.png') no-repeat center / contain;
+.brand-logo-gradient {
+  width: 172px;
+  height: 38px;
+  -webkit-mask: url('assets/vinavita_full_logo.png') no-repeat left center / contain;
+  mask: url('assets/vinavita_full_logo.png') no-repeat left center / contain;
   background: linear-gradient(120deg, #ffffff 0%, #fef08a 22%, #6ee7b7 52%, #34d399 78%, #a7f3d0 100%);
   background-size: 200% auto;
   animation: shineGradient 6s ease-in-out infinite alternate;
-  filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.65));
-  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(52, 211, 153, 0.65));
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+  flex-shrink: 0;
 }
 
-.brand:hover .brand-mortar-logo {
-  transform: scale(1.1) rotate(-4deg);
-  filter: drop-shadow(0 0 14px rgba(52, 211, 153, 0.95)) drop-shadow(0 0 20px rgba(254, 240, 138, 0.5));
+.brand-ai-tag {
+  font-family: var(--font-display, sans-serif);
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  background: linear-gradient(120deg, #ffffff 0%, #fef08a 22%, #6ee7b7 52%, #34d399 78%, #a7f3d0 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shineGradient 6s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 10px rgba(52, 211, 153, 0.7));
+  line-height: 1;
+}
+
+.brand:hover .brand-logo-gradient {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 16px rgba(52, 211, 153, 0.95)) drop-shadow(0 0 22px rgba(254, 240, 138, 0.5));
+}
+
+.brand:hover .brand-ai-tag {
+  filter: drop-shadow(0 0 16px rgba(52, 211, 153, 0.95));
 }
 
 .brand-text-wrap {
@@ -300,20 +299,7 @@ body {
 .brand-title-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-.brand-name {
-  font-family: var(--font-display);
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.5px;
-  white-space: nowrap;
-}
-
-.brand-name span {
-  color: var(--emerald-bright);
+  gap: 8px;
 }
 
 .brand-tagline {
