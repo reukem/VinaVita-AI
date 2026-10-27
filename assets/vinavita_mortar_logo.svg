@@ -1,0 +1,25 @@
+<svg class="brand-mortar-svg" viewBox="0 0 145 132" width="40" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="VinaVita Logo">
+  <defs>
+    <linearGradient id="logoShineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff">
+        <animate attributeName="stop-color" values="#ffffff;#fef08a;#6ee7b7;#34d399;#a7f3d0;#ffffff" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="25%" stop-color="#fef08a">
+        <animate attributeName="stop-color" values="#fef08a;#6ee7b7;#34d399;#a7f3d0;#ffffff;#fef08a" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="60%" stop-color="#6ee7b7">
+        <animate attributeName="stop-color" values="#6ee7b7;#34d399;#a7f3d0;#ffffff;#fef08a;#6ee7b7" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="85%" stop-color="#34d399">
+        <animate attributeName="stop-color" values="#34d399;#a7f3d0;#ffffff;#fef08a;#6ee7b7;#34d399" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#a7f3d0">
+        <animate attributeName="stop-color" values="#a7f3d0;#ffffff;#fef08a;#6ee7b7;#34d399;#a7f3d0" dur="6s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+    <mask id="mortarMask">
+      <image href="assets/vinavita_mortar_logo.png" width="145" height="132" />
+    </mask>
+  </defs>
+  <rect width="145" height="132" fill="url(#logoShineGradient)" mask="url(#mortarMask)" />
+</svg>
