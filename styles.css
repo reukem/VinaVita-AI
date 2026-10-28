@@ -2665,12 +2665,12 @@ body {
   }
 }
 
-/* Sacred Non-Colliding Sky Corridors: 5 Graceful Birds in Continuous Seamless Staggered Cadence */
-.chim-lac-track.track-1  { top: 3.8%;  animation-duration: 19.0s; animation-delay: 0.0s;   z-index: 4; display: block; }
-.chim-lac-track.track-2  { top: 14.5%; animation-duration: 19.0s; animation-delay: -3.8s;  z-index: 3; display: block; }
-.chim-lac-track.track-3  { top: 7.2%;  animation-duration: 19.0s; animation-delay: -7.6s;  z-index: 2; display: block; }
-.chim-lac-track.track-4  { top: 35.0%; animation-duration: 19.0s; animation-delay: -11.4s; z-index: 3; display: block; }
-.chim-lac-track.track-5  { top: 45.5%; animation-duration: 19.0s; animation-delay: -15.2s; z-index: 3; display: block; }
+/* Sacred Distant Sky Corridors: 5 Distant Single Birds in Serene Slower 36s Cadence */
+.chim-lac-track.track-1  { top: 3.5%;  animation-duration: 36.0s; animation-delay: 0.0s;   z-index: 4; display: block; }
+.chim-lac-track.track-2  { top: 13.0%; animation-duration: 36.0s; animation-delay: -7.2s;  z-index: 3; display: block; }
+.chim-lac-track.track-3  { top: 6.8%;  animation-duration: 36.0s; animation-delay: -14.4s; z-index: 2; display: block; }
+.chim-lac-track.track-4  { top: 33.0%; animation-duration: 36.0s; animation-delay: -21.6s; z-index: 3; display: block; }
+.chim-lac-track.track-5  { top: 45.0%; animation-duration: 36.0s; animation-delay: -28.8s; z-index: 3; display: block; }
 
 /* Soaring Wave & Aerodynamic Pitch Physics */
 .chim-lac-soar {
@@ -2680,19 +2680,19 @@ body {
 }
 
 .chim-lac-soar.wave-1 {
-  animation: soarGlideWave1 5.2s ease-in-out infinite alternate;
+  animation: soarGlideWave1 9.2s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-2 {
-  animation: soarGlideWave2 6.4s ease-in-out infinite alternate;
+  animation: soarGlideWave2 11.0s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-3 {
-  animation: soarGlideWave3 4.6s ease-in-out infinite alternate;
+  animation: soarGlideWave3 8.4s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-4 {
-  animation: soarGlideWave4 7.0s ease-in-out infinite alternate;
+  animation: soarGlideWave4 12.5s ease-in-out infinite alternate;
 }
 
 @keyframes soarGlideWave1 {
@@ -2743,15 +2743,15 @@ body {
 }
 
 .chim-lac-wing-echo.flap-1 {
-  animation: wingStrokeBeat 1.55s ease-in-out infinite alternate;
+  animation: wingStrokeBeat 2.8s ease-in-out infinite alternate;
 }
 
 .chim-lac-wing-echo.flap-2 {
-  animation: wingStrokeBeat 1.85s ease-in-out infinite 0.35s alternate;
+  animation: wingStrokeBeat 3.3s ease-in-out infinite 0.35s alternate;
 }
 
 .chim-lac-wing-echo.flap-3 {
-  animation: wingStrokeBeat 1.35s ease-in-out infinite 0.7s alternate;
+  animation: wingStrokeBeat 2.5s ease-in-out infinite 0.7s alternate;
 }
 
 @keyframes wingStrokeBeat {
@@ -2822,23 +2822,23 @@ body {
 
 .chim-lac-silk-svg.silk-single {
   right: 90%;
-  top: 62%;
-  width: 105px;
-  height: 30px;
+  top: 60%;
+  width: 65px;
+  height: 18px;
 }
 
 .chim-lac-silk-svg.silk-pair-lead {
   right: 65%;
-  top: 64%;
-  width: 95px;
-  height: 28px;
+  top: 62%;
+  width: 58px;
+  height: 16px;
 }
 
 .chim-lac-silk-svg.silk-pair-rear {
   right: 92%;
   top: 35%;
-  width: 78px;
-  height: 22px;
+  width: 48px;
+  height: 14px;
   opacity: 0.95;
 }
 
@@ -2854,12 +2854,12 @@ body {
   }
 }
 
-/* Single Bird Trail: Shorter, elegant plume right behind tail feathers */
+/* Single Bird Trail: Shorter, delicate distant plume right behind tail */
 .chim-lac-trail.trail-single {
   right: 90%;
-  top: 62%;
-  width: 85px;
-  height: 8px;
+  top: 60%;
+  width: 52px;
+  height: 5px;
   background: linear-gradient(
     90deg,
     transparent 0%,
@@ -2869,16 +2869,16 @@ body {
     rgba(254, 240, 138, 0.95) 98%,
     transparent 100%
   );
-  border-radius: 50% 6px 6px 50%;
-  box-shadow: 0 0 8px rgba(251, 191, 36, 0.55), 0 0 16px rgba(245, 158, 11, 0.28);
+  border-radius: 50% 4px 4px 50%;
+  box-shadow: 0 0 5px rgba(251, 191, 36, 0.5), 0 0 10px rgba(245, 158, 11, 0.25);
 }
 
-/* Pair Birds Trail: Compact, refined dual plume */
+/* Pair Birds Trail: Compact refined plume */
 .chim-lac-trail.trail-pair {
   right: 82%;
   top: 54%;
-  width: 105px;
-  height: 11px;
+  width: 65px;
+  height: 6px;
   background: linear-gradient(
     90deg,
     transparent 0%,
@@ -2888,16 +2888,16 @@ body {
     rgba(254, 240, 138, 0.98) 98%,
     transparent 100%
   );
-  border-radius: 50% 8px 8px 50%;
-  box-shadow: 0 0 10px rgba(251, 191, 36, 0.6), 0 0 18px rgba(245, 158, 11, 0.3);
+  border-radius: 50% 5px 5px 50%;
+  box-shadow: 0 0 6px rgba(251, 191, 36, 0.55), 0 0 12px rgba(245, 158, 11, 0.28);
 }
 
-/* High Horizon Distant Bird Trail: Subtle short plume */
+/* High Horizon Distant Bird Trail: Subtle micro plume */
 .chim-lac-trail.trail-distant {
   right: 88%;
-  top: 62%;
-  width: 60px;
-  height: 6px;
+  top: 60%;
+  width: 38px;
+  height: 4px;
   background: linear-gradient(
     90deg,
     transparent 0%,
@@ -2906,7 +2906,7 @@ body {
     rgba(254, 240, 138, 0.85) 98%,
     transparent 100%
   );
-  box-shadow: 0 0 6px rgba(251, 191, 36, 0.4);
+  box-shadow: 0 0 4px rgba(251, 191, 36, 0.4);
 }
 
 /* Delicate Golden Stardust Sparks */
@@ -2919,35 +2919,35 @@ body {
 }
 
 .trail-spark.s1 {
-  width: 3.5px;
-  height: 3.5px;
-  right: 14px;
+  width: 2.2px;
+  height: 2.2px;
+  right: 8px;
   top: 25%;
-  animation: sparkFlicker 1.4s ease-in-out infinite alternate;
+  animation: sparkFlicker 1.8s ease-in-out infinite alternate;
 }
 
 .trail-spark.s2 {
-  width: 3px;
-  height: 3px;
-  right: 32px;
+  width: 1.8px;
+  height: 1.8px;
+  right: 18px;
   top: 68%;
-  animation: sparkFlicker 2.0s ease-in-out infinite 0.4s alternate;
+  animation: sparkFlicker 2.4s ease-in-out infinite 0.4s alternate;
 }
 
 .trail-spark.s3 {
-  width: 3px;
-  height: 3px;
-  right: 52px;
+  width: 1.8px;
+  height: 1.8px;
+  right: 28px;
   top: 42%;
-  animation: sparkFlicker 1.7s ease-in-out infinite 0.8s alternate;
+  animation: sparkFlicker 2.1s ease-in-out infinite 0.8s alternate;
 }
 
 .trail-spark.s4 {
-  width: 2.5px;
-  height: 2.5px;
-  right: 70px;
+  width: 1.5px;
+  height: 1.5px;
+  right: 38px;
   top: 30%;
-  animation: sparkFlicker 2.2s ease-in-out infinite 1.1s alternate;
+  animation: sparkFlicker 2.6s ease-in-out infinite 1.1s alternate;
 }
 
 @keyframes sparkFlicker {
@@ -2962,42 +2962,43 @@ body {
 }
 
 /* Chim Lạc Graphics: Crisp, detailed, layered on top of VFX */
+/* Chim Lạc Graphics: Distant Celestial Gliders (Far Away, Refined, Atmospheric Depth) */
 .chim-lac-img {
   position: relative;
   z-index: 2;
   display: block;
-  width: 132px;
+  width: 58px;
   height: auto;
   transform: translateZ(0);
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 6px rgba(245, 158, 11, 0.45));
   transition: transform 0.3s ease;
   user-select: none;
 }
 
 .chim-lac-img.img-majestic {
-  width: 138px;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 9px rgba(251, 191, 36, 0.55));
+  width: 66px;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 7px rgba(251, 191, 36, 0.5));
 }
 
 .chim-lac-img.img-pair-sovereign {
-  width: 168px;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 9px rgba(251, 191, 36, 0.55));
+  width: 68px;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 7px rgba(251, 191, 36, 0.5));
 }
 
 .chim-lac-img.img-pair-distant {
-  width: 118px;
-  opacity: 0.85;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 6px rgba(245, 158, 11, 0.4));
+  width: 52px;
+  opacity: 0.80;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 5px rgba(245, 158, 11, 0.35));
 }
 
 .chim-lac-img.img-mid {
-  width: 112px;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 7px rgba(245, 158, 11, 0.45));
+  width: 56px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 6px rgba(245, 158, 11, 0.45));
 }
 
 .chim-lac-img.img-distant {
-  width: 82px;
-  opacity: 0.82;
+  width: 44px;
+  opacity: 0.76;
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 5px rgba(245, 158, 11, 0.35));
 }
 
@@ -3006,18 +3007,18 @@ body {
   .chim-lac-img,
   .chim-lac-img.img-majestic,
   .chim-lac-img.img-pair-sovereign {
-    width: 84px;
+    width: 42px;
   }
   .chim-lac-img.img-mid,
   .chim-lac-img.img-pair-distant {
-    width: 68px;
+    width: 36px;
   }
   .chim-lac-img.img-distant {
-    width: 52px;
+    width: 30px;
   }
   .chim-lac-trail {
-    width: 85px;
-    height: 9px;
+    width: 32px;
+    height: 3px;
   }
 }
 
