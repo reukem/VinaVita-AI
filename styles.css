@@ -41,9 +41,8 @@
 
 /* Dynamic Animated Background Gradient */
 body {
-  background: linear-gradient(130deg, #020a06 0%, #051a10 25%, #08291a 50%, #0d3824 75%, #04140c 100%);
-  background-size: 300% 300%;
-  animation: dynamicGradient 18s ease infinite;
+  background: radial-gradient(circle at 50% 0%, #072a1b 0%, #03140c 50%, #020a06 100%);
+  background-color: #020a06;
   color: var(--text-main);
   font-family: var(--font-sans);
   min-height: 100vh;
@@ -135,42 +134,38 @@ body {
   opacity: 0.95;
 }
 
-/* Ambient Floating Luminous Orbs */
+/* Ambient Luminous Orbs (Optimized: Native Radial Gradient Falloff, Zero Blur Filter) */
 .ambient-orb {
   position: fixed;
   border-radius: 50%;
-  filter: blur(100px);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.45;
-  transition: all 1s ease;
+  opacity: 0.35;
+  transform: translateZ(0);
 }
 
 .orb-1 {
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.35) 0%, transparent 70%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.26) 0%, rgba(16, 185, 129, 0.08) 42%, transparent 70%);
   top: -100px;
   left: 5%;
-  animation: floatOrb1 22s ease-in-out infinite alternate;
 }
 
 .orb-2 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, transparent 70%);
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.16) 0%, rgba(245, 158, 11, 0.05) 42%, transparent 70%);
   bottom: 5%;
   right: -80px;
-  animation: floatOrb2 25s ease-in-out infinite alternate;
 }
 
 .orb-3 {
-  width: 380px;
-  height: 380px;
-  background: radial-gradient(circle, rgba(52, 211, 153, 0.25) 0%, transparent 70%);
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.18) 0%, rgba(52, 211, 153, 0.05) 42%, transparent 70%);
   top: 45%;
   left: 60%;
-  animation: floatOrb3 20s ease-in-out infinite alternate;
 }
 
 @keyframes floatOrb1 {
@@ -329,8 +324,8 @@ body {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  
+  
   position: relative;
 }
 
@@ -556,8 +551,8 @@ body {
   background: 
     radial-gradient(ellipse 90% 65% at 50% 12%, rgba(52, 211, 153, 0.2) 0%, rgba(16, 185, 129, 0.12) 35%, rgba(6, 44, 30, 0.9) 70%, rgba(3, 18, 12, 0.98) 100%),
     linear-gradient(90deg, rgba(4, 20, 14, 0.96) 0%, rgba(6, 44, 30, 0.92) 25%, rgba(13, 78, 54, 0.88) 50%, rgba(6, 44, 30, 0.92) 75%, rgba(4, 20, 14, 0.96) 100%) !important;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  
+  
   border: 1.5px solid rgba(245, 158, 11, 0.55) !important;
   border-radius: 22px;
   padding: 34px;
@@ -794,8 +789,8 @@ body {
     0 16px 45px rgba(0, 0, 0, 0.6), 
     0 0 25px rgba(245, 158, 11, 0.2), 
     inset 0 0 32px rgba(16, 185, 129, 0.18) !important;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  
+  
 }
 
 /* Luminous Crown Glow Beam at Top */
@@ -1166,8 +1161,8 @@ body {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  
+  
   box-shadow: 
     0 16px 45px rgba(0, 0, 0, 0.6), 
     0 0 25px rgba(245, 158, 11, 0.18), 
@@ -1249,7 +1244,7 @@ body {
   font-weight: 800;
   padding: 4px 10px;
   border-radius: 12px;
-  backdrop-filter: blur(8px);
+  
 }
 
 .sig-title {
@@ -1354,8 +1349,8 @@ body {
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  
+  
   box-shadow: 
     0 16px 45px rgba(0, 0, 0, 0.6), 
     0 0 25px rgba(245, 158, 11, 0.18), 
@@ -1437,7 +1432,7 @@ body {
   font-weight: 800;
   padding: 4px 10px;
   border-radius: 12px;
-  backdrop-filter: blur(8px);
+  
   z-index: 3;
 }
 
@@ -2507,7 +2502,7 @@ body {
   width: calc(100% + 96px);
   height: calc(100% + 96px);
   animation: spinHaloRing 135s linear infinite;
-  filter: drop-shadow(0 0 22px rgba(251, 191, 36, 0.85)) drop-shadow(0 0 50px rgba(245, 158, 11, 0.5));
+  filter: drop-shadow(0 0 18px rgba(251, 191, 36, 0.65));
   opacity: 0.96;
 }
 
@@ -2517,10 +2512,9 @@ body {
   height: 94%;
   object-fit: contain;
   opacity: 0.65;
-  filter: drop-shadow(0 0 26px rgba(254, 240, 138, 0.82))
-          drop-shadow(0 0 62px rgba(251, 191, 36, 0.72))
-          drop-shadow(0 0 115px rgba(16, 185, 129, 0.45))
-          contrast(1.22) brightness(1.25);
+  filter: drop-shadow(0 0 22px rgba(251, 191, 36, 0.72))
+          drop-shadow(0 0 45px rgba(16, 185, 129, 0.35))
+          contrast(1.18) brightness(1.22);
   animation: spinDongSonDrum 85s linear infinite reverse;
   transform-origin: center center;
   transition: opacity 0.5s ease, filter 0.5s ease;
@@ -2677,19 +2671,19 @@ body {
 }
 
 /* Sacred Non-Colliding Sky Corridors (Continuous Multi-Layer Migration across Celestial Canopy) */
-.chim-lac-track.track-1  { top: 2.2%;  animation-duration: 10.5s; animation-delay: -1.2s;  z-index: 4; display: block; }
-.chim-lac-track.track-2  { top: 6.5%;  animation-duration: 12.0s; animation-delay: -3.5s;  z-index: 3; display: block; }
-.chim-lac-track.track-3  { top: 1.5%;  animation-duration: 13.5s; animation-delay: -6.5s;  z-index: 2; display: block; }
-.chim-lac-track.track-4  { top: 43.0%; animation-duration: 11.2s; animation-delay: -8.0s;  z-index: 3; display: block; }
-.chim-lac-track.track-5  { top: 4.2%;  animation-duration: 11.8s; animation-delay: -10.0s; z-index: 4; display: block; }
-.chim-lac-track.track-6  { top: 38.0%; animation-duration: 12.5s; animation-delay: -5.0s;  z-index: 2; display: block; }
-.chim-lac-track.track-7  { top: 9.8%;  animation-duration: 13.0s; animation-delay: -11.0s; z-index: 2; display: block; }
-.chim-lac-track.track-8  { top: 13.5%; animation-duration: 11.5s; animation-delay: -2.2s;  z-index: 3; display: block; }
-.chim-lac-track.track-9  { top: 32.5%; animation-duration: 12.2s; animation-delay: -7.0s;  z-index: 2; display: block; }
-.chim-lac-track.track-10 { top: 46.5%; animation-duration: 10.8s; animation-delay: -4.0s;  z-index: 3; display: block; }
-.chim-lac-track.track-11 { top: 16.0%; animation-duration: 12.8s; animation-delay: -9.0s;  z-index: 3; display: block; }
-.chim-lac-track.track-12 { top: 3.5%;  animation-duration: 13.8s; animation-delay: -5.5s;  z-index: 2; display: block; }
-.chim-lac-track.track-13 { top: 28.0%; animation-duration: 11.0s; animation-delay: -10.5s; z-index: 3; display: block; }
+.chim-lac-track.track-1  { top: 2.2%;  animation-duration: 25.0s; animation-delay: -2.0s;  z-index: 4; display: block; }
+.chim-lac-track.track-2  { top: 6.5%;  animation-duration: 28.0s; animation-delay: -7.5s;  z-index: 3; display: block; }
+.chim-lac-track.track-3  { top: 1.5%;  animation-duration: 31.0s; animation-delay: -14.0s; z-index: 2; display: block; }
+.chim-lac-track.track-4  { top: 43.0%; animation-duration: 26.5s; animation-delay: -18.5s; z-index: 3; display: block; }
+.chim-lac-track.track-5  { top: 4.2%;  animation-duration: 27.5s; animation-delay: -22.0s; z-index: 4; display: block; }
+.chim-lac-track.track-6  { top: 38.0%; animation-duration: 29.0s; animation-delay: -11.0s; z-index: 2; display: block; }
+.chim-lac-track.track-7  { top: 9.8%;  animation-duration: 30.0s; animation-delay: -25.5s; z-index: 2; display: block; }
+.chim-lac-track.track-8  { top: 13.5%; animation-duration: 27.0s; animation-delay: -4.5s;  z-index: 3; display: block; }
+.chim-lac-track.track-9  { top: 32.5%; animation-duration: 28.5s; animation-delay: -16.0s; z-index: 2; display: block; }
+.chim-lac-track.track-10 { top: 46.5%; animation-duration: 25.5s; animation-delay: -9.0s;  z-index: 3; display: block; }
+.chim-lac-track.track-11 { top: 16.0%; animation-duration: 29.5s; animation-delay: -20.5s; z-index: 3; display: block; }
+.chim-lac-track.track-12 { top: 3.5%;  animation-duration: 32.0s; animation-delay: -12.5s; z-index: 2; display: block; }
+.chim-lac-track.track-13 { top: 28.0%; animation-duration: 26.0s; animation-delay: -23.5s; z-index: 3; display: block; }
 
 /* Soaring Wave & Aerodynamic Pitch Physics */
 .chim-lac-soar {
@@ -2699,19 +2693,19 @@ body {
 }
 
 .chim-lac-soar.wave-1 {
-  animation: soarGlideWave1 2.8s ease-in-out infinite alternate;
+  animation: soarGlideWave1 5.2s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-2 {
-  animation: soarGlideWave2 3.4s ease-in-out infinite alternate;
+  animation: soarGlideWave2 6.4s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-3 {
-  animation: soarGlideWave3 2.5s ease-in-out infinite alternate;
+  animation: soarGlideWave3 4.6s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-4 {
-  animation: soarGlideWave4 3.6s ease-in-out infinite alternate;
+  animation: soarGlideWave4 7.0s ease-in-out infinite alternate;
 }
 
 @keyframes soarGlideWave1 {
@@ -2761,15 +2755,15 @@ body {
 }
 
 .chim-lac-wing-echo.flap-1 {
-  animation: wingStrokeBeat 0.72s ease-in-out infinite alternate;
+  animation: wingStrokeBeat 1.55s ease-in-out infinite alternate;
 }
 
 .chim-lac-wing-echo.flap-2 {
-  animation: wingStrokeBeat 0.84s ease-in-out infinite 0.15s alternate;
+  animation: wingStrokeBeat 1.85s ease-in-out infinite 0.35s alternate;
 }
 
 .chim-lac-wing-echo.flap-3 {
-  animation: wingStrokeBeat 0.65s ease-in-out infinite 0.3s alternate;
+  animation: wingStrokeBeat 1.35s ease-in-out infinite 0.7s alternate;
 }
 
 @keyframes wingStrokeBeat {
@@ -3066,7 +3060,7 @@ body {
   border-radius: 14px;
   padding: 10px 14px;
   text-align: left;
-  backdrop-filter: blur(14px);
+  
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.38), inset 0 0 14px rgba(16, 185, 129, 0.12);
   transition: all 0.25s ease;
 }
@@ -3528,7 +3522,7 @@ body {
   border-radius: 30px;
   padding: 8px 22px;
   margin-top: 18px;
-  backdrop-filter: blur(12px);
+  
   box-shadow: 0 4px 22px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
@@ -3811,8 +3805,8 @@ body {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  
+  
   box-shadow: 
     0 16px 45px rgba(0, 0, 0, 0.6), 
     0 0 25px rgba(245, 158, 11, 0.18), 
@@ -3870,8 +3864,8 @@ body {
   position: relative !important;
   overflow: visible !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  
+  
 }
 
 .team-card::before {
@@ -4195,7 +4189,7 @@ body {
   border-radius: 20px;
   padding: 18px 22px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(245, 158, 11, 0.08);
-  backdrop-filter: blur(16px);
+  
   position: relative;
   z-index: 10;
 }
@@ -4397,7 +4391,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(12px);
+  
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -4522,3 +4516,12 @@ body {
 .stroke-amber { stroke: #fbbf24; }
 .stroke-teal { stroke: #10b981; }
 .stroke-cyan { stroke: #38bdf8; }
+
+/* High-Performance Section Containment for 120 FPS Buttery Scrolling */
+.site-nav,
+.hero-section,
+.studio-section,
+.database-section,
+.team-section {
+  contain: content;
+}
