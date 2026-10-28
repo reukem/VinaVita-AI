@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let title = "Citrus Twilight Mocktail (VinaVita #01 — pH 4.3)";
     let subtitle = "The 'Sleep & Unwind' Pack • Gói Ngủ Ngon & Xả Stress Đêm (0.0% Alcohol | 0g Refined Sugar)";
     let badge = "⭐ HERO SKU #01 • SLEEP & UNWIND";
-    let heroImg = "assets/mocktail_hero.jpg";
+    let heroImg = "assets/citrus_twilight_hero.jpg";
     let formula = [];
     let brewTemp = "85°C (Bảo toàn Flavonoids & Apigenin)";
     let brewTime = "3 – 5 phút (Túi lọc sinh học PLA 5.3g)";
@@ -308,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (mood === "unwind") {
       sku = "01";
-      heroImg = "assets/mocktail_hero.jpg";
+      heroImg = "assets/citrus_twilight_hero.jpg";
 
       // Base: Lac Tien (1.80g) + Hoa Cuc (1.50g) = 3.30g
       const lacTienItem = {
@@ -640,7 +640,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } else if (mood === "social") {
       sku = "03";
-      heroImg = "assets/berry_mocktail_hero.jpg";
+      heroImg = "assets/berry_social_glow_hero.jpg";
       brewTemp = "85°C";
       brewTime = "4 phút (Túi lọc sinh học 5.3g)";
       serving = "Lắc cùng đá viên, thêm chút soda bọt mịn và 1 nhánh hương thảo";

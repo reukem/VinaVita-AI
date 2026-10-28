@@ -1752,7 +1752,7 @@ const SIGNATURE_DRINKS = [
     "name": "Citrus Twilight Mocktail (VinaVita #01)",
     "subtitle": "The 'Sleep & Unwind' Pack • Gói Ngủ Ngon & Xả Stress Đêm (0.0% Alcohol | 0g Refined Sugar)",
     "badge": "⭐ HERO SKU #01 • SLEEP & UNWIND",
-    "image": "assets/mocktail_hero.jpg",
+    "image": "assets/citrus_twilight_hero.jpg",
     "targetMood": "Thư giãn đêm & xả stress thi cử (0.0% Cồn)",
     "formula": [
       {
@@ -1849,7 +1849,7 @@ const SIGNATURE_DRINKS = [
     "name": "Berry Social Glow Mocktail (VinaVita #03)",
     "subtitle": "The '0% Party & Social Chill' Pack • Gói Tiệc Tùng 0% Cồn (0.0% Alcohol Social Chill)",
     "badge": "🍷 HERO SKU #03 • 0% PARTY & CHILL",
-    "image": "assets/berry_mocktail_hero.jpg",
+    "image": "assets/berry_social_glow_hero.jpg",
     "targetMood": "Giao lưu bạn bè, tiệc đêm 0.0% cồn tuân thủ Nghị định 168",
     "formula": [
       {
