@@ -482,7 +482,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } else if (mood === "focus") {
       sku = "02";
-      heroImg = "assets/dinh_lang.jpg";
+      heroImg = "assets/deadline_survivor_hero.jpg";
       brewTemp = "90°C (Chiết xuất trọn vẹn Saponin)";
       brewTime = "3 phút (Túi lọc sinh học 5.3g)";
       serving = "Dùng ấm hoặc rót qua đá viên";

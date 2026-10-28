@@ -1804,7 +1804,7 @@ const SIGNATURE_DRINKS = [
     "name": "Deadline Survivor Sâm Nam Brew (VinaVita #02)",
     "subtitle": "The 'Deadline & Exam' Pack • Gói Chạy Deadline & Ôn Thi (Tập trung 4h không ép tim)",
     "badge": "⚡ HERO SKU #02 • DEADLINE & EXAM",
-    "image": "assets/dinh_lang.jpg",
+    "image": "assets/deadline_survivor_hero.jpg",
     "targetMood": "Tỉnh táo tập trung học thi, không bồn chồn run tay",
     "formula": [
       {
