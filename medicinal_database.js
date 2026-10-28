@@ -1888,51 +1888,6 @@ const SIGNATURE_DRINKS = [
     },
     "biochemicalSummary": "Ly mocktail sắc đỏ Ruby dạ tiệc hòa quyện hương quế nồng ấm, 100% tuân thủ Nghị định 168/2024/NĐ-CP (0.00% cồn), an toàn tuyệt đối khi lái xe về nhà sau tiệc.",
     "sachetPrice": "69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)"
-  },
-  {
-    "id": "sig_highland_liver_rescue",
-    "name": "Highland Liver Rescue (VinaVita Detox)",
-    "subtitle": "Gói Thanh Can Mát Gan Sau Chuỗi Ngày Thức Trắng Đêm (0.0% Cồn | 0g Đường)",
-    "badge": "🍵 THANH NHIỆT MÁT GAN",
-    "image": "assets/atiso.jpg",
-    "targetMood": "Thanh nhiệt mát gan, hồi phục thể trạng sau mùa thi",
-    "formula": [
-      {
-        "herbId": "atiso",
-        "name": "Actisô Đà Lạt Tuyển Chọn",
-        "sci": "Cynara scolymus",
-        "amount": "2.0g",
-        "note": "Cynarin kích thích bài tiết mật và hỗ trợ chức năng giải độc gan"
-      },
-      {
-        "herbId": "hoa_cuc",
-        "name": "Hoa Cúc Vàng Bản Địa",
-        "sci": "Chrysanthemum indicum",
-        "amount": "1.5g",
-        "note": "Thanh can hỏa, sáng mắt, tiêu trừ mụn nhiệt sau thức khuya"
-      },
-      {
-        "herbId": "co_muc",
-        "name": "Cỏ Mực Bản Địa",
-        "sci": "Eclipta prostrata",
-        "amount": "1.0g",
-        "note": "Làm mát huyết, thanh can nhiệt theo Dược điển Việt Nam (Đỗ Tất Lợi 2004)"
-      },
-      {
-        "herbId": "co_ngot",
-        "name": "Cỏ Ngọt Tự Nhiên (Stevia)",
-        "sci": "Stevia rebaudiana",
-        "amount": "0.8g",
-        "note": "Vị ngọt dịu thanh mát không gây tăng đường huyết, an toàn cho huyết áp"
-      }
-    ],
-    "brewSpecs": {
-      "waterTemp": "92°C",
-      "steepingTime": "5 phút (Túi lọc sinh học 5.3g)",
-      "servingStyle": "Uống ấm hoặc uống mát cả ngày thanh lọc cơ thể"
-    },
-    "biochemicalSummary": "Tối đa hóa nồng độ Cynarin và acid hữu cơ thực vật hỗ trợ hệ enzyme Cytochrome P450 tại gan đào thải độc tố sinh ra sau các đêm thức trắng làm bài.",
-    "sachetPrice": "69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)"
   }
 ];
 

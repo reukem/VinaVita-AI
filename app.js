@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (q.includes("tiệc") || q.includes("bạn bè") || q.includes("party") || q.includes("chill")) {
       setMoodSelection("social");
     } else if (q.includes("gan") || q.includes("thanh nhiệt") || q.includes("mát") || q.includes("detox")) {
-      setMoodSelection("detox");
+      setMoodSelection("unwind");
     }
 
     if (q.includes("dạ dày") || q.includes("trào ngược") || q.includes("bao tử")) {
@@ -638,7 +638,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       formula = [dinhLangItem, saChanhItem, ...modulators];
 
-    } else if (mood === "social") {
+    } else { // social (SKU #03 — Berry Social Glow)
       sku = "03";
       heroImg = "assets/berry_social_glow_hero.jpg";
       brewTemp = "85°C";
@@ -810,68 +810,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       formula = [...baseHerbs, ...modulators];
 
-    } else { // detox
-      sku = "04";
-      title = "Highland Liver Rescue (VinaVita Detox — 5.3g)";
-      subtitle = "Gói Thanh Can Mát Gan Sau Chuỗi Ngày Thức Trắng Đêm (0.0% Cồn | 0g Đường)";
-      badge = "🍵 THANH NHIỆT MÁT GAN";
-      heroImg = "assets/atiso.jpg";
-      brewTemp = "92°C";
-      brewTime = "5 phút (Túi lọc sinh học 5.3g)";
-      serving = "Có thể uống ấm hoặc uống lạnh cả ngày thay nước lọc";
 
-      const baseDetox = [
-        {
-          name: "Actisô Đà Lạt Tuyển Chọn",
-          sci: "Cynara scolymus",
-          amount: "2.00g",
-          note: "Cynarin kích thích chức năng bài tiết mật và hỗ trợ tái tạo tế bào gan"
-        },
-        {
-          name: "Hoa Cúc Vàng Bản Địa",
-          sci: "Chrysanthemum indicum",
-          amount: "1.50g",
-          note: "Thanh can hỏa, sáng mắt, tiêu trừ mụn nhiệt sau thức khuya"
-        },
-        {
-          name: "Cỏ Mực Bản Địa",
-          sci: "Eclipta prostrata",
-          amount: "1.00g",
-          note: "Làm mát huyết, thanh nhiệt can thận theo Dược điển Việt Nam"
-        }
-      ];
-
-      let detoxMod = [];
-      if (flavor === "citrus") {
-        detoxMod = [
-          { name: "Tắc Sấy Lạnh Lát Mỏng", sci: "Citrus japonica", amount: "0.50g", note: "Chua thanh nhẹ" },
-          { name: "Cỏ Ngọt Tự Nhiên (Stevia)", sci: "Stevia rebaudiana", amount: "0.30g", note: "Ngọt thanh tự nhiên" }
-        ];
-      } else if (flavor === "minty") {
-        detoxMod = [
-          { name: "Bạc Hà Nam The Mát", sci: "Mentha arvensis", amount: "0.50g", note: "The mát sảng khoái" },
-          { name: "Cỏ Ngọt Tự Nhiên (Stevia)", sci: "Stevia rebaudiana", amount: "0.30g", note: "Ngọt thanh tự nhiên" }
-        ];
-      } else if (flavor === "floral") {
-        detoxMod = [
-          { name: "Hoa Nhài Bát Tràng", sci: "Jasminum sambac", amount: "0.50g", note: "Hương hoa thanh nhã" },
-          { name: "Cỏ Ngọt Tự Nhiên (Stevia)", sci: "Stevia rebaudiana", amount: "0.30g", note: "Ngọt thanh tự nhiên" }
-        ];
-      } else { // sweet
-        detoxMod = [
-          { name: "Táo Đỏ Tân Cương", sci: "Ziziphus jujuba", amount: "0.50g", note: "Bổ tỳ dưỡng huyết" },
-          { name: "Cỏ Ngọt Tự Nhiên (Stevia)", sci: "Stevia rebaudiana", amount: "0.30g", note: "Vị ngọt dịu thanh" }
-        ];
-      }
-
-      biochem = "Tối đa hóa nồng độ Cynarin và acid hữu cơ thực vật hỗ trợ hệ enzyme Cytochrome P450 tại gan đào thải nhanh độc tố sinh ra trong quá trình thức khuya dài ngày.";
-      matchedSachet = {
-        name: "Hộp 5 Túi Lọc Kim Tự Tháp #04 — Highland Liver Rescue",
-        specs: "Túi lọc sinh học PLA 5.30g • 69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)",
-        orderData: "Hộp 5 Gói Sachet #04 - Highland Liver Rescue (69.000đ)"
-      };
-
-      formula = [...baseDetox, ...detoxMod];
     }
 
     if (customNote) {
@@ -1285,7 +1224,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (herb.category === "bo_khi" || herb.category === "sang_mat") {
       targetMood = "focus";
     } else if (herb.category === "thanh_nhiet" || herb.category === "giai_doc") {
-      targetMood = "detox";
+      targetMood = "unwind";
     }
 
     const moodCard = document.querySelector(`.opt-mood[data-value="${targetMood}"]`);
@@ -2001,7 +1940,7 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
           recMood = "focus";
           recFlavor = hasGas ? "sweet" : "minty";
         } else if (activeGoals.has("detox")) {
-          recMood = "detox";
+          recMood = "unwind";
           recFlavor = "sweet";
         } else if (activeGoals.has("social")) {
           recMood = "social";
@@ -2197,17 +2136,15 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
               : `<strong>Tâm Sen Sao Vàng (1.0g):</strong> Thanh tâm hỏa, ổn định nhịp tim.`
           ];
         } else if (activeGoals.has("detox")) {
-          recMood = "detox";
+          recMood = "unwind";
           recFlavor = "sweet";
-          recTitle = "Đơn Thanh Can Giải Độc — Highland Liver Rescue";
+          recTitle = "Đơn Thanh Can Hạ Hỏa — VinaVita #01 Citrus Twilight";
           recItems = [
-            `<strong>Actisô Đà Lạt (4.0g):</strong> Hoạt chất <em>Cynarin</em> kích thích bài tiết mật, hỗ trợ hệ enzyme Cytochrome P450 đào thải độc tố sau chuỗi ngày thức khuya.`,
-            `<strong>Hoa Cúc Vàng (2.0g):</strong> Thanh can hỏa, giảm mụn nhiệt và làm dịu gan.`,
-            hasHighBP
-              ? `<strong>Cỏ Ngọt Tự Nhiên (0.5g):</strong> <em>(Thay thế Cam Thảo Bắc để bảo vệ huyết áp cao của bạn)</em>.`
-              : `<strong>Cam Thảo Bắc (1.2g):</strong> <em>Glycyrrhizin</em> điều vị ngọt sâu và bảo vệ niêm mạc tiêu hóa.`
+            `<strong>Hoa Cúc Vàng Bản Địa (1.5g):</strong> <em>Apigenin</em> thanh can giáng hỏa, làm mát gan và xua tan mụn nhiệt sau các đêm thức trắng.`,
+            `<strong>Lạc Tiên Khô (1.8g):</strong> <em>Vitexin</em> kích hoạt thụ thể GABA_A hạ nồng độ hormone căng thẳng Cortisol.`,
+            `<strong>Tắc Sấy Lạnh (1.5g) &amp; Cỏ Ngọt (0.5g):</strong> Axit hữu cơ tự nhiên hạ pH khử đắng, hậu vị ngọt thanh mát không sinh nhiệt đường.`
           ];
-          recBrew = "92°C trong 5 phút • Uống ấm hoặc mát thay nước lọc trong ngày";
+          recBrew = "85°C trong 3–5 phút • Rót qua đá viên hoặc uống ấm";
         } else if (activeGoals.has("social")) {
           recMood = "social";
           recFlavor = "sweet";
