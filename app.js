@@ -2517,8 +2517,8 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
     startCanvas();
 
     // ==============================================================================
-    // 3. ZERO-REFLOW IDLE-SMART 120-FPS 3D PARALLAX FOR SACRED ĐÔNG SƠN ASTROLABE
-    // Stops immediately when mouse is stationary or outside Hero; caches coordinates without reflows.
+    // 3. AUTHENTIC 3D MOUSE PARALLAX FOR SACRED ĐÔNG SƠN ASTROLABE (MATCHES EARLIER VERSION)
+    // Dynamic 3D perspective tracking with smooth LERP damping and instant freezing when dragging down to herbs.
     // ==============================================================================
     const heroSection = document.getElementById("heroStageSection");
     if (heroSection && astrolabe) {
@@ -2533,24 +2533,16 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
 
       let cachedCenterX = window.innerWidth / 2;
       let cachedCenterY = window.innerHeight / 2;
-      let heroTop = 0;
-      let heroHeight = 500;
 
       function updateCachedCenter() {
         if (!heroSection) return;
         const rect = heroSection.getBoundingClientRect();
-        heroTop = rect.top + window.scrollY;
-        heroHeight = rect.height;
         cachedCenterX = rect.left + rect.width / 2;
-        cachedCenterY = heroTop - window.scrollY + heroHeight / 2;
+        cachedCenterY = rect.top + rect.height / 2;
       }
 
       updateCachedCenter();
       window.addEventListener("resize", updateCachedCenter, { passive: true });
-      // Zero-reflow scroll update: purely arithmetic, never calls getBoundingClientRect!
-      window.addEventListener("scroll", () => {
-        cachedCenterY = heroTop - window.scrollY + heroHeight / 2;
-      }, { passive: true });
 
       function updateAstrolabeParallax() {
         if (!isHeroVisible) {
@@ -2564,24 +2556,27 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
         const drotX = targetRotX - currentRotX;
         const drotY = targetRotY - currentRotY;
 
-        // Idle detection: when settled, snap and terminate rAF loop to free 100% CPU/GPU cycles
-        if (Math.abs(dx) < 0.04 && Math.abs(dy) < 0.04 && Math.abs(drotX) < 0.04 && Math.abs(drotY) < 0.04) {
+        // Fluid organic glide (0.075) restoring the iconic feel from earlier versions
+        currentX += dx * 0.075;
+        currentY += dy * 0.075;
+        currentRotX += drotX * 0.075;
+        currentRotY += drotY * 0.075;
+
+        // Full 3D perspective tracking (perspective 1000px restores authentic 3D spatial depth)
+        astrolabe.style.transform = `translate(calc(-50% + ${currentX.toFixed(2)}px), calc(-50% + ${currentY.toFixed(2)}px)) perspective(1000px) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
+
+        // Idle snap when settled
+        if (Math.abs(dx) < 0.02 && Math.abs(dy) < 0.02 && Math.abs(drotX) < 0.02 && Math.abs(drotY) < 0.02) {
           currentX = targetX;
           currentY = targetY;
           currentRotX = targetRotX;
           currentRotY = targetRotY;
-          astrolabe.style.transform = `translate3d(calc(-50% + ${currentX.toFixed(2)}px), calc(-50% + ${currentY.toFixed(2)}px), 0) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
+          astrolabe.style.transform = `translate(calc(-50% + ${currentX.toFixed(2)}px), calc(-50% + ${currentY.toFixed(2)}px)) perspective(1000px) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
           isParallaxRunning = false;
           parallaxRafId = null;
           return;
         }
 
-        currentX += dx * 0.085;
-        currentY += dy * 0.085;
-        currentRotX += drotX * 0.085;
-        currentRotY += drotY * 0.085;
-
-        astrolabe.style.transform = `translate3d(calc(-50% + ${currentX.toFixed(2)}px), calc(-50% + ${currentY.toFixed(2)}px), 0) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
         parallaxRafId = requestAnimationFrame(updateAstrolabeParallax);
       }
 
@@ -2600,10 +2595,11 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
         const clampedX = Math.max(-1, Math.min(1, relX));
         const clampedY = Math.max(-1, Math.min(1, relY));
 
-        targetX = clampedX * 36;
-        targetY = clampedY * 22;
-        targetRotX = -clampedY * 5.5;
-        targetRotY = clampedX * 6.5;
+        // Original rich 3D amplitudes (+-38px translate, +-6.5/7.5deg 3D tilt)
+        targetX = clampedX * 38;
+        targetY = clampedY * 24;
+        targetRotX = -clampedY * 6.5;
+        targetRotY = clampedX * 7.5;
 
         requestParallaxTick();
       };
@@ -2616,26 +2612,69 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
         targetRotY = 0;
         requestParallaxTick();
       });
+
+      // Initial tick to center Trống Đồng in 3D
+      requestParallaxTick();
     }
 
     // ==============================================================================
-    // 4. INTERSECTION OBSERVER: SUSPEND OFFSCREEN CANVAS & CSS ANIMATIONS AUTOMATICALLY
-    // When user scrolls down into Database, Studio or About, Hero shuts down completely!
+    // 4. INSTANT HERO FREEZE ON DRAG/SCROLL DOWN (HERBS & MEDICINE FOCUS MODE)
+    // When the user drags or scrolls down to see the medicine, herbs, and studio:
+    // EVERYTHING in the Hero section completely stops (Canvas, Chim Lạc flock, Trống Đồng)!
     // ==============================================================================
+    function updateHeroActiveState() {
+      if (!heroSection) return;
+      // Scroll threshold: as soon as the user scrolls down past 90px to explore the herbs
+      const isScrolledDown = window.scrollY > 90;
+
+      if (isScrolledDown) {
+        if (isHeroVisible) {
+          isHeroVisible = false;
+          heroSection.classList.add("hero-offscreen");
+          stopCanvas();
+          if (parallaxRafId) {
+            cancelAnimationFrame(parallaxRafId);
+            parallaxRafId = null;
+            isParallaxRunning = false;
+          }
+        }
+      } else {
+        if (!isHeroVisible) {
+          isHeroVisible = true;
+          heroSection.classList.remove("hero-offscreen");
+          startCanvas();
+          if (typeof requestParallaxTick === "function") {
+            requestParallaxTick();
+          }
+        }
+      }
+    }
+
+    window.addEventListener("scroll", updateHeroActiveState, { passive: true });
+    updateHeroActiveState();
+
     if ("IntersectionObserver" in window && heroSection) {
       const heroObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            isHeroVisible = true;
-            heroSection.classList.remove("hero-offscreen");
-            startCanvas();
-          } else {
+          if (!entry.isIntersecting && isHeroVisible) {
             isHeroVisible = false;
             heroSection.classList.add("hero-offscreen");
             stopCanvas();
+            if (parallaxRafId) {
+              cancelAnimationFrame(parallaxRafId);
+              parallaxRafId = null;
+              isParallaxRunning = false;
+            }
+          } else if (entry.isIntersecting && window.scrollY <= 90 && !isHeroVisible) {
+            isHeroVisible = true;
+            heroSection.classList.remove("hero-offscreen");
+            startCanvas();
+            if (typeof requestParallaxTick === "function") {
+              requestParallaxTick();
+            }
           }
         });
-      }, { threshold: 0.05 });
+      }, { threshold: 0.1 });
 
       heroObserver.observe(heroSection);
     }

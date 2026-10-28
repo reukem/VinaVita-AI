@@ -4519,6 +4519,8 @@ body {
 /* ==============================================================================
    ZERO-LAG 120-FPS COMPOSITOR & OFFSCREEN ANIMATION SUSPENSION
    ============================================================================== */
+.hero-section.hero-offscreen,
+.hero-section.hero-offscreen *,
 .hero-section.hero-offscreen .chim-lac-track,
 .hero-section.hero-offscreen .chim-lac-soar,
 .hero-section.hero-offscreen .chim-lac-wing-echo,
