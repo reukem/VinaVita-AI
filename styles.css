@@ -2593,9 +2593,9 @@ body {
 }
 
 /* ==========================================================================
-   2. SACRED CHIM LẠC MIGRATORY FLIGHT SYSTEM V2.0 (DUAL-ENGINE: CANVAS + WING RIGS)
+   2. SACRED CHIM LẠC MIGRATORY FLIGHT SYSTEM V2.5 (8 SACRED BIRDS & TRỐNG ĐỒNG CROSSING)
    Continuous, majestic flight with 3D wing-flapping articulation, non-colliding
-   sky corridors framing the Hero text, and 60-FPS golden silk slipstreams.
+   sky corridors across Celestial Canopy & Trống Đồng Đông Sơn, and 60-FPS golden silk slipstreams.
    ========================================================================== */
 
 .hero-chim-lac-container {
@@ -2606,20 +2606,6 @@ body {
   z-index: 1;
   contain: strict;
   transform: translateZ(0);
-}
-
-.hero-chim-lac-container::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    ellipse 42% 26% at 50% 23%,
-    rgba(3, 18, 12, 0.85) 0%,
-    rgba(3, 18, 12, 0.45) 55%,
-    transparent 100%
-  );
-  z-index: 5;
 }
 
 .chim-lac-star-canvas {
@@ -2665,12 +2651,15 @@ body {
   }
 }
 
-/* Sacred Distant Sky Corridors: 5 Distant Single Birds in Serene Slower 36s Cadence */
-.chim-lac-track.track-1  { top: 3.5%;  animation-duration: 36.0s; animation-delay: 0.0s;   z-index: 4; display: block; }
-.chim-lac-track.track-2  { top: 13.0%; animation-duration: 36.0s; animation-delay: -7.2s;  z-index: 3; display: block; }
-.chim-lac-track.track-3  { top: 6.8%;  animation-duration: 36.0s; animation-delay: -14.4s; z-index: 2; display: block; }
-.chim-lac-track.track-4  { top: 33.0%; animation-duration: 36.0s; animation-delay: -21.6s; z-index: 3; display: block; }
-.chim-lac-track.track-5  { top: 45.0%; animation-duration: 36.0s; animation-delay: -28.8s; z-index: 3; display: block; }
+/* Sacred Multi-Layer Migration Sky Corridors (8 Sacred Birds - Stately Cadence & Trống Đồng Crossing) */
+.chim-lac-track.track-1  { top: 3.5%;  animation-duration: 25.0s; animation-delay: 0.0s;   z-index: 4; display: block; }
+.chim-lac-track.track-2  { top: 8.5%;  animation-duration: 27.0s; animation-delay: -6.5s;  z-index: 3; display: block; }
+.chim-lac-track.track-3  { top: 24.0%; animation-duration: 24.5s; animation-delay: -13.0s; z-index: 4; display: block; } /* Soars OVER upper Trống Đồng ring! */
+.chim-lac-track.track-4  { top: 1.8%;  animation-duration: 30.0s; animation-delay: -19.5s; z-index: 2; display: block; } /* High horizon scout */
+.chim-lac-track.track-5  { top: 14.5%; animation-duration: 28.0s; animation-delay: -3.5s;  z-index: 4; display: block; } /* Sovereign Pair */
+.chim-lac-track.track-6  { top: 35.0%; animation-duration: 26.0s; animation-delay: -10.0s; z-index: 3; display: block; } /* Soars OVER central Trống Đồng sawteeth & rays! */
+.chim-lac-track.track-7  { top: 18.5%; animation-duration: 25.5s; animation-delay: -16.5s; z-index: 3; display: block; } /* Mid-sky Sun Seeker */
+.chim-lac-track.track-8  { top: 45.0%; animation-duration: 27.5s; animation-delay: -22.5s; z-index: 3; display: block; } /* Soars OVER lower Trống Đồng ring! */
 
 /* Soaring Wave & Aerodynamic Pitch Physics */
 .chim-lac-soar {
@@ -2680,19 +2669,19 @@ body {
 }
 
 .chim-lac-soar.wave-1 {
-  animation: soarGlideWave1 9.2s ease-in-out infinite alternate;
+  animation: soarGlideWave1 6.2s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-2 {
-  animation: soarGlideWave2 11.0s ease-in-out infinite alternate;
+  animation: soarGlideWave2 7.5s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-3 {
-  animation: soarGlideWave3 8.4s ease-in-out infinite alternate;
+  animation: soarGlideWave3 5.8s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-4 {
-  animation: soarGlideWave4 12.5s ease-in-out infinite alternate;
+  animation: soarGlideWave4 8.2s ease-in-out infinite alternate;
 }
 
 @keyframes soarGlideWave1 {
@@ -2743,29 +2732,29 @@ body {
 }
 
 .chim-lac-wing-echo.flap-1 {
-  animation: wingStrokeBeat 2.8s ease-in-out infinite alternate;
+  animation: wingStrokeBeat 1.75s ease-in-out infinite alternate;
 }
 
 .chim-lac-wing-echo.flap-2 {
-  animation: wingStrokeBeat 3.3s ease-in-out infinite 0.35s alternate;
+  animation: wingStrokeBeat 1.95s ease-in-out infinite 0.25s alternate;
 }
 
 .chim-lac-wing-echo.flap-3 {
-  animation: wingStrokeBeat 2.5s ease-in-out infinite 0.7s alternate;
+  animation: wingStrokeBeat 1.60s ease-in-out infinite 0.45s alternate;
 }
 
 @keyframes wingStrokeBeat {
   0% {
-    transform: translateY(-4px) scaleY(1.16) rotate(-4deg);
-    opacity: 0.58;
+    transform: translateY(-4px) scaleY(1.15) rotate(-4deg);
+    opacity: 0.65;
   }
   50% {
     transform: translateY(0px) scaleY(1.0) rotate(0deg);
-    opacity: 0.28;
+    opacity: 0.35;
   }
   100% {
-    transform: translateY(5px) scaleY(0.78) rotate(5deg);
-    opacity: 0.52;
+    transform: translateY(5px) scaleY(0.80) rotate(5deg);
+    opacity: 0.58;
   }
 }
 
@@ -2798,7 +2787,7 @@ body {
 
 @keyframes celestialFluctuate2 {
   0%   { opacity: 0.35; transform: translateY(-50%) rotate(2deg) scaleX(0.90); }
-  50%  { opacity: 0.92; transform: translateY(-50%) rotate(4deg) scaleX(1.22); }
+  50%  { opacity: 0.95; transform: translateY(-50%) rotate(5deg) scaleX(1.22); }
   100% { opacity: 0.35; transform: translateY(-50%) rotate(2deg) scaleX(0.90); }
 }
 
@@ -2814,31 +2803,30 @@ body {
   pointer-events: none;
   z-index: 1;
   overflow: visible;
-  transform: translateZ(0);
-  will-change: transform;
+  filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.85)) drop-shadow(0 0 25px rgba(16, 185, 129, 0.45));
   transform-origin: right center;
   animation: silkRibbonWave 2.4s ease-in-out infinite alternate;
 }
 
 .chim-lac-silk-svg.silk-single {
-  right: 90%;
-  top: 60%;
-  width: 65px;
-  height: 18px;
+  right: 94%;
+  top: 66%;
+  width: 240px;
+  height: 56px;
 }
 
 .chim-lac-silk-svg.silk-pair-lead {
-  right: 65%;
-  top: 62%;
-  width: 58px;
-  height: 16px;
+  right: 66%;
+  top: 68%;
+  width: 230px;
+  height: 54px;
 }
 
 .chim-lac-silk-svg.silk-pair-rear {
-  right: 92%;
-  top: 35%;
-  width: 48px;
-  height: 14px;
+  right: 96%;
+  top: 36%;
+  width: 180px;
+  height: 44px;
   opacity: 0.95;
 }
 
@@ -2854,12 +2842,12 @@ body {
   }
 }
 
-/* Single Bird Trail: Shorter, delicate distant plume right behind tail */
+/* Single Bird Trail: Shorter, delicate plume right behind tail */
 .chim-lac-trail.trail-single {
   right: 90%;
   top: 60%;
-  width: 52px;
-  height: 5px;
+  width: 88px;
+  height: 8px;
   background: linear-gradient(
     90deg,
     transparent 0%,
@@ -2869,16 +2857,16 @@ body {
     rgba(254, 240, 138, 0.95) 98%,
     transparent 100%
   );
-  border-radius: 50% 4px 4px 50%;
-  box-shadow: 0 0 5px rgba(251, 191, 36, 0.5), 0 0 10px rgba(245, 158, 11, 0.25);
+  border-radius: 50% 6px 6px 50%;
+  box-shadow: 0 0 16px rgba(251, 191, 36, 0.6), 0 0 30px rgba(245, 158, 11, 0.35);
 }
 
-/* Pair Birds Trail: Compact refined plume */
+/* Pair Birds Trail: Majestic plume */
 .chim-lac-trail.trail-pair {
   right: 82%;
   top: 54%;
-  width: 65px;
-  height: 6px;
+  width: 118px;
+  height: 10px;
   background: linear-gradient(
     90deg,
     transparent 0%,
@@ -2888,16 +2876,16 @@ body {
     rgba(254, 240, 138, 0.98) 98%,
     transparent 100%
   );
-  border-radius: 50% 5px 5px 50%;
-  box-shadow: 0 0 6px rgba(251, 191, 36, 0.55), 0 0 12px rgba(245, 158, 11, 0.28);
+  border-radius: 50% 8px 8px 50%;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.7), 0 0 38px rgba(245, 158, 11, 0.4);
 }
 
 /* High Horizon Distant Bird Trail: Subtle micro plume */
 .chim-lac-trail.trail-distant {
   right: 88%;
   top: 60%;
-  width: 38px;
-  height: 4px;
+  width: 55px;
+  height: 5px;
   background: linear-gradient(
     90deg,
     transparent 0%,
@@ -2906,7 +2894,7 @@ body {
     rgba(254, 240, 138, 0.85) 98%,
     transparent 100%
   );
-  box-shadow: 0 0 4px rgba(251, 191, 36, 0.4);
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.45);
 }
 
 /* Delicate Golden Stardust Sparks */
@@ -2961,45 +2949,44 @@ body {
   }
 }
 
-/* Chim Lạc Graphics: Crisp, detailed, layered on top of VFX */
-/* Chim Lạc Graphics: Distant Celestial Gliders (Far Away, Refined, Atmospheric Depth) */
+/* Chim Lạc Graphics: Crisp, detailed, majestic proportions layered over Trống Đồng & Celestial Canopy */
 .chim-lac-img {
   position: relative;
   z-index: 2;
   display: block;
-  width: 58px;
+  width: 132px;
   height: auto;
   transform: translateZ(0);
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 6px rgba(245, 158, 11, 0.45));
-  transition: transform 0.3s ease;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 10px rgba(245, 158, 11, 0.6));
+  transition: transform 0.3s ease, filter 0.3s ease;
   user-select: none;
 }
 
 .chim-lac-img.img-majestic {
-  width: 66px;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 7px rgba(251, 191, 36, 0.5));
+  width: 138px;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 12px rgba(251, 191, 36, 0.7));
 }
 
 .chim-lac-img.img-pair-sovereign {
-  width: 68px;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 7px rgba(251, 191, 36, 0.5));
+  width: 168px;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 12px rgba(251, 191, 36, 0.68));
 }
 
 .chim-lac-img.img-pair-distant {
-  width: 52px;
-  opacity: 0.80;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 5px rgba(245, 158, 11, 0.35));
+  width: 118px;
+  opacity: 0.88;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
 }
 
 .chim-lac-img.img-mid {
-  width: 56px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 6px rgba(245, 158, 11, 0.45));
+  width: 112px;
+  filter: drop-shadow(0 2px 7px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 9px rgba(245, 158, 11, 0.55));
 }
 
 .chim-lac-img.img-distant {
-  width: 44px;
-  opacity: 0.76;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 5px rgba(245, 158, 11, 0.35));
+  width: 82px;
+  opacity: 0.84;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 7px rgba(245, 158, 11, 0.45));
 }
 
 /* Responsive scaling for mobile / tablets */
@@ -3007,21 +2994,20 @@ body {
   .chim-lac-img,
   .chim-lac-img.img-majestic,
   .chim-lac-img.img-pair-sovereign {
-    width: 42px;
+    width: 84px;
   }
   .chim-lac-img.img-mid,
   .chim-lac-img.img-pair-distant {
-    width: 36px;
+    width: 68px;
   }
   .chim-lac-img.img-distant {
-    width: 30px;
+    width: 52px;
   }
   .chim-lac-trail {
-    width: 32px;
-    height: 3px;
+    width: 48px;
+    height: 5px;
   }
 }
-
 
 /* ==========================================================================
    2B. HERO TELEMETRY PROOF RIBBON, SACHET THUMBNAILS & 5-STAGE PIPELINE HUD
