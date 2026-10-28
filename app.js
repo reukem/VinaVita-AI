@@ -2399,7 +2399,7 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
       }
     });
 
-    // 2. Ambient 60-FPS Đông Sơn Celestial Stardust Canvas (Floating Solar Stars & Botanical Motes)
+    // 2. High-Performance 60/120-FPS Stardust Canvas Engine (No Reflows, Zero Software Blur)
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
@@ -2418,14 +2418,19 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
     }
 
     resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
+    if (window.ResizeObserver) {
+      const ro = new ResizeObserver(() => resizeCanvas());
+      ro.observe(stage);
+    } else {
+      window.addEventListener("resize", resizeCanvas, { passive: true });
+    }
 
     const motes = Array.from({ length: 48 }, (_, i) => ({
-      x: Math.random() * width,
-      y: Math.random() * height * 0.85,
-      vx: 10 + Math.random() * 16,
-      vy: (Math.random() - 0.5) * 4.5,
-      r: 1.2 + Math.random() * 2.2,
+      x: Math.random() * (width || 800),
+      y: Math.random() * (height || 500) * 0.85,
+      vx: 18 + Math.random() * 22,
+      vy: (Math.random() - 0.5) * 5.0,
+      r: 1.2 + Math.random() * 2.0,
       phase: i * 0.65,
       isStar: i % 3 === 0,
       isGold: i % 4 !== 0
@@ -2453,33 +2458,33 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
       lastTime = now;
       const t = now * 0.001;
 
-      const stageRect = stage.getBoundingClientRect();
-      const curW = Math.round(stageRect.width);
-      const curH = Math.round(stageRect.height);
-      if (curW > 0 && curH > 0 && (curW !== width || curH !== height)) {
-        resizeCanvas();
-      }
-
+      // Pure GPU Cleared Draw without getBoundingClientRect layout reflow
       ctx.clearRect(0, 0, width, height);
 
       for (let i = 0; i < motes.length; i++) {
         const m = motes[i];
         m.x += m.vx * dt;
-        m.y += (m.vy + Math.sin(t * 1.6 + m.phase) * 3.5) * dt;
+        m.y += (m.vy + Math.sin(t * 1.8 + m.phase) * 4.0) * dt;
         if (m.x > width + 25) m.x = -25;
         if (m.y < 10) m.y = height * 0.82;
         if (m.y > height * 0.88) m.y = 15;
 
-        const twinkle = 0.35 + 0.55 * (0.5 + 0.5 * Math.sin(t * 2.8 + m.phase));
+        const twinkle = 0.35 + 0.55 * (0.5 + 0.5 * Math.sin(t * 3.2 + m.phase));
         const color = m.isGold ? "#fde047" : "#6ee7b7";
         if (m.isStar) {
           drawFourPointStar(m.x, m.y, m.r, color, twinkle);
         } else {
           ctx.save();
-          ctx.globalAlpha = twinkle * 0.85;
+          // Hardware-accelerated dual-circle glow (instant GPU rasterization, zero CPU Gaussian blur)
+          ctx.globalAlpha = twinkle * 0.35;
+          ctx.fillStyle = m.isGold ? "#f59e0b" : "#10b981";
+          ctx.beginPath();
+          ctx.arc(m.x, m.y, m.r * 2.2, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Bright sharp core
+          ctx.globalAlpha = twinkle * 0.95;
           ctx.fillStyle = color;
-          ctx.shadowColor = m.isGold ? "#f59e0b" : "#10b981";
-          ctx.shadowBlur = 6;
           ctx.beginPath();
           ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
           ctx.fill();
@@ -2493,8 +2498,8 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
     requestAnimationFrame(renderFrame);
 
     // ==============================================================================
-    // 3. BUTTERY 60-FPS 3D MOUSE PARALLAX FOR THE SACRED ĐÔNG SƠN ASTROLABE
-    // Real-time cursor depth response with smooth LERP damping and 3D pitch/roll
+    // 3. ZERO-REFLOW 120-FPS 3D MOUSE PARALLAX FOR THE SACRED ĐÔNG SƠN ASTROLABE
+    // Center cached on scroll/resize to guarantee 0ms DOM calculation during pointer moves
     // ==============================================================================
     const heroSection = document.getElementById("heroStageSection");
     const astrolabe = document.getElementById("dongSonAstrolabe");
@@ -2508,20 +2513,27 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
       let currentRotX = 0;
       let currentRotY = 0;
 
-      const handlePointerMove = (e) => {
+      let cachedCenterX = window.innerWidth / 2;
+      let cachedCenterY = window.innerHeight / 2;
+
+      function updateCachedCenter() {
+        if (!heroSection) return;
         const rect = heroSection.getBoundingClientRect();
-        // Calculate center of hero stage
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        
-        // Relative coordinates normalized to window dimensions
-        const relX = (e.clientX - centerX) / (window.innerWidth / 2 || 1);
-        const relY = (e.clientY - centerY) / (window.innerHeight / 2 || 1);
+        cachedCenterX = rect.left + rect.width / 2;
+        cachedCenterY = rect.top + rect.height / 2;
+      }
+
+      updateCachedCenter();
+      window.addEventListener("resize", updateCachedCenter, { passive: true });
+      window.addEventListener("scroll", updateCachedCenter, { passive: true });
+
+      const handlePointerMove = (e) => {
+        const relX = (e.clientX - cachedCenterX) / (window.innerWidth / 2 || 1);
+        const relY = (e.clientY - cachedCenterY) / (window.innerHeight / 2 || 1);
 
         const clampedX = Math.max(-1, Math.min(1, relX));
         const clampedY = Math.max(-1, Math.min(1, relY));
 
-        // Amplitudes: +-36px translation, +-6.5deg pitch & roll tilt
         targetX = clampedX * 36;
         targetY = clampedY * 22;
         targetRotX = -clampedY * 5.5;
@@ -2537,11 +2549,10 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
       });
 
       function updateAstrolabeParallax() {
-        // LERP factor 0.075 for organic fluid glide
-        currentX += (targetX - currentX) * 0.075;
-        currentY += (targetY - currentY) * 0.075;
-        currentRotX += (targetRotX - currentRotX) * 0.075;
-        currentRotY += (targetRotY - currentRotY) * 0.075;
+        currentX += (targetX - currentX) * 0.085;
+        currentY += (targetY - currentY) * 0.085;
+        currentRotX += (targetRotX - currentRotX) * 0.085;
+        currentRotY += (targetRotY - currentRotY) * 0.085;
 
         astrolabe.style.transform = `translate(calc(-50% + ${currentX.toFixed(2)}px), calc(-50% + ${currentY.toFixed(2)}px)) perspective(1000px) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
 

@@ -2496,8 +2496,8 @@ body {
 }
 
 @keyframes coronaPulse {
-  0% { transform: scale(0.95); opacity: 0.85; filter: blur(26px); }
-  100% { transform: scale(1.08); opacity: 1.0; filter: blur(34px); }
+  0% { transform: scale(0.95); opacity: 0.85; }
+  100% { transform: scale(1.06); opacity: 1.0; }
 }
 
 /* Layer 2: Outer Counter-Rotating Sacred Geometry SVG Compass Ring */
@@ -2616,6 +2616,8 @@ body {
   pointer-events: none;
   overflow: hidden;
   z-index: 1;
+  contain: layout paint;
+  will-change: transform;
   /* Soft central readability veil so birds crossing behind the central Hero title never clash with text */
   mask-image: radial-gradient(
     ellipse 38% 24% at 50% 23%,
@@ -2650,6 +2652,8 @@ body {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   z-index: 2;
+  backface-visibility: hidden;
+  transform: translate3d(-360px, 14px, 0);
 }
 
 @keyframes flyFlockAcross {
@@ -2673,19 +2677,19 @@ body {
 }
 
 /* Sacred Non-Colliding Sky Corridors (Continuous Multi-Layer Migration across Celestial Canopy) */
-.chim-lac-track.track-1  { top: 2.2%;  animation-duration: 25.0s; animation-delay: -2.0s;  z-index: 4; display: block; }
-.chim-lac-track.track-2  { top: 6.5%;  animation-duration: 28.0s; animation-delay: -7.5s;  z-index: 3; display: block; }
-.chim-lac-track.track-3  { top: 1.5%;  animation-duration: 31.0s; animation-delay: -14.0s; z-index: 2; display: block; }
-.chim-lac-track.track-4  { top: 43.0%; animation-duration: 26.5s; animation-delay: -18.5s; z-index: 3; display: block; }
-.chim-lac-track.track-5  { top: 4.2%;  animation-duration: 27.5s; animation-delay: -22.0s; z-index: 4; display: block; }
-.chim-lac-track.track-6  { top: 38.0%; animation-duration: 29.0s; animation-delay: -11.0s; z-index: 2; display: block; }
-.chim-lac-track.track-7  { top: 9.8%;  animation-duration: 30.0s; animation-delay: -25.5s; z-index: 2; display: block; }
-.chim-lac-track.track-8  { top: 13.5%; animation-duration: 27.0s; animation-delay: -4.5s;  z-index: 3; display: block; }
-.chim-lac-track.track-9  { top: 32.5%; animation-duration: 28.5s; animation-delay: -16.0s; z-index: 2; display: block; }
-.chim-lac-track.track-10 { top: 46.5%; animation-duration: 25.5s; animation-delay: -9.0s;  z-index: 3; display: block; }
-.chim-lac-track.track-11 { top: 16.0%; animation-duration: 29.5s; animation-delay: -20.5s; z-index: 3; display: block; }
-.chim-lac-track.track-12 { top: 3.5%;  animation-duration: 32.0s; animation-delay: -12.5s; z-index: 2; display: block; }
-.chim-lac-track.track-13 { top: 28.0%; animation-duration: 26.0s; animation-delay: -23.5s; z-index: 3; display: block; }
+.chim-lac-track.track-1  { top: 2.2%;  animation-duration: 10.5s; animation-delay: -1.2s;  z-index: 4; display: block; }
+.chim-lac-track.track-2  { top: 6.5%;  animation-duration: 12.0s; animation-delay: -3.5s;  z-index: 3; display: block; }
+.chim-lac-track.track-3  { top: 1.5%;  animation-duration: 13.5s; animation-delay: -6.5s;  z-index: 2; display: block; }
+.chim-lac-track.track-4  { top: 43.0%; animation-duration: 11.2s; animation-delay: -8.0s;  z-index: 3; display: block; }
+.chim-lac-track.track-5  { top: 4.2%;  animation-duration: 11.8s; animation-delay: -10.0s; z-index: 4; display: block; }
+.chim-lac-track.track-6  { top: 38.0%; animation-duration: 12.5s; animation-delay: -5.0s;  z-index: 2; display: block; }
+.chim-lac-track.track-7  { top: 9.8%;  animation-duration: 13.0s; animation-delay: -11.0s; z-index: 2; display: block; }
+.chim-lac-track.track-8  { top: 13.5%; animation-duration: 11.5s; animation-delay: -2.2s;  z-index: 3; display: block; }
+.chim-lac-track.track-9  { top: 32.5%; animation-duration: 12.2s; animation-delay: -7.0s;  z-index: 2; display: block; }
+.chim-lac-track.track-10 { top: 46.5%; animation-duration: 10.8s; animation-delay: -4.0s;  z-index: 3; display: block; }
+.chim-lac-track.track-11 { top: 16.0%; animation-duration: 12.8s; animation-delay: -9.0s;  z-index: 3; display: block; }
+.chim-lac-track.track-12 { top: 3.5%;  animation-duration: 13.8s; animation-delay: -5.5s;  z-index: 2; display: block; }
+.chim-lac-track.track-13 { top: 28.0%; animation-duration: 11.0s; animation-delay: -10.5s; z-index: 3; display: block; }
 
 /* Soaring Wave & Aerodynamic Pitch Physics */
 .chim-lac-soar {
@@ -2695,19 +2699,19 @@ body {
 }
 
 .chim-lac-soar.wave-1 {
-  animation: soarGlideWave1 5.2s ease-in-out infinite alternate;
+  animation: soarGlideWave1 2.8s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-2 {
-  animation: soarGlideWave2 6.4s ease-in-out infinite alternate;
+  animation: soarGlideWave2 3.4s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-3 {
-  animation: soarGlideWave3 4.6s ease-in-out infinite alternate;
+  animation: soarGlideWave3 2.5s ease-in-out infinite alternate;
 }
 
 .chim-lac-soar.wave-4 {
-  animation: soarGlideWave4 7.0s ease-in-out infinite alternate;
+  animation: soarGlideWave4 3.6s ease-in-out infinite alternate;
 }
 
 @keyframes soarGlideWave1 {
@@ -2757,15 +2761,15 @@ body {
 }
 
 .chim-lac-wing-echo.flap-1 {
-  animation: wingStrokeBeat 1.55s ease-in-out infinite alternate;
+  animation: wingStrokeBeat 0.72s ease-in-out infinite alternate;
 }
 
 .chim-lac-wing-echo.flap-2 {
-  animation: wingStrokeBeat 1.85s ease-in-out infinite 0.35s alternate;
+  animation: wingStrokeBeat 0.84s ease-in-out infinite 0.15s alternate;
 }
 
 .chim-lac-wing-echo.flap-3 {
-  animation: wingStrokeBeat 1.35s ease-in-out infinite 0.7s alternate;
+  animation: wingStrokeBeat 0.65s ease-in-out infinite 0.3s alternate;
 }
 
 @keyframes wingStrokeBeat {
@@ -2790,7 +2794,8 @@ body {
   z-index: 1;
   transform-origin: right center;
   transform: translateY(-50%) rotate(3deg);
-  will-change: opacity, transform, filter;
+  will-change: opacity, transform;
+  filter: blur(1.8px);
 }
 
 .chim-lac-trail.pulse-1 {
@@ -2804,21 +2809,21 @@ body {
 }
 
 @keyframes celestialFluctuate1 {
-  0%   { opacity: 0.28; transform: translateY(-50%) rotate(2deg) scaleX(0.85); filter: blur(2.5px); }
-  50%  { opacity: 0.85; transform: translateY(-50%) rotate(4deg) scaleX(1.18); filter: blur(1.2px); }
-  100% { opacity: 0.28; transform: translateY(-50%) rotate(2deg) scaleX(0.85); filter: blur(2.5px); }
+  0%   { opacity: 0.30; transform: translateY(-50%) rotate(2deg) scaleX(0.85); }
+  50%  { opacity: 0.88; transform: translateY(-50%) rotate(4deg) scaleX(1.18); }
+  100% { opacity: 0.30; transform: translateY(-50%) rotate(2deg) scaleX(0.85); }
 }
 
 @keyframes celestialFluctuate2 {
-  0%   { opacity: 0.32; transform: translateY(-50%) rotate(2deg) scaleX(0.90); filter: blur(2.5px); }
-  50%  { opacity: 0.90; transform: translateY(-50%) rotate(4deg) scaleX(1.22); filter: blur(1.2px); }
-  100% { opacity: 0.32; transform: translateY(-50%) rotate(2deg) scaleX(0.90); filter: blur(2.5px); }
+  0%   { opacity: 0.35; transform: translateY(-50%) rotate(2deg) scaleX(0.90); }
+  50%  { opacity: 0.92; transform: translateY(-50%) rotate(4deg) scaleX(1.22); }
+  100% { opacity: 0.35; transform: translateY(-50%) rotate(2deg) scaleX(0.90); }
 }
 
 @keyframes celestialFluctuate3 {
-  0%   { opacity: 0.25; transform: translateY(-50%) rotate(1deg) scaleX(0.82); filter: blur(2.5px); }
-  50%  { opacity: 0.80; transform: translateY(-50%) rotate(3deg) scaleX(1.15); filter: blur(1.5px); }
-  100% { opacity: 0.25; transform: translateY(-50%) rotate(1deg) scaleX(0.82); filter: blur(2.5px); }
+  0%   { opacity: 0.28; transform: translateY(-50%) rotate(1deg) scaleX(0.82); }
+  50%  { opacity: 0.82; transform: translateY(-50%) rotate(3deg) scaleX(1.15); }
+  100% { opacity: 0.28; transform: translateY(-50%) rotate(1deg) scaleX(0.82); }
 }
 
 /* GPU-Compositor-Locked Dual-Filament Golden Silk SVG Slipstreams */
