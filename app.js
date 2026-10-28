@@ -2417,10 +2417,11 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
         function resizeGlobalCanvas() {
           width = window.innerWidth || document.documentElement.clientWidth || 1200;
           height = window.innerHeight || document.documentElement.clientHeight || 800;
-          dpr = Math.min(window.devicePixelRatio || 1, 2);
-          globalCanvas.width = width * dpr;
-          globalCanvas.height = height * dpr;
-          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          // DPR locked to 1.0 for global background stars: eliminates 75% GPU fill-rate overhead on high-DPI screens
+          dpr = 1.0;
+          globalCanvas.width = width;
+          globalCanvas.height = height;
+          ctx.setTransform(1, 0, 0, 1, 0, 0);
         }
 
         resizeGlobalCanvas();
@@ -2606,58 +2607,28 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
     }
 
     // ==============================================================================
-    // 4. INSTANT HERO FREEZE ON DRAG/SCROLL DOWN (HERBS & MEDICINE FOCUS MODE)
-    // When the user drags or scrolls down to see the medicine, herbs, and studio:
-    // Trống Đồng and Chim Lạc flock completely freeze to save 100% compute for herbs!
+    // 4. UNINTERRUPTED CONTINUOUS SOARING & ADAPTIVE 3D PARALLAX SLEEP
+    // Chim Lạc and Đông Sơn Drum soar freely across the skies without freezing on scroll!
+    // When the Hero is completely out of view, only sleep the 3D mouse parallax loop.
     // ==============================================================================
-    function updateHeroActiveState() {
-      if (!heroSection) return;
-      const isScrolledDown = window.scrollY > 90;
-
-      if (isScrolledDown) {
-        if (isHeroVisible) {
-          isHeroVisible = false;
-          heroSection.classList.add("hero-offscreen");
-          if (parallaxRafId) {
-            cancelAnimationFrame(parallaxRafId);
-            parallaxRafId = null;
-            isParallaxRunning = false;
-          }
-        }
-      } else {
-        if (!isHeroVisible) {
-          isHeroVisible = true;
-          heroSection.classList.remove("hero-offscreen");
-          if (typeof requestParallaxTick === "function") {
-            requestParallaxTick();
-          }
-        }
-      }
-    }
-
-    window.addEventListener("scroll", updateHeroActiveState, { passive: true });
-    updateHeroActiveState();
-
     if ("IntersectionObserver" in window && heroSection) {
       const heroObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting && isHeroVisible) {
+          if (!entry.isIntersecting) {
             isHeroVisible = false;
-            heroSection.classList.add("hero-offscreen");
             if (parallaxRafId) {
               cancelAnimationFrame(parallaxRafId);
               parallaxRafId = null;
               isParallaxRunning = false;
             }
-          } else if (entry.isIntersecting && window.scrollY <= 90 && !isHeroVisible) {
+          } else {
             isHeroVisible = true;
-            heroSection.classList.remove("hero-offscreen");
             if (typeof requestParallaxTick === "function") {
               requestParallaxTick();
             }
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0 });
 
       heroObserver.observe(heroSection);
     }

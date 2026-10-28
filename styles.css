@@ -226,8 +226,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(4, 15, 10, 0.94);
-  backdrop-filter: blur(10px);
+  background: rgba(4, 15, 10, 0.97);
   transform: translateZ(0);
   border-bottom: 1px solid var(--border-subtle);
   padding: 12px 0;
@@ -1335,7 +1334,7 @@ body {
   color: #fff;
   font-size: 0.98rem;
   outline: none;
-  backdrop-filter: blur(12px);
+  background: rgba(4, 20, 13, 0.95);
   transition: all 0.2s ease;
 }
 
@@ -1462,7 +1461,7 @@ body {
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 8px;
-  backdrop-filter: blur(6px);
+  background: rgba(4, 20, 14, 0.96);
   z-index: 3;
 }
 
@@ -1627,8 +1626,7 @@ body {
     0 28px 70px rgba(0, 0, 0, 0.85), 
     0 0 45px rgba(245, 158, 11, 0.3), 
     inset 0 0 40px rgba(16, 185, 129, 0.2);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
+  background: rgba(4, 22, 15, 0.98);
 }
 
 .herb-modal-box::-webkit-scrollbar {
@@ -1745,8 +1743,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.88);
   z-index: 1000;
   display: none;
   align-items: center;
@@ -2265,8 +2262,7 @@ body {
   max-width: calc(100vw - 32px);
   height: 560px;
   max-height: calc(100vh - 100px);
-  background: rgba(4, 20, 13, 0.96);
-  backdrop-filter: blur(20px);
+  background: rgba(4, 20, 13, 0.98);
   border: 1px solid var(--border-glow);
   border-radius: 20px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(16, 185, 129, 0.2);
@@ -2507,8 +2503,8 @@ body {
 }
 
 @keyframes coronaPulse {
-  0% { transform: scale(0.95); opacity: 0.85; }
-  100% { transform: scale(1.06); opacity: 1.0; }
+  0% { opacity: 0.82; }
+  100% { opacity: 1.0; }
 }
 
 /* Layer 2: Outer Counter-Rotating Sacred Geometry SVG Compass Ring */
@@ -2647,6 +2643,7 @@ body {
   z-index: 2;
   backface-visibility: hidden;
   transform: translate3d(-360px, 14px, 0);
+  contain: layout style paint;
 }
 
 @keyframes flyFlockAcross {
@@ -2882,7 +2879,6 @@ body {
     transparent 100%
   );
   border-radius: 50% 8px 8px 50%;
-  box-shadow: 0 0 16px rgba(251, 191, 36, 0.6), 0 0 30px rgba(245, 158, 11, 0.35);
 }
 
 /* Pair Birds Trail */
@@ -2901,7 +2897,6 @@ body {
     transparent 100%
   );
   border-radius: 50% 10px 10px 50%;
-  box-shadow: 0 0 20px rgba(251, 191, 36, 0.7), 0 0 38px rgba(245, 158, 11, 0.4);
 }
 
 /* High Horizon Distant Bird Trail */
@@ -2918,7 +2913,6 @@ body {
     rgba(254, 240, 138, 0.85) 98%,
     transparent 100%
   );
-  box-shadow: 0 0 12px rgba(251, 191, 36, 0.45);
 }
 
 /* Delicate Golden Stardust Sparks */
@@ -2980,36 +2974,31 @@ body {
   display: block;
   width: 132px;
   height: auto;
-  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 10px rgba(245, 158, 11, 0.6));
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transform: translateZ(0);
+  transition: transform 0.3s ease;
   user-select: none;
 }
 
 .chim-lac-img.img-majestic {
   width: 138px;
-  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 12px rgba(251, 191, 36, 0.7));
 }
 
 .chim-lac-img.img-pair-sovereign {
   width: 168px;
-  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 12px rgba(251, 191, 36, 0.68));
 }
 
 .chim-lac-img.img-pair-distant {
   width: 118px;
   opacity: 0.85;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
 }
 
 .chim-lac-img.img-mid {
   width: 112px;
-  filter: drop-shadow(0 2px 7px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 9px rgba(245, 158, 11, 0.55));
 }
 
 .chim-lac-img.img-distant {
   width: 82px;
   opacity: 0.82;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 7px rgba(245, 158, 11, 0.45));
 }
 
 /* Responsive scaling for mobile / tablets */
@@ -3175,11 +3164,10 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  opacity: 0.48;
+  opacity: 0.38;
+  border-radius: 50%;
+  transform: translateZ(0);
   animation: spinDongSonDrum 50s linear infinite reverse;
-  filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.6));
-  mask-image: radial-gradient(circle, #000 0%, #000 65%, transparent 72%);
-  -webkit-mask-image: radial-gradient(circle, #000 0%, #000 65%, transparent 72%);
 }
 
 .placeholder-drum-medallion .recipe-placeholder-icon {
@@ -3452,9 +3440,9 @@ body {
   height: 320px;
   opacity: 0.12;
   pointer-events: none;
+  transform: translateZ(0);
   animation: spinDongSonDrum 120s linear infinite;
   z-index: 0;
-  filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.3));
 }
 
 /* 7. Traditional Vermilion Lacquer Seal (Ấn Triện Son Thếp Vàng Hoàng Cung) */
@@ -4531,20 +4519,7 @@ body {
 /* ==============================================================================
    ZERO-LAG 120-FPS COMPOSITOR & OFFSCREEN ANIMATION SUSPENSION
    ============================================================================== */
-.hero-section.hero-offscreen,
-.hero-section.hero-offscreen *,
-.hero-section.hero-offscreen .chim-lac-track,
-.hero-section.hero-offscreen .chim-lac-soar,
-.hero-section.hero-offscreen .chim-lac-wing-echo,
-.hero-section.hero-offscreen .chim-lac-silk-svg,
-.hero-section.hero-offscreen .chim-lac-trail,
-.hero-section.hero-offscreen .dong-son-spinning-drum,
-.hero-section.hero-offscreen .dong-son-outer-astrolabe,
-.hero-section.hero-offscreen .dong-son-halo-ring,
-.hero-section.hero-offscreen .dong-son-inner-sun,
-.hero-section.hero-offscreen .dong-son-solar-corona {
-  animation-play-state: paused !important;
-}
+/* Continuous flight: Chim Lạc flock & Trống Đồng soar freely without pausing on scroll */
 
 /* Modern DOM Virtualization: Offscreen Cards Skip Heavy Render Passes */
 .herb-card,
