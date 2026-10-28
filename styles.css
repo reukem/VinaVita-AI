@@ -2651,15 +2651,20 @@ body {
   }
 }
 
-/* Sacred Multi-Layer Migration Sky Corridors (8 Sacred Birds - Stately Cadence & Trống Đồng Crossing) */
-.chim-lac-track.track-1  { top: 3.5%;  animation-duration: 25.0s; animation-delay: 0.0s;   z-index: 4; display: block; }
-.chim-lac-track.track-2  { top: 8.5%;  animation-duration: 27.0s; animation-delay: -6.5s;  z-index: 3; display: block; }
-.chim-lac-track.track-3  { top: 24.0%; animation-duration: 24.5s; animation-delay: -13.0s; z-index: 4; display: block; } /* Soars OVER upper Trống Đồng ring! */
-.chim-lac-track.track-4  { top: 1.8%;  animation-duration: 30.0s; animation-delay: -19.5s; z-index: 2; display: block; } /* High horizon scout */
-.chim-lac-track.track-5  { top: 14.5%; animation-duration: 28.0s; animation-delay: -3.5s;  z-index: 4; display: block; } /* Sovereign Pair */
-.chim-lac-track.track-6  { top: 35.0%; animation-duration: 26.0s; animation-delay: -10.0s; z-index: 3; display: block; } /* Soars OVER central Trống Đồng sawteeth & rays! */
-.chim-lac-track.track-7  { top: 18.5%; animation-duration: 25.5s; animation-delay: -16.5s; z-index: 3; display: block; } /* Mid-sky Sun Seeker */
-.chim-lac-track.track-8  { top: 45.0%; animation-duration: 27.5s; animation-delay: -22.5s; z-index: 3; display: block; } /* Soars OVER lower Trống Đồng ring! */
+/* Sacred Multi-Layer Migration Sky Corridors (Prime 13 Sacred Birds - Panoramic Celestial Flocks) */
+.chim-lac-track.track-1  { top: 2.2%;  animation-duration: 25.0s; animation-delay: -2.0s;  z-index: 4; display: block; }
+.chim-lac-track.track-2  { top: 6.5%;  animation-duration: 28.0s; animation-delay: -7.5s;  z-index: 3; display: block; }
+.chim-lac-track.track-3  { top: 1.5%;  animation-duration: 31.0s; animation-delay: -14.0s; z-index: 2; display: block; }
+.chim-lac-track.track-4  { top: 43.0%; animation-duration: 26.5s; animation-delay: -18.5s; z-index: 3; display: block; }
+.chim-lac-track.track-5  { top: 4.2%;  animation-duration: 27.5s; animation-delay: -22.0s; z-index: 4; display: block; }
+.chim-lac-track.track-6  { top: 38.0%; animation-duration: 29.0s; animation-delay: -11.0s; z-index: 2; display: block; }
+.chim-lac-track.track-7  { top: 9.8%;  animation-duration: 30.0s; animation-delay: -25.5s; z-index: 2; display: block; }
+.chim-lac-track.track-8  { top: 13.5%; animation-duration: 27.0s; animation-delay: -4.5s;  z-index: 3; display: block; }
+.chim-lac-track.track-9  { top: 32.5%; animation-duration: 28.5s; animation-delay: -16.0s; z-index: 2; display: block; }
+.chim-lac-track.track-10 { top: 46.5%; animation-duration: 25.5s; animation-delay: -9.0s;  z-index: 3; display: block; }
+.chim-lac-track.track-11 { top: 16.0%; animation-duration: 29.5s; animation-delay: -20.5s; z-index: 3; display: block; }
+.chim-lac-track.track-12 { top: 3.5%;  animation-duration: 32.0s; animation-delay: -12.5s; z-index: 2; display: block; }
+.chim-lac-track.track-13 { top: 28.0%; animation-duration: 26.0s; animation-delay: -23.5s; z-index: 3; display: block; }
 
 /* Soaring Wave & Aerodynamic Pitch Physics */
 .chim-lac-soar {
