@@ -2406,6 +2406,10 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
     let width = 0;
     let height = 0;
     let dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let isHeroVisible = true;
+    let canvasRafId = null;
+    let parallaxRafId = null;
+    let isParallaxRunning = false;
 
     function resizeCanvas() {
       const rect = stage.getBoundingClientRect();
@@ -2437,28 +2441,32 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
     }));
 
     function drawFourPointStar(cx, cy, r, color, alpha) {
-      ctx.save();
-      ctx.globalAlpha = Math.max(0, alpha);
+      ctx.globalAlpha = Math.max(0, Math.min(1, alpha));
       ctx.fillStyle = color;
       ctx.beginPath();
       ctx.moveTo(cx, cy - r * 2.2);
-      ctx.quadraticCurveTo(cx + r * 0.35, cy - r * 0.35, cx + r * 2.2, cy);
-      ctx.quadraticCurveTo(cx + r * 0.35, cy + r * 0.35, cx, cy + r * 2.2);
-      ctx.quadraticCurveTo(cx - r * 0.35, cy + r * 0.35, cx - r * 2.2, cy);
-      ctx.quadraticCurveTo(cx - r * 0.35, cy - r * 0.35, cx, cy - r * 2.2);
+      ctx.lineTo(cx + r * 0.45, cy - r * 0.45);
+      ctx.lineTo(cx + r * 2.2, cy);
+      ctx.lineTo(cx + r * 0.45, cy + r * 0.45);
+      ctx.lineTo(cx, cy + r * 2.2);
+      ctx.lineTo(cx - r * 0.45, cy + r * 0.45);
+      ctx.lineTo(cx - r * 2.2, cy);
+      ctx.lineTo(cx - r * 0.45, cy - r * 0.45);
       ctx.closePath();
       ctx.fill();
-      ctx.restore();
     }
 
     let lastTime = performance.now();
 
     function renderFrame(now) {
+      if (!isHeroVisible) {
+        canvasRafId = null;
+        return;
+      }
       const dt = Math.min(Math.max((now - lastTime) * 0.001, 0.004), 0.05);
       lastTime = now;
       const t = now * 0.001;
 
-      // Pure GPU Cleared Draw without getBoundingClientRect layout reflow
       ctx.clearRect(0, 0, width, height);
 
       for (let i = 0; i < motes.length; i++) {
@@ -2474,35 +2482,45 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
         if (m.isStar) {
           drawFourPointStar(m.x, m.y, m.r, color, twinkle);
         } else {
-          ctx.save();
           // Hardware-accelerated dual-circle glow (instant GPU rasterization, zero CPU Gaussian blur)
-          ctx.globalAlpha = twinkle * 0.35;
+          ctx.globalAlpha = twinkle * 0.32;
           ctx.fillStyle = m.isGold ? "#f59e0b" : "#10b981";
           ctx.beginPath();
-          ctx.arc(m.x, m.y, m.r * 2.2, 0, Math.PI * 2);
+          ctx.arc(m.x, m.y, m.r * 2.0, 0, Math.PI * 2);
           ctx.fill();
 
-          // Bright sharp core
           ctx.globalAlpha = twinkle * 0.95;
           ctx.fillStyle = color;
           ctx.beginPath();
           ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
           ctx.fill();
-          ctx.restore();
         }
       }
 
-      requestAnimationFrame(renderFrame);
+      canvasRafId = requestAnimationFrame(renderFrame);
     }
 
-    requestAnimationFrame(renderFrame);
+    function startCanvas() {
+      if (!canvasRafId && isHeroVisible) {
+        lastTime = performance.now();
+        canvasRafId = requestAnimationFrame(renderFrame);
+      }
+    }
+
+    function stopCanvas() {
+      if (canvasRafId) {
+        cancelAnimationFrame(canvasRafId);
+        canvasRafId = null;
+      }
+    }
+
+    startCanvas();
 
     // ==============================================================================
-    // 3. ZERO-REFLOW 120-FPS 3D MOUSE PARALLAX FOR THE SACRED ĐÔNG SƠN ASTROLABE
-    // Center cached on scroll/resize to guarantee 0ms DOM calculation during pointer moves
+    // 3. ZERO-REFLOW IDLE-SMART 120-FPS 3D PARALLAX FOR SACRED ĐÔNG SƠN ASTROLABE
+    // Stops immediately when mouse is stationary or outside Hero; caches coordinates without reflows.
     // ==============================================================================
     const heroSection = document.getElementById("heroStageSection");
-    const astrolabe = document.getElementById("dongSonAstrolabe");
     if (heroSection && astrolabe) {
       let targetX = 0;
       let targetY = 0;
@@ -2515,19 +2533,67 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
 
       let cachedCenterX = window.innerWidth / 2;
       let cachedCenterY = window.innerHeight / 2;
+      let heroTop = 0;
+      let heroHeight = 500;
 
       function updateCachedCenter() {
         if (!heroSection) return;
         const rect = heroSection.getBoundingClientRect();
+        heroTop = rect.top + window.scrollY;
+        heroHeight = rect.height;
         cachedCenterX = rect.left + rect.width / 2;
-        cachedCenterY = rect.top + rect.height / 2;
+        cachedCenterY = heroTop - window.scrollY + heroHeight / 2;
       }
 
       updateCachedCenter();
       window.addEventListener("resize", updateCachedCenter, { passive: true });
-      window.addEventListener("scroll", updateCachedCenter, { passive: true });
+      // Zero-reflow scroll update: purely arithmetic, never calls getBoundingClientRect!
+      window.addEventListener("scroll", () => {
+        cachedCenterY = heroTop - window.scrollY + heroHeight / 2;
+      }, { passive: true });
+
+      function updateAstrolabeParallax() {
+        if (!isHeroVisible) {
+          isParallaxRunning = false;
+          parallaxRafId = null;
+          return;
+        }
+
+        const dx = targetX - currentX;
+        const dy = targetY - currentY;
+        const drotX = targetRotX - currentRotX;
+        const drotY = targetRotY - currentRotY;
+
+        // Idle detection: when settled, snap and terminate rAF loop to free 100% CPU/GPU cycles
+        if (Math.abs(dx) < 0.04 && Math.abs(dy) < 0.04 && Math.abs(drotX) < 0.04 && Math.abs(drotY) < 0.04) {
+          currentX = targetX;
+          currentY = targetY;
+          currentRotX = targetRotX;
+          currentRotY = targetRotY;
+          astrolabe.style.transform = `translate3d(calc(-50% + ${currentX.toFixed(2)}px), calc(-50% + ${currentY.toFixed(2)}px), 0) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
+          isParallaxRunning = false;
+          parallaxRafId = null;
+          return;
+        }
+
+        currentX += dx * 0.085;
+        currentY += dy * 0.085;
+        currentRotX += drotX * 0.085;
+        currentRotY += drotY * 0.085;
+
+        astrolabe.style.transform = `translate3d(calc(-50% + ${currentX.toFixed(2)}px), calc(-50% + ${currentY.toFixed(2)}px), 0) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
+        parallaxRafId = requestAnimationFrame(updateAstrolabeParallax);
+      }
+
+      function requestParallaxTick() {
+        if (!isParallaxRunning && isHeroVisible) {
+          isParallaxRunning = true;
+          parallaxRafId = requestAnimationFrame(updateAstrolabeParallax);
+        }
+      }
 
       const handlePointerMove = (e) => {
+        if (!isHeroVisible) return;
         const relX = (e.clientX - cachedCenterX) / (window.innerWidth / 2 || 1);
         const relY = (e.clientY - cachedCenterY) / (window.innerHeight / 2 || 1);
 
@@ -2538,6 +2604,8 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
         targetY = clampedY * 22;
         targetRotX = -clampedY * 5.5;
         targetRotY = clampedX * 6.5;
+
+        requestParallaxTick();
       };
 
       window.addEventListener("mousemove", handlePointerMove, { passive: true });
@@ -2546,19 +2614,30 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
         targetY = 0;
         targetRotX = 0;
         targetRotY = 0;
+        requestParallaxTick();
       });
+    }
 
-      function updateAstrolabeParallax() {
-        currentX += (targetX - currentX) * 0.085;
-        currentY += (targetY - currentY) * 0.085;
-        currentRotX += (targetRotX - currentRotX) * 0.085;
-        currentRotY += (targetRotY - currentRotY) * 0.085;
+    // ==============================================================================
+    // 4. INTERSECTION OBSERVER: SUSPEND OFFSCREEN CANVAS & CSS ANIMATIONS AUTOMATICALLY
+    // When user scrolls down into Database, Studio or About, Hero shuts down completely!
+    // ==============================================================================
+    if ("IntersectionObserver" in window && heroSection) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            isHeroVisible = true;
+            heroSection.classList.remove("hero-offscreen");
+            startCanvas();
+          } else {
+            isHeroVisible = false;
+            heroSection.classList.add("hero-offscreen");
+            stopCanvas();
+          }
+        });
+      }, { threshold: 0.05 });
 
-        astrolabe.style.transform = `translate(calc(-50% + ${currentX.toFixed(2)}px), calc(-50% + ${currentY.toFixed(2)}px)) perspective(1000px) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
-
-        requestAnimationFrame(updateAstrolabeParallax);
-      }
-      requestAnimationFrame(updateAstrolabeParallax);
+      heroObserver.observe(heroSection);
     }
   }
 
