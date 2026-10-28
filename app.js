@@ -2343,184 +2343,172 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
   // SACRED CHIM LẠC GPU-LOCKED GOLDEN SILK SLIPSTREAMS & ĐÔNG SƠN ASTROLABE ENGINE
   // ==============================================================================
   function initChimLacCelestialCanvas() {
-    const canvas = document.getElementById("chimLacStarCanvas");
+    // Global Starry Background Canvas (floats everywhere across the entire website!)
+    const globalCanvas = document.getElementById("vietHeritageStarCanvas") || document.getElementById("chimLacStarCanvas");
+    const heroSection = document.getElementById("heroStageSection");
+    const astrolabe = document.getElementById("dongSonAstrolabe");
     const stage = document.getElementById("heroChimLacStage");
-    if (!canvas || !stage) return;
 
-    // 1. Inject GPU-Compositor-Locked Dual-Filament Golden Silk SVG Slipstreams into each bird rig
-    const tracks = Array.from(stage.querySelectorAll(".chim-lac-track"));
-    tracks.forEach((trackEl, idx) => {
-      const soarEl = trackEl.querySelector(".chim-lac-soar");
-      const imgEl = trackEl.querySelector(".chim-lac-img");
-      if (!soarEl || !imgEl) return;
+    // 1. Inject GPU-Compositor-Locked Dual-Filament Golden Silk SVG Slipstreams into each bird rig (if hero stage exists)
+    if (stage) {
+      const tracks = Array.from(stage.querySelectorAll(".chim-lac-track"));
+      tracks.forEach((trackEl, idx) => {
+        const soarEl = trackEl.querySelector(".chim-lac-soar");
+        const imgEl = trackEl.querySelector(".chim-lac-img");
+        if (!soarEl || !imgEl) return;
 
-      const isPair = (imgEl.getAttribute("src") && imgEl.getAttribute("src").includes("pair")) ||
-                     imgEl.classList.contains("img-pair-sovereign") ||
-                     imgEl.classList.contains("img-pair-distant");
+        const isPair = (imgEl.getAttribute("src") && imgEl.getAttribute("src").includes("pair")) ||
+                       imgEl.classList.contains("img-pair-sovereign") ||
+                       imgEl.classList.contains("img-pair-distant");
 
-      const makeRibbonSvg = (extraClass, gradId) => {
-        const svgNS = "http://www.w3.org/2000/svg";
-        const svg = document.createElementNS(svgNS, "svg");
-        svg.setAttribute("viewBox", "0 0 240 60");
-        svg.setAttribute("class", `chim-lac-silk-svg ${extraClass}`);
-        svg.setAttribute("aria-hidden", "true");
-        svg.innerHTML = `
-          <defs>
-            <linearGradient id="${gradId}_gold" x1="0%" y1="50%" x2="100%" y2="50%">
-              <stop offset="0%" stop-color="#10b981" stop-opacity="0"/>
-              <stop offset="25%" stop-color="#34d399" stop-opacity="0.32"/>
-              <stop offset="65%" stop-color="#f59e0b" stop-opacity="0.75"/>
-              <stop offset="100%" stop-color="#fef08a" stop-opacity="0.98"/>
-            </linearGradient>
-            <linearGradient id="${gradId}_jade" x1="0%" y1="50%" x2="100%" y2="50%">
-              <stop offset="0%" stop-color="#10b981" stop-opacity="0"/>
-              <stop offset="40%" stop-color="#6ee7b7" stop-opacity="0.38"/>
-              <stop offset="100%" stop-color="#fbbf24" stop-opacity="0.75"/>
-            </linearGradient>
-          </defs>
-          <path class="silk-wave-primary" d="M 238,30 C 195,12 145,46 92,26 C 50,11 24,36 2,28" fill="none" stroke="url(#${gradId}_gold)" stroke-width="3.5" stroke-linecap="round"/>
-          <path class="silk-wave-secondary" d="M 238,32 C 198,44 150,18 98,36 C 58,48 28,22 6,32" fill="none" stroke="url(#${gradId}_jade)" stroke-width="2.2" stroke-linecap="round"/>
-          <g class="silk-star-glints" fill="#fef08a">
-            <polygon points="192,20 194.5,25.5 200,27.5 194.5,29.5 192,35 189.5,29.5 184,27.5 189.5,25.5" opacity="0.95"/>
-            <polygon points="135,26 137,30.5 141.5,32 137,33.5 135,38 133,33.5 128.5,32 133,30.5" fill="#6ee7b7" opacity="0.88"/>
-            <polygon points="76,18 77.5,21.5 81,23 77.5,24.5 76,28 74.5,24.5 71,23 74.5,21.5" opacity="0.75"/>
-            <circle cx="165" cy="33" r="2.2" fill="#fde047" opacity="0.9"/>
-            <circle cx="106" cy="24" r="1.8" fill="#a7f3d0" opacity="0.85"/>
-          </g>
-        `;
-        return svg;
-      };
+        const makeRibbonSvg = (extraClass, gradId) => {
+          const svgNS = "http://www.w3.org/2000/svg";
+          const svg = document.createElementNS(svgNS, "svg");
+          svg.setAttribute("viewBox", "0 0 240 60");
+          svg.setAttribute("class", `chim-lac-silk-svg ${extraClass}`);
+          svg.setAttribute("aria-hidden", "true");
+          svg.innerHTML = `
+            <defs>
+              <linearGradient id="${gradId}_gold" x1="0%" y1="50%" x2="100%" y2="50%">
+                <stop offset="0%" stop-color="#10b981" stop-opacity="0"/>
+                <stop offset="25%" stop-color="#34d399" stop-opacity="0.32"/>
+                <stop offset="65%" stop-color="#f59e0b" stop-opacity="0.75"/>
+                <stop offset="100%" stop-color="#fef08a" stop-opacity="0.98"/>
+              </linearGradient>
+              <linearGradient id="${gradId}_jade" x1="0%" y1="50%" x2="100%" y2="50%">
+                <stop offset="0%" stop-color="#10b981" stop-opacity="0"/>
+                <stop offset="40%" stop-color="#6ee7b7" stop-opacity="0.38"/>
+                <stop offset="100%" stop-color="#fbbf24" stop-opacity="0.75"/>
+              </linearGradient>
+            </defs>
+            <path class="silk-wave-primary" d="M 238,30 C 195,12 145,46 92,26 C 50,11 24,36 2,28" fill="none" stroke="url(#${gradId}_gold)" stroke-width="3.5" stroke-linecap="round"/>
+            <path class="silk-wave-secondary" d="M 238,32 C 198,44 150,18 98,36 C 58,48 28,22 6,32" fill="none" stroke="url(#${gradId}_jade)" stroke-width="2.2" stroke-linecap="round"/>
+            <g class="silk-star-glints" fill="#fef08a">
+              <polygon points="192,20 194.5,25.5 200,27.5 194.5,29.5 192,35 189.5,29.5 184,27.5 189.5,25.5" opacity="0.95"/>
+              <polygon points="135,26 137,30.5 141.5,32 137,33.5 135,38 133,33.5 128.5,32 133,30.5" fill="#6ee7b7" opacity="0.88"/>
+              <polygon points="76,18 77.5,21.5 81,23 77.5,24.5 76,28 74.5,24.5 71,23 74.5,21.5" opacity="0.75"/>
+              <circle cx="165" cy="33" r="2.2" fill="#fde047" opacity="0.9"/>
+              <circle cx="106" cy="24" r="1.8" fill="#a7f3d0" opacity="0.85"/>
+            </g>
+          `;
+          return svg;
+        };
 
-      if (isPair) {
-        soarEl.appendChild(makeRibbonSvg("silk-pair-lead", `silkGrad_${idx}_a`));
-        soarEl.appendChild(makeRibbonSvg("silk-pair-rear", `silkGrad_${idx}_b`));
-      } else {
-        soarEl.appendChild(makeRibbonSvg("silk-single", `silkGrad_${idx}_s`));
-      }
-    });
-
-    // 2. High-Performance 60/120-FPS Stardust Canvas Engine (No Reflows, Zero Software Blur)
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let width = 0;
-    let height = 0;
-    let dpr = Math.min(window.devicePixelRatio || 1, 2);
-    let isHeroVisible = true;
-    let canvasRafId = null;
-    let parallaxRafId = null;
-    let isParallaxRunning = false;
-
-    function resizeCanvas() {
-      const rect = stage.getBoundingClientRect();
-      width = Math.max(Math.round(rect.width), 320);
-      height = Math.max(Math.round(rect.height), 260);
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-
-    resizeCanvas();
-    if (window.ResizeObserver) {
-      const ro = new ResizeObserver(() => resizeCanvas());
-      ro.observe(stage);
-    } else {
-      window.addEventListener("resize", resizeCanvas, { passive: true });
-    }
-
-    const motes = Array.from({ length: 48 }, (_, i) => ({
-      x: Math.random() * (width || 800),
-      y: Math.random() * (height || 500) * 0.85,
-      vx: 18 + Math.random() * 22,
-      vy: (Math.random() - 0.5) * 5.0,
-      r: 1.2 + Math.random() * 2.0,
-      phase: i * 0.65,
-      isStar: i % 3 === 0,
-      isGold: i % 4 !== 0
-    }));
-
-    function drawFourPointStar(cx, cy, r, color, alpha) {
-      ctx.globalAlpha = Math.max(0, Math.min(1, alpha));
-      ctx.fillStyle = color;
-      ctx.beginPath();
-      ctx.moveTo(cx, cy - r * 2.2);
-      ctx.lineTo(cx + r * 0.45, cy - r * 0.45);
-      ctx.lineTo(cx + r * 2.2, cy);
-      ctx.lineTo(cx + r * 0.45, cy + r * 0.45);
-      ctx.lineTo(cx, cy + r * 2.2);
-      ctx.lineTo(cx - r * 0.45, cy + r * 0.45);
-      ctx.lineTo(cx - r * 2.2, cy);
-      ctx.lineTo(cx - r * 0.45, cy - r * 0.45);
-      ctx.closePath();
-      ctx.fill();
-    }
-
-    let lastTime = performance.now();
-
-    function renderFrame(now) {
-      if (!isHeroVisible) {
-        canvasRafId = null;
-        return;
-      }
-      const dt = Math.min(Math.max((now - lastTime) * 0.001, 0.004), 0.05);
-      lastTime = now;
-      const t = now * 0.001;
-
-      ctx.clearRect(0, 0, width, height);
-
-      for (let i = 0; i < motes.length; i++) {
-        const m = motes[i];
-        m.x += m.vx * dt;
-        m.y += (m.vy + Math.sin(t * 1.8 + m.phase) * 4.0) * dt;
-        if (m.x > width + 25) m.x = -25;
-        if (m.y < 10) m.y = height * 0.82;
-        if (m.y > height * 0.88) m.y = 15;
-
-        const twinkle = 0.35 + 0.55 * (0.5 + 0.5 * Math.sin(t * 3.2 + m.phase));
-        const color = m.isGold ? "#fde047" : "#6ee7b7";
-        if (m.isStar) {
-          drawFourPointStar(m.x, m.y, m.r, color, twinkle);
+        if (isPair) {
+          soarEl.appendChild(makeRibbonSvg("silk-pair-lead", `silkGrad_${idx}_a`));
+          soarEl.appendChild(makeRibbonSvg("silk-pair-rear", `silkGrad_${idx}_b`));
         } else {
-          // Hardware-accelerated dual-circle glow (instant GPU rasterization, zero CPU Gaussian blur)
-          ctx.globalAlpha = twinkle * 0.32;
-          ctx.fillStyle = m.isGold ? "#f59e0b" : "#10b981";
-          ctx.beginPath();
-          ctx.arc(m.x, m.y, m.r * 2.0, 0, Math.PI * 2);
-          ctx.fill();
+          soarEl.appendChild(makeRibbonSvg("silk-single", `silkGrad_${idx}_s`));
+        }
+      });
+    }
 
-          ctx.globalAlpha = twinkle * 0.95;
+    // ==============================================================================
+    // 2. GLOBAL 120-FPS CELESTIAL STARDUST ENGINE (EVERYWHERE ACROSS ENTIRE WEBSITE)
+    // Continuous viewport coverage: twinkling 4-point stars, golden motes, and emerald glints!
+    // ==============================================================================
+    if (globalCanvas) {
+      const ctx = globalCanvas.getContext("2d");
+      if (ctx) {
+        let width = 0;
+        let height = 0;
+        let dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        function resizeGlobalCanvas() {
+          width = window.innerWidth || document.documentElement.clientWidth || 1200;
+          height = window.innerHeight || document.documentElement.clientHeight || 800;
+          dpr = Math.min(window.devicePixelRatio || 1, 2);
+          globalCanvas.width = width * dpr;
+          globalCanvas.height = height * dpr;
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        resizeGlobalCanvas();
+        window.addEventListener("resize", resizeGlobalCanvas, { passive: true });
+
+        // Rich population of 84 stars & motes distributed across the entire viewport
+        const motes = Array.from({ length: 84 }, (_, i) => ({
+          x: Math.random() * (width || 1200),
+          y: Math.random() * (height || 800),
+          vx: 12 + Math.random() * 20,
+          vy: (Math.random() - 0.5) * 4.5,
+          r: 1.1 + Math.random() * 2.2,
+          phase: i * 0.45,
+          isStar: i % 3 === 0,
+          isGold: i % 4 !== 0
+        }));
+
+        function drawFourPointStar(cx, cy, r, color, alpha) {
+          ctx.globalAlpha = Math.max(0, Math.min(1, alpha));
           ctx.fillStyle = color;
           ctx.beginPath();
-          ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
+          ctx.moveTo(cx, cy - r * 2.2);
+          ctx.lineTo(cx + r * 0.42, cy - r * 0.42);
+          ctx.lineTo(cx + r * 2.2, cy);
+          ctx.lineTo(cx + r * 0.42, cy + r * 0.42);
+          ctx.lineTo(cx, cy + r * 2.2);
+          ctx.lineTo(cx - r * 0.42, cy + r * 0.42);
+          ctx.lineTo(cx - r * 2.2, cy);
+          ctx.lineTo(cx - r * 0.42, cy - r * 0.42);
+          ctx.closePath();
           ctx.fill();
         }
+
+        let lastTime = performance.now();
+
+        function renderGlobalStars(now) {
+          const dt = Math.min(Math.max((now - lastTime) * 0.001, 0.004), 0.05);
+          lastTime = now;
+          const t = now * 0.001;
+
+          ctx.clearRect(0, 0, width, height);
+
+          for (let i = 0; i < motes.length; i++) {
+            const m = motes[i];
+            m.x += m.vx * dt;
+            m.y += (m.vy + Math.sin(t * 1.5 + m.phase) * 3.5) * dt;
+
+            // Wrap around edges smoothly
+            if (m.x > width + 25) m.x = -25;
+            if (m.y < -20) m.y = height + 15;
+            if (m.y > height + 20) m.y = -15;
+
+            const twinkle = 0.35 + 0.55 * (0.5 + 0.5 * Math.sin(t * 2.8 + m.phase));
+            const color = m.isGold ? "#fde047" : "#6ee7b7";
+
+            if (m.isStar) {
+              drawFourPointStar(m.x, m.y, m.r, color, twinkle);
+            } else {
+              // Dual-circle glow (hardware-accelerated, zero CPU Gaussian blur)
+              ctx.globalAlpha = twinkle * 0.30;
+              ctx.fillStyle = m.isGold ? "#f59e0b" : "#10b981";
+              ctx.beginPath();
+              ctx.arc(m.x, m.y, m.r * 2.0, 0, Math.PI * 2);
+              ctx.fill();
+
+              ctx.globalAlpha = twinkle * 0.95;
+              ctx.fillStyle = color;
+              ctx.beginPath();
+              ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
+              ctx.fill();
+            }
+          }
+
+          requestAnimationFrame(renderGlobalStars);
+        }
+
+        requestAnimationFrame(renderGlobalStars);
       }
-
-      canvasRafId = requestAnimationFrame(renderFrame);
     }
-
-    function startCanvas() {
-      if (!canvasRafId && isHeroVisible) {
-        lastTime = performance.now();
-        canvasRafId = requestAnimationFrame(renderFrame);
-      }
-    }
-
-    function stopCanvas() {
-      if (canvasRafId) {
-        cancelAnimationFrame(canvasRafId);
-        canvasRafId = null;
-      }
-    }
-
-    startCanvas();
 
     // ==============================================================================
     // 3. AUTHENTIC 3D MOUSE PARALLAX FOR SACRED ĐÔNG SƠN ASTROLABE (MATCHES EARLIER VERSION)
     // Dynamic 3D perspective tracking with smooth LERP damping and instant freezing when dragging down to herbs.
     // ==============================================================================
-    const heroSection = document.getElementById("heroStageSection");
+    let isHeroVisible = true;
+    let parallaxRafId = null;
+    let isParallaxRunning = false;
+
     if (heroSection && astrolabe) {
       let targetX = 0;
       let targetY = 0;
@@ -2620,18 +2608,16 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
     // ==============================================================================
     // 4. INSTANT HERO FREEZE ON DRAG/SCROLL DOWN (HERBS & MEDICINE FOCUS MODE)
     // When the user drags or scrolls down to see the medicine, herbs, and studio:
-    // EVERYTHING in the Hero section completely stops (Canvas, Chim Lạc flock, Trống Đồng)!
+    // Trống Đồng and Chim Lạc flock completely freeze to save 100% compute for herbs!
     // ==============================================================================
     function updateHeroActiveState() {
       if (!heroSection) return;
-      // Scroll threshold: as soon as the user scrolls down past 90px to explore the herbs
       const isScrolledDown = window.scrollY > 90;
 
       if (isScrolledDown) {
         if (isHeroVisible) {
           isHeroVisible = false;
           heroSection.classList.add("hero-offscreen");
-          stopCanvas();
           if (parallaxRafId) {
             cancelAnimationFrame(parallaxRafId);
             parallaxRafId = null;
@@ -2642,7 +2628,6 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
         if (!isHeroVisible) {
           isHeroVisible = true;
           heroSection.classList.remove("hero-offscreen");
-          startCanvas();
           if (typeof requestParallaxTick === "function") {
             requestParallaxTick();
           }
@@ -2659,7 +2644,6 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
           if (!entry.isIntersecting && isHeroVisible) {
             isHeroVisible = false;
             heroSection.classList.add("hero-offscreen");
-            stopCanvas();
             if (parallaxRafId) {
               cancelAnimationFrame(parallaxRafId);
               parallaxRafId = null;
@@ -2668,7 +2652,6 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
           } else if (entry.isIntersecting && window.scrollY <= 90 && !isHeroVisible) {
             isHeroVisible = true;
             heroSection.classList.remove("hero-offscreen");
-            startCanvas();
             if (typeof requestParallaxTick === "function") {
               requestParallaxTick();
             }
@@ -2679,7 +2662,6 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
       heroObserver.observe(heroSection);
     }
   }
-
   initChimLacCelestialCanvas();
 
 });
