@@ -943,29 +943,57 @@ document.addEventListener("DOMContentLoaded", () => {
         };
       }
 
-      // Localize herb names in formula
+      // Localize herb names and pharmacological notes in formula
       const herbTranslations = [
-        ["Lạc Tiên", "Passionflower (Lạc Tiên)"],
-        ["Hoa Cúc Vàng", "Imperial White Chrysanthemum"],
+        ["Lạc Tiên", "Wild Passionflower"],
+        ["Hoa Cúc Vàng", "Imperial Yellow Chamomile"],
         ["Hoa Cúc Trắng", "Imperial White Chrysanthemum"],
-        ["Tắc Sấy Lạnh", "Freeze-dried Kumquat"],
+        ["Hoa Cúc Dịu Nhẹ", "Gentle White Chamomile"],
+        ["Tắc Sấy Lạnh", "Freeze-dried Kumquat & Peel"],
         ["Cỏ Ngọt", "Natural Stevia Leaf"],
         ["Muối Khoáng", "Purified Mineral Salt (Na+)"],
-        ["Đinh Lăng", "Polyscias Ginseng Leaf"],
+        ["Đinh Lăng", "Polyscias Ginseng Leaf (Sâm Nam)"],
         ["Sả Chanh", "Indigenous Lemongrass"],
         ["Gừng Núi", "Mountain Ginger"],
-        ["La Hán Quả", "Ancestral Monk Fruit"],
+        ["La Hán Quả", "Traditional Monk Fruit"],
         ["Atiso Đỏ", "Roselle Hibiscus (Atiso Đỏ)"],
+        ["Quế Trà Bồng", "Trà Bồng Cinnamon Bark"],
         ["Quế", "Trà Bồng Cinnamon Bark"],
         ["Bạc Hà", "Native Peppermint"],
-        ["Hoa Nhài", "Imperial Jasmine"],
+        ["Hoa Nhài", "Imperial Jasmine Buds"],
         ["Táo Đỏ", "Jujube Red Dates"],
         ["Dâu Tằm", "Black Mulberry"]
       ];
+
+      const noteTranslations = [
+        ["Vitexin kích hoạt thụ thể GABA_A hạ Cortisol", "Vitexin modulates GABA_A receptors to lower Cortisol (Tan et al. 2024; Appel et al. 2011)"],
+        ["Vitexin kích hoạt GABA_A tạo cảm giác ấm áp", "Vitexin activates GABA_A receptors to foster warm, convivial social relaxation"],
+        ["Apigenin làm dịu trục HPA thần kinh", "Apigenin calms the HPA nerve axis; locks out Lotus Plumule to protect low blood pressure"],
+        ["Apigenin hiệp đồng cùng flavonoid", "Apigenin synergizes with botanical flavonoids to soothe visual-motor neural fatigue"],
+        ["Axit citric tự nhiên đưa pH về 4.3", "Natural citric acid buffers pH to 4.3, directly suppressing bitter receptor hTAS2R16 (Sakurai et al. 2009)"],
+        ["Stevioside ngọt thanh tự nhiên 0-calorie", "Natural stevioside delivers 0-calorie sweetness (GI=0), preventing nocturnal glycemic spikes"],
+        ["Ion Na+ khử đắng chéo trung ương", "Na+ ions provide central cross-bitterness suppression (Breslin & Beauchamp 1997), yielding smooth finish"],
+        ["Saponin triterpenoid tăng lưu lượng máu", "Triterpenoid saponins enhance cerebral blood flow & prefrontal cortex oxygenation for sustained focus"],
+        ["Citral tạo hương thơm tươi mát", "Citral & Geraniol provide uplifting freshness, melting away sensory fatigue"],
+        ["Gingerol làm ấm tỳ vị", "Gingerols warm digestion, boosting peripheral microcirculation and stamina"],
+        ["Mogroside V ngọt mát 0-calorie", "Mogroside V yields cooling 0-calorie sweetness, completely safe for blood pressure & glucose (GI=0)"],
+        ["Anthocyanin tạo sắc đỏ Ruby", "Anthocyanins produce vivid party ruby hue; organic acids buffer pH to 4.2 suppressing bitterness"],
+        ["Hương thơm quý phái như rượu vang", "Cinnamaldehyde imparts a noble festive aroma reminiscent of warm Mulled Wine"],
+        ["Menthol sảng khoái tạo cảm giác mát lạnh", "Crisp natural menthol activates cooling TRPM8 receptors for refreshing alertness"],
+        ["Bổ tỳ dưỡng vị", "Nourishes spleen and stomach, protecting gastric mucosa"],
+        ["Hương thơm hoa cúc dịu êm thanh nhã", "Gentle chrysanthemum aroma for delicate mental tranquility"]
+      ];
+
       resultObj.formula.forEach(item => {
         for (const [vi, en] of herbTranslations) {
           if (item.name && item.name.includes(vi)) {
             item.name = item.name.replace(vi, en);
+          }
+        }
+        for (const [viSnippet, enText] of noteTranslations) {
+          if (item.note && item.note.includes(viSnippet)) {
+            item.note = enText;
+            break;
           }
         }
       });
