@@ -295,7 +295,7 @@ const MEDICINAL_DATABASE = [
       "co_muc",
       "bac_ha"
     ],
-    "popularDrink": "Liver Rescue Botanical",
+    "popularDrink": "Artichoke Botanical Tonic",
     "mindfulReminder": "Thanh lọc cơ thể cũng là lúc thanh lọc tâm trí; hãy buông bỏ những muộn phiền tích tụ để tái sinh nguồn năng lượng tươi mát như sương sớm Đà Lạt.",
     "officialSource": "EMA/HMPC, Cynarae folium, bản tóm tắt: https://www.ema.europa.eu/en/medicines/herbal/cynarae-folium"
   },
@@ -848,7 +848,7 @@ const MEDICINAL_DATABASE = [
       "atiso",
       "hoa_cuc"
     ],
-    "popularDrink": "Highland Breeze (Thanh Can Lạc Hồng)",
+    "popularDrink": "Eclipta Herbal Elixir (Thanh Can Lạc Hồng)",
     "mindfulReminder": "Thanh lọc những cơn bốc hỏa, dịu mát tâm trí giữa áp lực cuộc sống bằng dòng dược chất lành dịu của đất phù sa Nam Bộ."
   },
   {
