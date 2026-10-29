@@ -5,6 +5,7 @@ import re
 folder = r"C:\Users\THIS PC\.gemini\antigravity-ide\scratch\anthao-ai"
 html_path = os.path.join(folder, "index.html")
 css_path = os.path.join(folder, "styles.css")
+trans_path = os.path.join(folder, "translations.js")
 db_path = os.path.join(folder, "medicinal_database.js")
 app_path = os.path.join(folder, "app.js")
 assets_dir = os.path.join(folder, "assets")
@@ -14,6 +15,9 @@ with open(html_path, "r", encoding="utf-8") as f:
 
 with open(css_path, "r", encoding="utf-8") as f:
     css = f.read()
+
+with open(trans_path, "r", encoding="utf-8") as f:
+    trans_js = f.read()
 
 with open(db_path, "r", encoding="utf-8") as f:
     db_js = f.read()
@@ -43,8 +47,9 @@ if os.path.exists(assets_dir):
 
 # Combine into standalone HTML
 bundled = html.replace('<link rel="stylesheet" href="styles.css">', f"<style>\n{css}\n</style>")
-script_block = f"<script>\n{db_js}\n{app_js}\n</script>"
+script_block = f"<script>\n{trans_js}\n{db_js}\n{app_js}\n</script>"
 
+bundled = re.sub(r'<script\s+src="translations\.js"[^>]*></script>', '', bundled)
 bundled = re.sub(r'<script\s+src="medicinal_database\.js"[^>]*></script>', '', bundled)
 # Use lambda replacement to prevent Python re.sub from interpreting \n and backslashes in JS code as escape sequences
 bundled = re.sub(r'<script\s+src="app\.js"[^>]*></script>', lambda _: script_block, bundled)

@@ -412,6 +412,50 @@ body {
   box-shadow: 0 0 12px var(--gold-glow);
 }
 
+/* Language Switcher Pill next to RMIT RBPC */
+.lang-toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #a7f3d0;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.lang-toggle-pill:hover {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: rgba(52, 211, 153, 0.7);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.lang-toggle-pill .lang-opt {
+  opacity: 0.55;
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.lang-toggle-pill .lang-opt.active {
+  opacity: 1;
+  color: #fef08a;
+  text-shadow: 0 0 8px rgba(254, 240, 138, 0.6);
+  font-weight: 800;
+}
+
+.lang-toggle-pill .lang-divider {
+  opacity: 0.35;
+  color: #94a3b8;
+  font-size: 0.72rem;
+}
+
 /* Hero Section with Generous Spacing */
 .hero-section {
   padding: 64px 0 40px 0;
