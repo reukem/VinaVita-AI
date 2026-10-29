@@ -679,6 +679,9 @@ window.applyLanguage = function(lang) {
   if (window.refreshChatbotAiBadge) {
     window.refreshChatbotAiBadge();
   }
+  if (window.updateSafetyAlert) {
+    window.updateSafetyAlert();
+  }
 };
 
 /**

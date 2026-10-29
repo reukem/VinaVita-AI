@@ -181,54 +181,55 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateSafetyAlert() {
+    const isEn = (window.currentLang === "en");
     const blockedActions = [];
 
     if (activeConditions.has("hypotension")) {
       blockedActions.push({
-        rule: "Huyết áp thấp (Hypotension)",
-        blocked: "Tâm Sen (Nelumbo nucifera) & Atiso Đỏ đậm đặc",
-        safe: "Lạc Tiên + Hoa Cúc Vàng",
-        why: "Ngừa hạ áp đột ngột do alkaloid Liensinine & anthocyanin gây giãn mạch quá mức."
+        rule: isEn ? "Low Blood Pressure (Hypotension)" : "Huyết áp thấp (Hypotension)",
+        blocked: isEn ? "Lotus Plumule (Nelumbo nucifera) & High-concentration Hibiscus" : "Tâm Sen (Nelumbo nucifera) & Atiso Đỏ đậm đặc",
+        safe: isEn ? "Passionflower + Yellow Chamomile" : "Lạc Tiên + Hoa Cúc Vàng",
+        why: isEn ? "Prevents acute hypotensive drops caused by alkaloid Liensinine & anthocyanin vasodilation." : "Ngừa hạ áp đột ngột do alkaloid Liensinine & anthocyanin gây giãn mạch quá mức."
       });
     }
     if (activeConditions.has("hypertension")) {
       blockedActions.push({
-        rule: "Huyết áp cao (Hypertension)",
-        blocked: "Cam Thảo Bắc (Glycyrrhiza) & Gừng liều cao",
-        safe: "Cỏ Ngọt (Stevia) / La Hán Quả 0-calorie",
-        why: "Glycyrrhizin trong Cam Thảo gây giữ natri và bài tiết kali, làm tăng áp lực thành mạch."
+        rule: isEn ? "High Blood Pressure (Hypertension)" : "Huyết áp cao (Hypertension)",
+        blocked: isEn ? "Northern Licorice (Glycyrrhiza) & High-dose Ginger" : "Cam Thảo Bắc (Glycyrrhiza) & Gừng liều cao",
+        safe: isEn ? "Stevia / 0-Calorie Monk Fruit" : "Cỏ Ngọt (Stevia) / La Hán Quả 0-calorie",
+        why: isEn ? "Glycyrrhizin causes sodium retention and potassium excretion, elevating arterial pressure." : "Glycyrrhizin trong Cam Thảo gây giữ natri và bài tiết kali, làm tăng áp lực thành mạch."
       });
     }
     if (activeConditions.has("gastritis")) {
       blockedActions.push({
-        rule: "Đau dạ dày / Trào ngược (Acid Reflux)",
-        blocked: "Quất Tươi & Atiso Đỏ đậm đặc (>50%) & Gừng cay",
-        safe: "Đệm pH ≥ 4.4 êm dịu, Hoa Cúc & La Hán Quả",
-        why: "Đệm giảm acid hữu cơ để tránh kích ứng niêm mạc dạ dày (Sakurai et al. 2009)."
+        rule: isEn ? "Gastritis / Acid Reflux (GERD)" : "Đau dạ dày / Trào ngược (Acid Reflux)",
+        blocked: isEn ? "Fresh Kumquat & High-acid Hibiscus (>50%) & Pungent Ginger" : "Quất Tươi & Atiso Đỏ đậm đặc (>50%) & Gừng cay",
+        safe: isEn ? "Gentle buffered pH ≥ 4.4, Chamomile & Monk Fruit" : "Đệm pH ≥ 4.4 êm dịu, Hoa Cúc & La Hán Quả",
+        why: isEn ? "Buffers organic acids to prevent mucosal gastric irritation (Sakurai et al. 2009)." : "Đệm giảm acid hữu cơ để tránh kích ứng niêm mạc dạ dày (Sakurai et al. 2009)."
       });
     }
     if (selectedMood === "unwind") {
       blockedActions.push({
-        rule: "Chế độ Thư Giãn Đêm (Night Unwind)",
-        blocked: "Đinh Lăng Sâm Nam (Polyscias fruticosa)",
-        safe: "Lạc Tiên + Hoa Cúc / Tâm Sen sao vàng nhẹ",
-        why: "Saponin triterpenoid kích thích tuần hoàn não và hưng phấn đại não, chỉ thích hợp dùng ban ngày."
+        rule: isEn ? "Night Unwind Mode (Sleep Safe)" : "Chế độ Thư Giãn Đêm (Night Unwind)",
+        blocked: isEn ? "Polyscias Leaf / Southern Ginseng (Polyscias fruticosa)" : "Đinh Lăng Sâm Nam (Polyscias fruticosa)",
+        safe: isEn ? "Passionflower + Chamomile / Lightly Roasted Lotus Plumule" : "Lạc Tiên + Hoa Cúc / Tâm Sen sao vàng nhẹ",
+        why: isEn ? "Triterpenoid saponins stimulate cerebral circulation and cortical excitation, suitable only for daytime use." : "Saponin triterpenoid kích thích tuần hoàn não và hưng phấn đại não, chỉ thích hợp dùng ban ngày."
       });
     }
     if (activeConditions.has("pregnancy")) {
       blockedActions.push({
-        rule: "Mang thai / Cho con bú (Pregnancy Safe)",
-        blocked: "Lạc Tiên liều cao, Rễ Đinh Lăng, Cát Sâm",
-        safe: "Hoa Cúc nhẹ, Táo Đỏ & Cỏ Ngọt dịu",
-        why: "Tránh các vết alkaloid Harman kích thích co bóp cơ trơn tử cung."
+        rule: isEn ? "Pregnancy / Nursing (Pregnancy Safe)" : "Mang thai / Cho con bú (Pregnancy Safe)",
+        blocked: isEn ? "High-dose Passionflower, Polyscias Root, Millettia" : "Lạc Tiên liều cao, Rễ Đinh Lăng, Cát Sâm",
+        safe: isEn ? "Mild Chamomile, Red Date & Gentle Stevia" : "Hoa Cúc nhẹ, Táo Đỏ & Cỏ Ngọt dịu",
+        why: isEn ? "Avoids trace Harman alkaloids that might stimulate uterine smooth muscle contractions." : "Tránh các vết alkaloid Harman kích thích co bóp cơ trơn tử cung."
       });
     }
     if (activeConditions.has("driving")) {
       blockedActions.push({
-        rule: "Cần lái xe / Tỉnh táo cao (High Vigilance)",
-        blocked: "Tâm Sen liều an thần sâu & Lạc Tiên liều cao",
-        safe: "Đinh Lăng + Bạc Hà + Cỏ Ngọt",
-        why: "Đảm bảo tỉnh táo tập trung cao độ, 100% tuân thủ Nghị định 168/2024/NĐ-CP."
+        rule: isEn ? "Driving / High Vigilance Required" : "Cần lái xe / Tỉnh táo cao (High Vigilance)",
+        blocked: isEn ? "Deep-sedative Lotus Plumule & High-dose Passionflower" : "Tâm Sen liều an thần sâu & Lạc Tiên liều cao",
+        safe: isEn ? "Polyscias + Peppermint + Stevia" : "Đinh Lăng + Bạc Hà + Cỏ Ngọt",
+        why: isEn ? "Ensures optimal alertness and cognitive sharpness, 100% compliant with Traffic Safety Decree 168/2024/NĐ-CP." : "Đảm bảo tỉnh táo tập trung cao độ, 100% tuân thủ Nghị định 168/2024/NĐ-CP."
       });
     }
 
@@ -237,13 +238,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const listHtml = blockedActions.map(b => `
           <div class="safety-rule-row" style="margin-bottom:6px; font-size:0.86rem; line-height:1.5;">
             <span style="color:#fef08a; font-weight:700;">• ${b.rule}:</span>
-            <span style="color:var(--text-light);"> Đã tự động loại trừ <strong>${b.blocked}</strong> để bảo vệ sức khỏe của bạn. Gợi ý thay thế bằng thảo mộc an toàn: <em>${b.safe}</em>. (${b.why})</span>
+            <span style="color:var(--text-light);"> ${isEn ? "Automatically excluded" : "Đã tự động loại trừ"} <strong>${b.blocked}</strong> ${isEn ? "to safeguard your physiology. Recommended safe alternative:" : "để bảo vệ sức khỏe của bạn. Gợi ý thay thế bằng thảo mộc an toàn:"} <em>${b.safe}</em>. (${b.why})</span>
           </div>
         `).join("");
 
         alertText.innerHTML = `
           <div style="margin-bottom:8px; font-weight:800; color:#fbbf24; letter-spacing:0.5px;">
-            🛡️ LƯU Ý AN TOÀN TỰ ĐỘNG TỪ HỆ THỐNG DƯỢC LIỆU:
+            ${isEn ? "🛡️ AUTOMATED CLINICAL SAFETY ALERTS (PHARMACOPOEIA):" : "🛡️ LƯU Ý AN TOÀN TỰ ĐỘNG TỪ HỆ THỐNG DƯỢC LIỆU:"}
           </div>
           <div>${listHtml}</div>
         `;
@@ -253,6 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
+  window.updateSafetyAlert = updateSafetyAlert;
 
   // Generate Formulation Button Logic (Systematic AI Synthesis Ritual)
   const btnGenerate = document.getElementById("btnGenerate");
@@ -261,18 +263,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (btnGenerate) {
     btnGenerate.addEventListener("click", () => {
-      btnGenerate.innerHTML = `<span>⏳</span> Đang đối chiếu Dược Điển &amp; kiểm tra tương tác...`;
+      const isEn = (window.currentLang === "en");
+      btnGenerate.innerHTML = isEn
+        ? `<span>⏳</span> Cross-referencing Pharmacopoeia &amp; checking interactions...`
+        : `<span>⏳</span> Đang đối chiếu Dược Điển &amp; kiểm tra tương tác...`;
       btnGenerate.disabled = true;
 
       setTimeout(() => {
-        btnGenerate.innerHTML = `<span>🍃</span> Đang ức chế thụ thể vị đắng hTAS2R16 (pH 4.2–4.5)...`;
+        btnGenerate.innerHTML = isEn
+          ? `<span>🍃</span> Suppressing bitter receptor hTAS2R16 (pH 4.2–4.5)...`
+          : `<span>🍃</span> Đang ức chế thụ thể vị đắng hTAS2R16 (pH 4.2–4.5)...`;
       }, 350);
 
       setTimeout(() => {
-        btnGenerate.innerHTML = `<span>✨</span> Đã bào chế thành công ly mocktail 5.3g!`;
+        btnGenerate.innerHTML = isEn
+          ? `<span>✨</span> Formulated 5.3g mocktail sachet successfully!`
+          : `<span>✨</span> Đã bào chế thành công ly mocktail 5.3g!`;
         renderGeneratedRecipe(true);
         setTimeout(() => {
-          btnGenerate.innerHTML = `<span>✨</span> Pha Cho Tôi Một Ly (Gợi ý công thức ngay)`;
+          btnGenerate.innerHTML = isEn
+            ? `<span>✨</span> Brew Me a Glass (Generate Formula Now)`
+            : `<span>✨</span> Pha Cho Tôi Một Ly (Gợi ý công thức ngay)`;
           btnGenerate.disabled = false;
         }, 300);
       }, 750);
