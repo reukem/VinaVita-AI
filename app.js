@@ -833,6 +833,15 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
+  window.refreshCurrentFormulation = function() {
+    if (recipeCard && recipeCard.classList.contains("active")) {
+      renderGeneratedRecipe(true);
+    }
+    if (typeof renderSignatureDrinks === "function") {
+      renderSignatureDrinks();
+    }
+  };
+
   function renderGeneratedRecipe(isInstant = false, customNote = "") {
     if (recipePlaceholder) recipePlaceholder.style.display = "none";
     if (recipeCard) {
@@ -908,9 +917,11 @@ document.addEventListener("DOMContentLoaded", () => {
   updateSafetyAlert();
   // Placeholder remains active until user clicks 'Pha Cho Tôi Một Ly' or a quick preset!
 
-  // Render Signature Drinks
-  const sigContainer = document.getElementById("signatureContainer");
-  if (sigContainer && typeof SIGNATURE_DRINKS !== "undefined") {
+  // Render Signature Drinks (Bilingual Aware)
+  function renderSignatureDrinks() {
+    const sigContainer = document.getElementById("signatureContainer");
+    if (!sigContainer || typeof SIGNATURE_DRINKS === "undefined") return;
+    const isEn = (window.currentLang === "en");
     sigContainer.innerHTML = "";
     SIGNATURE_DRINKS.forEach(drink => {
       const card = document.createElement("div");
@@ -983,6 +994,8 @@ document.addEventListener("DOMContentLoaded", () => {
       sigContainer.appendChild(card);
     });
   }
+  window.renderSignatureDrinks = renderSignatureDrinks;
+  renderSignatureDrinks();
 
   // Render Database Encyclopedia with Botanical Photography
   // ==============================================================================
@@ -1595,23 +1608,26 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
    - Gastritis / GERD (Đau dạ dày / Trào ngược): Reduce sour/spicy herbs (Tắc, Atiso đỏ, Gừng) by 50% to buffer pH >= 4.5; drink warm 30 mins after meals.
    - Caffeine Tachycardia (Tim đập nhanh khi uống cà phê): 100% 0mg Caffeine (#02 Deadline Survivor with Lá Đinh Lăng).
    - Pregnancy (Mang thai): Avoid high-dose Lạc Tiên, Rễ Đinh Lăng, Tâm Sen in first trimester; use mild Hoa Cúc + Táo Đỏ.
-4. Conversational Style:
-   - Reply naturally, warmly, and intelligently in the SAME language the user writes in (Vietnamese or English).
+4. Conversational Style & Strict Language Selection:
+   - When the user communicates in English OR when the UI language is set to English ([Active UI Language: EN]), you MUST respond 100% in fluent, polished, authoritative, empathetic ENGLISH. Use standard international pharmaceutical and botanical English terminology alongside Latin binomials (e.g., Polyscias fruticosa / Vietnamese Ginseng leaf, Passiflora foetida / Wild Passionflower, Chrysanthemum indicum / Wild Chamomile, Hibiscus sabdariffa / Roselle Hibiscus, Zingiber officinale / Mountain Ginger, Cymbopogon citratus / Lemongrass, Siraitia grosvenorii / Monk Fruit, Stevia rebaudiana / Stevia).
+   - When the user communicates in Vietnamese OR when the UI language is set to Vietnamese ([Active UI Language: VI]), respond in professional, empathetic Vietnamese following Dược điển Việt Nam standards.
    - Pay strict attention to negations (e.g., "không bị huyết áp thấp" means the user does NOT have low blood pressure!).
-   - If someone asks if you are hardcoded ("thats hard coded bro", "see??", "are you a real AI"), explain your Cloud Neural AI (Gemini 2.5 Flash) + Neuro-Symbolic Dược Điển RAG architecture built by Ngô Minh Thiên Bảo & Team Thinking Space.
+   - If someone asks if you are hardcoded ("thats hard coded bro", "see??", "are you a real AI"), explain your Cloud Neural AI (Gemini 2.5 Flash) + Neuro-Symbolic Dược Điển RAG architecture built by Ngô Minh Thiên Bảo & Team Thinking Space for RMIT RBPC 2026.
    - Keep responses concise (3-6 sentences or clean bullet points), accurate, and never repeat robotic templates.`;
 
     async function callCloudAiCluster(userText, ragContextSnippet) {
+      const activeLang = (window.currentLang || "vi").toUpperCase();
       const enrichedInput = ragContextSnippet
-        ? `${userText}\n\n[Dữ liệu Dược điển & Hồ sơ cơ địa trích xuất tự động cho câu hỏi này: ${ragContextSnippet}]`
-        : userText;
+        ? `[Active UI Language: ${activeLang}]\n${userText}\n\n[Dữ liệu Dược điển & Hồ sơ cơ địa trích xuất tự động cho câu hỏi này / Pharmacopoeia context: ${ragContextSnippet}]`
+        : `[Active UI Language: ${activeLang}]\n${userText}`;
 
       // Cloud Node 1: Google Gemini 2.5 Flash (HTTPS Cloud Gateway — Multi-Turn & Zero Cooldown)
       try {
         const base = "https://nakaassoumatine-einstein-chatbot.hf.space";
+        const isEnUi = (window.currentLang === "en");
         const gradHist = [
           { role: "user", content: [{ type: "text", text: VINAVITA_CLOUD_SYSTEM_PROMPT }] },
-          { role: "assistant", content: [{ type: "text", text: "Đã kích hoạt chế độ Dược Sĩ AI VinaVita. Tôi sẽ tư vấn chính xác theo Dược điển VinaVita, chú ý từ phủ định, và tuyệt đối không nhắc đến bất kỳ vai diễn nào khác." }] }
+          { role: "assistant", content: [{ type: "text", text: isEnUi ? "VinaVita AI Pharmacist mode activated. I will provide precise herbal, biomedical, and formulation consultations in English following VinaVita Pharmacopoeia standards." : "Đã kích hoạt chế độ Dược Sĩ AI VinaVita. Tôi sẽ tư vấn chính xác theo Dược điển VinaVita, chú ý từ phủ định, và tuyệt đối không nhắc đến bất kỳ vai diễn nào khác." }] }
         ];
         for (const h of chatSessionMemory.history.slice(-6)) {
           gradHist.push({
