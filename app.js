@@ -2391,6 +2391,17 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
 
       let finalHtml = "";
       if (cloudResult && cloudResult.reply) {
+        const isEn = (window.currentLang === "en");
+        if (isEn) {
+          // Real-time zero-Vietnamese sanitizer for English mode:
+          // Ensures the bot refers to himself strictly as 'AI Pharmacist, VinaVita'
+          cloudResult.reply = cloudResult.reply
+            .replace(/\b(?:Dược\s*Sĩ\s*AI\s*VinaVita|AI\s*Dược\s*Sĩ\s*VinaVita|Dược\s*Sĩ\s*AI|AI\s*Dược\s*Sĩ|VinaVita\s*AI\s*Pharmacist)\b/gi, "AI Pharmacist, VinaVita")
+            .replace(/\b(?:Dược\s*Điển\s*Việt\s*Nam\s*V|Dược\s*Điển\s*Việt\s*Nam|Dược\s*Điển)\b/gi, "Pharmacopoeia")
+            .replace(/\b(?:Hồ\s*sơ\s*dược\s*liệu)\b/gi, "Botanical Dossier")
+            .replace(/\b(?:Bài\s*thuốc|Phác\s*đồ\s*thảo\s*mộc)\b/gi, "Botanical Formulation")
+            .replace(/\b(?:Dược\s*liệu)\b/gi, "Botanicals");
+        }
         updateAiNodeBadges(cloudResult.nodeType || "gemini");
         finalHtml = `
           <div style="display:inline-flex; align-items:center; gap:5px; font-size:0.71rem; color:#a7f3d0; background:rgba(16,185,129,0.18); border:1px solid rgba(52,211,153,0.4); border-radius:10px; padding:3px 9px; margin-bottom:8px;">
