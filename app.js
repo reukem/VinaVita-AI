@@ -1190,6 +1190,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Botanical Comprehensive Translation Registry for Encyclopedia & Modal
   const HERB_I18N = {
     "ha_thu_o": {
+      "mindful_en": "Patience in brewing mirrors patience in life; true inner vitality is nurtured gently each day through mindful nourishment.",
       "cat_en": "Nourish Liver & Kidney / Enrich Blood / Longevity",
       "origin_en": "Hoang Lien Son & Ha Giang Virgin Mountain Ranges",
       "aroma_en": "Deep herbal aroma, mildly astringent finish",
@@ -1199,6 +1200,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Paired with black beans and licorice to buffer tannins, eliminating astringency."
     },
     "co_nho_noi": {
+      "mindful_en": "Sip slowly and allow the crisp green sweetness of native meadow herbs to cool away lingering mental heat.",
       "cat_en": "Cool Blood / Liver Detox / Nourish Kidney Yin",
       "origin_en": "Mekong Delta Herbal Islands & Southern Plains",
       "aroma_en": "Gentle herbal meadow notes, crisp vegetal aroma",
@@ -1208,6 +1210,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Blends smoothly with Chamomile and Kumquat to create a balanced herbaceous tea."
     },
     "bo_cong_anh": {
+      "mindful_en": "A cup of clean dandelion tea purifies the mind from inner clutter, restoring clear focus and serene peace.",
       "cat_en": "Anti-inflammatory / Detox / Natural Antibacterial",
       "origin_en": "Sa Pa (Lao Cai) & Moc Chau Highland Valleys",
       "aroma_en": "Delicate wild highland herbal aroma",
@@ -1217,6 +1220,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Balanced with Stevia and Kumquat citric acid to suppress sesquiterpene bitterness."
     },
     "dau_tam": {
+      "mindful_en": "The delicate sweet tartness of ripe mulberries reminds us to slow down, nourish the body, and rest deeply.",
       "cat_en": "Enrich Blood / Anti-Aging / Deep Restful Sleep",
       "origin_en": "Bao Loc Mulberry Capital (Lam Dong) & Red River Basin",
       "aroma_en": "Ripe sun-ripened mulberry fragrance, sweet tartness",
@@ -1226,6 +1230,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Natural malic acid pairs harmoniously with Passionflower and Roselle."
     },
     "hoa_nhai": {
+      "mindful_en": "The noble fragrance of jasmine blossoms dissolves heavy burdens, opening space for gentle mindful breathing.",
       "cat_en": "Stress Relief / Cognitive Awakening / Lower Cortisol",
       "origin_en": "Quang Ba Ancient Floral Village (Hanoi Heritage)",
       "aroma_en": "Intensely elegant jasmine blossom aroma, deep relaxing",
@@ -1235,6 +1240,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Infuses warm floral luxury that masks bitter botanical notes naturally."
     },
     "bach_chi": {
+      "mindful_en": "Warm botanical vapors soothe facial tension, helping you find center and clarity amid bustling work.",
       "cat_en": "Headache Relief / Open Meridians / Muscle Relaxation",
       "origin_en": "Tam Dao Mountain Range Botanical Sanctuaries",
       "aroma_en": "Warm mild spice, distinctive noble botanical aroma",
@@ -1244,6 +1250,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Pair with Stevia and Lemongrass to smooth out coumarin warmth."
     },
     "cat_sam": {
+      "mindful_en": "Deep mountain roots teach us resilient groundedness; nourish your core daily with gentle natural tonics.",
       "cat_en": "Nourish Lungs / Boost Stamina / Physical Endurance",
       "origin_en": "Tra My & Tay Giang Mountain Forests (Quang Nam)",
       "aroma_en": "Warm sweet wild mountain ginseng notes",
@@ -1253,6 +1260,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Natural sweet profile pairs perfectly with Ginger and Monk Fruit."
     },
     "la_han_qua": {
+      "mindful_en": "Pure, zero-calorie sweetness from ancient monk fruit brings tranquil peace, releasing pressure and embracing natural lightness.",
       "cat_en": "Natural Sweetener (0-Calorie) & Bitterness Masking",
       "origin_en": "Northern High Mountain Ranges (Ha Giang, Cao Bang)",
       "aroma_en": "Rich sun-dried monk fruit aroma, deep natural sweetness",
@@ -1262,6 +1270,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Supreme bitter masker across all traditional botanical formulations."
     },
     "atiso_do": {
+      "mindful_en": "Vibrant ruby crimson and crisp floral tartness awaken every sense, sparking creative joy and convivial harmony.",
       "cat_en": "Organic Acids for hTAS2R16 Masking & Party Ruby Hue",
       "origin_en": "Binh Thuan & Da Lat Botanical Basins (OCOP Certified)",
       "aroma_en": "Bright tart hibiscus aroma with berry undertones",
@@ -1271,6 +1280,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Key taste architect providing vibrant ruby hue and tart refreshing mocktail base."
     },
     "lac_tien": {
+      "mindful_en": "Allow the gentle embrace of wild passionflower to quiet restless thoughts, guiding your spirit into deep restorative rest.",
       "cat_en": "Lower Cortisol / Natural Sedation / GABA_A Activation",
       "origin_en": "Central Highlands & Southern Wild Hill Valleys",
       "aroma_en": "Gentle soothing wild passionflower notes",
@@ -1280,6 +1290,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Buffered with Kumquat and Stevia to eliminate wild grassy astringency."
     },
     "dinh_lang": {
+      "mindful_en": "Clear, purposeful presence is our greatest asset; sustain your vital energy with calm, steady herbal nourishment.",
       "cat_en": "Cognitive Focus / Mental Alertness / Cerebral Microcirculation",
       "origin_en": "Hai Hau (Nam Dinh) & Nghe An Heritage Plantations",
       "aroma_en": "Subtle invigorating ginseng-herbal freshness",
@@ -1289,6 +1300,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Paired with Lemongrass and Mountain Ginger for bright, zesty alertness."
     },
     "tam_sen": {
+      "mindful_en": "Deep therapeutic bitterness yields gentle serenity; honor the quiet moments of peace that balance our busy days.",
       "cat_en": "Nerve Soothing / Stress Reduction / Heart Rhythm Balance",
       "origin_en": "Dong Thap Muoi & Hue Ancient Lotus Basins",
       "aroma_en": "Pure delicate young lotus aroma, smooth deep bitterness",
@@ -1298,6 +1310,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Requires light golden roasting and pairing with Chamomile / Licorice to smooth intense bitterness."
     },
     "hoa_cuc": {
+      "mindful_en": "Golden chamomile blossoms carry the gentle warmth of autumnal sunshine, soothing visual strain and weary nerves.",
       "cat_en": "Calm Nerves / Clear Liver Heat / Protect Eyes",
       "origin_en": "Nghia Trai Botanical Village (Hung Yen Heritage)",
       "aroma_en": "Fresh calming chamomile fragrance, delicate sweet finish",
@@ -1307,6 +1320,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Pairs universally across sweet and tart herbal teas."
     },
     "quat_tac": {
+      "mindful_en": "Bright citrus notes bring refreshing vitality, reminding us that life is renewed in every mindful sip.",
       "cat_en": "Citric Acid Bitter Masking & Vitamin C Immunity",
       "origin_en": "Tien Giang & Cao Lanh Citrus Groves",
       "aroma_en": "Crisp zesty kumquat peel citrus fragrance",
@@ -1316,6 +1330,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Essential acid buffer for all evening unwinding formulations."
     },
     "co_ngot": {
+      "mindful_en": "Gentle natural sweetness needs no excess; savor pure harmony without heavy sugar or guilt.",
       "cat_en": "Natural 0-Calorie Sweetness (GI=0)",
       "origin_en": "Ha Giang & Lam Dong Clean Botanical Farms",
       "aroma_en": "Refreshing herbal sweetness, 0 calories",
@@ -1325,6 +1340,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Paired with trace Na+ mineral salt to eliminate any lingering metallic aftertaste."
     },
     "sa_chanh": {
+      "mindful_en": "Crisp aromatherapeutic lemongrass washes away mental fatigue, leaving behind crisp clarity.",
       "cat_en": "Aromatherapeutic Uplift / Sensory De-fatigue",
       "origin_en": "Dak Lak & Dong Nai Heritage Farming Basins",
       "aroma_en": "Crisp lemony aroma, invigorating freshness",
@@ -1334,6 +1350,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Blends seamlessly with Polyscias and Ginger for focused study sessions."
     },
     "gung_ta": {
+      "mindful_en": "Warming ginger stokes the inner fire gently, grounding your energy and dispelling cold dampness.",
       "cat_en": "Digestive Warmth / Peripheral Microcirculation",
       "origin_en": "Ky Son Highland Slopes (Nghe An)",
       "aroma_en": "Pungent spicy warmth, aromatic gingerol notes",
@@ -1343,6 +1360,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Subtle dosing paired with Monk Fruit balances warming spice."
     },
     "que_tra_bong": {
+      "mindful_en": "The rustic warmth of indigenous cinnamon connects us to sacred simplicity, melting away urban tension.",
       "cat_en": "Noble Festive Spice / Insulin Sensitivity",
       "origin_en": "Tra Bong Heritage Cinnamon Forests (Quang Ngai)",
       "aroma_en": "Rich noble cinnamon bark sweetness, mulled wine aroma",
@@ -1352,6 +1370,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Infuses deep holiday warmth that masks herbal grassy astringency."
     },
     "tao_do": {
+      "mindful_en": "Sweet jujube dates nourish the heart and spleen, wrapping your evening in comforting familial warmth.",
       "cat_en": "Replenish Qi / Spleen Tonic / Harmonize Formula",
       "origin_en": "Clean Verified Botanical Cooperatives",
       "aroma_en": "Sweet mellow jujube aroma, warm comforting notes",
@@ -1361,6 +1380,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Universal harmonizer in oriental herbal formulations."
     },
     "ky_tu": {
+      "mindful_en": "Ruby goji berries protect bright vision, inspiring us to gaze upon life with gratitude and clear perception.",
       "cat_en": "Nourish Kidney & Eye Health / Zeaxanthin Carotenoids",
       "origin_en": "High Altitude Organic Lycium Cooperatives",
       "aroma_en": "Gentle sweet tartness, rich fruity aroma",
@@ -1370,6 +1390,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "masking_en": "Adds mellow fruitiness to study and focus infusions."
     },
     "tra_xanh": {
+      "mindful_en": "In a cup of green tea lies the timeless art of stillness; sip with awareness and find harmony in the present moment.",
       "cat_en": "Cognitive Focus / EGCG Antioxidants / L-Theanine",
       "origin_en": "Tan Cuong Heritage Tea Slopes (Thai Nguyen)",
       "aroma_en": "Fresh green tea aroma, smooth vegetal umami",
@@ -1578,12 +1599,12 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
 
       <!-- Mindful Reflection Quote -->
-      ${herb.mindfulReminder ? `
+      ${(herb.mindfulReminder || i18n.mindful_en) ? `
       <div class="mindful-reminder-box" style="margin-bottom:20px;">
         <span class="mindful-icon">🪷</span>
         <div class="mindful-content">
           <div class="mindful-title">${isEn ? 'Mindful Living &amp; Natural Wellness Note:' : 'Lời Nhắc Chánh Niệm &amp; Dưỡng Sinh:'}</div>
-          <div class="mindful-text">"${herb.mindfulReminder}"</div>
+          <div class="mindful-text">"${isEn ? (i18n.mindful_en || herb.mindfulReminder_en || 'Mindful botanical nourishment connects us to ancestral wisdom and gentle restorative peace.') : herb.mindfulReminder}"</div>
         </div>
       </div>` : ''}
 
