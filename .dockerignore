@@ -1,0 +1,15 @@
+.git
+.gitignore
+__pycache__
+llama_bin
+lucy_database
+slm
+*.py
+*.ps1
+*.png
+!assets/**
+*.log
+*.tmp
+Dockerfile
+.dockerignore
+README.md
