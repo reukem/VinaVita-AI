@@ -1443,18 +1443,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Open Full Pharmacological Dossier Modal (Renovated Image 1 Aesthetic)
+  // Open Full Pharmacological Dossier Modal (Renovated Image 1 Aesthetic, Fully Bilingual)
   window.openHerbDetailModal = function(herbId) {
     if (typeof MEDICINAL_DATABASE === "undefined") return;
     const herb = MEDICINAL_DATABASE.find(h => h.id === herbId);
     if (!herb) return;
 
     if (!herbModal || !herbModalContent) return;
+    const isEn = (window.currentLang === "en");
+    const i18n = HERB_I18N[herb.id] || {};
+
+    const catLabel = isEn ? (i18n.cat_en || herb.categoryLabel) : herb.categoryLabel;
+    const origin = isEn ? (i18n.origin_en || herb.heritageOrigin) : (herb.heritageOrigin || 'Vùng Dược Liệu Bản Địa Đại Việt');
+    const aroma = isEn ? (i18n.aroma_en || herb.tasteProfile.aroma) : herb.tasteProfile.aroma;
+    const safeDose = isEn ? (i18n.safe_en || herb.safeDailyDose) : herb.safeDailyDose;
+    const partUsed = isEn ? (i18n.part_en || herb.partUsed) : herb.partUsed;
+    const bioAction = isEn ? (i18n.bioAction_en || herb.bioAction) : (herb.bioAction || 'Thuật toán VinaVita AI đối soát trực tiếp nồng độ hoạt chất với thụ thể thần kinh, bảo toàn hoạt tính sinh học theo tiêu chuẩn Dược điển Việt Nam.');
+    const masking = isEn ? (i18n.masking_en || herb.maskingRules.join('. ')) : herb.maskingRules.join('. ');
 
     const compoundsRows = herb.keyCompounds.map(c => `
       <tr>
         <td><strong style="color:#a7f3d0; font-size:0.92rem;">${c.name}</strong></td>
-        <td><span class="compound-class-badge">${c.class || 'Hoạt chất'}</span></td>
+        <td><span class="compound-class-badge">${c.class || (isEn ? 'Bioactive' : 'Hoạt chất')}</span></td>
         <td style="color:#cbd5e1; font-size:0.86rem; line-height:1.45;">${c.action}</td>
       </tr>
     `).join("");
@@ -1466,14 +1476,14 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="herb-modal-hero">
         <div class="herb-modal-img-wrap">
           <img src="${herb.image}" alt="${herb.name}" class="herb-modal-img">
-          <span class="herb-badge-overlay">${herb.categoryLabel}</span>
+          <span class="herb-badge-overlay">${catLabel}</span>
         </div>
         <div class="herb-modal-hero-info">
-          <div class="herb-modal-title">${herb.name}</div>
-          <div class="herb-modal-sci">${herb.sciName} • ${herb.enName}</div>
+          <div class="herb-modal-title">${isEn ? `${herb.enName} (${herb.name})` : herb.name}</div>
+          <div class="herb-modal-sci">${herb.sciName}</div>
           <div class="herb-modal-tags">
-            <span class="heritage-origin-tag"><span>📍</span> ${herb.heritageOrigin || 'Vùng Dược Liệu Bản Địa Đại Việt'}</span>
-            <span class="evidence-level-badge"><span>🔬</span> Evidence: Preclinical / Lab Study &amp; Dược Điển VN V</span>
+            <span class="heritage-origin-tag"><span>📍</span> ${origin}</span>
+            <span class="evidence-level-badge"><span>🔬</span> Evidence: Preclinical / Lab Study &amp; Pharmacopoeia VN V</span>
           </div>
         </div>
       </div>
@@ -1481,14 +1491,14 @@ document.addEventListener("DOMContentLoaded", () => {
       <!-- Phytochemical Compounds Table -->
       <div style="margin-bottom:18px;">
         <div class="herb-modal-section-title">
-          <span>🧬</span> Bảng Hoạt Chất Sinh Học &amp; Tác Dụng Dược Lý
+          <span>🧬</span> ${isEn ? 'Bioactive Phytochemicals &amp; Pharmacological Actions' : 'Bảng Hoạt Chất Sinh Học &amp; Tác Dụng Dược Lý'}
         </div>
         <table class="formula-table" style="margin-bottom:16px;">
           <thead>
             <tr>
-              <th>HOẠT CHẤT</th>
-              <th>NHÓM HÓA THỰC VẬT</th>
-              <th>CƠ CHẾ DƯỢC LÝ &amp; TÁC ĐỘNG</th>
+              <th>${isEn ? 'BIOACTIVE COMPOUND' : 'HOẠT CHẤT'}</th>
+              <th>${isEn ? 'PHYTOCHEMICAL CLASS' : 'NHÓM HÓA THỰC VẬT'}</th>
+              <th>${isEn ? 'PHARMACOLOGICAL MECHANISM &amp; IMPACT' : 'CƠ CHẾ DƯỢC LÝ &amp; TÁC ĐỘNG'}</th>
             </tr>
           </thead>
           <tbody>
@@ -1499,40 +1509,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <!-- Extraction & Brew Specs -->
       <div class="brew-specs-box" style="margin-bottom:16px;">
-        <div class="brew-spec-item"><span>Bộ phận dùng:</span><strong>${herb.partUsed}</strong></div>
-        <div class="brew-spec-item"><span>Liều dùng an toàn:</span><strong>${herb.safeDailyDose}</strong></div>
-        <div class="brew-spec-item"><span>Vị giác &amp; Cảm quan:</span><strong>Đắng ${herb.tasteProfile.bitterness}/5 | ${herb.tasteProfile.aroma}</strong></div>
+        <div class="brew-spec-item"><span>${isEn ? 'Part Used:' : 'Bộ phận dùng:'}</span><strong>${partUsed}</strong></div>
+        <div class="brew-spec-item"><span>${isEn ? 'Safe Daily Dose:' : 'Liều dùng an toàn:'}</span><strong>${safeDose}</strong></div>
+        <div class="brew-spec-item"><span>${isEn ? 'Taste &amp; Sensory:' : 'Vị giác &amp; Cảm quan:'}</span><strong>${isEn ? 'Bitter ' : 'Đắng '}${herb.tasteProfile.bitterness}/5 | ${aroma}</strong></div>
       </div>
 
       <!-- Renovated Emerald Box (Image 1 Style): Biochemical & Receptor Synergy -->
       <div class="biochem-box" style="margin-bottom:16px; border-radius:16px; padding:16px 18px; border:1px solid rgba(52,211,153,0.45); background:rgba(6,44,30,0.85); box-shadow:0 8px 24px rgba(0,0,0,0.35);">
-        <strong style="color:#a7f3d0; font-size:1.02rem; display:block; margin-bottom:6px;">🔬 Cơ Chế Sinh Hóa Dược Lý (Biochemical &amp; Receptor Synergy):</strong>
+        <strong style="color:#a7f3d0; font-size:1.02rem; display:block; margin-bottom:6px;">🔬 ${isEn ? 'Biochemical &amp; Receptor Synergy (Pharmacopoeia Standards):' : 'Cơ Chế Sinh Hóa Dược Lý (Biochemical &amp; Receptor Synergy):'}</strong>
         <div style="color:#e2e8f0; font-size:0.92rem; line-height:1.65;">
-          ${herb.bioAction || 'Thuật toán VinaVita AI đối soát trực tiếp nồng độ hoạt chất với thụ thể thần kinh, bảo toàn hoạt tính sinh học theo tiêu chuẩn Dược điển Việt Nam.'}
+          ${bioAction}
         </div>
       </div>
 
       <!-- Renovated Gold Box (Image 1 Style): Sachet Pilot Formulation & Pre-Order -->
       <div class="res-sachet-matched-bar" style="margin-bottom:16px; border-radius:16px; padding:18px 20px;">
         <div class="res-sachet-info">
-          <div class="res-sachet-tag">📦 ĐÃ CÓ GÓI ĐÓNG SẴN CHÍNH THỨC (PILOT LINE)</div>
-          <div class="res-sachet-title">${herb.popularDrink ? 'Hero Formula: ' + herb.popularDrink : 'Gói Dược Liệu Tươi Tuyển Chọn — ' + herb.name}</div>
-          <div class="res-sachet-specs">Túi lọc sinh học PLA sấy lạnh bảo toàn hoạt chất • 15.000 VNĐ / gói đong tươi (hoặc 69.000 VNĐ / Hộp 5 gói)</div>
+          <div class="res-sachet-tag">${isEn ? '📦 OFFICIAL READY-BREW SACHET (PILOT LINE)' : '📦 ĐÃ CÓ GÓI ĐÓNG SẴN CHÍNH THỨC (PILOT LINE)'}</div>
+          <div class="res-sachet-title">${isEn ? (herb.popularDrink ? 'Hero Formula: ' + herb.popularDrink : 'Curated Fresh Botanical Sachet — ' + herb.enName) : (herb.popularDrink ? 'Hero Formula: ' + herb.popularDrink : 'Gói Dược Liệu Tươi Tuyển Chọn — ' + herb.name)}</div>
+          <div class="res-sachet-specs">${isEn ? 'Freeze-dried PLA pyramid tea bag preserving active compounds • 15,000 VND / sachet (or 69,000 VND / 5-sachet box)' : 'Túi lọc sinh học PLA sấy lạnh bảo toàn hoạt chất • 15.000 VNĐ / gói đong tươi (hoặc 69.000 VNĐ / Hộp 5 gói)'}</div>
         </div>
-        <button class="btn-primary-action btn-order-trigger" data-drink="Gói Dược Liệu ${herb.name} Tuyển Chọn (15.000đ)">
-          🛒 Đặt Thảo Dược – 15.000 VNĐ
+        <button class="btn-primary-action btn-order-trigger" data-drink="${isEn ? 'Selected Botanical Sachet: ' + herb.enName : 'Gói Dược Liệu ' + herb.name + ' Tuyển Chọn (15.000đ)'}">
+          ${isEn ? '🛒 Order Botanical – 15,000 VND' : '🛒 Đặt Thảo Dược – 15.000 VNĐ'}
         </button>
       </div>
 
       <!-- Bitterness Masking & Pairing Box -->
       <div class="bitterness-masking-box" style="margin-bottom:16px; padding:14px 16px;">
-        <div class="bitterness-badge-title" style="font-size:0.78rem;"><span>🧪</span> QUY TẮC KHỬ ĐẮNG TAS2R &amp; PHỐI VỊ (FOOD SCIENCE)</div>
-        <div style="font-size:0.84rem; color:#d1fae5; line-height:1.5; margin-top:6px;">${herb.maskingRules.join('. ')}</div>
+        <div class="bitterness-badge-title" style="font-size:0.78rem;"><span>🧪</span> ${isEn ? 'TAS2R BITTERNESS MASKING &amp; PAIRING RULES (FOOD SCIENCE)' : 'QUY TẮC KHỬ ĐẮNG TAS2R &amp; PHỐI VỊ (FOOD SCIENCE)'}</div>
+        <div style="font-size:0.84rem; color:#d1fae5; line-height:1.5; margin-top:6px;">${masking}</div>
       </div>
 
       <!-- Pharmacological Warning -->
       <div class="warning-tag" style="margin-bottom:16px;">
-        ⚠️ <strong>Lưu ý dược lý &amp; Chống chỉ định:</strong> ${warningsList}
+        ⚠️ <strong>${isEn ? 'Pharmacological Precautions &amp; Contraindications:' : 'Lưu ý dược lý &amp; Chống chỉ định:'}</strong> ${warningsList}
       </div>
 
       <!-- Mindful Reflection Quote -->
@@ -1540,15 +1550,15 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="mindful-reminder-box" style="margin-bottom:20px;">
         <span class="mindful-icon">🪷</span>
         <div class="mindful-content">
-          <div class="mindful-title">Lời Nhắc Chánh Niệm &amp; Dưỡng Sinh:</div>
+          <div class="mindful-title">${isEn ? 'Mindful Living &amp; Natural Wellness Note:' : 'Lời Nhắc Chánh Niệm &amp; Dưỡng Sinh:'}</div>
           <div class="mindful-text">"${herb.mindfulReminder}"</div>
         </div>
       </div>` : ''}
 
       <!-- Action Buttons Row (Image 1 Style) -->
       <div class="action-row" style="margin-top:20px;">
-        <button class="btn-secondary" onclick="window.print()">📥 Tải Hồ Sơ Dược Liệu (PDF)</button>
-        <button class="btn-primary-action" onclick="window.useHerbInMixologist('${herb.id}')">🧪 Đưa Vào Phòng Thí Nghiệm AI (Pha Chế)</button>
+        <button class="btn-secondary" onclick="window.print()">${isEn ? '📥 Download Botanical Dossier (PDF)' : '📥 Tải Hồ Sơ Dược Liệu (PDF)'}</button>
+        <button class="btn-primary-action" onclick="window.useHerbInMixologist('${herb.id}')">${isEn ? '🧪 Deploy to AI Mixology Studio' : '🧪 Đưa Vào Phòng Thí Nghiệm AI (Pha Chế)'}</button>
       </div>
     `;
 
