@@ -2125,10 +2125,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==============================================================================
     function checkClientSafetyModeration(rawText) {
       const q = rawText.trim().toLowerCase();
+      const isEn = (window.currentLang === "en");
 
       // Category A: Racial slurs, hate speech, sexual harassment, NSFW requests
       const severeRegex = /\b(nigger|nigga|nigg|nig|faggot|retard|rape|rapist|pedophile|pedo|sex|having\s+sex|have\s+sex|sex\s+with\s+me|wanna\s+fuck|blowjob|handjob|horny|nude|nudes|porn|hentai|onlyfans|boobs|tits|chịch|xoạc|làm\s+tình|hiếp\s+dâm|ấu\s+dâm|bú\s+cu|khoe\s+thân|dâm\s+đãng)\b/i;
       if (severeRegex.test(q)) {
+        if (isEn) {
+          return `
+            <div class="chat-warning-box" style="margin:0; border-left:4px solid #f43f5e; background:rgba(244,63,94,0.18);">
+              ⛔ <strong>RESPONSE REFUSED — CODE OF CONDUCT &amp; MEDICAL ETHICS VIOLATION:</strong><br>
+              <strong>AI Pharmacist, VinaVita</strong> strictly adheres to community standards and does not process hate speech, harassment, explicit, or offensive language.<br>
+              <span style="font-size:0.8rem; color:#fda4af;">This consultation session is dedicated strictly to botanical medicine, food biochemistry, and healthy living.</span>
+            </div>
+          `;
+        }
         return `
           <div class="chat-warning-box" style="margin:0; border-left:4px solid #f43f5e; background:rgba(244,63,94,0.18);">
             ⛔ <strong>TỪ CHỐI PHẢN HỒI — VI PHẠM QUY TẮC ĐẠO ĐỨC &amp; ỨNG XỬ Y KHOA:</strong><br>
@@ -2141,6 +2151,15 @@ document.addEventListener("DOMContentLoaded", () => {
       // Category B: Direct profanity, swearing, verbal insults ("fuck u", "fukc u", "bitch", etc.)
       const profanityRegex = /\b(fuck|fukc|fcuk|fck|fu|bitch|biatch|stfu|asshole|motherfucker|mf|dick|cock|pussy|cunt|whore|slut|bastard|bullshit|wtf|đm|đkm|địt|đéo|vãi\s*lồn|vl|lồn|cặc|buồi|chó\s*đẻ|ngu\s*vl|cút)\b/i;
       if (profanityRegex.test(q)) {
+        if (isEn) {
+          return `
+            <div class="chat-warning-box" style="margin:0; border-left:4px solid #f59e0b; background:rgba(245,158,11,0.14); color:#fef3c7;">
+              🛡️ <strong>VinaVita Moderation Filter intercepted this message.</strong><br>
+              I am <strong>AI Pharmacist, VinaVita</strong> dedicated to botanical medicine — please maintain polite and respectful communication!<br><br>
+              💡 <em>Pharmacological Insight:</em> Acute stress or irritation triggers the HPA axis to release surges of <strong>Cortisol</strong> and <strong>Adrenaline</strong>, accelerating heart rate. Take a deep breath, or ask me about our <strong>Citrus Twilight (Passionflower + Chrysanthemum pH 4.3)</strong> sachet so natural <em>Apigenin</em> &amp; <em>Vitexin</em> can gently soothe neuro-tension 🌿.
+            </div>
+          `;
+        }
         return `
           <div class="chat-warning-box" style="margin:0; border-left:4px solid #f59e0b; background:rgba(245,158,11,0.14); color:#fef3c7;">
             🛡️ <strong>Bộ lọc ngôn từ VinaVita đã chặn thông điệp này.</strong><br>
@@ -2849,6 +2868,22 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
       }
 
       // 8. INTELLIGENT CONTEXT-AWARE FALLBACK (Never repeats "Cảm ơn câu hỏi rất thú vị của bạn"!)
+      const isEn = (window.currentLang === "en");
+      if (isEn) {
+        return {
+          ragSnippet,
+          actionFooterHtml,
+          html: `
+            <p>🌿 I have noted your message: <em>"${escapeHtml(p)}"</em></p>
+            <p style="margin-top:6px; font-size:0.85rem; color:#e2e8f0; line-height:1.6;">
+              To help <strong>AI Pharmacist, VinaVita</strong> formulate the most suitable botanical recipe tailored to your constitution down to the exact gram, could you share <strong>2 quick details</strong> about yourself?<br>
+              1️⃣ <strong>Your primary wellness goal right now:</strong> Do you need <em>deep sleep &amp; stress relief</em>, <em>staying awake for deadlines without heart palpitation</em>, <em>liver detox &amp; cooling</em>, or <em>0.0% alcohol social mocktail</em>?<br>
+              2️⃣ <strong>Any pre-existing conditions (if any):</strong> Do you have <em>low blood pressure, high blood pressure, acid reflux / GERD, caffeine sensitivity</em>, or are you <em>pregnant</em>?<br><br>
+              👉 Feel free to describe everything in one sentence, and I will automatically filter out incompatible botanicals and calibrate a pH 4.2–4.5 formula for you!
+            </p>
+          `
+        };
+      }
       return {
         ragSnippet,
         actionFooterHtml,
