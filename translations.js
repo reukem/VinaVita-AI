@@ -224,14 +224,14 @@ const I18N = {
     "footer.tagline": "Nền Tảng Pha Chế Dược Liệu & Mocktail Thảo Mộc Việt Nam — 0.0% Cồn",
     "footer.team": "Huỳnh Hữu Anh Khoa — Leader & Biotech Researcher, Ngô Minh Thiên Bảo — Lead System Architect, Trương Quang Hiếu — Pharmacologist & Nguyễn Minh Dũng — Data Intelligence Lead • Team Thinking Space — RMIT RBPC 2026",
     "footer.disclaimer": "Dự án nghiên cứu phục vụ cuộc thi RMIT Business Plan Competition 2026. Các thông tin công thức dựa trên y học cổ truyền và dược lý học thực nghiệm, không nhằm mục đích thay thế chẩn đoán hoặc điều trị y tế chuyên sâu.",
-    "footer.ai_warning": "⚠️ AI có thể mắc lỗi, vui lòng kiểm tra lại thông tin để đảm bảo tính chính xác.",
+    "footer.ai_warning": "⚠️ AI có thể mắc lỗi, vui lòng kiểm tra lại thông tin để đảm bảo tính chính xác. Vui lòng tham khảo thêm ý kiến chuyên gia y tế và bác sĩ đối với các lời khuyên sức khỏe và dược liệu.",
 
     // AI Pharmacist Chatbot
     "chat.fab_label": "Dược Sĩ AI VinaVita",
     "chat.fab_title": "Trò chuyện cùng Dược Sĩ AI VinaVita",
     "chat.bot_name": "Dược Sĩ AI VinaVita",
     "chat.status_text": "🟢 Cloud Neural AI Online (Gemini 2.5 Flash + Dược Điển RAG) • AI có thể mắc lỗi, kiểm tra lại thông tin",
-    "chat.disclaimer": "⚠️ AI có thể mắc lỗi, vui lòng kiểm tra lại độ chính xác",
+    "chat.disclaimer": "⚠️ AI có thể mắc lỗi. Vui lòng tham khảo thêm ý kiến chuyên gia y tế & bác sĩ đối với các lời khuyên sức khỏe và dược liệu.",
     "chat.prompts_label": "💡 Gợi ý nhanh:",
     "chat.chip1": "🌸 Tâm sen & Huyết áp",
     "chat.chip2": "⚡ Chạy deadline",
@@ -513,14 +513,14 @@ const I18N = {
     "footer.tagline": "Vietnamese Botanical Infusion & Herbal Mocktail Platform — 0.0% Alcohol",
     "footer.team": "Huỳnh Hữu Anh Khoa — Leader & Biotech Researcher, Ngô Minh Thiên Bảo — Lead System Architect, Trương Quang Hiếu — Pharmacologist & Nguyễn Minh Dũng — Data Intelligence Lead • Team Thinking Space — RMIT RBPC 2026",
     "footer.disclaimer": "Research initiative for RMIT Business Plan Competition 2026. Formulas are based on traditional ethnobotany and experimental pharmacology; not intended to replace professional medical treatment.",
-    "footer.ai_warning": "⚠️ AI may produce inaccuracies; please verify critical information.",
+    "footer.ai_warning": "⚠️ AI may produce inaccuracies; please verify critical information. Please do also consult a specialist regarding advices and medicine as well.",
 
     // AI Pharmacist Chatbot
     "chat.fab_label": "AI Pharmacist, VinaVita",
     "chat.fab_title": "Chat with AI Pharmacist, VinaVita",
     "chat.bot_name": "AI Pharmacist, VinaVita",
     "chat.status_text": "🟢 Cloud Neural AI Online (Gemini 2.5 Flash + Pharmacopoeia RAG) • AI may make errors, verify info",
-    "chat.disclaimer": "⚠️ AI may produce errors; please verify accuracy",
+    "chat.disclaimer": "⚠️ AI may produce errors. Please do also consult a specialist regarding advices and medicine as well.",
     "chat.prompts_label": "💡 Quick queries:",
     "chat.chip1": "🌸 Lotus Plumule & Blood Pressure",
     "chat.chip2": "⚡ Deadline Cramming",
