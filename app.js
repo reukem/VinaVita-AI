@@ -1067,11 +1067,18 @@ document.addEventListener("DOMContentLoaded", () => {
     SIGNATURE_DRINKS.forEach(drink => {
       const card = document.createElement("div");
       card.className = "sig-card";
+
+      const drinkName = (isEn && drink.name_en) ? drink.name_en : drink.name;
+      const drinkSubtitle = (isEn && drink.subtitle_en) ? drink.subtitle_en : drink.subtitle;
+      const drinkBadge = (isEn && drink.badge_en) ? drink.badge_en : drink.badge;
+      const drinkBiochem = (isEn && drink.biochemicalSummary_en) ? drink.biochemicalSummary_en : drink.biochemicalSummary;
+      const drinkPrice = (isEn && drink.sachetPrice_en) ? drink.sachetPrice_en : drink.sachetPrice;
       
       const formulaRows = drink.formula.map(f => {
         const herb = MEDICINAL_DATABASE.find(h => h.id === f.herbId);
-        const herbName = herb ? herb.name : f.herbId;
-        const herbSci = herb ? herb.sciName : '';
+        const herbName = isEn ? (f.name_en || (herb ? (herb.enName || herb.name) : f.herbId)) : (f.name || (herb ? herb.name : f.herbId));
+        const herbSci = f.sci || (herb ? herb.sciName : '');
+        const herbNote = isEn ? (f.note_en || f.note || '') : (f.note || '');
         return `
           <tr>
             <td>
@@ -1079,10 +1086,14 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="formula-herb-sci">${herbSci}</div>
             </td>
             <td style="text-align:center; font-weight:800; color:#fff;">${f.amount}</td>
-            <td style="color:#cbd5e1; font-size:0.82rem;">${f.note || ''}</td>
+            <td style="color:#cbd5e1; font-size:0.82rem;">${herbNote}</td>
           </tr>
         `;
       }).join("");
+
+      const waterTemp = isEn ? (drink.brewSpecs.waterTemp_en || drink.brewSpecs.waterTemp) : drink.brewSpecs.waterTemp;
+      const steepingTime = isEn ? (drink.brewSpecs.steepingTime_en || drink.brewSpecs.steepingTime) : drink.brewSpecs.steepingTime;
+      const servingStyle = isEn ? (drink.brewSpecs.servingStyle_en || drink.brewSpecs.servingStyle) : drink.brewSpecs.servingStyle;
 
       card.innerHTML = `
         <span class="gold-corner-filigree top-left" aria-hidden="true"></span>
@@ -1092,11 +1103,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div>
           <div class="recipe-visual-banner" style="position:relative; overflow:hidden; border-radius:14px; margin-bottom:16px; border:1.5px solid rgba(245,158,11,0.35); box-shadow:0 8px 24px rgba(0,0,0,0.5);">
-            <img src="${drink.image}" alt="${drink.name}" class="recipe-hero-img" style="margin-bottom:0; height:180px; width:100%; object-fit:cover;">
+            <img src="${drink.image}" alt="${drinkName}" class="recipe-hero-img" style="margin-bottom:0; height:180px; width:100%; object-fit:cover;">
           </div>
-          <span class="recipe-badge">${drink.badge}</span>
-          <h3 class="recipe-title" style="font-size:1.5rem; margin-top:8px;">${drink.name}</h3>
-          <div class="recipe-subtitle" style="font-size:0.88rem; margin-bottom:16px;">${drink.subtitle}</div>
+          <span class="recipe-badge">${drinkBadge}</span>
+          <h3 class="recipe-title" style="font-size:1.5rem; margin-top:8px;">${drinkName}</h3>
+          <div class="recipe-subtitle" style="font-size:0.88rem; margin-bottom:16px;">${drinkSubtitle}</div>
 
           <table class="formula-table" style="margin-bottom:16px;">
             <thead>
@@ -1113,23 +1124,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
           ${drink.brewSpecs ? `
           <div class="brew-specs-box" style="margin-bottom:16px;">
-            <div class="brew-spec-item"><span>${isEn ? 'Optimal Water Temp:' : 'Nhiệt độ nước tối ưu:'}</span><strong>${drink.brewSpecs.waterTemp}</strong></div>
-            <div class="brew-spec-item"><span>${isEn ? 'Steeping Time:' : 'Thời gian hãm chiết xuất:'}</span><strong>${drink.brewSpecs.steepingTime}</strong></div>
-            <div class="brew-spec-item"><span>${isEn ? 'Serving Style:' : 'Cách thức thưởng thức:'}</span><strong>${drink.brewSpecs.servingStyle}</strong></div>
+            <div class="brew-spec-item"><span>${isEn ? 'Optimal Water Temp:' : 'Nhiệt độ nước tối ưu:'}</span><strong>${waterTemp}</strong></div>
+            <div class="brew-spec-item"><span>${isEn ? 'Steeping Time:' : 'Thời gian hãm chiết xuất:'}</span><strong>${steepingTime}</strong></div>
+            <div class="brew-spec-item"><span>${isEn ? 'Serving Style:' : 'Cách thức thưởng thức:'}</span><strong>${servingStyle}</strong></div>
           </div>` : ''}
 
           <div class="biochem-box" style="margin-bottom:18px;">
             <strong>${isEn ? '🔬 Biochemical & Taste Mechanism:' : '🔬 Cơ Chế Dược Lý & Vị Giác:'}</strong>
-            <div style="margin-top:4px;">${drink.biochemicalSummary}</div>
+            <div style="margin-top:4px;">${drinkBiochem}</div>
           </div>
         </div>
 
         <div class="sig-footer" style="border-top:1px solid rgba(245,158,11,0.25); padding-top:16px;">
           <div class="sachet-price-wrap">
-            <span class="sachet-price-val">${drink.sachetPrice}</span>
-            <span class="sachet-unit">${isEn ? 'Aluminum barrier sachet packaging' : 'Đóng gói màng nhôm bảo quản dược tính'}</span>
+            <span class="sachet-price-val">${drinkPrice}</span>
+            <span class="sachet-unit">${isEn ? 'Aluminum barrier packaging for bioactivity preservation' : 'Đóng gói màng nhôm bảo quản dược tính'}</span>
           </div>
-          <button class="btn-primary-action btn-order-trigger" data-drink="${drink.name}">${isEn ? '🛒 Order Sachet' : '🛒 Đặt Gói Sachet'}</button>
+          <button class="btn-primary-action btn-order-trigger" data-drink="${drinkName}">${isEn ? '🛒 Order Sachet' : '🛒 Đặt Gói Sachet'}</button>
         </div>
       `;
       sigContainer.appendChild(card);

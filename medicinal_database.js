@@ -1750,144 +1750,197 @@ const SIGNATURE_DRINKS = [
   {
     "id": "sig_citrus_twilight",
     "name": "Citrus Twilight Mocktail (VinaVita #01)",
+    "name_en": "Citrus Twilight Mocktail (VinaVita #01)",
     "subtitle": "The 'Sleep & Unwind' Pack • Gói Ngủ Ngon & Xả Stress Đêm (0.0% Alcohol | 0g Refined Sugar)",
+    "subtitle_en": "The 'Sleep & Unwind' Pack • Deep Sleep & Night De-stress (0.0% Alcohol | 0g Refined Sugar)",
     "badge": "⭐ HERO SKU #01 • SLEEP & UNWIND",
+    "badge_en": "⭐ HERO SKU #01 • SLEEP & UNWIND",
     "image": "assets/citrus_twilight_hero.jpg",
     "targetMood": "Thư giãn đêm & xả stress thi cử (0.0% Cồn)",
+    "targetMood_en": "Night unwind & exam stress relief (0.0% Alcohol)",
     "formula": [
       {
         "herbId": "lac_tien",
         "name": "Lạc Tiên (Aerial parts)",
+        "name_en": "Wild Passionflower (Aerial parts)",
         "sci": "Passiflora foetida",
         "amount": "1.8g",
-        "note": "Vitexin kích hoạt thụ thể GABA_A hạ Cortisol (Tan et al. 2024; Appel et al. 2011)"
+        "note": "Vitexin kích hoạt thụ thể GABA_A hạ Cortisol (Tan et al. 2024; Appel et al. 2011)",
+        "note_en": "Vitexin modulates GABA_A receptors to lower Cortisol (Tan et al. 2024; Appel et al. 2011)"
       },
       {
         "herbId": "hoa_cuc",
         "name": "Hoa Cúc Vàng Bản Địa",
+        "name_en": "Indigenous Yellow Chamomile",
         "sci": "Chrysanthemum indicum",
         "amount": "1.5g",
-        "note": "Apigenin làm dịu trục thần kinh HPA; an toàn thay thế Tâm Sen cho người huyết áp thấp"
+        "note": "Apigenin làm dịu trục thần kinh HPA; an toàn thay thế Tâm Sen cho người huyết áp thấp",
+        "note_en": "Apigenin calms HPA nerve axis; safe alternative to Lotus Plumule for low blood pressure"
       },
       {
         "herbId": "quat_tac",
         "name": "Tắc Sấy Lạnh / Kumquat (pH 4.3)",
+        "name_en": "Freeze-dried Kumquat & Peel (pH 4.3)",
         "sci": "Citrus japonica",
         "amount": "1.5g",
-        "note": "Axit citric tự nhiên đưa pH về 4.3, ức chế trực tiếp thụ thể vị đắng hTAS2R16 (Sakurai et al. 2009)"
+        "note": "Axit citric tự nhiên đưa pH về 4.3, ức chế trực tiếp thụ thể vị đắng hTAS2R16 (Sakurai et al. 2009)",
+        "note_en": "Natural citric acid buffers pH to 4.3, directly suppressing bitter receptor hTAS2R16 (Sakurai et al. 2009)"
       },
       {
         "herbId": "co_ngot",
         "name": "Cỏ Ngọt Tự Nhiên (Stevia)",
+        "name_en": "Natural Stevia Leaf",
         "sci": "Stevia rebaudiana",
         "amount": "0.45g",
-        "note": "Stevioside ngọt thanh tự nhiên 0-calorie, GI=0, không gây tăng đường huyết đêm"
+        "note": "Stevioside ngọt thanh tự nhiên 0-calorie, GI=0, không gây tăng đường huyết đêm",
+        "note_en": "Natural stevioside 0-calorie sweetness, GI=0, prevents nocturnal glycemic spikes"
       },
       {
         "herbId": "muoi_khoang",
         "name": "Muối Khoáng Tinh Khiết (Na+)",
+        "name_en": "Pure Mineral Salt (Na+)",
         "sci": "Mineral Salt Na+",
         "amount": "0.05g",
-        "note": "Ion Na+ khử đắng chéo trung ương (Breslin & Beauchamp 1997), tạo hậu vị êm mượt"
+        "note": "Ion Na+ khử đắng chéo trung ương (Breslin & Beauchamp 1997), tạo hậu vị êm mượt",
+        "note_en": "Na+ ions provide central cross-bitterness suppression (Breslin & Beauchamp 1997), yielding smooth finish"
       }
     ],
     "brewSpecs": {
       "waterTemp": "85°C (Bảo toàn Flavonoids & Apigenin)",
+      "waterTemp_en": "85°C (Preserves Flavonoids & Apigenin)",
       "steepingTime": "3 – 5 phút (Túi lọc PLA kim tự tháp 5.3g)",
-      "servingStyle": "Rót qua 100g đá viên, trang trí 1 lát tắc sấy lạnh (0.0% Cồn)"
+      "steepingTime_en": "3 – 5 mins (5.3g PLA Pyramid Sachet)",
+      "servingStyle": "Rót qua 100g đá viên, trang trí 1 lát tắc sấy lạnh (0.0% Cồn)",
+      "servingStyle_en": "Pour over 100g ice rocks, garnish with a freeze-dried kumquat slice (0.0% ABV)"
     },
     "biochemicalSummary": "Tận dụng cơ chế ức chế thụ thể vị đắng hTAS2R16 qua pH 4.3 kết hợp kích hoạt GABA_A từ Lạc Tiên và Hoa Cúc. Đạt chuẩn 5.3g pre-portioned sachet, tuyệt đối không caffeine, không cồn, không đường tinh luyện.",
-    "sachetPrice": "69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)"
+    "biochemicalSummary_en": "Synergizes hTAS2R16 bitter receptor suppression at pH 4.3 with GABA_A receptor activation from Passionflower and Chamomile. Standardized 5.3g sachet, 0mg caffeine, 0% alcohol, 0g refined sugar.",
+    "sachetPrice": "69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)",
+    "sachetPrice_en": "69,000 VND / 5-Sachet Box (13.8k/cup)"
   },
   {
     "id": "sig_deadline_survivor",
     "name": "Deadline Survivor Sâm Nam Brew (VinaVita #02)",
+    "name_en": "Deadline Survivor Southern Ginseng Brew (VinaVita #02)",
     "subtitle": "The 'Deadline & Exam' Pack • Gói Chạy Deadline & Ôn Thi (Tập trung 4h không ép tim)",
+    "subtitle_en": "The 'Deadline & Exam' Pack • Calm Focus & Study Energy (4h Focus without Jitters)",
     "badge": "⚡ HERO SKU #02 • DEADLINE & EXAM",
+    "badge_en": "⚡ HERO SKU #02 • DEADLINE & EXAM",
     "image": "assets/deadline_survivor_hero.jpg",
     "targetMood": "Tỉnh táo tập trung học thi, không bồn chồn run tay",
+    "targetMood_en": "Sustained study focus without caffeine jitters or heart racing",
     "formula": [
       {
         "herbId": "dinh_lang",
         "name": "Lá Đinh Lăng Sâm Nam",
+        "name_en": "Polyscias Leaf (Southern Ginseng)",
         "sci": "Polyscias fruticosa",
         "amount": "2.0g",
-        "note": "Saponin triterpenoid tăng lưu lượng máu và oxy lên thùy trán, duy trì tập trung bền bỉ"
+        "note": "Saponin triterpenoid tăng lưu lượng máu và oxy lên thùy trán, duy trì tập trung bền bỉ",
+        "note_en": "Triterpenoid saponins enhance cerebral blood flow & prefrontal cortex oxygenation for sustained focus"
       },
       {
         "herbId": "sa_chanh",
         "name": "Sả Chanh Bản Địa",
+        "name_en": "Indigenous Lemongrass",
         "sci": "Cymbopogon citratus",
         "amount": "1.5g",
-        "note": "Citral tạo hương thơm tươi mát giải tỏa mệt mỏi giác quan"
+        "note": "Citral tạo hương thơm tươi mát giải tỏa mệt mỏi giác quan",
+        "note_en": "Citral & Geraniol provide uplifting freshness, melting away sensory fatigue"
       },
       {
         "herbId": "gung_ta",
         "name": "Gừng Núi Kỳ Sơn",
+        "name_en": "Kỳ Sơn Mountain Ginger",
         "sci": "Zingiber officinale",
         "amount": "0.8g",
-        "note": "Gingerol làm ấm tỳ vị, kích thích vi tuần hoàn ngoại vi"
+        "note": "Gingerol làm ấm tỳ vị, kích thích vi tuần hoàn ngoại vi",
+        "note_en": "Gingerols warm digestion, boosting peripheral microcirculation and stamina"
       },
       {
         "herbId": "la_han_qua",
         "name": "La Hán Quả / Cỏ Ngọt",
+        "name_en": "Traditional Monk Fruit",
         "sci": "Siraitia grosvenorii",
         "amount": "1.0g",
-        "note": "Mogroside V ngọt mát 0-calorie, hoàn toàn an toàn cho huyết áp và đường huyết"
+        "note": "Mogroside V ngọt mát 0-calorie, hoàn toàn an toàn cho huyết áp và đường huyết",
+        "note_en": "Mogroside V delivers cooling natural sweetness, completely safe for blood pressure & glucose (GI=0)"
       }
     ],
     "brewSpecs": {
       "waterTemp": "90°C (Chiết xuất trọn vẹn Saponin)",
+      "waterTemp_en": "90°C (Full Saponin Extraction)",
       "steepingTime": "3 phút (Túi lọc sinh học 5.3g)",
-      "servingStyle": "Dùng ấm hoặc rót qua đá viên tùy sở thích"
+      "steepingTime_en": "3 mins (5.3g PLA Pyramid Sachet)",
+      "servingStyle": "Dùng ấm hoặc rót qua đá viên tùy sở thích",
+      "servingStyle_en": "Serve warm or pour over ice rocks for refreshing herbal mocktail"
     },
     "biochemicalSummary": "Giải pháp thay thế nước tăng lực & cà phê đặc: Cung cấp tỉnh táo bền bỉ từ Saponin Sâm Nam không gây ép tim, cồn cào dạ dày hay hạ đường huyết crash về đêm. Đạt chuẩn 5.3g sachet.",
-    "sachetPrice": "69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)"
+    "biochemicalSummary_en": "Clean alternative to sugary energy drinks & high-roast coffee: Provides sustained alertness via Polyscias saponins without tachycardia, stomach acid rebound, or nighttime crash. Standardized 5.3g sachet.",
+    "sachetPrice": "69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)",
+    "sachetPrice_en": "69,000 VND / 5-Sachet Box (13.8k/cup)"
   },
   {
     "id": "sig_berry_social_glow",
     "name": "Berry Social Glow Mocktail (VinaVita #03)",
+    "name_en": "Berry Social Glow Mocktail (VinaVita #03)",
     "subtitle": "The '0% Party & Social Chill' Pack • Gói Tiệc Tùng 0% Cồn (0.0% Alcohol Social Chill)",
+    "subtitle_en": "The '0% Party & Social Chill' Pack • 0.0% Alcohol Party Mocktail (Social Relaxation)",
     "badge": "🍷 HERO SKU #03 • 0% PARTY & CHILL",
+    "badge_en": "🍷 HERO SKU #03 • 0% PARTY & CHILL",
     "image": "assets/berry_social_glow_hero.jpg",
     "targetMood": "Giao lưu bạn bè, tiệc đêm 0.0% cồn tuân thủ Nghị định 168",
+    "targetMood_en": "Social party mocktail, 0.0% ABV compliance with road safety laws",
     "formula": [
       {
         "herbId": "atiso_do",
         "name": "Atiso Đỏ (Roselle Hibiscus)",
+        "name_en": "Roselle Hibiscus (Atiso Đỏ)",
         "sci": "Hibiscus sabdariffa",
         "amount": "2.2g",
-        "note": "Anthocyanin tạo sắc đỏ Ruby dạ tiệc; Axit hữu cơ đưa pH về 4.2 ức chế vị đắng"
+        "note": "Anthocyanin tạo sắc đỏ Ruby dạ tiệc; Axit hữu cơ đưa pH về 4.2 ức chế vị đắng",
+        "note_en": "Anthocyanins produce vivid party ruby hue; organic acids buffer pH to 4.2 suppressing bitterness"
       },
       {
         "herbId": "lac_tien",
         "name": "Lạc Tiên Khô Bản Địa",
+        "name_en": "Dried Passionflower",
         "sci": "Passiflora foetida",
         "amount": "1.3g",
-        "note": "Vitexin tạo cảm giác ấm áp, cởi mở hòa đồng tự nhiên trong giao tiếp"
+        "note": "Vitexin tạo cảm giác ấm áp, cởi mở hòa đồng tự nhiên trong giao tiếp",
+        "note_en": "Vitexin activates GABA_A receptors for warm, convivial social relaxation"
       },
       {
         "herbId": "que_tra_bong",
         "name": "Quế Trà Bồng Bản Địa",
+        "name_en": "Trà Bồng Cinnamon Bark",
         "sci": "Cinnamomum loureiroi",
         "amount": "0.8g",
-        "note": "Cinnamaldehyde tạo hương thơm nồng ấm quý phái như rượu vang Mulled Wine"
+        "note": "Cinnamaldehyde tạo hương thơm nồng ấm quý phái như rượu vang Mulled Wine",
+        "note_en": "Cinnamaldehyde imparts a festive warm aroma reminiscent of mulled wine"
       },
       {
         "herbId": "la_han_qua",
         "name": "La Hán Quả Tự Nhiên",
+        "name_en": "Monk Fruit & Stevia",
         "sci": "Siraitia grosvenorii",
         "amount": "1.0g",
-        "note": "Vị ngọt tròn đầy không năng lượng thừa, không cồn"
+        "note": "Vị ngọt tròn đầy không năng lượng thừa, không cồn",
+        "note_en": "Full-bodied natural sweetness with zero excess calories and 0% alcohol"
       }
     ],
     "brewSpecs": {
       "waterTemp": "85°C",
+      "waterTemp_en": "85°C",
       "steepingTime": "4 phút (Túi lọc sinh học 5.3g)",
-      "servingStyle": "Lắc cùng đá viên, thêm chút soda bọt mịn và 1 nhánh hương thảo"
+      "steepingTime_en": "4 mins (5.3g PLA Pyramid Sachet)",
+      "servingStyle": "Lắc cùng đá viên, thêm chút soda bọt mịn và 1 nhánh hương thảo",
+      "servingStyle_en": "Shake with ice, top with fine soda bubbles and a fresh rosemary sprig"
     },
     "biochemicalSummary": "Ly mocktail sắc đỏ Ruby dạ tiệc hòa quyện hương quế nồng ấm, 100% tuân thủ Nghị định 168/2024/NĐ-CP (0.00% cồn), an toàn tuyệt đối khi lái xe về nhà sau tiệc.",
-    "sachetPrice": "69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)"
+    "biochemicalSummary_en": "Party-ready ruby red mocktail infused with noble cinnamon warmth, 100% compliant with zero-alcohol road regulations (0.00% ABV) for safe drives home.",
+    "sachetPrice": "69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)",
+    "sachetPrice_en": "69,000 VND / 5-Sachet Box (13.8k/cup)"
   }
 ];
 
