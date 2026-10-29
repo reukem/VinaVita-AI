@@ -302,7 +302,7 @@ const I18N = {
     "nav.signatures": "⭐ Menu & Gen-Z Sachets",
     "nav.database": "📚 Herb Encyclopedia",
     "nav.about": "🏛️ Project & Team",
-    "nav.ai_node_title": "Cloud AI Node Active (Click to open AI Pharmacist)",
+    "nav.ai_node_title": "Cloud AI Node Active (Click to open AI Pharmacist, VinaVita)",
 
     // Hero Section
     "hero.initiative": "RMIT RBPC 2026 BUSINESS INITIATIVE",
@@ -508,9 +508,9 @@ const I18N = {
     "footer.ai_warning": "⚠️ AI may produce inaccuracies; please verify critical information.",
 
     // AI Pharmacist Chatbot
-    "chat.fab_label": "VinaVita AI Pharmacist",
-    "chat.fab_title": "Chat with VinaVita AI Pharmacist",
-    "chat.bot_name": "VinaVita AI Pharmacist",
+    "chat.fab_label": "AI Pharmacist, VinaVita",
+    "chat.fab_title": "Chat with AI Pharmacist, VinaVita",
+    "chat.bot_name": "AI Pharmacist, VinaVita",
     "chat.status_text": "🟢 Cloud Neural AI Online (Gemini 2.5 Flash + Pharmacopoeia RAG) • AI may make errors, verify info",
     "chat.disclaimer": "⚠️ AI may produce errors; please verify accuracy",
     "chat.prompts_label": "💡 Quick queries:",
@@ -520,7 +520,7 @@ const I18N = {
     "chat.chip4": "🍵 TAS2R Bitter Suppression",
     "chat.chip5": "📦 5-Sachet Combo Box",
     "chat.chip6": "🛡️ Gastritis & Reflux",
-    "chat.welcome_full": "<p>Hello! I am the <strong>VinaVita AI Pharmacist</strong>. I interface directly with our Pharmacopoeia botanical repository, analyzing bioactive compounds (GABA, Flavonoids, Alkaloids, Saponins, L-Theanine) and physiological health guardrails.</p><p style=\"margin-top:6px;\">Feel free to ask anything: <em>\"What does Lotus Plumule do?\", \"Formula for pulling all-nighters without jitters?\", \"What to drink with gastritis?\", or \"How much is the 5-sachet box?\"</em>.</p>",
+    "chat.welcome_full": "<p>Hello! I am <strong>AI Pharmacist, VinaVita</strong>. I interface directly with our Pharmacopoeia botanical repository, analyzing bioactive compounds (GABA, Flavonoids, Alkaloids, Saponins, L-Theanine) and physiological health guardrails.</p><p style=\"margin-top:6px;\">Feel free to ask anything: <em>\"What does Lotus Plumule do?\", \"Formula for pulling all-nighters without jitters?\", \"What to drink with gastritis?\", or \"How much is the 5-sachet box?\"</em>.</p>",
     "chat.input_placeholder": "Ask a question (insomnia, deadline, gastritis)...",
     "chat.send_btn": "Send",
     // Seal & Recipe Defaults
