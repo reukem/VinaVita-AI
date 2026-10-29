@@ -229,7 +229,7 @@ const I18N = {
     "chat.chip6": "🛡️ Đau dạ dày",
     "chat.welcome_full": "<p>Xin chào! Mình là <strong>Dược Sĩ AI VinaVita</strong>. Mình kết nối trực tiếp với toàn bộ Bách khoa Dược liệu cổ truyền, phân tích hoạt chất sinh học (GABA, Flavonoid, Alkaloid, Saponin, L-Theanine) và rào cản sức khỏe.</p><p style=\"margin-top:6px;\">Bạn có thể hỏi bất cứ điều gì: <em>\"Tâm sen tác dụng gì?\", \"Công thức thức khuya chạy deadline?\", \"Đau dạ dày uống gì?\", hoặc \"Combo 5 gói sachet giá bao nhiêu?\"</em>.</p>",
     "chat.input_placeholder": "Nhập câu hỏi (mất ngủ, deadline, dạ dày)...",
-    "chat.send_btn": "Gửi"
+    "chat.send_btn": "Gửi",
     // Seal & Recipe Defaults
     "brand.seal_line1": "NAM DƯỢC",
     "brand.seal_line2": "TRỊ NAM NHÂN",
@@ -514,7 +514,7 @@ const I18N = {
     "chat.chip6": "🛡️ Gastritis & Reflux",
     "chat.welcome_full": "<p>Hello! I am the <strong>VinaVita AI Pharmacist</strong>. I interface directly with our Pharmacopoeia botanical repository, analyzing bioactive compounds (GABA, Flavonoids, Alkaloids, Saponins, L-Theanine) and physiological health guardrails.</p><p style=\"margin-top:6px;\">Feel free to ask anything: <em>\"What does Lotus Plumule do?\", \"Formula for pulling all-nighters without jitters?\", \"What to drink with gastritis?\", or \"How much is the 5-sachet box?\"</em>.</p>",
     "chat.input_placeholder": "Ask a question (insomnia, deadline, gastritis)...",
-    "chat.send_btn": "Send"
+    "chat.send_btn": "Send",
     // Seal & Recipe Defaults
     "brand.seal_line1": "SOUTHERN",
     "brand.seal_line2": "HERBS",
@@ -686,7 +686,36 @@ window.toggleLanguage = function() {
   window.applyLanguage(nextLang);
 };
 
-// Auto-run on DOMContentLoaded
-document.addEventListener("DOMContentLoaded", () => {
+function initLanguageSwitcher() {
   window.applyLanguage(window.currentLang);
-});
+
+  const pill = document.getElementById("langTogglePill");
+  const optVi = document.getElementById("langOptVi");
+  const optEn = document.getElementById("langOptEn");
+
+  if (pill) {
+    pill.addEventListener("click", (e) => {
+      if (e.target === pill || e.target.classList.contains("lang-divider")) {
+        window.toggleLanguage();
+      }
+    });
+  }
+  if (optVi) {
+    optVi.addEventListener("click", (e) => {
+      e.stopPropagation();
+      window.applyLanguage("vi");
+    });
+  }
+  if (optEn) {
+    optEn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      window.applyLanguage("en");
+    });
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initLanguageSwitcher);
+} else {
+  initLanguageSwitcher();
+}

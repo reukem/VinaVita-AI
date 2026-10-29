@@ -47,7 +47,7 @@ if os.path.exists(assets_dir):
 
 # Combine into standalone HTML
 bundled = html.replace('<link rel="stylesheet" href="styles.css">', f"<style>\n{css}\n</style>")
-script_block = f"<script>\n{trans_js}\n{db_js}\n{app_js}\n</script>"
+script_block = f"<script>\n{trans_js}\n</script>\n<script>\n{db_js}\n</script>\n<script>\n{app_js}\n</script>"
 
 bundled = re.sub(r'<script\s+src="translations\.js"[^>]*></script>', '', bundled)
 bundled = re.sub(r'<script\s+src="medicinal_database\.js"[^>]*></script>', '', bundled)
