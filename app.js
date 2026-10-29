@@ -53,54 +53,134 @@ document.addEventListener("DOMContentLoaded", () => {
   let selectedFlavor = "citrus";
   const activeConditions = new Set(["hypotension"]); // Default checked from Screenshot 2
 
-  // Quick fill helper for custom prompt input
-  window.fillCustomQuery = function(text) {
+  // Quick fill helper for custom prompt input (bilingual aware)
+  window.fillCustomQuery = function(param) {
+    const isEn = (window.currentLang === "en");
     const input = document.getElementById("customMixInput");
-    if (input) {
-      input.value = text;
-      handleCustomQuery(text);
+    let queryText = param;
+
+    if (param === 1 || param === "1" || (typeof param === "string" && (param.includes("ôn thi") || param.includes("finals") || param.includes("Cramming") || param.includes("exam")))) {
+      queryText = isEn
+        ? "Cramming late for finals, acid reflux, prefer cool refreshing taste"
+        : "Thức khuya ôn thi, đau dạ dày, thích the mát";
+    } else if (param === 2 || param === "2" || (typeof param === "string" && (param.includes("Khó ngủ") || param.includes("insomnia") || param.includes("sleeping") || param.includes("sleep")))) {
+      queryText = isEn
+        ? "Trouble sleeping, insomnia, low blood pressure, prefer mellow sweet"
+        : "Khó ngủ trằn trọc, huyết áp thấp, thích vị ngọt dịu";
+    } else if (param === 3 || param === "3" || (typeof param === "string" && (param.includes("Tiệc tùng") || param.includes("Party") || param.includes("alcohol") || param.includes("driver")))) {
+      queryText = isEn
+        ? "0.0% alcohol social party, night driving, zero refined sugar"
+        : "Tiệc tùng 0% cồn, lái xe về đêm, không đường";
     }
+
+    if (input) {
+      input.value = queryText;
+    }
+    handleCustomQuery(queryText);
   };
 
-  function handleCustomQuery(query) {
-    const q = query.toLowerCase();
-    if (q.includes("thi") || q.includes("deadline") || q.includes("tập trung") || q.includes("học")) {
+  // Robust Bilingual Query Parameter Parser
+  function parseCustomQueryParams(query) {
+    if (!query) return;
+    const q = query.toLowerCase().trim();
+
+    // 1. Mood Detection (Bilingual: English + Vietnamese)
+    if (
+      q.includes("thi") || q.includes("deadline") || q.includes("tập trung") || q.includes("học") ||
+      q.includes("exam") || q.includes("cram") || q.includes("cramming") || q.includes("finals") ||
+      q.includes("study") || q.includes("studying") || q.includes("focus") || q.includes("alert") ||
+      q.includes("wake") || q.includes("all-nighter") || q.includes("survivor") || q.includes("energy") ||
+      q.includes("late exam")
+    ) {
       setMoodSelection("focus");
-    } else if (q.includes("ngủ") || q.includes("stress") || q.includes("thư giãn") || q.includes("đêm")) {
+    } else if (
+      q.includes("ngủ") || q.includes("stress") || q.includes("thư giãn") || q.includes("đêm") ||
+      q.includes("mất ngủ") || q.includes("khó ngủ") || q.includes("trằn trọc") ||
+      q.includes("sleep") || q.includes("insomnia") || q.includes("unwind") || q.includes("relax") ||
+      q.includes("de-stress") || q.includes("rest") || q.includes("calm") || q.includes("bedtime") ||
+      q.includes("anxiety")
+    ) {
       setMoodSelection("unwind");
-    } else if (q.includes("tiệc") || q.includes("bạn bè") || q.includes("party") || q.includes("chill")) {
+    } else if (
+      q.includes("tiệc") || q.includes("bạn bè") || q.includes("party") || q.includes("chill") ||
+      q.includes("quán bar") || q.includes("mocktail") ||
+      q.includes("social") || q.includes("gather") || q.includes("friend") || q.includes("hangout") ||
+      q.includes("0.0%") || q.includes("0% alcohol") || q.includes("non-alcoholic") || q.includes("party 0%")
+    ) {
       setMoodSelection("social");
-    } else if (q.includes("gan") || q.includes("thanh nhiệt") || q.includes("mát") || q.includes("detox")) {
+    } else if (
+      q.includes("gan") || q.includes("thanh nhiệt") || q.includes("mát") || q.includes("detox") ||
+      q.includes("mụn") || q.includes("thanh lọc") ||
+      q.includes("liver") || q.includes("cleanse") || q.includes("cooling")
+    ) {
       setMoodSelection("unwind");
     }
 
-    if (q.includes("dạ dày") || q.includes("trào ngược") || q.includes("bao tử")) {
+    // 2. Health Guardrails Detection (Bilingual)
+    if (
+      q.includes("dạ dày") || q.includes("trào ngược") || q.includes("bao tử") ||
+      q.includes("gastritis") || q.includes("reflux") || q.includes("acid reflux") || q.includes("gerd") ||
+      q.includes("stomach") || q.includes("heartburn")
+    ) {
       setGuardrailCondition("gastritis", true);
     }
-    if (q.includes("huyết áp thấp") || q.includes("ha thấp") || q.includes("tụt huyết áp")) {
+    if (
+      q.includes("huyết áp thấp") || q.includes("ha thấp") || q.includes("tụt huyết áp") ||
+      q.includes("hypotension") || q.includes("low bp") || q.includes("low blood pressure") ||
+      q.includes("dizziness") || q.includes("faint")
+    ) {
       setGuardrailCondition("hypotension", true);
     }
-    if (q.includes("huyết áp cao") || q.includes("ha cao")) {
+    if (
+      q.includes("huyết áp cao") || q.includes("ha cao") || q.includes("tăng huyết áp") ||
+      q.includes("hypertension") || q.includes("high bp") || q.includes("high blood pressure")
+    ) {
       setGuardrailCondition("hypertension", true);
     }
-    if (q.includes("lái xe") || q.includes("tỉnh táo")) {
+    if (
+      q.includes("lái xe") || q.includes("tỉnh táo") || q.includes("đường dài") ||
+      q.includes("driving") || q.includes("drive") || q.includes("driver") || q.includes("vigilance")
+    ) {
       setGuardrailCondition("driving", true);
     }
-    if (q.includes("mang thai") || q.includes("bầu") || q.includes("cho con bú")) {
+    if (
+      q.includes("mang thai") || q.includes("bầu") || q.includes("cho con bú") ||
+      q.includes("pregnant") || q.includes("pregnancy") || q.includes("nursing") || q.includes("breastfeeding")
+    ) {
       setGuardrailCondition("pregnancy", true);
     }
 
-    if (q.includes("the mát") || q.includes("bạc hà") || q.includes("lạnh") || q.includes("mint")) {
+    // 3. Flavor Detection (Bilingual)
+    if (
+      q.includes("the mát") || q.includes("bạc hà") || q.includes("lạnh") || q.includes("mát") ||
+      q.includes("mint") || q.includes("minty") || q.includes("cool") || q.includes("peppermint") ||
+      q.includes("refreshing") || q.includes("crisp")
+    ) {
       setFlavorSelection("minty");
-    } else if (q.includes("chua") || q.includes("quất") || q.includes("tắc") || q.includes("chanh")) {
+    } else if (
+      q.includes("chua") || q.includes("quất") || q.includes("tắc") || q.includes("chanh") ||
+      q.includes("citrus") || q.includes("tart") || q.includes("kumquat") || q.includes("lemon") ||
+      q.includes("sour") || q.includes("tangy")
+    ) {
       setFlavorSelection("citrus");
-    } else if (q.includes("ngọt") || q.includes("la hán") || q.includes("dịu")) {
+    } else if (
+      q.includes("ngọt") || q.includes("la hán") || q.includes("dịu") ||
+      q.includes("sweet") || q.includes("mellow") || q.includes("monk fruit") || q.includes("stevia") ||
+      q.includes("honey")
+    ) {
       setFlavorSelection("sweet");
-    } else if (q.includes("hoa") || q.includes("cúc") || q.includes("nhài") || q.includes("thơm")) {
+    } else if (
+      q.includes("hoa") || q.includes("cúc") || q.includes("nhài") || q.includes("thơm") ||
+      q.includes("floral") || q.includes("flower") || q.includes("blossom") || q.includes("jasmine") ||
+      q.includes("chamomile") || q.includes("breeze")
+    ) {
       setFlavorSelection("floral");
     }
+  }
 
-    if (btnGenerate) btnGenerate.click();
+  function handleCustomQuery(query) {
+    parseCustomQueryParams(query);
+    renderGeneratedRecipe(true, query);
   }
 
   function setMoodSelection(mood) {
@@ -110,6 +190,9 @@ document.addEventListener("DOMContentLoaded", () => {
       else c.classList.remove("selected");
     });
     updateSafetyAlert();
+    if (recipeCard && recipeCard.classList.contains("active")) {
+      renderGeneratedRecipe(true);
+    }
   }
 
   function setFlavorSelection(flavor) {
@@ -118,6 +201,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (c.dataset.value === flavor) c.classList.add("selected");
       else c.classList.remove("selected");
     });
+    if (recipeCard && recipeCard.classList.contains("active")) {
+      renderGeneratedRecipe(true);
+    }
   }
 
   function setGuardrailCondition(cond, isChecked) {
@@ -126,16 +212,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const cb = document.querySelector(`.guardrail-input[value="${cond}"]`);
     if (cb) cb.checked = isChecked;
     updateSafetyAlert();
+    if (recipeCard && recipeCard.classList.contains("active")) {
+      renderGeneratedRecipe(true);
+    }
   }
 
-  // Systematic Option Cards Listeners (Selection only, waits for big button)
+  // Systematic Option Cards Listeners (Selection with live reactive formula update)
   document.querySelectorAll(".opt-mood").forEach(card => {
     card.addEventListener("click", () => {
       document.querySelectorAll(".opt-mood").forEach(c => c.classList.remove("selected"));
       card.classList.add("selected");
       selectedMood = card.dataset.value;
       updateSafetyAlert();
-      // Keep placeholder or existing recipe until big button is clicked for systematic feel
+      if (recipeCard && recipeCard.classList.contains("active")) {
+        renderGeneratedRecipe(true);
+      }
     });
   });
 
@@ -144,7 +235,9 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".opt-flavor").forEach(c => c.classList.remove("selected"));
       card.classList.add("selected");
       selectedFlavor = card.dataset.value;
-      // Keep placeholder or existing recipe until big button is clicked
+      if (recipeCard && recipeCard.classList.contains("active")) {
+        renderGeneratedRecipe(true);
+      }
     });
   });
 
@@ -161,7 +254,9 @@ document.addEventListener("DOMContentLoaded", () => {
         activeConditions.delete(input.value);
       }
       updateSafetyAlert();
-      // Keep placeholder or existing recipe until big button is clicked
+      if (recipeCard && recipeCard.classList.contains("active")) {
+        renderGeneratedRecipe(true);
+      }
     });
   });
 
@@ -269,6 +364,13 @@ document.addEventListener("DOMContentLoaded", () => {
         : `<span>⏳</span> Đang đối chiếu Dược Điển &amp; kiểm tra tương tác...`;
       btnGenerate.disabled = true;
 
+      // Extract and parse custom user query if present in Section 4
+      const customInput = document.getElementById("customMixInput");
+      const customVal = customInput ? customInput.value.trim() : "";
+      if (customVal) {
+        parseCustomQueryParams(customVal);
+      }
+
       setTimeout(() => {
         btnGenerate.innerHTML = isEn
           ? `<span>🍃</span> Suppressing bitter receptor hTAS2R16 (pH 4.2–4.5)...`
@@ -279,7 +381,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btnGenerate.innerHTML = isEn
           ? `<span>✨</span> Formulated 5.3g mocktail sachet successfully!`
           : `<span>✨</span> Đã bào chế thành công ly mocktail 5.3g!`;
-        renderGeneratedRecipe(true);
+        renderGeneratedRecipe(true, customVal);
         setTimeout(() => {
           btnGenerate.innerHTML = isEn
             ? `<span>✨</span> Brew Me a Glass (Generate Formula Now)`
