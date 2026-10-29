@@ -64,10 +64,46 @@
           <span id="navAiNodeText">Gemini 2.5 Flash</span>
         </div>
         <div class="rbpc-badge">RMIT RBPC 2026</div>
-        <div class="lang-toggle-pill" id="langTogglePill" title="Chuyển đổi ngôn ngữ / Switch language (VI / EN)" onclick="window.toggleLanguage && window.toggleLanguage()">
-          <span class="lang-opt active" id="langOptVi">🇻🇳 VI</span>
+        <div class="lang-toggle-pill" id="langTogglePill" title="Chuyển đổi ngôn ngữ / Switch language (Tiếng Việt / English)" onclick="window.toggleLanguage && window.toggleLanguage()">
+          <span class="lang-opt active" id="langOptVi">
+            <svg class="lang-flag-svg" viewBox="0 0 640 480" aria-hidden="true">
+              <rect width="640" height="480" fill="#da251d" rx="24"/>
+              <polygon fill="#ffeb3b" points="320,72 357,186 476,186 380,256 417,370 320,300 223,370 260,256 164,186 283,186"/>
+            </svg>
+            <span>VI</span>
+          </span>
           <span class="lang-divider">|</span>
-          <span class="lang-opt" id="langOptEn">🇬🇧 EN</span>
+          <span class="lang-opt" id="langOptEn">
+            <!-- Hybrid US/UK Flag (Union Jack Top-Left, Stars & Stripes Bottom-Right) -->
+            <svg class="lang-flag-svg" viewBox="0 0 60 40" aria-hidden="true">
+              <defs>
+                <clipPath id="ukHalf"><polygon points="0,0 60,0 0,40"/></clipPath>
+                <clipPath id="usHalf"><polygon points="60,0 60,40 0,40"/></clipPath>
+                <clipPath id="flagRound"><rect width="60" height="40" rx="4"/></clipPath>
+              </defs>
+              <g clip-path="url(#flagRound)">
+                <!-- UK Top-Left -->
+                <g clip-path="url(#ukHalf)">
+                  <path d="M0,0 v40 h60 v-40 z" fill="#012169"/>
+                  <path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="7"/>
+                  <path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/>
+                  <path d="M30,0 v40 M0,20 h60" stroke="#fff" stroke-width="12"/>
+                  <path d="M30,0 v40 M0,20 h60" stroke="#C8102E" stroke-width="7"/>
+                </g>
+                <!-- US Bottom-Right -->
+                <g clip-path="url(#usHalf)">
+                  <rect width="60" height="40" fill="#b22234"/>
+                  <path d="M0,4H60M0,10H60M0,16H60M0,22H60M0,28H60M0,34H60" stroke="#fff" stroke-width="3"/>
+                  <polygon points="60,18 60,40 26,40" fill="#3c3b6e"/>
+                  <circle cx="50" cy="30" r="1.8" fill="#fff"/>
+                  <circle cx="42" cy="34" r="1.8" fill="#fff"/>
+                  <circle cx="54" cy="36" r="1.8" fill="#fff"/>
+                </g>
+                <line x1="0" y1="40" x2="60" y2="0" stroke="rgba(255,255,255,0.8)" stroke-width="1"/>
+              </g>
+            </svg>
+            <span>EN</span>
+          </span>
         </div>
       </div>
     </div>
