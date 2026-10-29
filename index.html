@@ -6,6 +6,7 @@
   <title>VinaVita AI — Nền Tảng Pha Chế Dược Liệu & Mocktail Thảo Mộc Việt Nam — RMIT RBPC 2026</title>
   <meta name="description" content="Dự án tham dự RMIT Business Plan Competition 2026: Ứng dụng AI và Khoa học Thực phẩm để cá nhân hóa thức uống Dược Liệu Việt thay thế cồn và nước tăng lực.">
   <link rel="stylesheet" href="styles.css">
+  <script src="translations.js" defer></script>
   <script src="medicinal_database.js" defer></script>
   <script src="app.js" defer></script>
 </head>
@@ -38,31 +39,36 @@
               <span class="chop-line2">TRỊ NAM NHÂN</span>
             </div>
           </div>
-          <div class="brand-tagline">Dược Liệu Việt • Quốc Hồn Trà</div>
+          <div class="brand-tagline" data-i18n="brand.tagline">Dược Liệu Việt • Quốc Hồn Trà</div>
         </div>
       </a>
 
       <nav class="tab-nav">
-        <button class="tab-btn active" data-target="viewMixologist">
+        <button class="tab-btn active" data-target="viewMixologist" data-i18n="nav.mixologist">
           <span>🍸</span> AI Mixologist
         </button>
-        <button class="tab-btn" data-target="viewSignatures">
+        <button class="tab-btn" data-target="viewSignatures" data-i18n="nav.signatures">
           <span>⭐</span> Menu &amp; Gói Sachet Gen-Z
         </button>
-        <button class="tab-btn" data-target="viewDatabase">
+        <button class="tab-btn" data-target="viewDatabase" data-i18n="nav.database">
           <span>📚</span> Bách Khoa Dược Liệu
         </button>
-        <button class="tab-btn" data-target="viewAbout">
+        <button class="tab-btn" data-target="viewAbout" data-i18n="nav.about">
           <span>🏛️</span> Dự Án &amp; Đội Ngũ
         </button>
       </nav>
 
       <div class="header-meta">
-        <div class="receptor-nav-pill" id="navAiNodePill" title="Trạng thái Node AI Đám Mây đang hoạt động (Nhấn để mở Dược Sĩ AI)" style="cursor:pointer;" onclick="window.openChatWidget && window.openChatWidget()">
+        <div class="receptor-nav-pill" id="navAiNodePill" data-i18n-title="nav.ai_node_title" title="Trạng thái Node AI Đám Mây đang hoạt động (Nhấn để mở Dược Sĩ AI)" style="cursor:pointer;" onclick="window.openChatWidget && window.openChatWidget()">
           <span class="receptor-dot" id="navAiNodeDot"></span>
           <span id="navAiNodeText">Gemini 2.5 Flash</span>
         </div>
         <div class="rbpc-badge">RMIT RBPC 2026</div>
+        <div class="lang-toggle-pill" id="langTogglePill" title="Chuyển đổi ngôn ngữ / Switch language (VI / EN)" onclick="window.toggleLanguage && window.toggleLanguage()">
+          <span class="lang-opt active" id="langOptVi">🇻🇳 VI</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-opt" id="langOptEn">🇬🇧 EN</span>
+        </div>
       </div>
     </div>
   </header>
@@ -382,7 +388,7 @@
               </div>
               <div class="pill-herbs">Lạc Tiên (1.8g) • Hoa Cúc (1.5g) • Tắc sấy lạnh (1.5g) • Cỏ Ngọt (0.5g)</div>
             </div>
-            <button class="pill-action-btn" type="button">Pha Thử ➔</button>
+            <button class="pill-action-btn" type="button" data-i18n="hero.pill_btn">Pha Thử ➔</button>
           </div>
           <!-- Card 2: Deadline Survivor -->
           <div class="sachet-home-pill pill-focus" onclick="window.selectHeroSachet('focus', 'minty')" title="Nhấp để phối trộn ngay Deadline Survivor">
@@ -394,7 +400,7 @@
               </div>
               <div class="pill-herbs">Lá Đinh Lăng (2.5g) • Sả (1.2g) • Gừng (1.3g) • La Hán Quả (0.3g)</div>
             </div>
-            <button class="pill-action-btn" type="button">Pha Thử ➔</button>
+            <button class="pill-action-btn" type="button" data-i18n="hero.pill_btn">Pha Thử ➔</button>
           </div>
           <!-- Card 3: Berry Social Glow -->
           <div class="sachet-home-pill pill-berry" onclick="window.selectHeroSachet('social', 'sweet')" title="Nhấp để phối trộn ngay Berry Social Glow">
@@ -406,7 +412,7 @@
               </div>
               <div class="pill-herbs">Atiso Đỏ (2.2g) • Lạc Tiên (1.3g) • Quế thanh (0.8g) • La Hán Quả (1.0g)</div>
             </div>
-            <button class="pill-action-btn" type="button">Pha Thử ➔</button>
+            <button class="pill-action-btn" type="button" data-i18n="hero.pill_btn">Pha Thử ➔</button>
           </div>
         </div>
       </div>
@@ -435,7 +441,7 @@
 
           <!-- Step 1: Mood & Occasion -->
           <div class="control-group">
-            <label class="control-label">1. Bạn cần một ly nước thế nào hôm nay? • Need &amp; Mood</label>
+            <label class="control-label" data-i18n="studio.step1_label">1. Bạn cần một ly nước thế nào hôm nay? • Need &amp; Mood</label>
             <div class="option-cards">
               <div class="opt-card opt-mood selected" data-value="social">
                 <div class="opt-icon">🌟</div>
@@ -457,7 +463,7 @@
 
           <!-- Step 2: Health Guardrails (Real-Time Safety Engine) -->
           <div class="control-group">
-            <label class="control-label">2. Cơ địa &amp; Lưu ý sức khỏe • Health Guardrails</label>
+            <label class="control-label" data-i18n="studio.step2_label">2. Cơ địa &amp; Lưu ý sức khỏe • Health Guardrails</label>
             <div class="guardrail-grid">
               <label class="guardrail-item">
                 <input type="checkbox" class="guardrail-input" value="hypotension">
@@ -704,8 +710,8 @@
       <div class="heritage-crest-divider">
         <img src="assets/chim_lac_single.png" alt="Chim Lạc" class="crest-chim-lac flip-h">
         <div class="crest-center-content">
-          <div class="crest-sub">TINH HOA BẢN ĐỊA</div>
-          <div class="crest-main">Trà Dược Liệu Đóng Gói Sachet Tiện Lợi</div>
+          <div class="crest-sub" data-i18n="menu.crest_sub">TINH HOA BẢN ĐỊA</div>
+          <div class="crest-main" data-i18n="menu.crest_main">Trà Dược Liệu Đóng Gói Sachet Tiện Lợi</div>
         </div>
         <img src="assets/chim_lac_single.png" alt="Chim Lạc" class="crest-chim-lac">
       </div>
@@ -722,8 +728,8 @@
       <!-- 3 HERO SACHET BOXES (CANVA PDF SLIDE 7-9 SPECIFICATION) -->
       <div class="hero-sachet-showcase">
         <div class="hero-sachet-header">
-          <div class="hero-sachet-pill">🌿 DÒNG SẢN PHẨM THỬ NGHIỆM RMIT RBPC 2026 • 69.000 VNĐ / HỘP 5 GÓI (TÚI LỌC BỘT NGÔ PLA)</div>
-          <h3 class="hero-sachet-headline">Bộ 3 Gói Trà Sachet Di Sản Dành Cho Giới Trẻ <span class="gradient-text">(Hero Sachets)</span></h3>
+          <div class="hero-sachet-pill" data-i18n="menu.hero_pill">🌿 DÒNG SẢN PHẨM THỬ NGHIỆM RMIT RBPC 2026 • 69.000 VNĐ / HỘP 5 GÓI (TÚI LỌC BỘT NGÔ PLA)</div>
+          <h3 class="hero-sachet-headline" data-i18n="menu.hero_headline">Bộ 3 Gói Trà Sachet Di Sản Dành Cho Giới Trẻ <span class="gradient-text">(Hero Sachets)</span></h3>
           <p class="hero-sachet-sub">
             Túi lọc kim tự tháp màng sinh học PLA từ bột ngô giúp thảo dược nở đều và giữ trọn tinh dầu thơm tự nhiên.
             <br>
@@ -808,7 +814,7 @@
                 <span class="sachet-price-val">69.000 VNĐ</span>
                 <span class="sachet-unit">/ Hộp 5 túi PLA (5.35g)</span>
               </div>
-              <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #01 - Citrus Twilight (69.000đ)">
+              <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #01 - Citrus Twilight (69.000đ)" data-i18n="menu.box1_btn">
                 🛒 Đặt Hộp #01
               </button>
             </div>
@@ -890,7 +896,7 @@
                 <span class="sachet-price-val">69.000 VNĐ</span>
                 <span class="sachet-unit">/ Hộp 5 túi PLA (5.5g)</span>
               </div>
-              <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #02 - Deadline Survivor (69.000đ)">
+              <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #02 - Deadline Survivor (69.000đ)" data-i18n="menu.box2_btn">
                 🛒 Đặt Hộp #02
               </button>
             </div>
@@ -972,7 +978,7 @@
                 <span class="sachet-price-val">69.000 VNĐ</span>
                 <span class="sachet-unit">/ Hộp 5 túi PLA (5.5g)</span>
               </div>
-              <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #03 - Berry Social Glow (69.000đ)">
+              <button class="btn-primary-action btn-order-trigger" data-drink="Hộp 5 Gói Sachet #03 - Berry Social Glow (69.000đ)" data-i18n="menu.box3_btn">
                 🛒 Đặt Hộp #03
               </button>
             </div>
@@ -983,10 +989,10 @@
       </div>
 
       <div style="margin:48px 0 24px 0; text-align:center;">
-        <h3 style="font-family:var(--font-display); font-size:1.75rem; font-weight:700;">
+        <h3 style="font-family:var(--font-display); font-size:1.75rem; font-weight:700;" data-i18n="menu.expanded_title">
           Bộ Sưu Tập Menu Mở Rộng <span class="gradient-text">Phục Vụ Trực Tiếp &amp; Sachet Lẻ</span>
         </h3>
-        <p style="color:var(--text-muted); font-size:0.92rem; max-width:600px; margin:6px auto 0 auto;">
+        <p style="color:var(--text-muted); font-size:0.92rem; max-width:600px; margin:6px auto 0 auto;" data-i18n="menu.expanded_sub">
           Dành cho khách hàng muốn thưởng thức các hương vị đặc trưng cố đô hoặc đặt gói đong lẻ từng ly (15.000 – 18.000 VNĐ/gói).
         </p>
       </div>
@@ -1002,8 +1008,8 @@
       <div class="heritage-crest-divider">
         <img src="assets/chim_lac_single.png" alt="Chim Lạc" class="crest-chim-lac flip-h">
         <div class="crest-center-content">
-          <div class="crest-sub">TRI THỨC DÂN TỘC</div>
-          <div class="crest-main">Bách Khoa Dược Liệu Dân Tộc An Toàn</div>
+          <div class="crest-sub" data-i18n="db.crest_sub">TRI THỨC DÂN TỘC</div>
+          <div class="crest-main" data-i18n="db.crest_main">Bách Khoa Dược Liệu Dân Tộc An Toàn</div>
         </div>
         <img src="assets/chim_lac_single.png" alt="Chim Lạc" class="crest-chim-lac">
       </div>
