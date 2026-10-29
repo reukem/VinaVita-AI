@@ -79,44 +79,116 @@ document.addEventListener("DOMContentLoaded", () => {
     handleCustomQuery(queryText);
   };
 
-  // Robust Bilingual Query Parameter Parser
+  // Robust Bilingual Query Parameter Parser with Direct SKU & Intent Understanding
   function parseCustomQueryParams(query) {
     if (!query) return;
     const q = query.toLowerCase().trim();
 
-    // 1. Mood Detection (Bilingual: English + Vietnamese)
+    // Step 0: Direct SKU / Signature Product Name & Number Overrides
+    // SKU #01: Citrus Twilight (Night Unwind / Deep Sleep / De-Stress)
     if (
-      q.includes("thi") || q.includes("deadline") || q.includes("tập trung") || q.includes("học") ||
-      q.includes("exam") || q.includes("cram") || q.includes("cramming") || q.includes("finals") ||
-      q.includes("study") || q.includes("studying") || q.includes("focus") || q.includes("alert") ||
-      q.includes("wake") || q.includes("all-nighter") || q.includes("survivor") || q.includes("energy") ||
-      q.includes("late exam")
+      q.includes("citrus twilight") || q.includes("twilight") ||
+      q.includes("pack 1") || q.includes("pack 01") || q.includes("pack #1") || q.includes("pack #01") ||
+      q.includes("#01") || q.includes("#1") || q.includes("sku 1") || q.includes("sku 01") ||
+      q.includes("gói 1") || q.includes("gói 01") || q.includes("gói số 1") || q.includes("gói số 01") ||
+      q.includes("vinavita 01") || q.includes("vinavita 1") || q.includes("vinavita #01") ||
+      q.includes("sleep pack") || q.includes("unwind pack")
+    ) {
+      setMoodSelection("unwind");
+      if (q.includes("mint") || q.includes("bạc hà") || q.includes("cool")) setFlavorSelection("minty");
+      else if (q.includes("sweet") || q.includes("ngọt") || q.includes("la hán")) setFlavorSelection("sweet");
+      else if (q.includes("floral") || q.includes("hoa") || q.includes("cúc") || q.includes("nhài")) setFlavorSelection("floral");
+      else setFlavorSelection("citrus");
+    }
+    // SKU #02: Deadline Survivor (Calm Focus / Alertness / Cramming / Stay Awake)
+    else if (
+      q.includes("deadline survivor") || q.includes("deadline boost") ||
+      q.includes("pack 2") || q.includes("pack 02") || q.includes("pack #2") || q.includes("pack #02") ||
+      q.includes("#02") || q.includes("#2") || q.includes("sku 2") || q.includes("sku 02") ||
+      q.includes("gói 2") || q.includes("gói 02") || q.includes("gói số 2") || q.includes("gói số 02") ||
+      q.includes("vinavita 02") || q.includes("vinavita 2") || q.includes("vinavita #02") ||
+      q.includes("deadline pack") || q.includes("exam pack") || q.includes("focus pack")
     ) {
       setMoodSelection("focus");
-    } else if (
-      q.includes("ngủ") || q.includes("stress") || q.includes("thư giãn") || q.includes("đêm") ||
-      q.includes("mất ngủ") || q.includes("khó ngủ") || q.includes("trằn trọc") ||
-      q.includes("sleep") || q.includes("insomnia") || q.includes("unwind") || q.includes("relax") ||
-      q.includes("de-stress") || q.includes("rest") || q.includes("calm") || q.includes("bedtime") ||
-      q.includes("anxiety")
-    ) {
-      setMoodSelection("unwind");
-    } else if (
-      q.includes("tiệc") || q.includes("bạn bè") || q.includes("party") || q.includes("chill") ||
-      q.includes("quán bar") || q.includes("mocktail") ||
-      q.includes("social") || q.includes("gather") || q.includes("friend") || q.includes("hangout") ||
-      q.includes("0.0%") || q.includes("0% alcohol") || q.includes("non-alcoholic") || q.includes("party 0%")
+      if (q.includes("citrus") || q.includes("chua") || q.includes("quất")) setFlavorSelection("citrus");
+      else if (q.includes("sweet") || q.includes("ngọt") || q.includes("la hán")) setFlavorSelection("sweet");
+      else if (q.includes("floral") || q.includes("hoa")) setFlavorSelection("floral");
+      else setFlavorSelection("minty");
+    }
+    // SKU #03: Berry Social Glow (0.0% Alcohol / Social Hangouts / Party / Chill)
+    else if (
+      q.includes("berry social glow") || q.includes("berry social") || q.includes("social glow") || q.includes("berry glow") ||
+      q.includes("pack 3") || q.includes("pack 03") || q.includes("pack #3") || q.includes("pack #03") ||
+      q.includes("#03") || q.includes("#3") || q.includes("sku 3") || q.includes("sku 03") ||
+      q.includes("gói 3") || q.includes("gói 03") || q.includes("gói số 3") || q.includes("gói số 03") ||
+      q.includes("vinavita 03") || q.includes("vinavita 3") || q.includes("vinavita #03") ||
+      q.includes("party pack") || q.includes("social pack")
     ) {
       setMoodSelection("social");
-    } else if (
-      q.includes("gan") || q.includes("thanh nhiệt") || q.includes("mát") || q.includes("detox") ||
-      q.includes("mụn") || q.includes("thanh lọc") ||
-      q.includes("liver") || q.includes("cleanse") || q.includes("cooling")
-    ) {
-      setMoodSelection("unwind");
+      if (q.includes("sweet") || q.includes("ngọt")) setFlavorSelection("sweet");
+      else if (q.includes("mint") || q.includes("bạc hà") || q.includes("cool")) setFlavorSelection("minty");
+      else if (q.includes("floral") || q.includes("hoa")) setFlavorSelection("floral");
+      else setFlavorSelection("citrus");
+    }
+    // Step 1: Semantic Situational & Functional Intent (When no direct product name is stated)
+    else {
+      // Priority 1: Sleep Distress & Insomnia ALWAYS routes to Unwind (Clinical rule: do not excite with Ginseng!)
+      const hasSleepDistress = [
+        "trouble sleeping", "can't sleep", "cant sleep", "cannot sleep", "hard to sleep",
+        "insomnia", "sleepless", "fall asleep", "deep sleep", "mất ngủ", "khó ngủ", "trằn trọc",
+        "không ngủ được", "overthinking", "bedtime", "night sleep"
+      ].some(w => q.includes(w));
+
+      // Priority 2: Explicit Desire to Stay Awake / Fight Drowsiness -> Focus (#02 Deadline Survivor)
+      const hasStayAwakeIntent = [
+        "stay awake", "staying awake", "wake up", "wanna stay awake", "want to stay awake",
+        "keep me awake", "awake", "not sleep", "dont want to sleep", "don't want to sleep",
+        "all-nighter", "tỉnh táo", "tỉnh ngủ", "chống buồn ngủ", "thức trắng", "thức khuya"
+      ].some(w => q.includes(w));
+
+      if (hasSleepDistress) {
+        setMoodSelection("unwind");
+        setFlavorSelection("citrus");
+      } else if (hasStayAwakeIntent) {
+        setMoodSelection("focus");
+        setFlavorSelection("minty");
+      } else if ([
+        "party", "social", "hangout", "friends", "mocktail", "0.0%", "0% alcohol", "zero alcohol",
+        "non-alcoholic", "gathering", "bar", "club", "tiệc", "tiệc tùng", "bạn bè", "gặp gỡ", "chill"
+      ].some(w => q.includes(w))) {
+        setMoodSelection("social");
+        setFlavorSelection("citrus");
+      } else if ([
+        "thi", "exam", "finals", "cram", "cramming", "study", "studying", "deadline", "focus",
+        "tập trung", "học", "học bài", "cày cuốc", "late exam"
+      ].some(w => q.includes(w))) {
+        setMoodSelection("focus");
+        setFlavorSelection("minty");
+      } else if ([
+        "relax", "unwind", "stress", "de-stress", "thư giãn", "xả stress", "calm", "an thần", "êm dịu"
+      ].some(w => q.includes(w))) {
+        setMoodSelection("unwind");
+        setFlavorSelection("citrus");
+      } else if ([
+        "gan", "thanh nhiệt", "mát", "detox", "mụn", "thanh lọc", "liver", "cleanse", "cooling"
+      ].some(w => q.includes(w))) {
+        setMoodSelection("unwind");
+        setFlavorSelection("citrus");
+      }
+
+      // Step 2: Flavor Override if user explicitly requested a specific taste
+      if (["mint", "minty", "cool", "bạc hà", "the mát", "peppermint", "refreshing", "crisp"].some(w => q.includes(w))) {
+        setFlavorSelection("minty");
+      } else if (["citrus", "tart", "chua", "tắc", "quất", "chanh", "kumquat", "sour", "tangy"].some(w => q.includes(w))) {
+        setFlavorSelection("citrus");
+      } else if (["sweet", "ngọt", "mellow", "monk fruit", "la hán", "stevia", "honey"].some(w => q.includes(w))) {
+        setFlavorSelection("sweet");
+      } else if (["floral", "hoa", "cúc", "nhài", "jasmine", "chamomile", "blossom", "breeze"].some(w => q.includes(w))) {
+        setFlavorSelection("floral");
+      }
     }
 
-    // 2. Health Guardrails Detection (Bilingual)
+    // Step 3: Health Guardrails & Bio-Safety Detection (Bilingual)
     if (
       q.includes("dạ dày") || q.includes("trào ngược") || q.includes("bao tử") ||
       q.includes("gastritis") || q.includes("reflux") || q.includes("acid reflux") || q.includes("gerd") ||
@@ -148,33 +220,6 @@ document.addEventListener("DOMContentLoaded", () => {
       q.includes("pregnant") || q.includes("pregnancy") || q.includes("nursing") || q.includes("breastfeeding")
     ) {
       setGuardrailCondition("pregnancy", true);
-    }
-
-    // 3. Flavor Detection (Bilingual)
-    if (
-      q.includes("the mát") || q.includes("bạc hà") || q.includes("lạnh") || q.includes("mát") ||
-      q.includes("mint") || q.includes("minty") || q.includes("cool") || q.includes("peppermint") ||
-      q.includes("refreshing") || q.includes("crisp")
-    ) {
-      setFlavorSelection("minty");
-    } else if (
-      q.includes("chua") || q.includes("quất") || q.includes("tắc") || q.includes("chanh") ||
-      q.includes("citrus") || q.includes("tart") || q.includes("kumquat") || q.includes("lemon") ||
-      q.includes("sour") || q.includes("tangy")
-    ) {
-      setFlavorSelection("citrus");
-    } else if (
-      q.includes("ngọt") || q.includes("la hán") || q.includes("dịu") ||
-      q.includes("sweet") || q.includes("mellow") || q.includes("monk fruit") || q.includes("stevia") ||
-      q.includes("honey")
-    ) {
-      setFlavorSelection("sweet");
-    } else if (
-      q.includes("hoa") || q.includes("cúc") || q.includes("nhài") || q.includes("thơm") ||
-      q.includes("floral") || q.includes("flower") || q.includes("blossom") || q.includes("jasmine") ||
-      q.includes("chamomile") || q.includes("breeze")
-    ) {
-      setFlavorSelection("floral");
     }
   }
 
