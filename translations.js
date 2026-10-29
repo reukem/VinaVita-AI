@@ -86,7 +86,7 @@ const I18N = {
     // Recipe Placeholder & Output
     "res.ph_status_pill": "⚡ BUỒNG BÀO CHẾ SINH HỌC & ĐỐI CHIẾU DƯỢC ĐIỂN",
     "res.ph_title": "Ly Thảo Mộc Của Bạn Đang Chờ...",
-    "res.ph_desc": "Hãy lựa chọn nhanh các tiêu chí ở cột bên trái rồi bấm nút, hệ thống AI Mixologist sẽ tự động lọc thảo mộc kỵ, cân bằng độ chua pH 4.2–4.5 để khử vị đắng và gợi ý công thức an toàn nhất cho riêng bạn!",
+    "res.ph_desc": "Hãy lựa chọn nhanh các tiêu chí ở cột bên trái rồi bấm nút, hệ thống AI Mixologist sẽ tự động lọc thảo mộc kỵ, cân bằng độ chua pH 4.2–4.5 để khử vị đắng và gợi ý công thức phù hợp nhất cho riêng bạn!",
     "res.ph_spec1_lbl": "Cơ chế khử đắng",
     "res.ph_spec1_val": "Khóa thụ thể hTAS2R16 (pH 4.3)",
     "res.ph_spec2_lbl": "Độ an toàn dược lý",
@@ -375,7 +375,7 @@ const I18N = {
     // Recipe Placeholder & Output
     "res.ph_status_pill": "⚡ BIOMEDICAL FORMULATION CHAMBER & PHARMACOPOEIA MATCHING",
     "res.ph_title": "Your Herbal Infusion is Awaiting...",
-    "res.ph_desc": "Select your criteria in the left column and click generate; the AI Mixologist engine will automatically lock contraindicated herbs, buffer pH to 4.2–4.5 to eliminate herbal bitterness, and tailor the safest recipe for you!",
+    "res.ph_desc": "Select your criteria in the left column and click generate; the AI Mixologist engine will automatically lock contraindicated herbs, buffer pH to 4.2–4.5 to eliminate herbal bitterness, and tailor the most suitable recipe for you!",
     "res.ph_spec1_lbl": "Bitterness Masking",
     "res.ph_spec1_val": "hTAS2R16 Receptor Block (pH 4.3)",
     "res.ph_spec2_lbl": "Pharmacological Safety",
