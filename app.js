@@ -1159,17 +1159,210 @@ document.addEventListener("DOMContentLoaded", () => {
   const herbModalClose = document.getElementById("herbModalClose");
   const herbModalContent = document.getElementById("herbModalDynamicContent");
 
+  // Botanical Comprehensive Translation Registry for Encyclopedia & Modal
+  const HERB_I18N = {
+    "ha_thu_o": {
+      "cat_en": "Nourish Liver & Kidney / Enrich Blood / Longevity",
+      "origin_en": "Hoang Lien Son & Ha Giang Virgin Mountain Ranges",
+      "aroma_en": "Deep herbal aroma, mildly astringent finish",
+      "safe_en": "6 – 12g (traditionally steamed & sun-dried 9 times with black beans)",
+      "part_en": "Prepared root tuber (Radix Polygoni multiflori praeparata)",
+      "bioAction_en": "Directly activates SIRT1 anti-aging pathway and neural neuroprotection via TSG stilbene glycosides, scavenging free radicals.",
+      "masking_en": "Paired with black beans and licorice to buffer tannins, eliminating astringency."
+    },
+    "co_nho_noi": {
+      "cat_en": "Cool Blood / Liver Detox / Nourish Kidney Yin",
+      "origin_en": "Mekong Delta Herbal Islands & Southern Plains",
+      "aroma_en": "Gentle herbal meadow notes, crisp vegetal aroma",
+      "safe_en": "8 – 16g dried (or 30 – 50g fresh aerial parts)",
+      "part_en": "Aerial parts (Herba Ecliptae)",
+      "bioAction_en": "Wedelolactone and demethylwedelolactone protect hepatocytes, accelerating liver enzyme clearance.",
+      "masking_en": "Blends smoothly with Chamomile and Kumquat to create a balanced herbaceous tea."
+    },
+    "bo_cong_anh": {
+      "cat_en": "Anti-inflammatory / Detox / Natural Antibacterial",
+      "origin_en": "Sa Pa (Lao Cai) & Moc Chau Highland Valleys",
+      "aroma_en": "Delicate wild highland herbal aroma",
+      "safe_en": "8 – 15g dried herb",
+      "part_en": "Whole plant with roots (Herba Lactucae indicae)",
+      "bioAction_en": "Taraxasterol and luteolin downregulate inflammatory cytokines, cleansing dermal heat.",
+      "masking_en": "Balanced with Stevia and Kumquat citric acid to suppress sesquiterpene bitterness."
+    },
+    "dau_tam": {
+      "cat_en": "Enrich Blood / Anti-Aging / Deep Restful Sleep",
+      "origin_en": "Bao Loc Mulberry Capital (Lam Dong) & Red River Basin",
+      "aroma_en": "Ripe sun-ripened mulberry fragrance, sweet tartness",
+      "safe_en": "12 – 20g dried berries (or 6 – 12g dried leaves)",
+      "part_en": "Ripe fruit (Fructus Mori) / Leaves (Folium Mori)",
+      "bioAction_en": "Cyanidin-3-glucoside and resveratrol protect cerebral capillaries, promoting restful sleep.",
+      "masking_en": "Natural malic acid pairs harmoniously with Passionflower and Roselle."
+    },
+    "hoa_nhai": {
+      "cat_en": "Stress Relief / Cognitive Awakening / Lower Cortisol",
+      "origin_en": "Quang Ba Ancient Floral Village (Hanoi Heritage)",
+      "aroma_en": "Intensely elegant jasmine blossom aroma, deep relaxing",
+      "safe_en": "3 – 6g dried flower buds",
+      "part_en": "Dried unopened flower buds (Flos Jasmini)",
+      "bioAction_en": "Volatile linalool and benzyl acetate stimulate parasympathetic tone, reducing cortisol.",
+      "masking_en": "Infuses warm floral luxury that masks bitter botanical notes naturally."
+    },
+    "bach_chi": {
+      "cat_en": "Headache Relief / Open Meridians / Muscle Relaxation",
+      "origin_en": "Tam Dao Mountain Range Botanical Sanctuaries",
+      "aroma_en": "Warm mild spice, distinctive noble botanical aroma",
+      "safe_en": "3 – 8g dried sliced root",
+      "part_en": "Dried root (Radix Angelicae dahuricae)",
+      "bioAction_en": "Imperatorin and byakangelicin relieve cranial vascular spasm and sinus tension.",
+      "masking_en": "Pair with Stevia and Lemongrass to smooth out coumarin warmth."
+    },
+    "cat_sam": {
+      "cat_en": "Nourish Lungs / Boost Stamina / Physical Endurance",
+      "origin_en": "Tra My & Tay Giang Mountain Forests (Quang Nam)",
+      "aroma_en": "Warm sweet wild mountain ginseng notes",
+      "safe_en": "10 – 20g dried root",
+      "part_en": "Dried tuberous root (Radix Milletiae speciosae)",
+      "bioAction_en": "Polysaccharides and formononetin enhance natural killer cell activity and physical endurance.",
+      "masking_en": "Natural sweet profile pairs perfectly with Ginger and Monk Fruit."
+    },
+    "la_han_qua": {
+      "cat_en": "Natural Sweetener (0-Calorie) & Bitterness Masking",
+      "origin_en": "Northern High Mountain Ranges (Ha Giang, Cao Bang)",
+      "aroma_en": "Rich sun-dried monk fruit aroma, deep natural sweetness",
+      "safe_en": "1/2 – 1 fruit steeped for all-day hydration",
+      "part_en": "Dried ripe fruit (Fructus Siraitiae grosvenorii)",
+      "bioAction_en": "Mogroside V binds sweet receptors with 300x intensity of sucrose without elevating blood glucose (GI=0).",
+      "masking_en": "Supreme bitter masker across all traditional botanical formulations."
+    },
+    "atiso_do": {
+      "cat_en": "Organic Acids for hTAS2R16 Masking & Party Ruby Hue",
+      "origin_en": "Binh Thuan & Da Lat Botanical Basins (OCOP Certified)",
+      "aroma_en": "Bright tart hibiscus aroma with berry undertones",
+      "safe_en": "3 – 5 dried calyces (~3 – 5g)",
+      "part_en": "Fleshy dried calyx (Calyx Hibisci sabdariffae)",
+      "bioAction_en": "Hibiscic and citric acids lower formulation pH to 4.2, suppressing hTAS2R16 bitter receptors.",
+      "masking_en": "Key taste architect providing vibrant ruby hue and tart refreshing mocktail base."
+    },
+    "lac_tien": {
+      "cat_en": "Lower Cortisol / Natural Sedation / GABA_A Activation",
+      "origin_en": "Central Highlands & Southern Wild Hill Valleys",
+      "aroma_en": "Gentle soothing wild passionflower notes",
+      "safe_en": "8 – 15g dried aerial parts",
+      "part_en": "Dried aerial parts (Herba Passiflorae foetidae)",
+      "bioAction_en": "Vitexin binds GABA_A benzodiazepine sites, calming anxiety and facilitating slow-wave sleep.",
+      "masking_en": "Buffered with Kumquat and Stevia to eliminate wild grassy astringency."
+    },
+    "dinh_lang": {
+      "cat_en": "Cognitive Focus / Mental Alertness / Cerebral Microcirculation",
+      "origin_en": "Hai Hau (Nam Dinh) & Nghe An Heritage Plantations",
+      "aroma_en": "Subtle invigorating ginseng-herbal freshness",
+      "safe_en": "10 – 15g dried leaves (or 10 – 20g roots)",
+      "part_en": "Leaves & roots (Folium et Radix Polysciadis)",
+      "bioAction_en": "Triterpenoid saponins increase cerebral arterial blood flow, sustaining executive focus without tachycardia.",
+      "masking_en": "Paired with Lemongrass and Mountain Ginger for bright, zesty alertness."
+    },
+    "tam_sen": {
+      "cat_en": "Nerve Soothing / Stress Reduction / Heart Rhythm Balance",
+      "origin_en": "Dong Thap Muoi & Hue Ancient Lotus Basins",
+      "aroma_en": "Pure delicate young lotus aroma, smooth deep bitterness",
+      "safe_en": "1 – 3g (lightly roasted before brewing)",
+      "part_en": "Dried green lotus plumule (Embryo Nelumbinis)",
+      "bioAction_en": "Alkaloids liensinine and isoliensinine modulate cardiac ion channels, stabilizing heart rate and inducing deep sleep.",
+      "masking_en": "Requires light golden roasting and pairing with Chamomile / Licorice to smooth intense bitterness."
+    },
+    "hoa_cuc": {
+      "cat_en": "Calm Nerves / Clear Liver Heat / Protect Eyes",
+      "origin_en": "Nghia Trai Botanical Village (Hung Yen Heritage)",
+      "aroma_en": "Fresh calming chamomile fragrance, delicate sweet finish",
+      "safe_en": "5 – 10g dried flowers",
+      "part_en": "Dried flower heads (Flos Chrysanthemi indici)",
+      "bioAction_en": "Apigenin crosses blood-brain barrier to bind GABA receptors, mitigating nocturnal anxiety.",
+      "masking_en": "Pairs universally across sweet and tart herbal teas."
+    },
+    "quat_tac": {
+      "cat_en": "Citric Acid Bitter Masking & Vitamin C Immunity",
+      "origin_en": "Tien Giang & Cao Lanh Citrus Groves",
+      "aroma_en": "Crisp zesty kumquat peel citrus fragrance",
+      "safe_en": "5 – 15g fresh or 2 – 5g freeze-dried",
+      "part_en": "Whole freeze-dried fruit and peel (Fructus Citri japonicae)",
+      "bioAction_en": "Natural citric and malic acids lower pH to 4.3, directly suppressing bitter taste receptor hTAS2R16.",
+      "masking_en": "Essential acid buffer for all evening unwinding formulations."
+    },
+    "co_ngot": {
+      "cat_en": "Natural 0-Calorie Sweetness (GI=0)",
+      "origin_en": "Ha Giang & Lam Dong Clean Botanical Farms",
+      "aroma_en": "Refreshing herbal sweetness, 0 calories",
+      "safe_en": "0.5 – 1.5g dried leaves",
+      "part_en": "Dried leaves (Folium Steviae rebaudianae)",
+      "bioAction_en": "Stevioside and rebaudioside A activate sweet receptors without metabolizing into glucose.",
+      "masking_en": "Paired with trace Na+ mineral salt to eliminate any lingering metallic aftertaste."
+    },
+    "sa_chanh": {
+      "cat_en": "Aromatherapeutic Uplift / Sensory De-fatigue",
+      "origin_en": "Dak Lak & Dong Nai Heritage Farming Basins",
+      "aroma_en": "Crisp lemony aroma, invigorating freshness",
+      "safe_en": "5 – 10g dried sliced stalks",
+      "part_en": "Dried stalks and leaves (Herba Cymbopogonis citrati)",
+      "bioAction_en": "Citral and geraniol stimulate olfactory receptors to dissolve mental fatigue.",
+      "masking_en": "Blends seamlessly with Polyscias and Ginger for focused study sessions."
+    },
+    "gung_ta": {
+      "cat_en": "Digestive Warmth / Peripheral Microcirculation",
+      "origin_en": "Ky Son Highland Slopes (Nghe An)",
+      "aroma_en": "Pungent spicy warmth, aromatic gingerol notes",
+      "safe_en": "1 – 3g dried ginger slices",
+      "part_en": "Dried rhizome (Rhizoma Zingiberis)",
+      "bioAction_en": "6-Gingerol promotes vasodilation and thermogenesis, supporting sustained alertness.",
+      "masking_en": "Subtle dosing paired with Monk Fruit balances warming spice."
+    },
+    "que_tra_bong": {
+      "cat_en": "Noble Festive Spice / Insulin Sensitivity",
+      "origin_en": "Tra Bong Heritage Cinnamon Forests (Quang Ngai)",
+      "aroma_en": "Rich noble cinnamon bark sweetness, mulled wine aroma",
+      "safe_en": "0.5 – 1.5g dried bark shavings",
+      "part_en": "Dried tree bark (Cortex Cinnamomi loureiroi)",
+      "bioAction_en": "Cinnamaldehyde improves peripheral circulation and adds festive warmth to social mocktails.",
+      "masking_en": "Infuses deep holiday warmth that masks herbal grassy astringency."
+    },
+    "tao_do": {
+      "cat_en": "Replenish Qi / Spleen Tonic / Harmonize Formula",
+      "origin_en": "Clean Verified Botanical Cooperatives",
+      "aroma_en": "Sweet mellow jujube aroma, warm comforting notes",
+      "safe_en": "10 – 20g dried sliced dates",
+      "part_en": "Dried ripe fruit (Fructus Ziziphi jujubae)",
+      "bioAction_en": "Jujubosides and cyclic AMP tone digestive spleen energy and nourish the nervous system.",
+      "masking_en": "Universal harmonizer in oriental herbal formulations."
+    },
+    "ky_tu": {
+      "cat_en": "Nourish Kidney & Eye Health / Zeaxanthin Carotenoids",
+      "origin_en": "High Altitude Organic Lycium Cooperatives",
+      "aroma_en": "Gentle sweet tartness, rich fruity aroma",
+      "safe_en": "8 – 15g dried berries",
+      "part_en": "Dried ripe fruit (Fructus Lycii)",
+      "bioAction_en": "Zeaxanthin and LBP polysaccharides protect retinal cells from digital screen fatigue.",
+      "masking_en": "Adds mellow fruitiness to study and focus infusions."
+    },
+    "tra_xanh": {
+      "cat_en": "Cognitive Focus / EGCG Antioxidants / L-Theanine",
+      "origin_en": "Tan Cuong Heritage Tea Slopes (Thai Nguyen)",
+      "aroma_en": "Fresh green tea aroma, smooth vegetal umami",
+      "safe_en": "3 – 5g whole leaf",
+      "part_en": "Dried young tea leaves and buds (Folium Camelliae sinensis)",
+      "bioAction_en": "L-Theanine balances caffeine to induce calm alpha-wave focus without jitteriness.",
+      "masking_en": "Cold-brewing or pairing with Kumquat prevents excessive catechin bitterness."
+    }
+  };
   // Render Compact, Uniform Fixed-Length Herb Cards for scannability
   function renderDatabase(herbs) {
     if (!dbContainer) return;
     dbContainer.innerHTML = "";
+    const isEn = (window.currentLang === "en");
 
     if (!herbs || herbs.length === 0) {
       dbContainer.innerHTML = `
         <div style="grid-column: 1 / -1; text-align:center; padding:50px 20px; color:var(--text-muted); background:rgba(6,44,30,0.4); border-radius:20px; border:1px dashed rgba(245,158,11,0.3);">
           <div style="font-size:2.5rem; margin-bottom:12px;">🌿</div>
-          <h3 style="color:#fff; font-size:1.25rem; margin-bottom:8px;">Không tìm thấy dược liệu phù hợp</h3>
-          <p style="font-size:0.9rem;">Vui lòng thử từ khóa khác (ví dụ: Lạc Tiên, Vitexin, GABA, Đinh Lăng, Tâm Sen...)</p>
+          <h3 style="color:#fff; font-size:1.25rem; margin-bottom:8px;">${isEn ? 'No matching botanicals found' : 'Không tìm thấy dược liệu phù hợp'}</h3>
+          <p style="font-size:0.9rem;">${isEn ? 'Please try another keyword (e.g., Passionflower, Vitexin, GABA, Polyscias, Chamomile...)' : 'Vui lòng thử từ khóa khác (ví dụ: Lạc Tiên, Vitexin, GABA, Đinh Lăng, Tâm Sen...)'}</p>
         </div>
       `;
       return;
@@ -1181,10 +1374,18 @@ document.addEventListener("DOMContentLoaded", () => {
       card.setAttribute("data-herb-id", herb.id);
       card.onclick = () => window.openHerbDetailModal(herb.id);
 
+      const i18n = HERB_I18N[herb.id] || {};
+      const catLabel = isEn ? (i18n.cat_en || herb.categoryLabel) : herb.categoryLabel;
+      const origin = isEn ? (i18n.origin_en || herb.heritageOrigin) : (herb.heritageOrigin || 'Vùng Dược Liệu Bản Địa Đại Việt');
+      const aroma = isEn ? (i18n.aroma_en || herb.tasteProfile.aroma) : herb.tasteProfile.aroma;
+      const safeDose = isEn ? (i18n.safe_en || herb.safeDailyDose) : herb.safeDailyDose;
+      const herbTitle = isEn ? `${herb.enName} (${herb.name})` : herb.name;
+      const herbSubtitle = isEn ? `${herb.sciName}` : `${herb.sciName} • ${herb.enName}`;
+
       // Top 2 active phytochemical constituents as sleek pill badges
       const topPills = (herb.keyCompounds || []).slice(0, 2).map(c => `
         <span class="herb-pill-tag">
-          <strong>${c.name}</strong> <small>(${c.class || 'Hoạt chất'})</small>
+          <strong>${c.name}</strong> <small>(${c.class || (isEn ? 'Bioactive' : 'Hoạt chất')})</small>
         </span>
       `).join("");
 
@@ -1197,17 +1398,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <!-- Card Banner -->
         <div class="herb-card-banner">
           <img src="${herb.image}" alt="${herb.name}" class="herb-img" loading="lazy">
-          <span class="herb-badge-overlay">${herb.categoryLabel}</span>
+          <span class="herb-badge-overlay">${catLabel}</span>
           <span class="herb-evidence-tag">🔬 Evidence: Preclinical &amp; Traditional</span>
         </div>
 
         <!-- Card Body (Compact & Fixed Length) -->
         <div class="herb-card-body">
           <div>
-            <h3 class="herb-card-name">${herb.name}</h3>
-            <div class="herb-card-sci">${herb.sciName} • ${herb.enName}</div>
+            <h3 class="herb-card-name">${herbTitle}</h3>
+            <div class="herb-card-sci">${herbSubtitle}</div>
             <div class="herb-card-origin">
-              <span>📍</span> ${herb.heritageOrigin || 'Vùng Dược Liệu Bản Địa Đại Việt'}
+              <span>📍</span> ${origin}
             </div>
           </div>
 
@@ -1219,12 +1420,12 @@ document.addEventListener("DOMContentLoaded", () => {
           <!-- Quick Specs: Taste & Safe Dose -->
           <div class="herb-quick-specs">
             <div class="quick-spec-item">
-              <span class="quick-spec-label">Vị &amp; Độ đắng:</span>
-              <span class="quick-spec-val">Đắng ${herb.tasteProfile.bitterness}/5 • ${herb.tasteProfile.aroma}</span>
+              <span class="quick-spec-label">${isEn ? 'Taste &amp; Bitterness:' : 'Vị &amp; Độ đắng:'}</span>
+              <span class="quick-spec-val">${isEn ? 'Bitter ' : 'Đắng '}${herb.tasteProfile.bitterness}/5 • ${aroma}</span>
             </div>
             <div class="quick-spec-item">
-              <span class="quick-spec-label">Liều an toàn:</span>
-              <span class="quick-spec-val">${herb.safeDailyDose}</span>
+              <span class="quick-spec-label">${isEn ? 'Safe Daily Dose:' : 'Liều an toàn:'}</span>
+              <span class="quick-spec-val">${safeDose}</span>
             </div>
           </div>
         </div>
@@ -1232,7 +1433,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <!-- Card Footer -->
         <div class="herb-card-footer">
           <button class="btn-herb-reveal" onclick="event.stopPropagation(); window.openHerbDetailModal('${herb.id}')">
-            <span>Khám Phá Dược Điển &amp; Đơn Bào Chế</span>
+            <span>${isEn ? 'Explore Pharmacopoeia &amp; Formulation' : 'Khám Phá Dược Điển &amp; Đơn Bào Chế'}</span>
             <span class="reveal-arrow">➔</span>
           </button>
         </div>
