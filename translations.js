@@ -188,6 +188,10 @@ const I18N = {
     "about.dung_name": "Dũng",
     "about.dung_bio": "Đồng sáng lập phụ trách phân tích dữ liệu và luồng trải nghiệm người dùng. Sở hữu nền tảng kỹ thuật công nghệ vững chắc, Dũng trực tiếp thiết kế khảo sát, thu thập và bóc tách dữ liệu hành vi thực tế từ 60 bạn trẻ. Thông qua các mô hình trực quan hóa và phân tích sâu sắc, Dũng giúp đội ngũ thấu hiểu trọn vẹn nhu cầu người dùng, hoàn thiện cơ sở dữ liệu thực nghiệm và tối ưu hóa hệ thống VinaVita AI.",
     "about.ref_title": "Tài Liệu Tham Khảo Học Thuật",
+    "about.ref_list": "<li>Appel, K, Rose, T, Fiebich, B, Kammler, T, Hoffmann, C &amp; Weiss, G 2011, \'Modulation of the γ-aminobutyric acid (GABA) system by Passiflora incarnata L.\', <em>Phytotherapy Research</em>, vol. 25, no. 6, pp. 838–843.</li><li>Breslin, PAS &amp; Beauchamp, GK 1997, \'Salt enhances flavour by suppressing bitterness\', <em>Nature</em>, vol. 387, no. 6633, p. 563.</li><li>Đỗ, TL 2004, <em>Những cây thuốc và vị thuốc Việt Nam</em>, Nhà xuất bản Y học, Hà Nội.</li><li>Nguyễn, TTH, Nguyễn, QH &amp; Trần, VS 2020, \'Phytochemical constituents and biological activities of Passiflora foetida L. in Vietnam\', <em>Vietnam Journal of Science and Technology</em>, vol. 58, no. 4, pp. 412–420.</li><li>World Health Organization (WHO) 2024, <em>Global status report on alcohol and health and treatment of substance use disorders</em>, World Health Organization, Geneva.</li>",
+    "modal.close": "Đóng hồ sơ",
+    "chat.btn_minimize": "Thu nhỏ",
+    "chat.btn_close": "Đóng",
 
     // Order Modal
     "order.title": "Đặt Gói Sachet VinaVita Đong Sẵn",
@@ -473,6 +477,10 @@ const I18N = {
     "about.dung_name": "Dũng",
     "about.dung_bio": "Co-founder leading Data Analytics & UX Flow. Possessing strong technical engineering expertise, Dũng designed user surveys, gathered and dissected behavioral datasets from 60 youth respondents, and optimized the VinaVita AI interaction pipeline.",
     "about.ref_title": "Academic References & Literature",
+    "about.ref_list": "<li>Appel, K, Rose, T, Fiebich, B, Kammler, T, Hoffmann, C &amp; Weiss, G 2011, \'Modulation of the γ-aminobutyric acid (GABA) system by Passiflora incarnata L.\', <em>Phytotherapy Research</em>, vol. 25, no. 6, pp. 838–843.</li><li>Breslin, PAS &amp; Beauchamp, GK 1997, \'Salt enhances flavour by suppressing bitterness\', <em>Nature</em>, vol. 387, no. 6633, p. 563.</li><li>Do, TL 2004, <em>Medicinal Plants and Traditional Remedies of Vietnam</em>, Medical Publishing House, Hanoi.</li><li>Nguyen, TTH, Nguyen, QH &amp; Tran, VS 2020, \'Phytochemical constituents and biological activities of Passiflora foetida L. in Vietnam\', <em>Vietnam Journal of Science and Technology</em>, vol. 58, no. 4, pp. 412–420.</li><li>World Health Organization (WHO) 2024, <em>Global status report on alcohol and health and treatment of substance use disorders</em>, World Health Organization, Geneva.</li>",
+    "modal.close": "Close Dossier",
+    "chat.btn_minimize": "Minimize",
+    "chat.btn_close": "Close",
 
     // Order Modal
     "order.title": "Order Pre-Portioned VinaVita Sachet Box",
