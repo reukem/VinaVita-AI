@@ -1111,9 +1111,15 @@ const MEDICINAL_DATABASE = [
     "category": "flavor",
     "categoryLabel": "Chất Ngọt Tự Nhiên (0-Calorie) & Khử Đắng",
     "heritageOrigin": "Vùng núi cao phía Bắc Việt Nam (OCOP)",
-    "tasteProfile": "Vị ngọt thanh dịu đậm, hậu vị mát lành, quy kinh phế & tỳ",
+    "tasteProfile": {
+      "bitterness": 0,
+      "astringency": 0,
+      "sweetness": 5,
+      "aroma": "Thơm ngát quả chín tự nhiên, ngọt đậm sâu"
+    },
     "traditionalTaste": "Vị ngọt đậm, tính mát; quy kinh phế và tỳ",
     "activeCompounds": "Mogroside V (ngọt gấp 300 lần đường mía, 0-calorie)",
+    "partUsed": "Quả chín sấy khô (Fructus Siraitiae grosvenorii)",
     "keyCompounds": [
       {
         "name": "Mogroside V",
@@ -1128,7 +1134,15 @@ const MEDICINAL_DATABASE = [
     ],
     "biologicalRole": "Tạo vị ngọt sâu tự nhiên, khử đắng thảo mộc trung ương mà hoàn toàn không tăng đường huyết (GI=0)",
     "preclinicalEvidence": "Chống oxy hóa, kháng viêm đường hô hấp, ức chế tín hiệu đắng (Tan et al. 2024)",
-    "contraindications": "An toàn cao cho mọi đối tượng, người tỳ vị hư hàn nặng nên dùng lượng vừa phải",
+    "contraindications": [
+      "An toàn cao cho mọi đối tượng",
+      "Người tỳ vị hư hàn nặng nên dùng lượng vừa phải (dưới 3g/ngày)"
+    ],
+    "maskingRules": [
+      "Mogroside V ngọt gấp 300 lần đường mía, khử đắng thảo mộc trung ương hoàn hảo mà hoàn toàn không tăng đường huyết (GI=0)",
+      "Phối hợp tuyệt vời với Lạc Tiên, Hoa Cúc, Đinh Lăng để làm mượt mà hậu vị thảo mộc"
+    ],
+    "mindfulReminder": "Vị ngọt thanh lành không năng lượng thừa từ La Hán Quả nuôi dưỡng thân tâm an tịnh, giúp buông bỏ áp lực và tìm lại sự nhẹ nhõm giữa đời thường.",
     "safeCulinaryDose": "1.0g – 2.0g sấy khô",
     "safeDailyDose": "1.0g – 2.0g sấy khô (Tối đa 3.0g/ngày)",
     "origin": "Vùng núi cao phía Bắc Việt Nam (OCOP)",
@@ -1142,9 +1156,15 @@ const MEDICINAL_DATABASE = [
     "category": "flavor",
     "categoryLabel": "Axit Hữu Cơ Ức Chế hTAS2R16 & Sắc Tố Ruby",
     "heritageOrigin": "Vùng Trồng Dược Liệu Bình Thuận & Đà Lạt (OCOP)",
-    "tasteProfile": "Vị chua thanh mát, sắc đỏ Ruby tự nhiên, quy kinh can & đại tràng",
+    "tasteProfile": {
+      "bitterness": 0,
+      "astringency": 1,
+      "sweetness": 1,
+      "aroma": "Thơm chua thanh mát hoa dâm bụt đỏ, hậu vị thanh lọc sảng khoái"
+    },
     "traditionalTaste": "Vị chua thanh mát, tính bình; quy kinh can và đại tràng",
     "activeCompounds": "Anthocyanin, Axit Hibiscic, Axit Citric, Vitamin C",
+    "partUsed": "Đài hoa mọng nước sấy lạnh (Calyx Hibisci sabdariffae)",
     "keyCompounds": [
       {
         "name": "Anthocyanin (Delphinidin-3-sambubioside)",
@@ -1159,7 +1179,15 @@ const MEDICINAL_DATABASE = [
     ],
     "biologicalRole": "Tạo sắc đỏ Ruby tự nhiên cho mocktail; axit hữu cơ đưa pH về 4.2–4.5 trực tiếp ức chế thụ thể vị đắng hTAS2R16",
     "preclinicalEvidence": "Hạ mỡ máu, bảo vệ gan, giảm huyết áp nhẹ qua giãn mạch ngoại vi (Sotoyama et al. 2017)",
-    "contraindications": "Người huyết áp thấp nặng (Hypotension) hoặc viêm loét dạ dày cấp nên giảm liều",
+    "contraindications": [
+      "Người huyết áp thấp nặng (Hypotension) nên kết hợp thêm Hoa Cúc hoặc dùng liều thấp",
+      "Người viêm loét dạ dày cấp nên dùng sau khi ăn no"
+    ],
+    "maskingRules": [
+      "Axit Hibiscic và Axit Citric tự nhiên đưa pH dung dịch trà về 4.2–4.5, trực tiếp ức chế thụ thể vị đắng hTAS2R16 trên gai lưỡi",
+      "Kết hợp hoàn hảo với Lạc Tiên và Quế Trà Bồng tạo nên ly Mocktail sắc đỏ Ruby dạ tiệc thượng hạng"
+    ],
+    "mindfulReminder": "Sắc đỏ Ruby rực rỡ và vị chua thanh mát đánh thức từng giác quan, mang lại niềm vui tươi mới và năng lượng tích cực cho những buổi chuyện trò sum vầy.",
     "safeCulinaryDose": "1.0g – 2.2g đài hoa khô",
     "safeDailyDose": "1.0g – 2.2g đài hoa khô (EFSA/EMA ngưỡng ẩm thực an toàn)",
     "origin": "Bình Thuận, Đà Lạt (OCOP)",
@@ -1173,9 +1201,20 @@ const MEDICINAL_DATABASE = [
     "category": "flavor",
     "categoryLabel": "Nốt Hương Ấm Mulled Wine & Tuần Hoàn",
     "heritageOrigin": "Trà Bồng, Quảng Ngãi (Di Sản Chỉ Dẫn Địa Lý Quốc Gia)",
-    "tasteProfile": "Vị cay ngọt nồng ấm, hậu vị đậm đà, quy kinh thận, tỳ, tâm, can",
+    "tasteProfile": {
+      "bitterness": 0,
+      "astringency": 1,
+      "sweetness": 3,
+      "aroma": "Hương quế nồng ấm quý phái, vị cay ngọt đậm đà"
+    },
     "traditionalTaste": "Vị cay ngọt nồng, tính ấm; quy kinh thận, tỳ, tâm, can",
     "activeCompounds": "Cinnamaldehyde (hàm lượng tinh dầu cao)",
+    "partUsed": "Vỏ thân cây quế sấy khô (Cortex Cinnamomi)",
+    "maskingRules": [
+      "Hương thơm quý phái và nốt cay ấm nồng che giấu hoàn hảo mùi ngái cỏ cây tự nhiên của thảo dược",
+      "Phối hợp ăn ý với Atiso Đỏ và La Hán Quả tạo phong vị rượu vang nóng Mulled Wine 0% cồn"
+    ],
+    "mindfulReminder": "Hương thơm mộc mạc của quế nhà nhắc ta nhớ về những điều bình dị thiêng liêng nhất, giải tỏa mọi căng thẳng nơi đô thị ồn ào.",
     "keyCompounds": [
       {
         "name": "Cinnamaldehyde",

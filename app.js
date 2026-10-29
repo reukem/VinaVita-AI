@@ -1449,7 +1449,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="herb-quick-specs">
             <div class="quick-spec-item">
               <span class="quick-spec-label">${isEn ? 'Taste &amp; Bitterness:' : 'Vị &amp; Độ đắng:'}</span>
-              <span class="quick-spec-val">${isEn ? 'Bitter ' : 'Đắng '}${herb.tasteProfile.bitterness}/5 • ${aroma}</span>
+              <span class="quick-spec-val">${isEn ? 'Bitter ' : 'Đắng '}${(herb.tasteProfile && typeof herb.tasteProfile.bitterness === 'number') ? herb.tasteProfile.bitterness : 0}/5 • ${aroma}</span>
             </div>
             <div class="quick-spec-item">
               <span class="quick-spec-label">${isEn ? 'Safe Daily Dose:' : 'Liều an toàn:'}</span>
@@ -1487,7 +1487,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const safeDose = isEn ? (i18n.safe_en || herb.safeDailyDose) : herb.safeDailyDose;
     const partUsed = isEn ? (i18n.part_en || herb.partUsed) : herb.partUsed;
     const bioAction = isEn ? (i18n.bioAction_en || herb.bioAction) : (herb.bioAction || 'Thuật toán VinaVita AI đối soát trực tiếp nồng độ hoạt chất với thụ thể thần kinh, bảo toàn hoạt tính sinh học theo tiêu chuẩn Dược điển Việt Nam.');
-    const masking = isEn ? (i18n.masking_en || herb.maskingRules.join('. ')) : herb.maskingRules.join('. ');
+    const masking = isEn
+      ? (i18n.masking_en || (Array.isArray(herb.maskingRules) ? herb.maskingRules.join('. ') : (herb.maskingRules || 'Natural food science synergy.')))
+      : (Array.isArray(herb.maskingRules) ? herb.maskingRules.join('. ') : (herb.maskingRules || 'Quy tắc phối vị điều hòa vị đắng.'));
 
     const compoundsRows = herb.keyCompounds.map(c => `
       <tr>
@@ -1497,7 +1499,9 @@ document.addEventListener("DOMContentLoaded", () => {
       </tr>
     `).join("");
 
-    const warningsList = herb.contraindications.join("; ");
+    const warningsList = Array.isArray(herb.contraindications)
+      ? herb.contraindications.join("; ")
+      : (herb.contraindications || "");
 
     herbModalContent.innerHTML = `
       <!-- Top Hero Banner with Botanical Photo -->
@@ -1539,7 +1543,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="brew-specs-box" style="margin-bottom:16px;">
         <div class="brew-spec-item"><span>${isEn ? 'Part Used:' : 'Bộ phận dùng:'}</span><strong>${partUsed}</strong></div>
         <div class="brew-spec-item"><span>${isEn ? 'Safe Daily Dose:' : 'Liều dùng an toàn:'}</span><strong>${safeDose}</strong></div>
-        <div class="brew-spec-item"><span>${isEn ? 'Taste &amp; Sensory:' : 'Vị giác &amp; Cảm quan:'}</span><strong>${isEn ? 'Bitter ' : 'Đắng '}${herb.tasteProfile.bitterness}/5 | ${aroma}</strong></div>
+        <div class="brew-spec-item"><span>${isEn ? 'Taste &amp; Sensory:' : 'Vị giác &amp; Cảm quan:'}</span><strong>${isEn ? 'Bitter ' : 'Đắng '}${(herb.tasteProfile && typeof herb.tasteProfile.bitterness === 'number') ? herb.tasteProfile.bitterness : 0}/5 | ${aroma}</strong></div>
       </div>
 
       <!-- Renovated Emerald Box (Image 1 Style): Biochemical & Receptor Synergy -->
