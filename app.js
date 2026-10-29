@@ -817,7 +817,7 @@ document.addEventListener("DOMContentLoaded", () => {
       biochem = `${customNote} ${biochem}`;
     }
 
-    return {
+    const resultObj = {
       sku,
       title,
       subtitle,
@@ -831,6 +831,136 @@ document.addEventListener("DOMContentLoaded", () => {
       biochem,
       matchedSachet
     };
+
+    if (window.currentLang === "en") {
+      if (sku === "01") {
+        resultObj.badge = "⭐ HERO SKU #01 • SLEEP & UNWIND";
+        resultObj.brewTemp = "85°C (Preserving Flavonoids & Apigenin)";
+        resultObj.brewTime = "3 – 5 mins (Cornstarch PLA Sachet 5.3g)";
+        resultObj.serving = "Pour over 100g ice cubes, garnish with a kumquat wheel (0.0% Alcohol)";
+        if (title.includes("Citrus")) {
+          resultObj.title = "Citrus Twilight Mocktail (VinaVita #01 — pH 4.3)";
+          resultObj.subtitle = "The 'Sleep & Unwind' Pack • Nighttime Sleep & De-Stress (0.0% Alcohol | 0g Sugar)";
+          resultObj.biochem = "Standardized formula per Proposal Slide 7: Freeze-dried kumquat buffers infusion pH to 4.3 to inhibit hTAS2R16 bitterness receptors, pairing with Vitexin from Passionflower and Apigenin from Chamomile for natural sleep onset without sedatives or refined sugar.";
+          resultObj.matchedSachet = {
+            name: "Box of 5 Pyramid Sachets #01 — Citrus Twilight",
+            specs: "Bio-based PLA sachet 5.30g • 69,000 VND / Box of 5 (13,800 VND/cup)",
+            orderData: "Box of 5 Sachets #01 - Citrus Twilight (69,000 VND)"
+          };
+        } else if (title.includes("Minty")) {
+          resultObj.title = "Cool-Minty Twilight Mocktail (VinaVita #01 — 5.3g)";
+          resultObj.subtitle = "The 'Sleep & Unwind' Pack • Crisp Peppermint for Restful Sleep (0.0% Alcohol)";
+          resultObj.biochem = "Cool-Minty variant: 1.0g native Peppermint activates cooling TRPM8 receptors, working synergistically with Passionflower to alleviate tension headaches.";
+          resultObj.matchedSachet = {
+            name: "Box of 5 Pyramid Sachets #01 — Minty Twilight",
+            specs: "Bio-based PLA sachet 5.30g • 69,000 VND / Box of 5",
+            orderData: "Box of 5 Sachets #01 - Minty Twilight (69,000 VND)"
+          };
+        } else if (title.includes("Floral")) {
+          resultObj.title = "Floral Blossom Twilight (VinaVita #01 — 5.3g)";
+          resultObj.subtitle = "The 'Sleep & Unwind' Pack • Delicate Floral Aroma for Peaceful Unwind (0.0% Alcohol)";
+          resultObj.biochem = "Floral Breeze variant: Selected Jasmine and White Chrysanthemum foster relaxing Alpha brainwaves prior to natural sleep.";
+          resultObj.matchedSachet = {
+            name: "Box of 5 Pyramid Sachets #01 — Floral Twilight",
+            specs: "Bio-based PLA sachet 5.30g • 69,000 VND / Box of 5",
+            orderData: "Box of 5 Sachets #01 - Floral Twilight (69,000 VND)"
+          };
+        } else {
+          resultObj.title = "Mellow-Sweet Twilight (VinaVita #01 — 5.3g)";
+          resultObj.subtitle = "The 'Sleep & Unwind' Pack • Mellow Sweet Tonifying Night Elixir (0.0% Alcohol)";
+          resultObj.biochem = "Mellow-Sweet variant: Natural sweetness from Monk Fruit and Red Dates harmonizes with Passionflower, comforting the stomach and facilitating deep sleep.";
+          resultObj.matchedSachet = {
+            name: "Box of 5 Pyramid Sachets #01 — Mellow Twilight",
+            specs: "Bio-based PLA sachet 5.30g • 69,000 VND / Box of 5",
+            orderData: "Box of 5 Sachets #01 - Mellow Twilight (69,000 VND)"
+          };
+        }
+      } else if (sku === "02") {
+        resultObj.badge = "⚡ HERO SKU #02 • DEADLINE SURVIVOR";
+        resultObj.brewTemp = "90°C (Full Saponin & Essential Oil Extraction)";
+        resultObj.brewTime = "3 Mins (Biodegradable PLA Sachet 5.3g)";
+        resultObj.serving = "Enjoy warm or pour over ice rocks for an invigorating tonic";
+        if (title.includes("Minty")) {
+          resultObj.title = "Deadline Survivor Cool-Minty Brew (VinaVita #02 — 5.3g)";
+          resultObj.subtitle = "The 'Deadline & Exam' Pack • Crisp Awakening Focus (4h Alertness without Jitters)";
+          resultObj.biochem = "Healthy alertness solution for students: Combines Southern Ginseng Saponins with 1.0g cooling Peppermint, providing sustained focus without synthetic caffeine, tremors, or crashes.";
+          resultObj.matchedSachet = {
+            name: "Box of 5 Pyramid Sachets #02 — Deadline Survivor (Cool-Minty)",
+            specs: "Bio-based PLA sachet 5.30g • 69,000 VND / Box of 5",
+            orderData: "Box of 5 Sachets #02 - Deadline Survivor Minty (69,000 VND)"
+          };
+        } else if (title.includes("Citrus")) {
+          resultObj.title = "Deadline Survivor Citrus Boost (VinaVita #02 — 5.3g)";
+          resultObj.subtitle = "The 'Deadline & Exam' Pack • Tart Refreshing Focus (4h Alertness without Jitters)";
+          resultObj.biochem = "Combines Polyscias Saponins with refreshing freeze-dried kumquat citrus acidity, sustaining high focus throughout 4-hour study sessions.";
+          resultObj.matchedSachet = {
+            name: "Box of 5 Pyramid Sachets #02 — Deadline Survivor",
+            specs: "Bio-based PLA sachet 5.30g • 69,000 VND / Box of 5",
+            orderData: "Box of 5 Sachets #02 - Deadline Survivor (69,000 VND)"
+          };
+        } else if (title.includes("Floral")) {
+          resultObj.title = "Deadline Survivor Floral Focus (VinaVita #02 — 5.3g)";
+          resultObj.subtitle = "The 'Deadline & Exam' Pack • Chrysanthemum Eye-Relief Focus (4h Alertness)";
+          resultObj.biochem = "Specially formulated for screen-heavy studying: White Chrysanthemum eases ocular strain while Polyscias enhances cerebral blood flow.";
+          resultObj.matchedSachet = {
+            name: "Box of 5 Pyramid Sachets #02 — Floral Focus",
+            specs: "Bio-based PLA sachet 5.30g • 69,000 VND / Box of 5",
+            orderData: "Box of 5 Sachets #02 - Floral Focus (69,000 VND)"
+          };
+        } else {
+          resultObj.title = "Deadline Survivor Mellow Sweet (VinaVita #02 — 5.3g)";
+          resultObj.subtitle = "The 'Deadline & Exam' Pack • Gentle Sustained Focus for Finals (4h Alertness)";
+          resultObj.biochem = "Mellow Monk Fruit sweetness pairs with Polyscias and Lemongrass, delivering steady cerebral fuel without sugar spikes.";
+          resultObj.matchedSachet = {
+            name: "Box of 5 Pyramid Sachets #02 — Mellow Focus",
+            specs: "Bio-based PLA sachet 5.30g • 69,000 VND / Box of 5",
+            orderData: "Box of 5 Sachets #02 - Mellow Focus (69,000 VND)"
+          };
+        }
+      } else if (sku === "03") {
+        resultObj.badge = "🍷 HERO SKU #03 • 0% PARTY & CHILL";
+        resultObj.brewTemp = "85°C (Anthocyanin & Essential Oil Extraction)";
+        resultObj.brewTime = "4 Mins (Deep Ruby Botanical Extraction)";
+        resultObj.serving = "Shake with ice, splash with sparkling soda and a sprig of rosemary (0.0% Alcohol)";
+        resultObj.title = "Berry Social Glow Mocktail (VinaVita #03 — 0.0% Alcohol)";
+        resultObj.subtitle = "The '0% Party & Social Chill' Pack • Hangout & Social Chill (0.0% Alcohol | 0g Sugar)";
+        resultObj.biochem = "Anthocyanins yield vivid ruby party colors; Vitexin engages GABA_A receptors to foster warm social relaxation, substituting alcoholic drinks safely with zero intoxication or hangover.";
+        resultObj.matchedSachet = {
+          name: "Box of 5 Pyramid Sachets #03 — Berry Social Glow",
+          specs: "Bio-based PLA sachet 5.50g • 69,000 VND / Box of 5 (13,800 VND/cup)",
+          orderData: "Box of 5 Sachets #03 - Berry Social Glow (69,000 VND)"
+        };
+      }
+
+      // Localize herb names in formula
+      const herbTranslations = [
+        ["Lạc Tiên", "Passionflower (Lạc Tiên)"],
+        ["Hoa Cúc Vàng", "Imperial White Chrysanthemum"],
+        ["Hoa Cúc Trắng", "Imperial White Chrysanthemum"],
+        ["Tắc Sấy Lạnh", "Freeze-dried Kumquat"],
+        ["Cỏ Ngọt", "Natural Stevia Leaf"],
+        ["Muối Khoáng", "Purified Mineral Salt (Na+)"],
+        ["Đinh Lăng", "Polyscias Ginseng Leaf"],
+        ["Sả Chanh", "Indigenous Lemongrass"],
+        ["Gừng Núi", "Mountain Ginger"],
+        ["La Hán Quả", "Ancestral Monk Fruit"],
+        ["Atiso Đỏ", "Roselle Hibiscus (Atiso Đỏ)"],
+        ["Quế", "Trà Bồng Cinnamon Bark"],
+        ["Bạc Hà", "Native Peppermint"],
+        ["Hoa Nhài", "Imperial Jasmine"],
+        ["Táo Đỏ", "Jujube Red Dates"],
+        ["Dâu Tằm", "Black Mulberry"]
+      ];
+      resultObj.formula.forEach(item => {
+        for (const [vi, en] of herbTranslations) {
+          if (item.name && item.name.includes(vi)) {
+            item.name = item.name.replace(vi, en);
+          }
+        }
+      });
+    }
+
+    return resultObj;
   }
 
   window.refreshCurrentFormulation = function() {
@@ -960,9 +1090,9 @@ document.addEventListener("DOMContentLoaded", () => {
           <table class="formula-table" style="margin-bottom:16px;">
             <thead>
               <tr>
-                <th>DƯỢC LIỆU BẢN ĐỊA</th>
-                <th style="text-align:center;">ĐỊNH LƯỢNG</th>
-                <th>VAI TRÒ SINH HỌC &amp; VỊ GIÁC</th>
+                <th>${isEn ? 'INDIGENOUS BOTANICAL' : 'DƯỢC LIỆU BẢN ĐỊA'}</th>
+                <th style="text-align:center;">${isEn ? 'DOSAGE' : 'ĐỊNH LƯỢNG'}</th>
+                <th>${isEn ? 'BIOCHEMICAL & TASTE ROLE' : 'VAI TRÒ SINH HỌC & VỊ GIÁC'}</th>
               </tr>
             </thead>
             <tbody>
@@ -972,13 +1102,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
           ${drink.brewSpecs ? `
           <div class="brew-specs-box" style="margin-bottom:16px;">
-            <div class="brew-spec-item"><span>Nhiệt độ nước tối ưu:</span><strong>${drink.brewSpecs.waterTemp}</strong></div>
-            <div class="brew-spec-item"><span>Thời gian hãm chiết xuất:</span><strong>${drink.brewSpecs.steepingTime}</strong></div>
-            <div class="brew-spec-item"><span>Cách thức thưởng thức:</span><strong>${drink.brewSpecs.servingStyle}</strong></div>
+            <div class="brew-spec-item"><span>${isEn ? 'Optimal Water Temp:' : 'Nhiệt độ nước tối ưu:'}</span><strong>${drink.brewSpecs.waterTemp}</strong></div>
+            <div class="brew-spec-item"><span>${isEn ? 'Steeping Time:' : 'Thời gian hãm chiết xuất:'}</span><strong>${drink.brewSpecs.steepingTime}</strong></div>
+            <div class="brew-spec-item"><span>${isEn ? 'Serving Style:' : 'Cách thức thưởng thức:'}</span><strong>${drink.brewSpecs.servingStyle}</strong></div>
           </div>` : ''}
 
           <div class="biochem-box" style="margin-bottom:18px;">
-            <strong>🔬 Cơ Chế Dược Lý &amp; Vị Giác:</strong>
+            <strong>${isEn ? '🔬 Biochemical & Taste Mechanism:' : '🔬 Cơ Chế Dược Lý & Vị Giác:'}</strong>
             <div style="margin-top:4px;">${drink.biochemicalSummary}</div>
           </div>
         </div>
@@ -986,9 +1116,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="sig-footer" style="border-top:1px solid rgba(245,158,11,0.25); padding-top:16px;">
           <div class="sachet-price-wrap">
             <span class="sachet-price-val">${drink.sachetPrice}</span>
-            <span class="sachet-unit">Đóng gói màng nhôm bảo quản dược tính</span>
+            <span class="sachet-unit">${isEn ? 'Aluminum barrier sachet packaging' : 'Đóng gói màng nhôm bảo quản dược tính'}</span>
           </div>
-          <button class="btn-primary-action btn-order-trigger" data-drink="${drink.name}">🛒 Đặt Gói Sachet</button>
+          <button class="btn-primary-action btn-order-trigger" data-drink="${drink.name}">${isEn ? '🛒 Order Sachet' : '🛒 Đặt Gói Sachet'}</button>
         </div>
       `;
       sigContainer.appendChild(card);
