@@ -1467,15 +1467,20 @@ document.addEventListener("DOMContentLoaded", () => {
       history: []
     };
 
+    let currentAiNodeType = "gemini";
     function updateAiNodeBadges(nodeType) {
-      if (nodeType === "gemini") {
+      if (nodeType) currentAiNodeType = nodeType;
+      const isEn = (window.currentLang === "en");
+      if (currentAiNodeType === "gemini") {
         cloudAiOnline = true;
         if (statusDot) {
           statusDot.style.background = "#10b981";
           statusDot.style.boxShadow = "0 0 8px #10b981";
         }
         if (statusText) {
-          statusText.textContent = "🟢 Cloud Neural AI Online (Gemini 2.5 Flash + Dược Điển RAG) • AI có thể mắc lỗi, kiểm tra lại thông tin";
+          statusText.textContent = isEn
+            ? "🟢 Cloud Neural AI Online (Gemini 2.5 Flash + Pharmacopoeia RAG) • AI may make errors, verify info"
+            : "🟢 Cloud Neural AI Online (Gemini 2.5 Flash + Dược Điển RAG) • AI có thể mắc lỗi, kiểm tra lại thông tin";
         }
         if (navAiNodeDot) {
           navAiNodeDot.style.background = "#10b981";
@@ -1484,14 +1489,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (navAiNodeText) {
           navAiNodeText.textContent = "Gemini 2.5 Flash";
         }
-      } else if (nodeType === "chatgpt") {
+      } else if (currentAiNodeType === "chatgpt") {
         cloudAiOnline = true;
         if (statusDot) {
           statusDot.style.background = "#06b6d4";
           statusDot.style.boxShadow = "0 0 8px #06b6d4";
         }
         if (statusText) {
-          statusText.textContent = "🟢 Cloud Neural AI Online (ChatGPT / GPT-OSS + Dược Điển RAG) • AI có thể mắc lỗi, kiểm tra lại thông tin";
+          statusText.textContent = isEn
+            ? "🟢 Cloud Neural AI Online (ChatGPT / GPT-OSS + Pharmacopoeia RAG) • AI may make errors, verify info"
+            : "🟢 Cloud Neural AI Online (ChatGPT / GPT-OSS + Dược Điển RAG) • AI có thể mắc lỗi, kiểm tra lại thông tin";
         }
         if (navAiNodeDot) {
           navAiNodeDot.style.background = "#06b6d4";
@@ -1507,17 +1514,20 @@ document.addEventListener("DOMContentLoaded", () => {
           statusDot.style.boxShadow = "0 0 8px #fbbf24";
         }
         if (statusText) {
-          statusText.textContent = "⚡ Offline Clinical RAG Mode • AI có thể mắc lỗi, kiểm tra lại thông tin";
+          statusText.textContent = isEn
+            ? "⚡ Offline Clinical RAG Mode • AI may make errors, verify info"
+            : "⚡ Offline Clinical RAG Mode • AI có thể mắc lỗi, kiểm tra lại thông tin";
         }
         if (navAiNodeDot) {
           navAiNodeDot.style.background = "#fbbf24";
           navAiNodeDot.style.boxShadow = "0 0 8px #fbbf24";
         }
         if (navAiNodeText) {
-          navAiNodeText.textContent = "Offline RAG";
+          navAiNodeText.textContent = isEn ? "Offline RAG" : "Offline RAG";
         }
       }
     }
+    window.refreshChatbotAiBadge = () => updateAiNodeBadges();
 
     async function checkSlmStatus() {
       try {
@@ -1602,12 +1612,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function appendUserMessage(text) {
       if (!chatMessages) return;
+      const isEn = (window.currentLang === "en");
+      const userAuthor = isEn ? "You (Gen-Z)" : "Bạn (Gen-Z)";
       const msgDiv = document.createElement("div");
       msgDiv.className = "chat-msg user";
       msgDiv.innerHTML = `
         <div class="msg-avatar">👤</div>
         <div class="msg-bubble">
-          <div class="msg-author">Bạn (Gen-Z)</div>
+          <div class="msg-author">${userAuthor}</div>
           <p>${escapeHtml(text)}</p>
         </div>
       `;
@@ -1617,12 +1629,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function appendBotMessage(htmlContent) {
       if (!chatMessages) return;
+      const isEn = (window.currentLang === "en");
+      const botAuthor = isEn ? "VinaVita AI Pharmacist" : "AI Dược Sĩ VinaVita";
       const msgDiv = document.createElement("div");
       msgDiv.className = "chat-msg bot";
       msgDiv.innerHTML = `
         <div class="msg-avatar">🌿</div>
         <div class="msg-bubble">
-          <div class="msg-author">AI Dược Sĩ VinaVita</div>
+          <div class="msg-author">${botAuthor}</div>
           ${htmlContent}
         </div>
       `;
@@ -1632,6 +1646,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function showTypingIndicator() {
       if (!chatMessages) return null;
+      const isEn = (window.currentLang === "en");
+      const typingText = isEn
+        ? "Analyzing constitution &amp; querying Pharmacopoeia..."
+        : "Đang phân tích cơ địa &amp; tra cứu Dược điển...";
       const typingDiv = document.createElement("div");
       typingDiv.className = "chat-msg bot typing-msg";
       typingDiv.innerHTML = `
@@ -1641,7 +1659,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <span class="typing-dot"></span>
             <span class="typing-dot"></span>
             <span class="typing-dot"></span>
-            <span style="font-size:0.75rem; color:var(--emerald-light); margin-left:6px;">Đang phân tích cơ địa &amp; tra cứu Dược điển...</span>
+            <span style="font-size:0.75rem; color:var(--emerald-light); margin-left:6px;">${typingText}</span>
           </div>
         </div>
       `;
