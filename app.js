@@ -1610,7 +1610,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <!-- Action Buttons Row (Image 1 Style) -->
       <div class="action-row" style="margin-top:20px;">
-        <button class="btn-secondary" onclick="window.print()">${isEn ? '📥 Download Botanical Dossier (PDF)' : '📥 Tải Hồ Sơ Dược Liệu (PDF)'}</button>
+        <button class="btn-secondary" onclick="window.printHerbDossierPdf('${herb.id}')">${isEn ? '📥 Download Botanical Dossier (PDF)' : '📥 Tải Hồ Sơ Dược Liệu (PDF)'}</button>
         <button class="btn-primary-action" onclick="window.useHerbInMixologist('${herb.id}')">${isEn ? '🧪 Deploy to AI Mixology Studio' : '🧪 Đưa Vào Phòng Thí Nghiệm AI (Pha Chế)'}</button>
       </div>
     `;
@@ -1635,6 +1635,172 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target === herbModal) herbModal.classList.remove("active");
     });
   }
+
+  // Standalone High-Fidelity 1-Page Printable Botanical Monograph Generator
+  window.printHerbDossierPdf = function(herbId) {
+    if (typeof MEDICINAL_DATABASE === "undefined") return;
+    const herb = MEDICINAL_DATABASE.find(h => h.id === herbId);
+    if (!herb) return;
+
+    const isEn = (window.currentLang === "en");
+    const i18n = (typeof HERB_I18N !== "undefined" && HERB_I18N[herb.id]) ? HERB_I18N[herb.id] : {};
+
+    const herbTitle = isEn ? `${herb.enName} (${herb.name})` : `${herb.name} (${herb.enName})`;
+    const catLabel = isEn ? (i18n.cat_en || herb.categoryLabel) : herb.categoryLabel;
+    const origin = isEn ? (i18n.origin_en || herb.heritageOrigin) : (herb.heritageOrigin || 'Đại Việt Heritage Botanical Region');
+    const aroma = isEn ? (i18n.aroma_en || (herb.tasteProfile && herb.tasteProfile.aroma) || '') : ((herb.tasteProfile && herb.tasteProfile.aroma) || '');
+    const safeDose = isEn ? (i18n.safe_en || herb.safeDailyDose) : herb.safeDailyDose;
+    const partUsed = isEn ? (i18n.part_en || herb.partUsed) : herb.partUsed;
+    const bioAction = isEn ? (i18n.bioAction_en || herb.bioAction) : (herb.bioAction || 'Thuật toán VinaVita AI chuẩn hóa nồng độ hoạt chất theo Dược điển Việt Nam V.');
+    const masking = isEn ? (i18n.masking_en || (Array.isArray(herb.maskingRules) ? herb.maskingRules.join('. ') : (herb.maskingRules || 'Natural pH 4.2-4.5 taste modulation.'))) : (Array.isArray(herb.maskingRules) ? herb.maskingRules.join('. ') : (herb.maskingRules || 'Quy tắc phối vị khử đắng tự nhiên.'));
+    const warnings = Array.isArray(herb.contraindications) ? herb.contraindications.join('; ') : (herb.contraindications || (isEn ? 'Standard culinary safety precautions apply.' : 'Sử dụng đúng liều khuyến nghị.'));
+    const mindfulQuote = isEn ? (i18n.mindful_en || herb.mindfulReminder_en || 'Mindful herbal nourishment connects us to ancestral wisdom and gentle restorative peace.') : (herb.mindfulReminder || 'Thưởng thức thảo mộc trong chánh niệm là biểu hiện của sự trân quý sức khỏe.');
+
+    const compoundsRows = (herb.keyCompounds || []).map(c => `
+      <tr>
+        <td style="padding:6px 10px; font-weight:700; color:#064e3b; border-bottom:1px solid #e2e8f0;">${c.name}</td>
+        <td style="padding:6px 10px; color:#475569; border-bottom:1px solid #e2e8f0;"><span style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:0.78rem;">${c.class || (isEn ? 'Bioactive' : 'Hoạt chất')}</span></td>
+        <td style="padding:6px 10px; color:#334155; border-bottom:1px solid #e2e8f0; font-size:0.82rem; line-height:1.45;">${c.action}</td>
+      </tr>
+    `).join('');
+
+    const printHtml = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>VinaVita Botanical Monograph — ${herb.name}</title>
+  <style>
+    @page { size: A4 portrait; margin: 12mm 15mm; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1e293b; background: #fff; margin: 0; padding: 0; font-size: 9.5pt; line-height: 1.45; }
+    .monograph-header { border-bottom: 2.5px solid #065f46; padding-bottom: 10px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: flex-start; }
+    .brand-title { font-size: 16pt; font-weight: 800; color: #065f46; letter-spacing: -0.5px; }
+    .brand-sub { font-size: 8pt; color: #64748b; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+    .badge-stamp { border: 1.5px solid #d97706; color: #b45309; padding: 4px 10px; border-radius: 6px; font-size: 7.5pt; font-weight: 700; text-align: right; }
+    .hero-strip { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; margin-bottom: 12px; display: flex; gap: 14px; align-items: center; }
+    .herb-img { width: 75px; height: 75px; border-radius: 6px; object-fit: cover; border: 1px solid #cbd5e1; }
+    .herb-title { font-size: 13pt; font-weight: 800; color: #0f172a; margin: 0 0 2px 0; }
+    .herb-sci { font-size: 9pt; font-style: italic; color: #059669; font-weight: 600; }
+    .herb-origin { font-size: 8pt; color: #475569; margin-top: 3px; }
+    .section-title { font-size: 9.5pt; font-weight: 800; color: #065f46; border-left: 3px solid #059669; padding-left: 6px; margin: 10px 0 6px 0; text-transform: uppercase; letter-spacing: 0.5px; }
+    table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin-bottom: 10px; }
+    th { background: #f1f5f9; color: #0f172a; text-align: left; padding: 6px 10px; font-weight: 700; border-bottom: 1.5px solid #cbd5e1; font-size: 8pt; text-transform: uppercase; }
+    .spec-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+    .spec-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 10px; font-size: 8pt; }
+    .spec-label { font-weight: 700; color: #64748b; text-transform: uppercase; font-size: 7pt; display: block; margin-bottom: 2px; }
+    .spec-val { color: #0f172a; font-weight: 600; }
+    .highlight-box { border-radius: 6px; padding: 8px 12px; margin-bottom: 8px; font-size: 8.5pt; }
+    .box-emerald { background: #ecfdf5; border: 1px solid #a7f3d0; color: #064e3b; }
+    .box-amber { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
+    .box-rose { background: #fff1f2; border: 1px solid #fecdd3; color: #9f1239; }
+    .monograph-footer { margin-top: 14px; border-top: 1px dashed #cbd5e1; padding-top: 8px; display: flex; justify-content: space-between; font-size: 7.5pt; color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <div class="monograph-header">
+    <div>
+      <div class="brand-title">VINAVITA AI • PHARMACOPOEIA DOSSIER</div>
+      <div class="brand-sub">${isEn ? 'Vietnamese Botanical Medicine &amp; Food Biochemistry Laboratory' : 'Bách Khoa Dược Liệu Dân Tộc &amp; Hóa Sinh Thực Phẩm'}</div>
+    </div>
+    <div class="badge-stamp">
+      <div>RMIT RBPC 2026</div>
+      <div>${isEn ? 'Clinical Verification' : 'Đối Chiếu Dược Điển V'}</div>
+    </div>
+  </div>
+
+  <div class="hero-strip">
+    <img src="${herb.image}" alt="${herb.name}" class="herb-img">
+    <div>
+      <div class="herb-title">${herbTitle}</div>
+      <div class="herb-sci">${herb.sciName} — Class: ${catLabel}</div>
+      <div class="herb-origin">📍 ${origin} • Evidence Grade: Preclinical &amp; Pharmacopoeia VN V</div>
+    </div>
+  </div>
+
+  <div class="section-title">${isEn ? 'Phytochemical Constituents &amp; Pharmacological Actions' : 'Bảng Hoạt Chất Sinh Học &amp; Dược Lý Lâm Sàng'}</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:26%;">${isEn ? 'Bioactive Compound' : 'Hoạt Chất'}</th>
+        <th style="width:24%;">${isEn ? 'Phytochemical Class' : 'Nhóm Hóa Thực Vật'}</th>
+        <th style="width:50%;">${isEn ? 'Mechanism &amp; Physiological Action' : 'Cơ Chế Dược Lý &amp; Tác Động'}</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${compoundsRows}
+    </tbody>
+  </table>
+
+  <div class="section-title">${isEn ? 'Botanical Extraction &amp; Sensory Specifications' : 'Thông Số Bào Chế &amp; Cảm Quan'}</div>
+  <div class="spec-grid">
+    <div class="spec-card">
+      <span class="spec-label">${isEn ? 'Part Used' : 'Bộ Phận Dùng'}</span>
+      <span class="spec-val">${partUsed}</span>
+    </div>
+    <div class="spec-card">
+      <span class="spec-label">${isEn ? 'Safe Daily Dose' : 'Liều An Toàn'}</span>
+      <span class="spec-val">${safeDose}</span>
+    </div>
+    <div class="spec-card">
+      <span class="spec-label">${isEn ? 'Taste &amp; Bitterness' : 'Vị &amp; Độ Đắng'}</span>
+      <span class="spec-val">${isEn ? 'Bitter' : 'Đắng'} ${(herb.tasteProfile && typeof herb.tasteProfile.bitterness === 'number') ? herb.tasteProfile.bitterness : 0}/5 • ${aroma}</span>
+    </div>
+  </div>
+
+  <div class="section-title">${isEn ? 'Biochemical Synergy &amp; Bitterness Modulation (hTAS2R16)' : 'Cơ Chế Sinh Hóa &amp; Khử Vị Đắng'}</div>
+  <div class="highlight-box box-emerald">
+    <strong>🔬 ${isEn ? 'Biochemical &amp; Receptor Synergy:' : 'Cơ Chế Sinh Hóa Dược Lý:'}</strong> ${bioAction}
+  </div>
+  <div class="highlight-box box-amber">
+    <strong>🧪 ${isEn ? 'Bitterness Masking &amp; Pairing Rules:' : 'Quy Tắc Khử Đắng &amp; Phối Vị:'}</strong> ${masking}
+  </div>
+
+  <div class="highlight-box box-rose">
+    <strong>⚠️ ${isEn ? 'Clinical Precautions &amp; Contraindications:' : 'Lưu Ý Dược Lý &amp; Chống Chỉ Định:'}</strong> ${warnings}
+  </div>
+
+  <div class="highlight-box" style="background:#f8fafc; border:1px solid #e2e8f0; font-style:italic; color:#475569;">
+    🪷 <strong>${isEn ? 'Mindful Living Note:' : 'Lời Nhắc Chánh Niệm:'}</strong> "${mindfulQuote}"
+  </div>
+
+  <div class="monograph-footer">
+    <div>VinaVita AI Mixologist System • RMIT Business Plan Competition 2026</div>
+    <div>Archived &amp; Certified: ${new Date().toLocaleDateString()} • Lead Systems Architect: Ngô Minh Thiên Bảo</div>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        window.print();
+      }, 250);
+    });
+  <\/script>
+</body>
+</html>`;
+
+    const printWin = window.open('', '_blank', 'width=840,height=960,toolbar=0,menubar=0,scrollbars=1');
+    if (printWin) {
+      printWin.document.open();
+      printWin.document.write(printHtml);
+      printWin.document.close();
+    } else {
+      let iframe = document.getElementById('herbPrintIframe');
+      if (!iframe) {
+        iframe = document.createElement('iframe');
+        iframe.id = 'herbPrintIframe';
+        iframe.style.position = 'fixed';
+        iframe.style.right = '0';
+        iframe.style.bottom = '0';
+        iframe.style.width = '0';
+        iframe.style.height = '0';
+        iframe.style.border = '0';
+        document.body.appendChild(iframe);
+      }
+      const doc = iframe.contentWindow.document;
+      doc.open();
+      doc.write(printHtml);
+      doc.close();
+    }
+  };
 
   // Cross-linking: Send herb directly into AI Mixologist
   window.useHerbInMixologist = function(herbId) {
