@@ -18,7 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroSection = document.getElementById("heroStageSection");
 
   window.showTab = function(targetViewId) {
-    if (heroSection) heroSection.style.display = "none";
+    if (heroSection) {
+      heroSection.style.display = "block";
+      heroSection.classList.add("module-active");
+    }
 
     tabBtns.forEach(b => {
       if (b.dataset.target === targetViewId) {
@@ -42,7 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
   window.showHome = function(e) {
     if (e && e.preventDefault) e.preventDefault();
 
-    if (heroSection) heroSection.style.display = "block";
+    if (heroSection) {
+      heroSection.style.display = "block";
+      heroSection.classList.remove("module-active");
+    }
 
     tabBtns.forEach(b => b.classList.remove("active"));
     views.forEach(v => v.classList.remove("active"));
