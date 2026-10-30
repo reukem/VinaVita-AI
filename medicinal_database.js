@@ -1788,8 +1788,8 @@ const MEDICINAL_DATABASE = [
 const SIGNATURE_DRINKS = [
   {
     "id": "sig_citrus_twilight",
-    "name": "Citrus Twilight Mocktail (VinaVita #01)",
-    "name_en": "Citrus Twilight Mocktail (VinaVita #01)",
+    "name": "Citrus Twilight (\"Bing Chilling\" Pack) — VinaVita #01",
+    "name_en": "Citrus Twilight (\"Bing Chilling\" Pack) — VinaVita #01",
     "subtitle": "The 'Sleep & Unwind' Pack • Gói Ngủ Ngon & Xả Stress Đêm (0.0% Alcohol | 0g Refined Sugar)",
     "subtitle_en": "The 'Sleep & Unwind' Pack • Deep Sleep & Night De-stress (0.0% Alcohol | 0g Refined Sugar)",
     "badge": "⭐ HERO SKU #01 • SLEEP & UNWIND",
@@ -1822,8 +1822,8 @@ const SIGNATURE_DRINKS = [
         "name_en": "Freeze-dried Kumquat & Peel (pH 4.3)",
         "sci": "Citrus japonica",
         "amount": "1.5g",
-        "note": "Axit citric tự nhiên đưa pH về 4.3, ức chế trực tiếp thụ thể vị đắng hTAS2R16 (Sakurai et al. 2009)",
-        "note_en": "Natural citric acid buffers pH to 4.3, directly suppressing bitter receptor hTAS2R16 (Sakurai et al. 2009)"
+        "note": "Axit citric tự nhiên đưa pH về 4.3, ức chế trực tiếp thụ thể vị đắng hTAS2R16 (Sakurai et al. 2010)",
+        "note_en": "Natural citric acid buffers pH to 4.3, directly suppressing bitter receptor hTAS2R16 (Sakurai et al. 2010)"
       },
       {
         "herbId": "co_ngot",
@@ -1859,8 +1859,8 @@ const SIGNATURE_DRINKS = [
   },
   {
     "id": "sig_deadline_survivor",
-    "name": "Deadline Survivor Sâm Nam Brew (VinaVita #02)",
-    "name_en": "Deadline Survivor Southern Ginseng Brew (VinaVita #02)",
+    "name": "Deadline Survivor (Study & Focus Pack) — VinaVita #02",
+    "name_en": "Deadline Survivor (Study & Focus Pack) — VinaVita #02",
     "subtitle": "The 'Deadline & Exam' Pack • Gói Chạy Deadline & Ôn Thi (Tập trung 4h không ép tim)",
     "subtitle_en": "The 'Deadline & Exam' Pack • Calm Focus & Study Energy (4h Focus without Jitters)",
     "badge": "⚡ HERO SKU #02 • DEADLINE & EXAM",
@@ -1874,7 +1874,7 @@ const SIGNATURE_DRINKS = [
         "name": "Lá Đinh Lăng Sâm Nam",
         "name_en": "Polyscias Leaf (Southern Ginseng)",
         "sci": "Polyscias fruticosa",
-        "amount": "2.0g",
+        "amount": "2.5g",
         "note": "Saponin triterpenoid tăng lưu lượng máu và oxy lên thùy trán, duy trì tập trung bền bỉ",
         "note_en": "Triterpenoid saponins enhance cerebral blood flow & prefrontal cortex oxygenation for sustained focus"
       },
@@ -1883,7 +1883,7 @@ const SIGNATURE_DRINKS = [
         "name": "Sả Chanh Bản Địa",
         "name_en": "Indigenous Lemongrass",
         "sci": "Cymbopogon citratus",
-        "amount": "1.5g",
+        "amount": "1.2g",
         "note": "Citral tạo hương thơm tươi mát giải tỏa mệt mỏi giác quan",
         "note_en": "Citral & Geraniol provide uplifting freshness, melting away sensory fatigue"
       },
@@ -1892,7 +1892,7 @@ const SIGNATURE_DRINKS = [
         "name": "Gừng Núi Kỳ Sơn",
         "name_en": "Kỳ Sơn Mountain Ginger",
         "sci": "Zingiber officinale",
-        "amount": "0.8g",
+        "amount": "1.3g",
         "note": "Gingerol làm ấm tỳ vị, kích thích vi tuần hoàn ngoại vi",
         "note_en": "Gingerols warm digestion, boosting peripheral microcirculation and stamina"
       },
@@ -1901,7 +1901,7 @@ const SIGNATURE_DRINKS = [
         "name": "La Hán Quả / Cỏ Ngọt",
         "name_en": "Traditional Monk Fruit",
         "sci": "Siraitia grosvenorii",
-        "amount": "1.0g",
+        "amount": "0.3g",
         "note": "Mogroside V ngọt mát 0-calorie, hoàn toàn an toàn cho huyết áp và đường huyết",
         "note_en": "Mogroside V delivers cooling natural sweetness, completely safe for blood pressure & glucose (GI=0)"
       }
@@ -1921,8 +1921,8 @@ const SIGNATURE_DRINKS = [
   },
   {
     "id": "sig_berry_social_glow",
-    "name": "Berry Social Glow Mocktail (VinaVita #03)",
-    "name_en": "Berry Social Glow Mocktail (VinaVita #03)",
+    "name": "Berry Social Glow (\"Party Animal\" Pack) — VinaVita #03",
+    "name_en": "Berry Social Glow (\"Party Animal\" Pack) — VinaVita #03",
     "subtitle": "The '0% Party & Social Chill' Pack • Gói Tiệc Tùng 0% Cồn (0.0% Alcohol Social Chill)",
     "subtitle_en": "The '0% Party & Social Chill' Pack • 0.0% Alcohol Party Mocktail (Social Relaxation)",
     "badge": "🍷 HERO SKU #03 • 0% PARTY & CHILL",

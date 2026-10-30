@@ -268,6 +268,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".opt-mood").forEach(c => c.classList.remove("selected"));
       card.classList.add("selected");
       selectedMood = card.dataset.value;
+      const customInp = document.getElementById("customMixInput");
+      if (customInp) customInp.value = "";
       updateSafetyAlert();
       if (recipeCard && recipeCard.classList.contains("active")) {
         renderGeneratedRecipe(true);
@@ -280,6 +282,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".opt-flavor").forEach(c => c.classList.remove("selected"));
       card.classList.add("selected");
       selectedFlavor = card.dataset.value;
+      const customInp = document.getElementById("customMixInput");
+      if (customInp) customInp.value = "";
       if (recipeCard && recipeCard.classList.contains("active")) {
         renderGeneratedRecipe(true);
       }
@@ -345,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
         rule: isEn ? "Gastritis / Acid Reflux (GERD)" : "Đau dạ dày / Trào ngược (Acid Reflux)",
         blocked: isEn ? "Fresh Kumquat & High-acid Hibiscus (>50%) & Pungent Ginger" : "Quất Tươi & Atiso Đỏ đậm đặc (>50%) & Gừng cay",
         safe: isEn ? "Gentle buffered pH ≥ 4.4, Chamomile & Monk Fruit" : "Đệm pH ≥ 4.4 êm dịu, Hoa Cúc & La Hán Quả",
-        why: isEn ? "Buffers organic acids to prevent mucosal gastric irritation (Sakurai et al. 2009)." : "Đệm giảm acid hữu cơ để tránh kích ứng niêm mạc dạ dày (Sakurai et al. 2009)."
+        why: isEn ? "Buffers organic acids to prevent mucosal gastric irritation (Sakurai et al. 2010)." : "Đệm giảm acid hữu cơ để tránh kích ứng niêm mạc dạ dày (Sakurai et al. 2010)."
       });
     }
     if (selectedMood === "unwind") {
@@ -409,12 +413,9 @@ document.addEventListener("DOMContentLoaded", () => {
         : `<span>⏳</span> Đang đối chiếu Dược Điển &amp; kiểm tra tương tác...`;
       btnGenerate.disabled = true;
 
-      // Extract and parse custom user query if present in Section 4
+      // Use active selected cards from Step 1-3
       const customInput = document.getElementById("customMixInput");
       const customVal = customInput ? customInput.value.trim() : "";
-      if (customVal) {
-        parseCustomQueryParams(customVal);
-      }
 
       setTimeout(() => {
         btnGenerate.innerHTML = isEn
@@ -449,7 +450,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const hasDriving = conditions.has("driving");
 
     let sku = "01";
-    let title = "Citrus Twilight Mocktail (VinaVita #01 — pH 4.3)";
+    let title = "Citrus Twilight (\"Bing Chilling\" Pack • VinaVita #01)";
     let subtitle = "The 'Sleep & Unwind' Pack • Gói Ngủ Ngon & Xả Stress Đêm (0.0% Alcohol | 0g Refined Sugar)";
     let badge = "⭐ HERO SKU #01 • SLEEP & UNWIND";
     let heroImg = "assets/citrus_twilight_hero.jpg";
@@ -459,7 +460,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let serving = "Rót qua 100g đá viên, trang trí 1 lát tắc sấy lạnh (0.0% Cồn)";
     let biochem = "";
     let matchedSachet = {
-      name: "Hộp 5 Túi Lọc Kim Tự Tháp #01 — Citrus Twilight",
+      name: "Hộp 5 Túi Lọc Kim Tự Tháp #01 — Citrus Twilight (\"Bing Chilling\" Pack)",
       specs: "Túi lọc sinh học PLA 5.30g • 69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)",
       orderData: "Hộp 5 Gói Sachet #01 - Citrus Twilight (69.000đ)"
     };
@@ -477,7 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       const hoaCucItem = {
-        name: hasLowBP ? "Hoa Cúc Vàng (Khóa Tâm Sen)" : (hasPregnancy ? "Hoa Cúc Dịu Nhẹ" : "Hoa Cúc Vàng Bản Địa"),
+        name: hasLowBP ? "Hoa Cúc Vàng (Khóa Tâm Sen / Bảo Vệ Huyết Áp)" : (hasPregnancy ? "Hoa Cúc Dịu Nhẹ" : "Hoa Cúc Vàng Bản Địa"),
         sci: "Chrysanthemum indicum",
         amount: "1.50g",
         note: hasLowBP
@@ -488,7 +489,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Modulators: 2.00g to reach 5.30g total
       let modulators = [];
       if (flavor === "citrus") {
-        title = "Citrus Twilight Mocktail (VinaVita #01 — pH 4.3)";
+        title = "Citrus Twilight (\"Bing Chilling\" Pack • VinaVita #01)";
         subtitle = "The 'Sleep & Unwind' Pack • Gói Ngủ Ngon & Xả Stress Đêm (0.0% Alcohol | 0g Refined Sugar)";
         badge = "⭐ HERO SKU #01 • SLEEP & UNWIND";
         modulators = [
@@ -496,7 +497,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: hasGastritis ? "Tắc Sấy Lạnh (Đệm giảm chua pH 4.4)" : "Tắc Sấy Lạnh / Kumquat (pH 4.3)",
             sci: "Citrus japonica",
             amount: hasGastritis ? "1.00g" : "1.50g",
-            note: "Axit citric tự nhiên đưa pH về 4.3, ức chế trực tiếp thụ thể vị đắng hTAS2R16 trên gai lưỡi (Sakurai et al. 2009)"
+            note: "Axit citric tự nhiên đưa pH về 4.3, ức chế trực tiếp thụ thể vị đắng hTAS2R16 trên gai lưỡi (Sakurai et al. 2010)"
           },
           ...(hasGastritis ? [{
             name: "Táo Đỏ Tân Cương Thái Lát",
@@ -519,7 +520,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ];
         biochem = "Công thức chuẩn hóa: Tắc sấy lạnh đưa pH dịch chiết về 4.3 để ức chế thụ thể hTAS2R16, kết hợp hoạt chất Vitexin từ Lạc Tiên và Apigenin từ Hoa Cúc giúp đi vào giấc ngủ tự nhiên mà không cần đến thuốc ngủ hay đường tinh luyện.";
         matchedSachet = {
-          name: "Hộp 5 Túi Lọc Kim Tự Tháp #01 — Citrus Twilight",
+          name: "Hộp 5 Túi Lọc Kim Tự Tháp #01 — Citrus Twilight (\"Bing Chilling\" Pack)",
           specs: "Túi lọc sinh học PLA 5.30g • 69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)",
           orderData: "Hộp 5 Gói Sachet #01 - Citrus Twilight (69.000đ)"
         };
@@ -645,18 +646,18 @@ document.addEventListener("DOMContentLoaded", () => {
       brewTime = "3 phút (Túi lọc sinh học 5.3g)";
       serving = "Dùng ấm hoặc rót qua đá viên";
 
-      // Base: Dinh Lang (2.00g) + Sa Chanh (1.50g) = 3.50g
+      // Base: Dinh Lang (2.50g) + Sa Chanh (1.20g) = 3.70g (Strictly 5.30g total with 1.60g modulators)
       const dinhLangItem = {
         name: "Lá Đinh Lăng Sâm Nam",
         sci: "Polyscias fruticosa",
-        amount: "2.00g",
+        amount: "2.50g",
         note: "Saponin triterpenoid tăng lưu lượng máu và oxy lên thùy trán, duy trì tập trung bền bỉ không ép tim"
       };
 
       const saChanhItem = {
         name: "Sả Chanh Bản Địa",
         sci: "Cymbopogon citratus",
-        amount: "1.50g",
+        amount: "1.20g",
         note: "Citral xua tan căng thẳng giác quan, tạo hương thơm sảng khoái"
       };
 
@@ -664,33 +665,21 @@ document.addEventListener("DOMContentLoaded", () => {
       let modulators = [];
       if (flavor === "minty") {
         // EXACT SCREENSHOT 1 MATCH: Focus + Minty + Low BP
-        title = "Deadline Survivor Cool-Minty Brew (VinaVita #02 — 5.3g)";
-        subtitle = "The 'Deadline & Exam' Pack • Gói Chạy Deadline The Mát Tỉnh Táo (Tập trung 4h không ép tim)";
+        title = "Deadline Survivor (Study & Focus Pack • VinaVita #02)";
+        subtitle = "The 'Deadline Survivor' Pack • Gói Chạy Deadline & Ôn Thi (0mg Caffeine)";
         badge = "⚡ HERO SKU #02 • DEADLINE SURVIVOR";
         modulators = [
           {
-            name: "Bạc Hà Nam The Mát",
-            sci: "Mentha arvensis",
-            amount: "1.00g",
-            note: "Tinh dầu Menthol the mát kích hoạt thụ thể TRPM8 mang lại cảm giác tỉnh táo tức thì"
-          },
-          {
-            name: (hasGastritis || hasHighBP) ? "Gừng Núi (Giảm liều nhẹ)" : "Gừng Núi Kỳ Sơn",
+            name: "Gừng Núi Kỳ Sơn",
             sci: "Zingiber officinale",
-            amount: (hasGastritis || hasHighBP) ? "0.30g" : "0.50g",
-            note: "Gingerol làm ấm tỳ vị, kích thích vi tuần hoàn ngoại vi"
+            amount: "1.30g",
+            note: "Gingerol làm ấm tỳ vị, hỗ trợ lưu thông khí huyết và chống mệt mỏi"
           },
-          ...( (hasGastritis || hasHighBP) ? [{
-            name: "Táo Đỏ Tân Cương",
-            sci: "Ziziphus jujuba",
-            amount: "0.20g",
-            note: "Bổ tỳ bảo vệ dạ dày"
-          }] : []),
           {
-            name: "La Hán Quả / Cỏ Ngọt",
+            name: "La Hán Quả Cổ Truyền",
             sci: "Siraitia grosvenorii",
-            amount: (hasGastritis || hasHighBP) ? "0.30g" : "0.30g",
-            note: "Mogroside V ngọt mát 0-calorie, hoàn toàn an toàn cho huyết áp và đường huyết"
+            amount: "0.30g",
+            note: "Mogroside V tạo vị ngọt thanh dịu mát, 0g đường tinh luyện, 0-calorie (GI = 0)"
           }
         ];
         biochem = "Giải pháp tỉnh táo lành mạnh cho các bạn học sinh, sinh viên: Kết hợp Saponin Sâm Nam với 1.0g Bạc Hà Nam the mát, kích thích tỉnh táo mạnh mẽ mà không cần caffein, không gây run tay, ép tim hay cồn cào dạ dày. Chuẩn 5.30g sachet.";
@@ -701,7 +690,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
       } else if (flavor === "citrus") {
-        title = "Deadline Survivor Citrus Boost (VinaVita #02 — 5.3g)";
+        title = "Deadline Survivor (Study & Focus Pack • VinaVita #02)";
         subtitle = "The 'Deadline & Exam' Pack • Gói Chạy Deadline Vị Chua Thanh (Tập trung 4h không ép tim)";
         badge = "⚡ HERO SKU #02 • DEADLINE SURVIVOR";
         modulators = [
@@ -726,7 +715,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ];
         biochem = "Kết hợp Saponin Đinh Lăng và vị chua thanh sảng khoái từ Tắc sấy lạnh, duy trì tỉnh táo đỉnh cao trong suốt 4 tiếng học tập.";
         matchedSachet = {
-          name: "Hộp 5 Túi Lọc Kim Tự Tháp #02 — Deadline Survivor",
+          name: "Hộp 5 Túi Lọc Kim Tự Tháp #02 — Deadline Survivor (Study & Focus Pack)",
           specs: "Túi lọc sinh học PLA 5.30g • 69.000 VNĐ / Hộp 5 gói",
           orderData: "Hộp 5 Gói Sachet #02 - Deadline Survivor (69.000đ)"
         };
@@ -940,7 +929,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         ];
       } else { // sweet / default PDF Page 7
-        title = "Berry Social Glow Mocktail (VinaVita #03 — pH 4.2)";
+        title = "Berry Social Glow (\"Party Animal\" Pack • VinaVita #03)";
         subtitle = "The '0% Party & Social Chill' Pack • Gói Tiệc Tùng 0% Cồn (0.0% Alcohol Social Chill)";
         badge = "🍷 HERO SKU #03 • 0% PARTY & CHILL";
         modulators = [
@@ -961,7 +950,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       biochem = "Ly mocktail sắc đỏ Ruby dạ tiệc hòa quyện hương quế nồng ấm, 100% tuân thủ Nghị định 168/2024/NĐ-CP (0.00% cồn), an toàn tuyệt đối khi lái xe về nhà sau tiệc.";
       matchedSachet = {
-        name: "Hộp 5 Túi Lọc Kim Tự Tháp #03 — Berry Social Glow",
+        name: "Hộp 5 Túi Lọc Kim Tự Tháp #03 — Berry Social Glow (\"Party Animal\" Pack)",
         specs: "Túi lọc sinh học PLA 5.30g • 69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)",
         orderData: "Hộp 5 Gói Sachet #03 - Berry Social Glow (69.000đ)"
       };
@@ -997,11 +986,11 @@ document.addEventListener("DOMContentLoaded", () => {
         resultObj.brewTime = "3 – 5 mins (Cornstarch PLA Sachet 5.3g)";
         resultObj.serving = "Pour over 100g ice cubes, garnish with a kumquat wheel (0.0% Alcohol)";
         if (title.includes("Citrus")) {
-          resultObj.title = "Citrus Twilight Mocktail (VinaVita #01 — pH 4.3)";
+          resultObj.title = "Citrus Twilight (\"Bing Chilling\" Pack • VinaVita #01)";
           resultObj.subtitle = "The 'Sleep & Unwind' Pack • Nighttime Sleep & De-Stress (0.0% Alcohol | 0g Sugar)";
           resultObj.biochem = "Standardized formula: Freeze-dried kumquat buffers infusion pH to 4.3 to inhibit hTAS2R16 bitterness receptors, pairing with Vitexin from Passionflower and Apigenin from Chamomile for natural sleep onset without sedatives or refined sugar.";
           resultObj.matchedSachet = {
-            name: "Box of 5 Pyramid Sachets #01 — Citrus Twilight",
+            name: "Box of 5 Pyramid Sachets #01 — Citrus Twilight (\"Bing Chilling\" Pack)",
             specs: "Bio-based PLA sachet 5.30g • 69,000 VND / Box of 5 (13,800 VND/cup)",
             orderData: "Box of 5 Sachets #01 - Citrus Twilight (69,000 VND)"
           };
@@ -1039,7 +1028,7 @@ document.addEventListener("DOMContentLoaded", () => {
         resultObj.brewTime = "3 Mins (Biodegradable PLA Sachet 5.3g)";
         resultObj.serving = "Enjoy warm or pour over ice rocks for an invigorating tonic";
         if (title.includes("Minty")) {
-          resultObj.title = "Deadline Survivor Cool-Minty Brew (VinaVita #02 — 5.3g)";
+          resultObj.title = "Deadline Survivor (Study & Focus Pack • VinaVita #02)";
           resultObj.subtitle = "The 'Deadline & Exam' Pack • Crisp Awakening Focus (4h Alertness without Jitters)";
           resultObj.biochem = "Healthy alertness solution for students: Combines Southern Ginseng Saponins with 1.0g cooling Peppermint, providing sustained focus without synthetic caffeine, tremors, or crashes.";
           resultObj.matchedSachet = {
@@ -1048,11 +1037,11 @@ document.addEventListener("DOMContentLoaded", () => {
             orderData: "Box of 5 Sachets #02 - Deadline Survivor Minty (69,000 VND)"
           };
         } else if (title.includes("Citrus")) {
-          resultObj.title = "Deadline Survivor Citrus Boost (VinaVita #02 — 5.3g)";
+          resultObj.title = "Deadline Survivor (Study & Focus Pack • VinaVita #02)";
           resultObj.subtitle = "The 'Deadline & Exam' Pack • Tart Refreshing Focus (4h Alertness without Jitters)";
           resultObj.biochem = "Combines Polyscias Saponins with refreshing freeze-dried kumquat citrus acidity, sustaining high focus throughout 4-hour study sessions.";
           resultObj.matchedSachet = {
-            name: "Box of 5 Pyramid Sachets #02 — Deadline Survivor",
+            name: "Box of 5 Pyramid Sachets #02 — Deadline Survivor (Study & Focus Pack)",
             specs: "Bio-based PLA sachet 5.30g • 69,000 VND / Box of 5",
             orderData: "Box of 5 Sachets #02 - Deadline Survivor (69,000 VND)"
           };
@@ -1080,11 +1069,11 @@ document.addEventListener("DOMContentLoaded", () => {
         resultObj.brewTemp = "85°C (Anthocyanin & Essential Oil Extraction)";
         resultObj.brewTime = "4 Mins (Deep Ruby Botanical Extraction)";
         resultObj.serving = "Shake with ice, splash with sparkling soda and a sprig of rosemary (0.0% Alcohol)";
-        resultObj.title = "Berry Social Glow Mocktail (VinaVita #03 — 0.0% Alcohol)";
+        resultObj.title = "Berry Social Glow (\"Party Animal\" Pack • VinaVita #03)";
         resultObj.subtitle = "The '0% Party & Social Chill' Pack • Hangout & Social Chill (0.0% Alcohol | 0g Sugar)";
         resultObj.biochem = "Anthocyanins yield vivid ruby party colors; Vitexin engages GABA_A receptors to foster warm social relaxation, substituting alcoholic drinks safely with zero intoxication or hangover.";
         resultObj.matchedSachet = {
-          name: "Box of 5 Pyramid Sachets #03 — Berry Social Glow",
+          name: "Box of 5 Pyramid Sachets #03 — Berry Social Glow (\"Party Animal\" Pack)",
           specs: "Bio-based PLA sachet 5.50g • 69,000 VND / Box of 5 (13,800 VND/cup)",
           orderData: "Box of 5 Sachets #03 - Berry Social Glow (69,000 VND)"
         };
@@ -1092,23 +1081,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Localize herb names and pharmacological notes in formula
       const herbTranslations = [
+        ["Lạc Tiên (Aerial parts)", "Wild Passionflower (Aerial parts)"],
+        ["Lạc Tiên Khô Bản Địa", "Indigenous Dried Passionflower"],
+        ["Lạc Tiên Khô", "Dried Passionflower"],
         ["Lạc Tiên", "Wild Passionflower"],
-        ["Hoa Cúc Vàng", "Imperial Yellow Chamomile"],
-        ["Hoa Cúc Trắng", "Imperial White Chrysanthemum"],
+        ["Hoa Cúc Vàng Bản Địa", "Imperial Yellow Chamomile"],
+        ["Hoa Cúc Trắng Cố Đô", "Imperial White Chrysanthemum"],
+        ["Hoa Cúc Trắng", "White Chrysanthemum"],
         ["Hoa Cúc Dịu Nhẹ", "Gentle White Chamomile"],
-        ["Tắc Sấy Lạnh", "Freeze-dried Kumquat & Peel"],
+        ["Hoa Cúc Vàng", "Imperial Yellow Chamomile"],
+        ["Tắc Sấy Lạnh / Kumquat (pH 4.3)", "Freeze-dried Kumquat (pH 4.3)"],
+        ["Tắc Sấy Lạnh Lát Mỏng", "Freeze-dried Kumquat Slices"],
+        ["Tắc Sấy Lạnh", "Freeze-dried Kumquat"],
+        ["Cỏ Ngọt Tự Nhiên (Stevia)", "Natural Stevia Leaf (GI = 0)"],
+        ["Cỏ Ngọt Tự Nhiên", "Natural Stevia Leaf"],
         ["Cỏ Ngọt", "Natural Stevia Leaf"],
-        ["Muối Khoáng", "Purified Mineral Salt (Na+)"],
-        ["Đinh Lăng", "Polyscias Ginseng Leaf (Sâm Nam)"],
+        ["Muối Khoáng Tinh Khiết (Na+)", "Purified Mineral Salt (Na+)"],
+        ["Muối Khoáng", "Mineral Salt (Na+)"],
+        ["Lá Đinh Lăng Sâm Nam", "Polyscias Leaf (Southern Ginseng)"],
+        ["Đinh Lăng Sâm Nam", "Polyscias Leaf (Southern Ginseng)"],
+        ["Đinh Lăng", "Polyscias Leaf (Southern Ginseng)"],
+        ["Sả Chanh Bản Địa", "Indigenous Lemongrass"],
         ["Sả Chanh", "Indigenous Lemongrass"],
+        ["Gừng Núi Kỳ Sơn", "Kỳ Sơn Mountain Ginger"],
         ["Gừng Núi", "Mountain Ginger"],
+        ["La Hán Quả Cổ Truyền", "Traditional Monk Fruit"],
+        ["La Hán Quả Tự Nhiên", "Traditional Monk Fruit"],
+        ["La Hán Quả / Cỏ Ngọt", "Traditional Monk Fruit"],
         ["La Hán Quả", "Traditional Monk Fruit"],
+        ["Atiso Đỏ (Roselle Hibiscus)", "Roselle Hibiscus (Atiso Đỏ)"],
         ["Atiso Đỏ", "Roselle Hibiscus (Atiso Đỏ)"],
+        ["Quế Trà Bồng Bản Địa", "Trà Bồng Cinnamon Bark"],
         ["Quế Trà Bồng", "Trà Bồng Cinnamon Bark"],
-        ["Quế", "Trà Bồng Cinnamon Bark"],
+        ["Quế thanh", "Trà Bồng Cinnamon Bark"],
+        ["Quế", "Cinnamon Bark"],
+        ["Bạc Hà Nam The Mát", "Native Peppermint"],
+        ["Bạc Hà Nam", "Native Peppermint"],
         ["Bạc Hà", "Native Peppermint"],
+        ["Hoa Nhài Cố Đô", "Imperial Jasmine Buds"],
         ["Hoa Nhài", "Imperial Jasmine Buds"],
-        ["Táo Đỏ", "Jujube Red Dates"],
+        ["Táo Đỏ Tân Cương Thái Lát", "Sliced Red Jujube Dates"],
+        ["Táo Đỏ Tân Cương", "Red Jujube Dates"],
+        ["Táo Đỏ", "Red Jujube Dates"],
+        ["Dâu Tằm Sấy Lạnh Bản Địa", "Freeze-dried Black Mulberry"],
         ["Dâu Tằm", "Black Mulberry"]
       ];
 
@@ -1117,7 +1132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ["Vitexin kích hoạt GABA_A tạo cảm giác ấm áp", "Vitexin activates GABA_A receptors to foster warm, convivial social relaxation"],
         ["Apigenin làm dịu trục HPA thần kinh", "Apigenin calms the HPA nerve axis; locks out Lotus Plumule to protect low blood pressure"],
         ["Apigenin hiệp đồng cùng flavonoid", "Apigenin synergizes with botanical flavonoids to soothe visual-motor neural fatigue"],
-        ["Axit citric tự nhiên đưa pH về 4.3", "Natural citric acid buffers pH to 4.3, directly suppressing bitter receptor hTAS2R16 (Sakurai et al. 2009)"],
+        ["Axit citric tự nhiên đưa pH về 4.3", "Natural citric acid buffers pH to 4.3, directly suppressing bitter receptor hTAS2R16 (Sakurai et al. 2010)"],
         ["Stevioside ngọt thanh tự nhiên 0-calorie", "Natural stevioside delivers 0-calorie sweetness (GI=0), preventing nocturnal glycemic spikes"],
         ["Ion Na+ khử đắng chéo trung ương", "Na+ ions provide central cross-bitterness suppression (Breslin & Beauchamp 1997), yielding smooth finish"],
         ["Saponin triterpenoid tăng lưu lượng máu", "Triterpenoid saponins enhance cerebral blood flow & prefrontal cortex oxygenation for sustained focus"],
@@ -1128,13 +1143,26 @@ document.addEventListener("DOMContentLoaded", () => {
         ["Hương thơm quý phái như rượu vang", "Cinnamaldehyde imparts a noble festive aroma reminiscent of warm Mulled Wine"],
         ["Menthol sảng khoái tạo cảm giác mát lạnh", "Crisp natural menthol activates cooling TRPM8 receptors for refreshing alertness"],
         ["Bổ tỳ dưỡng vị", "Nourishes spleen and stomach, protecting gastric mucosa"],
-        ["Hương thơm hoa cúc dịu êm thanh nhã", "Gentle chrysanthemum aroma for delicate mental tranquility"]
+        ["Hương thơm hoa cúc dịu êm thanh nhã", "Gentle chrysanthemum aroma for delicate mental tranquility"],
+        ["Mogroside V", "Zero-glycemic natural Mogroside V sweetness"],
+        ["La Hán Quả", "Traditional Monk Fruit with zero glycemic impact"],
+        ["Bổ khí dưỡng tâm", "Nourishes relaxation with mild warmth"],
+        ["Bổ tỳ", "Nourishes relaxation with mild warmth"],
+        ["Ngọt thanh tự nhiên 0-calorie", "Zero-calorie natural Stevioside sweetness"],
+        ["Khử đắng trung ương", "Central bitter nerve channel suppression"],
+        ["Khử đắng chéo trung ương", "Central bitter nerve channel suppression"],
+        ["triệt tiêu vị đắng gai lưỡi", "Directly suppresses hTAS2R16 bitter taste receptors"],
+        ["Hậu vị ngọt sâu không đường", "Deep lingering zero-calorie sweetness with central bitterness suppression"],
       ];
 
       resultObj.formula.forEach(item => {
-        for (const [vi, en] of herbTranslations) {
-          if (item.name && item.name.includes(vi)) {
-            item.name = item.name.replace(vi, en);
+        if (item.name && item.name.includes("Khóa Tâm Sen")) {
+          item.name = "Imperial Yellow Chamomile (Chrysanthemum / Hoa Cúc Vàng)";
+        } else {
+          for (const [vi, en] of herbTranslations) {
+            if (item.name && item.name.includes(vi)) {
+              item.name = item.name.replace(vi, en);
+            }
           }
         }
         for (const [viSnippet, enText] of noteTranslations) {
@@ -1549,6 +1577,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   // Render Compact, Uniform Fixed-Length Herb Cards for scannability
   function renderDatabase(herbs) {
+  window.renderDatabase = renderDatabase;
     if (!dbContainer) return;
     dbContainer.innerHTML = "";
     const isEn = (window.currentLang === "en");
@@ -2776,7 +2805,7 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
         actionFooterHtml = `
           <div style="margin-top:8px;">
             <button class="chat-action-btn" type="button" onclick="window.applyChatProfileToStudio('${recMood}', '${recFlavor}', '${studioConds}')">
-              🧪 Đưa Hồ Sơ Cơ Địa Này Vào Trạm AI Mixologist ➔
+              ${(window.currentLang === "en") ? "🧪 Import Profile into AI Mixologist Studio ➔" : "🧪 Đưa Hồ Sơ Cơ Địa Này Vào Trạm AI Mixologist ➔"}
             </button>
           </div>
         `;
@@ -2784,7 +2813,7 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
         actionFooterHtml = `
           <div style="margin-top:8px;">
             <button class="chat-action-btn" type="button" onclick="window.openOrderModal('Combo Hộp 5 Gói Sachet VinaVita (69.000đ)')">
-              🛒 Đặt Thử Nghiệm Hộp 5 Gói (69.000 VNĐ)
+              ${(window.currentLang === "en") ? "🛒 Order 5-Sachet Trial Box (69,000 VND)" : "🛒 Đặt Thử Nghiệm Hộp 5 Gói (69.000 VNĐ)"}
             </button>
           </div>
         `;
@@ -2799,7 +2828,7 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
             <p>🧪 <strong>CƠ CHẾ KHỬ ĐẮNG SINH HỌC KÉP (DUAL-PATHWAY BITTERNESS MASKING — hTAS2R16):</strong></p>
             <div style="margin:8px 0; font-size:0.85rem; line-height:1.6; color:#e2e8f0;">
               Thuốc nam cổ truyền khó uống với Gen-Z vì các <strong>Alkaloid</strong> (như Liensinine trong Tâm Sen) và <strong>Glycoside</strong> gắn kết mạnh vào <strong>thụ thể vị đắng ngoại vi hTAS2R16</strong> trên gai lưỡi. VinaVita giải quyết triệt để mà <strong>không dùng bất kỳ gam đường tinh luyện nào</strong> nhờ 3 cơ chế:<br>
-              1. <strong>Điều biến cấu hình thụ thể bằng pH 4.2–4.5 (Sakurai et al. 2009):</strong> Acid citric tự nhiên từ <em>Tắc sấy lạnh (1.5g)</em> hoặc <em>Atiso Đỏ</em> đưa độ pH dung dịch về ngưỡng tối ưu <strong>4.2 – 4.5</strong>, làm thay đổi cấu trúc không gian của thụ thể hTAS2R16, giảm <strong>60–70%</strong> tín hiệu đắng truyền về não.<br>
+              1. <strong>Điều biến cấu hình thụ thể bằng pH 4.2–4.5 (Sakurai et al. 2010):</strong> Acid citric tự nhiên từ <em>Tắc sấy lạnh (1.5g)</em> hoặc <em>Atiso Đỏ</em> đưa độ pH dung dịch về ngưỡng tối ưu <strong>4.2 – 4.5</strong>, làm thay đổi cấu trúc không gian của thụ thể hTAS2R16, giảm <strong>60–70%</strong> tín hiệu đắng truyền về não.<br>
               2. <strong>Ức chế đắng chéo trung ương bằng Ion Na+ (Breslin &amp; Beauchamp 1997 - Nature):</strong> Bổ sung <strong>0.05g muối khoáng tinh khiết</strong> giúp khóa kênh dẫn truyền vị đắng ở mức độ synap vị giác.<br>
               3. <strong>Hiệp đồng ngọt tự nhiên GI = 0 (Stevioside / Mogroside V &amp; Menthol):</strong> Dùng <em>Cỏ Ngọt (0.3–0.5g)</em> hoặc <em>La Hán Quả (1.0g)</em> tráng êm niêm mạc lưỡi, kết hợp tinh dầu thơm bay hơi ở thì thở ra (retronasal olfaction).
             </div>
@@ -2823,7 +2852,7 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
               &nbsp;&nbsp;3️⃣ <strong>#03 Berry Social Glow (pH 4.2 — Tiệc tùng 0.0% Cồn):</strong> Atiso Đỏ (2.2g) + Lạc Tiên (1.3g) + Quế thanh (0.8g) + La Hán Quả (1.0g).
             </div>
             <button class="chat-action-btn" type="button" onclick="window.openOrderModal('Combo Hộp 5 Gói Sachet VinaVita (69.000đ)')">
-              🛒 Đặt Thử Nghiệm Hộp 5 Gói (69.000 VNĐ)
+              ${(window.currentLang === "en") ? "🛒 Order 5-Sachet Trial Box (69,000 VND)" : "🛒 Đặt Thử Nghiệm Hộp 5 Gói (69.000 VNĐ)"}
             </button>
           `
         };
