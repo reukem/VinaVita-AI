@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VinaVita AI — Nền Tảng Pha Chế Dược Liệu & Mocktail Thảo Mộc Việt Nam — RMIT RBPC 2026</title>
   <meta name="description" content="Dự án tham dự RMIT Business Plan Competition 2026: Ứng dụng AI và Khoa học Thực phẩm để cá nhân hóa thức uống Dược Liệu Việt thay thế cồn và nước tăng lực.">
-  <link rel="stylesheet" href="styles.css">
-  <script src="translations.js" defer></script>
-  <script src="medicinal_database.js" defer></script>
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261030_v3">
+  <script src="translations.js?v=20261030_v3" defer></script>
+  <script src="medicinal_database.js?v=20261030_v3" defer></script>
+  <script src="app.js?v=20261030_v3" defer></script>
 </head>
 <body>
 
@@ -29,7 +29,7 @@
   <!-- STICKY NAVIGATION BAR -->
   <header class="site-nav">
     <div class="container nav-wrap">
-      <a href="#" class="brand" title="VinaVita AI — Nền Tảng Mocktail Dược Liệu Việt">
+      <a href="#home" class="brand" id="brandLogo" onclick="window.showHome && window.showHome(event)" data-i18n-title="brand.home_title" title="VinaVita AI — Nhấp để về Trang Chủ">
         <div class="brand-crest">
           <img src="assets/vinavita_mortar_icon.png" alt="VinaVita Logo" class="brand-mortar-icon">
         </div>
@@ -46,7 +46,7 @@
       </a>
 
       <nav class="tab-nav">
-        <button class="tab-btn active" data-target="viewMixologist" data-i18n="nav.mixologist">
+        <button class="tab-btn" data-target="viewMixologist" data-i18n="nav.mixologist">
           <span>🍸</span> AI Mixologist
         </button>
         <button class="tab-btn" data-target="viewSignatures" data-i18n="nav.signatures">
@@ -462,13 +462,55 @@
           </div>
         </div>
       </div>
+
+      <!-- 4-MODULE EXPLORATION PORTAL (HOME VIEW HERO GATEWAY) -->
+      <div class="home-modules-portal">
+        <div class="portal-tag-wrap">
+          <span class="pulse-dot"></span>
+          <span class="portal-tag" data-i18n="portal.section_tag">CÁC CHỨC NĂNG NỀN TẢNG • TƯƠNG TÁC NGAY</span>
+        </div>
+        <div class="portal-grid">
+          <div class="portal-card" onclick="window.showTab('viewMixologist')" role="button" tabindex="0">
+            <div class="portal-card-top">
+              <span class="portal-icon">🍸</span>
+              <span class="portal-arrow">➔</span>
+            </div>
+            <h3 class="portal-title" data-i18n="portal.mixologist_title">AI Mixologist Studio</h3>
+            <p class="portal-desc" data-i18n="portal.mixologist_desc">Phối chế mocktail thảo mộc cá nhân hóa, tự động bảo vệ bởi rào chắn sinh học 5 tầng.</p>
+          </div>
+          <div class="portal-card" onclick="window.showTab('viewSignatures')" role="button" tabindex="0">
+            <div class="portal-card-top">
+              <span class="portal-icon">⭐</span>
+              <span class="portal-arrow">➔</span>
+            </div>
+            <h3 class="portal-title" data-i18n="portal.signatures_title">Menu &amp; Gói Sachet Gen-Z</h3>
+            <p class="portal-desc" data-i18n="portal.signatures_desc">3 dòng sản phẩm túi lọc kim tự tháp 5.3g chuẩn hóa, tiện lợi, giá sinh viên.</p>
+          </div>
+          <div class="portal-card" onclick="window.showTab('viewDatabase')" role="button" tabindex="0">
+            <div class="portal-card-top">
+              <span class="portal-icon">📚</span>
+              <span class="portal-arrow">➔</span>
+            </div>
+            <h3 class="portal-title" data-i18n="portal.database_title">Bách Khoa Dược Liệu</h3>
+            <p class="portal-desc" data-i18n="portal.database_desc">Tra cứu 12 vị thuốc Nam, hoạt chất sinh học (Vitexin, Apigenin) &amp; thụ thể hTAS2R16.</p>
+          </div>
+          <div class="portal-card" onclick="window.showTab('viewAbout')" role="button" tabindex="0">
+            <div class="portal-card-top">
+              <span class="portal-icon">🏛️</span>
+              <span class="portal-arrow">➔</span>
+            </div>
+            <h3 class="portal-title" data-i18n="portal.about_title">Dự Án &amp; Đội Ngũ</h3>
+            <p class="portal-desc" data-i18n="portal.about_desc">Sáng kiến RMIT RBPC 2026 từ nhóm học sinh Vinschool Central Park.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <main class="container">
 
     <!-- VIEW 1: AI MIXOLOGIST STUDIO (CORE PRODUCT) -->
-    <section id="viewMixologist" class="main-view active">
+    <section id="viewMixologist" class="main-view">
 
 
       <div class="mixologist-grid">

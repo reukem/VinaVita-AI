@@ -10,25 +10,63 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 
-  // Navigation Tabs
+  // ============================================================================
+  // SINGLE-PAGE VIEW ROUTING ENGINE: HOME HERO VS FUNCTIONAL MODULES
+  // ============================================================================
   const tabBtns = document.querySelectorAll(".tab-btn");
   const views = document.querySelectorAll(".main-view");
+  const heroSection = document.getElementById("heroStageSection");
 
+  window.showTab = function(targetViewId) {
+    if (heroSection) heroSection.style.display = "none";
+
+    tabBtns.forEach(b => {
+      if (b.dataset.target === targetViewId) {
+        b.classList.add("active");
+      } else {
+        b.classList.remove("active");
+      }
+    });
+
+    views.forEach(v => {
+      if (v.id === targetViewId) {
+        v.classList.add("active");
+      } else {
+        v.classList.remove("active");
+      }
+    });
+
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
+  window.showHome = function(e) {
+    if (e && e.preventDefault) e.preventDefault();
+
+    if (heroSection) heroSection.style.display = "block";
+
+    tabBtns.forEach(b => b.classList.remove("active"));
+    views.forEach(v => v.classList.remove("active"));
+
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
+  // Bind Brand Logo to Home
+  const brandLogo = document.querySelector(".brand");
+  if (brandLogo) {
+    brandLogo.addEventListener("click", window.showHome);
+  }
+
+  // Bind Tab Buttons
   tabBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      tabBtns.forEach(b => b.classList.remove("active"));
-      views.forEach(v => v.classList.remove("active"));
-
-      btn.classList.add("active");
-      const targetView = document.getElementById(btn.dataset.target);
-      if (targetView) targetView.classList.add("active");
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.showTab(btn.dataset.target);
     });
   });
 
   // Global Helper: Select Hero Sachet from Home Bar
   window.selectHeroSachet = function(mood, flavor) {
-    const tabBtn = document.querySelector('.tab-btn[data-target="viewMixologist"]');
-    if (tabBtn) tabBtn.click();
+    window.showTab("viewMixologist");
 
     const moodCard = document.querySelector(`.opt-mood[data-value="${mood}"]`);
     if (moodCard) moodCard.click();
@@ -36,11 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const flavorCard = document.querySelector(`.opt-flavor[data-value="${flavor}"]`);
     if (flavorCard) flavorCard.click();
 
-    const studio = document.getElementById("viewMixologist");
-    if (studio) studio.scrollIntoView({ behavior: "smooth", block: "start" });
-
     const btnGen = document.getElementById("btnGenerate");
-    if (btnGen) setTimeout(() => btnGen.click(), 100);
+    if (btnGen) setTimeout(() => btnGen.click(), 120);
   };
 
   // ============================================================================
@@ -1981,9 +2016,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Cross-linking: Send herb directly into AI Mixologist
   window.useHerbInMixologist = function(herbId) {
     if (herbModal) herbModal.classList.remove("active");
-
-    const mixologistTabBtn = document.querySelector('.tab-btn[data-target="viewMixologist"]');
-    if (mixologistTabBtn) mixologistTabBtn.click();
+    window.showTab("viewMixologist");
 
     if (typeof MEDICINAL_DATABASE === "undefined") return;
     const herb = MEDICINAL_DATABASE.find(h => h.id === herbId);
@@ -2038,8 +2071,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Core 2: Compositional Multi-Symptom Clinical RAG & Zero-Tolerance Safety Shield
   // ==============================================================================
   window.applyChatProfileToStudio = function(mood, flavor, conditionsCsv) {
-    const tabBtn = document.querySelector('.tab-btn[data-target="viewMixologist"]');
-    if (tabBtn) tabBtn.click();
+    window.showTab("viewMixologist");
 
     const condSet = new Set((conditionsCsv || "").split(",").map(s => s.trim()).filter(Boolean));
     document.querySelectorAll(".guardrail-input").forEach(input => {
@@ -3443,4 +3475,17 @@ Core Knowledge Base (VinaVita RMIT RBPC 2026):
   }
   initChimLacCelestialCanvas();
 
+  // Handle direct hash navigation if user opens page with #mixologist, etc.
+  const initialHash = (window.location.hash || "").replace("#", "").toLowerCase();
+  if (initialHash === "mixologist" || initialHash === "viewmixologist") {
+    window.showTab("viewMixologist");
+  } else if (initialHash === "signatures" || initialHash === "menu" || initialHash === "viewsignatures") {
+    window.showTab("viewSignatures");
+  } else if (initialHash === "database" || initialHash === "encyclopedia" || initialHash === "viewdatabase") {
+    window.showTab("viewDatabase");
+  } else if (initialHash === "about" || initialHash === "team" || initialHash === "viewabout") {
+    window.showTab("viewAbout");
+  } else {
+    window.showHome();
+  }
 });

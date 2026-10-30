@@ -47,6 +47,18 @@ const I18N = {
     "hero.pill3_title": "Nhấp để phối trộn ngay Berry Social Glow",
     "hero.pill_btn": "Pha Thử ➔",
 
+    // 4-Module Portal on Home View
+    "brand.home_title": "VinaVita AI — Nhấp để về Trang Chủ",
+    "portal.section_tag": "CÁC CHỨC NĂNG NỀN TẢNG • TƯƠNG TÁC NGAY",
+    "portal.mixologist_title": "AI Mixologist Studio",
+    "portal.mixologist_desc": "Phối chế mocktail thảo mộc cá nhân hóa, tự động bảo vệ bởi rào chắn sinh học 5 tầng.",
+    "portal.signatures_title": "Menu & Gói Sachet Gen-Z",
+    "portal.signatures_desc": "3 dòng sản phẩm túi lọc kim tự tháp 5.3g chuẩn hóa, tiện lợi, giá sinh viên.",
+    "portal.database_title": "Bách Khoa Dược Liệu",
+    "portal.database_desc": "Tra cứu 12 vị thuốc Nam, hoạt chất sinh học (Vitexin, Apigenin) & thụ thể hTAS2R16.",
+    "portal.about_title": "Dự Án & Đội Ngũ",
+    "portal.about_desc": "Sáng kiến RMIT RBPC 2026 từ nhóm học sinh Vinschool Central Park.",
+
     // AI Mixologist Studio (View 1)
     "studio.ctrl_title": "<span>🧪</span> Trạm phối trộn của AI Mixologist",
     "studio.ctrl_desc": "Hôm nay bạn thấy thế nào? Hãy chia sẻ tâm trạng, cơ địa của bạn (như huyết áp thấp, đau dạ dày) và gu vị bạn thích — trợ lý AI Mixologist sẽ tự động lọc thảo mộc kỵ và gợi ý công thức vừa an toàn, vừa chuẩn gu nhất cho riêng bạn.",
@@ -344,6 +356,18 @@ const I18N = {
     "hero.pill3_herbs": "Roselle Hibiscus (2.2g) • Passionflower (1.3g) • Cinnamon (0.8g) • Monk Fruit (1.0g)",
     "hero.pill3_title": "Click to formulate Berry Social Glow now",
     "hero.pill_btn": "Brew Now ➔",
+
+    // 4-Module Portal on Home View
+    "brand.home_title": "VinaVita AI — Return to Home",
+    "portal.section_tag": "CORE PLATFORM MODULES • INTERACT NOW",
+    "portal.mixologist_title": "AI Mixologist Studio",
+    "portal.mixologist_desc": "Formulate custom herbal mocktails guarded by our 5-stage biochemical safety shield.",
+    "portal.signatures_title": "Menu & Gen-Z Sachets",
+    "portal.signatures_desc": "3 standardized 5.3g PLA pyramid sachet blends for modern youth wellness.",
+    "portal.database_title": "Herb Encyclopedia",
+    "portal.database_desc": "Explore 12 Vietnamese medicinal herbs, bioactive compounds & hTAS2R16 receptors.",
+    "portal.about_title": "Project & Team",
+    "portal.about_desc": "RMIT RBPC 2026 business initiative by Vinschool Central Park High School team.",
 
     // AI Mixologist Studio (View 1)
     "studio.ctrl_title": "<span>🧪</span> AI Mixologist Formulation Studio",
