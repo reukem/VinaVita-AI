@@ -517,7 +517,7 @@ document.addEventListener("DOMContentLoaded", () => {
             note: "Ion Na+ khử đắng chéo trung ương (Breslin & Beauchamp 1997), tạo hậu vị mượt mà"
           }
         ];
-        biochem = "Công thức chuẩn hóa theo Canva Slide 7: Tắc sấy lạnh đưa pH dịch chiết về 4.3 để ức chế thụ thể hTAS2R16, kết hợp hoạt chất Vitexin từ Lạc Tiên và Apigenin từ Hoa Cúc giúp đi vào giấc ngủ tự nhiên mà không cần đến thuốc ngủ hay đường tinh luyện.";
+        biochem = "Công thức chuẩn hóa: Tắc sấy lạnh đưa pH dịch chiết về 4.3 để ức chế thụ thể hTAS2R16, kết hợp hoạt chất Vitexin từ Lạc Tiên và Apigenin từ Hoa Cúc giúp đi vào giấc ngủ tự nhiên mà không cần đến thuốc ngủ hay đường tinh luyện.";
         matchedSachet = {
           name: "Hộp 5 Túi Lọc Kim Tự Tháp #01 — Citrus Twilight",
           specs: "Túi lọc sinh học PLA 5.30g • 69.000 VNĐ / Hộp 5 gói (13.800 VNĐ/ly)",
@@ -999,7 +999,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (title.includes("Citrus")) {
           resultObj.title = "Citrus Twilight Mocktail (VinaVita #01 — pH 4.3)";
           resultObj.subtitle = "The 'Sleep & Unwind' Pack • Nighttime Sleep & De-Stress (0.0% Alcohol | 0g Sugar)";
-          resultObj.biochem = "Standardized formula per Proposal Slide 7: Freeze-dried kumquat buffers infusion pH to 4.3 to inhibit hTAS2R16 bitterness receptors, pairing with Vitexin from Passionflower and Apigenin from Chamomile for natural sleep onset without sedatives or refined sugar.";
+          resultObj.biochem = "Standardized formula: Freeze-dried kumquat buffers infusion pH to 4.3 to inhibit hTAS2R16 bitterness receptors, pairing with Vitexin from Passionflower and Apigenin from Chamomile for natural sleep onset without sedatives or refined sugar.";
           resultObj.matchedSachet = {
             name: "Box of 5 Pyramid Sachets #01 — Citrus Twilight",
             specs: "Bio-based PLA sachet 5.30g • 69,000 VND / Box of 5 (13,800 VND/cup)",
