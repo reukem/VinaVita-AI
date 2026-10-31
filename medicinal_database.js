@@ -20,17 +20,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Vitexin",
         "class": "Flavonoid C-glycoside",
-        "action": "Điều hòa thụ thể GABA_A, giảm lo âu"
+        "action": "Điều hòa thụ thể GABA_A, giảm lo âu",
+        "class_en": "Flavonoid C-glycoside",
+        "action_en": "Modulates GABA_A receptors, alleviates acute anxiety"
       },
       {
         "name": "Isovitexin",
         "class": "Flavonoid",
-        "action": "Chống oxy hóa, an thần nhẹ"
+        "action": "Chống oxy hóa, an thần nhẹ",
+        "class_en": "Flavonoid C-glycoside",
+        "action_en": "Modulates GABA_A receptors, alleviates acute anxiety"
       },
       {
         "name": "Harman alkaloids (vết)",
         "class": "Indole alkaloid",
-        "action": "Ức chế nhẹ MAO (ở nồng độ an toàn)"
+        "action": "Ức chế nhẹ MAO (ở nồng độ an toàn)",
+        "class_en": "Indole alkaloid",
+        "action_en": "Mildly inhibits MAO within pharmacopoeial safety limits"
       }
     ],
     "bioAction": "Tăng cường hoạt tính acid gamma-aminobutyric (GABA) tại hệ thần kinh trung ương, giúp làm dịu hưng phấn não bộ, tái tạo cảm giác thư giãn tự nhiên giống rượu vang nhẹ nhưng 0% cồn.",
@@ -43,7 +49,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 3,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Thảo mộc thanh mát, hơi nồng nhẹ"
+      "aroma": "Thảo mộc thanh mát, hơi nồng nhẹ",
+      "aroma_en": "Crisp botanical freshness with a gentle earthy aroma"
     },
     "maskingRules": [
       "Kết hợp với vị chua hữu cơ (Acid citric từ Quất / Chanh dây) để ức chế thụ thể đắng TAS2R",
@@ -56,12 +63,26 @@ const MEDICINAL_DATABASE = [
       "chanh_day"
     ],
     "popularDrink": "Social Glow Tonic",
-    "mindfulReminder": "Khi màn đêm buông xuống, hãy cho phép tâm trí được thảnh thơi trút bỏ mọi âu lo. Tự nhiên luôn có cách xoa dịu những gánh nặng nếu ta chịu dừng lại và thở sâu."
+    "mindfulReminder": "Khi màn đêm buông xuống, hãy cho phép tâm trí được thảnh thơi trút bỏ mọi âu lo. Tự nhiên luôn có cách xoa dịu những gánh nặng nếu ta chịu dừng lại và thở sâu.",
+    "categoryLabel_en": "Nerve Soothing / Deep Sleep",
+    "heritageOrigin_en": "Dong Thap Muoi & Southern Herbal Basins",
+    "partUsed_en": "Aerial parts (Herba Passiflorae)",
+    "safeDailyDose_en": "8 – 15g (dried botanical)",
+    "bioAction_en": "Enhances gamma-aminobutyric acid (GABA) receptor activity in the central nervous system, calming brain hyper-excitability and recreating natural relaxation similar to light wine but with 0.0% alcohol.",
+    "maskingRules_en": [
+      "Paired with organic citrus acid (Citric acid from Kumquat / Passionfruit) to inhibit bitter TAS2R receptors",
+      "Blended with Licorice Root (Glycyrrhizin) to create a lingering sweet finish"
+    ],
+    "contraindications_en": [
+      "Pregnant women (alkaloids may induce mild uterine contractions)",
+      "Long-distance drivers requiring peak alertness (high doses induce drowsiness)"
+    ],
+    "mindfulReminder_en": "As evening falls, allow your mind to let go of burdens. Nature always offers a soothing pause if we take a moment to breathe deeply."
   },
   {
     "id": "tam_sen",
     "heritageOrigin": "Đầm Sen Tịnh Tâm (Cố Đô Huế) & Đồng Tháp",
-    "name": "Tâm Sen (Liên Tâm)",
+    "name": "Tâm Sen",
     "sciName": "Embryo Nelumbinis",
     "enName": "Lotus Plumule",
     "image": "assets/tam_sen.jpg",
@@ -72,17 +93,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Liensinine",
         "class": "Bisbenzylisoquinoline alkaloid",
-        "action": "Hạ huyết áp, an thần, chống loạn nhịp"
+        "action": "Hạ huyết áp, an thần, chống loạn nhịp",
+        "class_en": "Bisbenzylisoquinoline alkaloid",
+        "action_en": "Lowers arterial blood pressure, calms central nervous system, anti-arrhythmic"
       },
       {
         "name": "Isoliensinine",
         "class": "Alkaloid",
-        "action": "Bảo vệ tế bào nội mô mạch máu"
+        "action": "Bảo vệ tế bào nội mô mạch máu",
+        "class_en": "Alkaloid",
+        "action_en": "Protects vascular endothelial cells against oxidative stress"
       },
       {
         "name": "Nuciferine",
         "class": "Aporphine alkaloid",
-        "action": "Thư giãn cơ trơn, hỗ trợ giấc ngủ sâu"
+        "action": "Thư giãn cơ trơn, hỗ trợ giấc ngủ sâu",
+        "class_en": "Aporphine alkaloid",
+        "action_en": "Relaxes smooth muscle tone, facilitates restorative slow-wave sleep"
       }
     ],
     "bioAction": "Tác động an thần chuyên sâu, giải nhiệt tâm hỏa, thanh nhiệt lương huyết, đặc biệt hiệu quả với chứng mất ngủ do stress thi cử, tim đập nhanh hồi hộp.",
@@ -96,7 +123,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 5,
       "astringency": 3,
       "sweetness": 0,
-      "aroma": "Mùi hương thanh tao nhưng vị đắng gắt đầu lưỡi"
+      "aroma": "Mùi hương thanh tao nhưng vị đắng gắt đầu lưỡi",
+      "aroma_en": "Pure delicate young lotus aroma with smooth deep bitterness"
     },
     "maskingRules": [
       "Bắt buộc dùng chất tạo ngọt mạnh tự nhiên (Cỏ Ngọt hoặc Mật Ong) để trung hòa",
@@ -109,12 +137,27 @@ const MEDICINAL_DATABASE = [
       "tao_do"
     ],
     "popularDrink": "Deep Night Unwind",
-    "mindfulReminder": "Giữ cho tâm phẳng lặng như mặt hồ sen mùa hạ; một chén trà dịu mát sẽ hạ bớt những ngọn lửa nóng vội, đón nhận sự an yên từ tận đáy lòng."
+    "mindfulReminder": "Giữ cho tâm phẳng lặng như mặt hồ sen mùa hạ; một chén trà dịu mát sẽ hạ bớt những ngọn lửa nóng vội, đón nhận sự an yên từ tận đáy lòng.",
+    "categoryLabel_en": "Nerve Soothing / Heart Heat Relief",
+    "heritageOrigin_en": "Tinh Tam Lotus Lake (Hue Ancient Citadel) & Dong Thap",
+    "partUsed_en": "Dried green lotus plumule (Embryo Nelumbinis)",
+    "safeDailyDose_en": "1.5 – 3g (lightly roasted dried herb)",
+    "bioAction_en": "Delivers intensive sedative action, clears pathogenic heart heat, and cools blood; exceptionally effective for exam stress-induced insomnia and palpitations.",
+    "maskingRules_en": [
+      "Must undergo light golden pan-roasting to volatilize harsh tannins",
+      "Paired with Chamomile and Licorice to buffer intense bitterness via TAS2R blockage"
+    ],
+    "contraindications_en": [
+      "Individuals with a history of HYPOTENSION (risk of sudden blood pressure drop)",
+      "Patients with cold-deficiency of spleen and stomach (frequent diarrhea, abdominal chilliness)",
+      "Do not use continuously for over 2 weeks without warming balancing herbs"
+    ],
+    "mindfulReminder_en": "True peace arises when excessive inner heat is calmed. Savor each sip as a gentle anchor back to tranquility."
   },
   {
     "id": "dinh_lang",
     "heritageOrigin": "Vùng Dược Liệu Hải Hậu (Nam Định) - Sâm Nam",
-    "name": "Đinh Lăng (Sâm Nam)",
+    "name": "Đinh Lăng",
     "sciName": "Polyscias fruticosa (L.) Harms",
     "enName": "Vietnamese Ginseng",
     "image": "assets/dinh_lang.jpg",
@@ -125,17 +168,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Saponin triterpenoid",
         "class": "Saponin",
-        "action": "Tăng lực, chống mệt mỏi thể chất và trí não"
+        "action": "Tăng lực, chống mệt mỏi thể chất và trí não",
+        "class_en": "Saponin",
+        "action_en": "Adaptogenic booster, combats physical and mental fatigue"
       },
       {
         "name": "Vitamin nhóm B & 20 acid amin",
         "class": "Dưỡng chất",
-        "action": "Nuôi dưỡng tế bào thần kinh"
+        "action": "Nuôi dưỡng tế bào thần kinh",
+        "class_en": "Essential Nutrients",
+        "action_en": "Nourishes cerebral neurons and neurotransmitter synthesis"
       },
       {
         "name": "Polysaccharides",
         "class": "Carbohydrate phức",
-        "action": "Tăng cường miễn dịch tự nhiên"
+        "action": "Tăng cường miễn dịch tự nhiên",
+        "class_en": "Complex Carbohydrate",
+        "action_en": "Enhances innate immune defense and cellular stamina"
       }
     ],
     "bioAction": "Thảo mộc Adaptogen bản địa giúp cơ thể thích nghi với áp lực căng thẳng cực độ, tăng tuần hoàn máu não, tăng dẫn truyền thần kinh dopamine mà không gây kích thích ép tim như caffein.",
@@ -148,7 +197,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 3,
-      "aroma": "Thơm dịu đặc trưng giống nhân sâm, hậu vị ngọt bùi"
+      "aroma": "Thơm dịu đặc trưng giống nhân sâm, hậu vị ngọt bùi",
+      "aroma_en": "Subtle invigorating herbal scent with faint ginseng undertones"
     },
     "maskingRules": [
       "Vị rất dễ chịu, dễ dàng phối hợp với hương cam chanh hoặc bạc hà tươi",
@@ -161,12 +211,26 @@ const MEDICINAL_DATABASE = [
       "gung_ta"
     ],
     "popularDrink": "Daylight Focus Brew",
-    "mindfulReminder": "Sức mạnh bền bỉ không đến từ sự thúc ép vội vã, mà đâm chồi từ cội rễ kiên tâm. Hãy lắng nghe nhịp điệu tự nhiên của cơ thể để đi xa hơn mỗi ngày."
+    "mindfulReminder": "Sức mạnh bền bỉ không đến từ sự thúc ép vội vã, mà đâm chồi từ cội rễ kiên tâm. Hãy lắng nghe nhịp điệu tự nhiên của cơ thể để đi xa hơn mỗi ngày.",
+    "categoryLabel_en": "Adaptogenic Tonifying / Brain Circulation",
+    "heritageOrigin_en": "Nam Dinh & Hai Hau Ancient Heritage Plantations",
+    "partUsed_en": "Roots aged 3+ years & sun-dried leaves",
+    "safeDailyDose_en": "10 – 20g (dried leaves) or 5 – 10g (dried roots)",
+    "bioAction_en": "Vietnamese Ginseng (Nam Duoc) rich in triterpenoid saponins, increases cerebral capillary blood flow, enhances mental endurance, and supports memory retention.",
+    "maskingRules_en": [
+      "Paired with Red Jujube and Longan to soften saponin astringency",
+      "A pinch of Mountain Ginger synergizes digestive warming"
+    ],
+    "contraindications_en": [
+      "Women in the first trimester of pregnancy",
+      "Excessive doses (>30g) may trigger saponin fatigue or lightheadedness"
+    ],
+    "mindfulReminder_en": "Resilience is cultivated gradually through consistent, mindful care. Honor your energy reserves before exhaustion strikes."
   },
   {
     "id": "cam_thao",
     "heritageOrigin": "Dược Điển Cổ Truyền Bắc Bộ (Hòa Vị Chi Dược)",
-    "name": "Cam Thảo Bắc",
+    "name": "Cam Thảo",
     "sciName": "Glycyrrhiza uralensis Fisch.",
     "enName": "Licorice Root",
     "image": "assets/cam_thao.jpg",
@@ -177,12 +241,16 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Glycyrrhizin",
         "class": "Saponin triterpen",
-        "action": "Độ ngọt gấp 50 lần đường mía, bảo vệ niêm mạc dạ dày"
+        "action": "Độ ngọt gấp 50 lần đường mía, bảo vệ niêm mạc dạ dày",
+        "class_en": "Triterpene Saponin",
+        "action_en": "50x sweeter than sucrose, forms protective barrier over gastric mucosa"
       },
       {
         "name": "Liquiritin & Isoliquiritigenin",
         "class": "Flavonoid",
-        "action": "Chống viêm, làm giãn cơ trơn tiêu hóa"
+        "action": "Chống viêm, làm giãn cơ trơn tiêu hóa",
+        "class_en": "Flavonoid",
+        "action_en": "Anti-inflammatory, relaxes gastrointestinal smooth muscles"
       }
     ],
     "bioAction": "Đóng vai trò là 'Sứ giả' trong bài thuốc cổ truyền: hòa hoãn tính dược, bảo vệ dạ dày, và là chất khử vị đắng tự nhiên số 1 giúp ức chế gai vị giác đắng TAS2R.",
@@ -195,7 +263,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 0,
       "astringency": 0,
       "sweetness": 5,
-      "aroma": "Ngọt đậm sâu, mùi thơm thảo mộc ấm áp"
+      "aroma": "Ngọt đậm sâu, mùi thơm thảo mộc ấm áp",
+      "aroma_en": "Warm comforting sweetness with deep woody floral fragrance"
     },
     "maskingRules": [
       "Chất khử đắng hoàn hảo cho Tâm Sen, Lạc Tiên, Actiso",
@@ -209,12 +278,25 @@ const MEDICINAL_DATABASE = [
     ],
     "popularDrink": "All Mocktails (Base Sweetener)",
     "mindfulReminder": "Hòa hợp là đỉnh cao của sự thấu hiểu; giữ cho mình sự bao dung và ngọt lành trong từng lời nói như vị ngọt sâu lắng của rễ cam thảo.",
-    "officialSource": "EMA/HMPC, Glycyrrhiza glabra L. and/or G. inflata Bat. and/or G. uralensis Fisch., radix (EMA/HMPC/571119/2010); Báo cáo ca: https://pmc.ncbi.nlm.nih.gov/articles/PMC4480140"
+    "officialSource": "EMA/HMPC, Glycyrrhiza glabra L. and/or G. inflata Bat. and/or G. uralensis Fisch., radix (EMA/HMPC/571119/2010); Báo cáo ca: https://pmc.ncbi.nlm.nih.gov/articles/PMC4480140",
+    "categoryLabel_en": "Harmonizing / Throat Soothing",
+    "heritageOrigin_en": "Standardized Northern Medicinal Botanical Reserves",
+    "partUsed_en": "Dried peeled root (Radix Glycyrrhizae)",
+    "safeDailyDose_en": "2 – 8g (dried root)",
+    "bioAction_en": "Universal balancing herb in Eastern pharmacopoeia; sweet glycyrrhizin soothes gastric mucosa, calms irritated airways, and neutralizes herbal bitterness.",
+    "maskingRules_en": [
+      "Key natural harmonic balancer; smooths harsh bitterness of herbs like Lotus Plumule and Green Tea"
+    ],
+    "contraindications_en": [
+      "Strictly contraindicated in hypertension, renal disease, and congestive heart failure",
+      "Prolonged high intake retains sodium and depletes potassium, risking dangerous hypertension and hypokalemia"
+    ],
+    "mindfulReminder_en": "Harmony transforms sharp edges into smooth melody. Softness often holds the greatest balancing strength."
   },
   {
     "id": "co_ngot",
     "heritageOrigin": "Vùng Cao Mộc Châu (Sơn La) & Hà Giang",
-    "name": "Cỏ Ngọt (Cúc Ngọt)",
+    "name": "Cỏ Ngọt",
     "sciName": "Stevia rebaudiana (Bertoni)",
     "enName": "Stevia",
     "image": "assets/co_ngot.jpg",
@@ -225,7 +307,9 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Stevioside & Rebaudioside A",
         "class": "Glycoside diterpen",
-        "action": "Ngọt gấp 250-300 lần đường mía, 0 calorie, không tăng đường huyết"
+        "action": "Ngọt gấp 250-300 lần đường mía, 0 calorie, không tăng đường huyết",
+        "class_en": "Diterpene Glycoside",
+        "action_en": "250-300x sweeter than sucrose, 0 calories, zero glycemic index impact"
       }
     ],
     "bioAction": "Cung cấp độ ngọt thanh mát tự nhiên mà không sinh năng lượng thừa, an toàn tuyệt đối cho người ăn kiêng, tập gym, hoặc tiểu đường.",
@@ -237,7 +321,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 0,
       "astringency": 1,
       "sweetness": 5,
-      "aroma": "Thảo mộc thanh nhạt"
+      "aroma": "Thảo mộc thanh nhạt",
+      "aroma_en": "Refreshing herbal sweetness, 0 calories"
     },
     "maskingRules": [
       "Kết hợp hoàn hảo với vị chua thanh của Quất/Chanh dây để khử hậu vị lợ"
@@ -249,14 +334,26 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "Zero-Calorie Social Tonic",
-    "mindfulReminder": "Cuộc sống trọn vẹn không cần thêm những gánh nặng dư thừa; đón nhận sự ngọt ngào thanh khiết vốn có từ những điều dung dị xung quanh."
+    "mindfulReminder": "Cuộc sống trọn vẹn không cần thêm những gánh nặng dư thừa; đón nhận sự ngọt ngào thanh khiết vốn có từ những điều dung dị xung quanh.",
+    "categoryLabel_en": "Natural Zero-Calorie Sweetener (GI=0)",
+    "heritageOrigin_en": "Ha Giang & Lam Dong Clean Botanical Farms",
+    "partUsed_en": "Dried leaves (Folium Steviae rebaudianae)",
+    "safeDailyDose_en": "0.5 – 1.5g dried leaves",
+    "bioAction_en": "Stevioside and rebaudioside A activate sweet taste receptors T1R2/T1R3 without metabolizing into glucose, producing clean natural sweetness with zero glycemic load.",
+    "maskingRules_en": [
+      "Paired with trace mineral salt and organic citrus to eliminate any lingering metallic aftertaste"
+    ],
+    "contraindications_en": [
+      "Excessive intake may leave a slightly brackish lingering aftertaste (balance with citrus/kumquat)"
+    ],
+    "mindfulReminder_en": "Gentle natural sweetness needs no excess; savor pure harmony without heavy sugar or guilt."
   },
   {
     "id": "atiso",
     "heritageOrigin": "Cao Nguyên Xứ Lạnh Đà Lạt (Lâm Đồng)",
     "name": "Actisô Đà Lạt",
     "sciName": "Cynara scolymus L.",
-    "enName": "Artichoke",
+    "enName": "Dalat Artichoke",
     "image": "assets/atiso.jpg",
     "category": "gan_mat",
     "categoryLabel": "Thanh nhiệt / Giải độc gan",
@@ -265,12 +362,16 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Cynarin",
         "class": "Dicaffeoylquinic acid",
-        "action": "Kích thích tiết mật, tái tạo tế bào gan"
+        "action": "Kích thích tiết mật, tái tạo tế bào gan",
+        "class_en": "Dicaffeoylquinic Acid",
+        "action_en": "Stimulates bile excretion, accelerates hepatocyte regeneration"
       },
       {
         "name": "Luteolin & Apigenin",
         "class": "Flavonoid",
-        "action": "Hạ cholesterol, chống oxy hóa mạch máu"
+        "action": "Hạ cholesterol, chống oxy hóa mạch máu",
+        "class_en": "Flavonoid",
+        "action_en": "Lowers circulating LDL cholesterol, protects vascular walls"
       }
     ],
     "bioAction": "Tăng cường chức năng thải độc của gan sau những chuỗi ngày thức khuya, ăn đồ cay nóng hoặc sau các bữa tiệc; làm mát cơ thể, giảm mụn nhọt.",
@@ -284,7 +385,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 3,
       "astringency": 2,
       "sweetness": 2,
-      "aroma": "Hương nồng đầm ấm, hậu vị ngọt nhẹ đặc trưng Đà Lạt"
+      "aroma": "Hương nồng đầm ấm, hậu vị ngọt nhẹ đặc trưng Đà Lạt",
+      "aroma_en": "Rich, mellow roasted botanical aroma with comforting bitter-sweet finish"
     },
     "maskingRules": [
       "Phối cùng Hoa Cúc và Cam Thảo để tạo dòng trà thanh nhiệt thượng hạng"
@@ -297,14 +399,29 @@ const MEDICINAL_DATABASE = [
     ],
     "popularDrink": "Artichoke Botanical Tonic",
     "mindfulReminder": "Thanh lọc cơ thể cũng là lúc thanh lọc tâm trí; hãy buông bỏ những muộn phiền tích tụ để tái sinh nguồn năng lượng tươi mát như sương sớm Đà Lạt.",
-    "officialSource": "EMA/HMPC, Cynarae folium, bản tóm tắt: https://www.ema.europa.eu/en/medicines/herbal/cynarae-folium"
+    "officialSource": "EMA/HMPC, Cynarae folium, bản tóm tắt: https://www.ema.europa.eu/en/medicines/herbal/cynarae-folium",
+    "categoryLabel_en": "Liver Detox / Bile Stimulation",
+    "heritageOrigin_en": "Da Lat Highland Valleys (Lam Dong, 1500m Elevation)",
+    "partUsed_en": "Dried flower buds and leaves (Cynara scolymus)",
+    "safeDailyDose_en": "5 – 10g dried botanical",
+    "bioAction_en": "Cynarin and caffeoylquinic acids stimulate hepatic bile production, assist liver enzymatic detoxification, and help lower LDL cholesterol.",
+    "maskingRules_en": [
+      "Combine with Stevia or Jujube Date to balance herbal bitterness",
+      "Serve chilled with lime peel for a refreshing detox tonic"
+    ],
+    "contraindications_en": [
+      "Recommended for ages 12 and above",
+      "Do not use during active hepatic failure or complete bile duct obstruction",
+      "Mild side effects may include transient soft stool or mild heartburn"
+    ],
+    "mindfulReminder_en": "Purification begins from within. Grant your body the space and clean nourishment it needs to regenerate."
   },
   {
     "id": "hoa_cuc",
     "heritageOrigin": "Làng Dược Thảo Cúc Tiến Vua Nghĩa Trai (Hưng Yên)",
-    "name": "Hoa Cúc Vàng (Cúc Hoa)",
+    "name": "Hoa Cúc Vàng",
     "sciName": "Chrysanthemum morifolium / C. indicum",
-    "enName": "White Chrysanthemum",
+    "enName": "Chrysanthemum Flower",
     "image": "assets/hoa_cuc.jpg",
     "category": "an_than",
     "categoryLabel": "Sáng mắt / Thanh nhiệt / Giải độc",
@@ -313,12 +430,16 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Apigenin",
         "class": "Flavonoid",
-        "action": "Gắn kết chọn lọc thụ thể Benzodiazepine, an thần êm dịu"
+        "action": "Gắn kết chọn lọc thụ thể Benzodiazepine, an thần êm dịu",
+        "class_en": "Flavonoid",
+        "action_en": "Selectively binds Benzodiazepine receptors, delivering gentle tranquilizing relaxation"
       },
       {
         "name": "Luteolin",
         "class": "Flavonoid",
-        "action": "Bảo vệ võng mạc, giảm nhức mỏi mắt khi nhìn màn hình"
+        "action": "Bảo vệ võng mạc, giảm nhức mỏi mắt khi nhìn màn hình",
+        "class_en": "Flavonoid",
+        "action_en": "Protects macular retinal cells, reduces digital screen-induced eye fatigue"
       }
     ],
     "bioAction": "Làm dịu căng thẳng thần kinh thị giác (rất cần cho học sinh và lập trình viên ngồi máy tính cả ngày), giảm đau đầu chóng mặt do căng thẳng.",
@@ -330,7 +451,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 1,
       "astringency": 1,
       "sweetness": 2,
-      "aroma": "Hương thơm quý phái, thanh khiết dịu dàng"
+      "aroma": "Hương thơm quý phái, thanh khiết dịu dàng",
+      "aroma_en": "Subtle, ethereal floral perfume with sweet golden undertones"
     },
     "maskingRules": [
       "Tôn vinh hương hoa tự nhiên, tuyệt đối không đun sôi sùng sục làm bay tinh dầu (pha ở 85°C)"
@@ -343,14 +465,27 @@ const MEDICINAL_DATABASE = [
     ],
     "popularDrink": "Scholar Eye Calm",
     "mindfulReminder": "Đôi mắt nhìn cuộc đời với lòng trắc ẩn sẽ luôn tìm thấy vẻ đẹp an lành. Hãy cho mắt nghỉ ngơi sau chuỗi giờ căng thẳng cùng màn hình máy tính.",
-    "officialSource": "PMC3038564 (2011): https://pmc.ncbi.nlm.nih.gov/articles/PMC3038564"
+    "officialSource": "PMC3038564 (2011): https://pmc.ncbi.nlm.nih.gov/articles/PMC3038564",
+    "categoryLabel_en": "Heat Clearing / Eye Comfort / Calming",
+    "heritageOrigin_en": "Hung Yen Nghia Trai Heritage Floral Villages",
+    "partUsed_en": "Dried flower heads (Flos Chrysanthemi)",
+    "safeDailyDose_en": "3 – 9g dried flowers",
+    "bioAction_en": "Apigenin selectively binds central benzodiazepine receptors to induce serene calm; luteolin filters digital screen blue light and relieves eye strain.",
+    "maskingRules_en": [
+      "Pairs splendidly with Goji Berry and Jujube Date for eye health and sweet harmony",
+      "Blends with Peppermint to add crisp refreshing top notes"
+    ],
+    "contraindications_en": [
+      "Individuals with known severe allergies to Asteraceae (daisy family) plants may experience hypersensitivity"
+    ],
+    "mindfulReminder_en": "Like golden blossoms opening to morning dew, let your senses unfold in quiet calm."
   },
   {
     "id": "quat_tac",
     "heritageOrigin": "Làng Quất Di Sản Tứ Liên (Hà Nội) & Miền Tây",
-    "name": "Quất (Tắc) Tươi & Vỏ Quất",
+    "name": "Quất Tươi",
     "sciName": "Citrus japonica Thunb.",
-    "enName": "Kumquat",
+    "enName": "Vietnamese Kumquat",
     "image": "assets/quat_tac.jpg",
     "category": "dieu_vi",
     "categoryLabel": "Axit hữu cơ / Tinh dầu khử đắng",
@@ -359,17 +494,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Citric acid",
         "class": "Acid hữu cơ",
-        "action": "Kích thích vị giác, ức chế thụ thể đắng TAS2R"
+        "action": "Kích thích vị giác, ức chế thụ thể đắng TAS2R",
+        "class_en": "Organic Acid",
+        "action_en": "Stimulates salivary flow, physiologically suppresses TAS2R bitter receptors"
       },
       {
         "name": "Limonene",
         "class": "Tinh dầu Terpene",
-        "action": "Tạo hương thơm phấn chấn, kích thích tiêu hóa"
+        "action": "Tạo hương thơm phấn chấn, kích thích tiêu hóa",
+        "class_en": "Terpene Essential Oil",
+        "action_en": "Uplifts mood, stimulates gastric enzymatic secretion"
       },
       {
         "name": "Vitamin C",
         "class": "Vitamin",
-        "action": "Chống oxy hóa, tăng sinh năng lượng tế bào"
+        "action": "Chống oxy hóa, tăng sinh năng lượng tế bào",
+        "class_en": "Essential Vitamin",
+        "action_en": "Potent free radical scavenger, boosts cellular mitochondrial energy"
       }
     ],
     "bioAction": "Cung cấp độ chua thanh sáng bừng (Zesty Acid), chuyển đổi một chén trà thuốc bắc buồn tẻ thành một ly Mocktail hiện đại thời thượng.",
@@ -381,7 +522,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 1,
       "astringency": 1,
       "sweetness": 2,
-      "aroma": "Hương tinh dầu cam chanh bừng tỉnh giác quan"
+      "aroma": "Hương tinh dầu cam chanh bừng tỉnh giác quan",
+      "aroma_en": "Zesty, vibrant citrus explosion with uplifting essential oil brightness"
     },
     "maskingRules": [
       "Vũ khí số 1 để 'đập tan' vị đắng của Lạc Tiên và Đinh Lăng"
@@ -393,12 +535,24 @@ const MEDICINAL_DATABASE = [
       "bac_ha"
     ],
     "popularDrink": "Zesty Zen Punch",
-    "mindfulReminder": "Một chút tươi vui, bừng tỉnh giác quan như giọt sương mai trên cành quất; hãy mở rộng lòng mình để đón nhận nguồn cảm hứng mới mỗi sớm mai."
+    "mindfulReminder": "Một chút tươi vui, bừng tỉnh giác quan như giọt sương mai trên cành quất; hãy mở rộng lòng mình để đón nhận nguồn cảm hứng mới mỗi sớm mai.",
+    "categoryLabel_en": "Natural Vitamin C / TAS2R Masking / Refreshing",
+    "heritageOrigin_en": "Tien Giang & Mekong Delta Orchard Basins",
+    "partUsed_en": "Fresh fruit & freeze-dried peel (Citrus japonica)",
+    "safeDailyDose_en": "3 – 6 fresh fruits or 5 – 10g freeze-dried peel",
+    "bioAction_en": "Natural citric acid optimizes beverage pH to 4.2-4.5, directly suppressing human bitter taste receptors hTAS2R16; limonene invigorates digestion.",
+    "maskingRules_en": [
+      "Core food science masking agent; pairs with bitter herbs (Lotus Plumule, Green Tea) to mute bitter perception"
+    ],
+    "contraindications_en": [
+      "Patients suffering from acute gastric peptic ulcers (avoid consuming on an empty stomach)"
+    ],
+    "mindfulReminder_en": "Bright citrus zest awakens the spirit, reminding us that renewal is always just a breath away."
   },
   {
     "id": "chanh_day",
     "heritageOrigin": "Thủ Phủ Nông Sản Cao Nguyên Gia Lai & Đắk Lắk",
-    "name": "Chanh Dây (Chanh Leo)",
+    "name": "Chanh Dây",
     "sciName": "Passiflora edulis Sims",
     "enName": "Passion Fruit",
     "image": "assets/chanh_day.jpg",
@@ -409,12 +563,16 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Acid Malic & Citric",
         "class": "Acid hữu cơ",
-        "action": "Cân bằng độ chua ngọt"
+        "action": "Cân bằng độ chua ngọt",
+        "class_en": "Organic Acid",
+        "action_en": "Balances sweet-tart taste ratio, enhances nutrient bioavailability"
       },
       {
         "name": "Passiflorine (vết)",
         "class": "Alkaloid",
-        "action": "Hỗ trợ an thần tự nhiên"
+        "action": "Hỗ trợ an thần tự nhiên",
+        "class_en": "Alkaloid",
+        "action_en": "Supports mild natural neuro-relaxation and emotional calm"
       }
     ],
     "bioAction": "Mang lại màu vàng óng ánh sang trọng và hương thơm nhiệt đới bùng nổ, biến ly Mocktail thành tâm điểm của mọi bữa tiệc acoustic.",
@@ -426,7 +584,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 0,
       "astringency": 1,
       "sweetness": 3,
-      "aroma": "Hương thơm nồng nàn quyến rũ đặc trưng Nam Bộ"
+      "aroma": "Hương thơm nồng nàn quyến rũ đặc trưng Nam Bộ",
+      "aroma_en": "Intensely exotic tropical perfume with bright tart sweetness"
     },
     "maskingRules": [
       "Tạo nền chua ngọt nhiệt đới che phủ hoàn toàn thảo mộc"
@@ -438,14 +597,26 @@ const MEDICINAL_DATABASE = [
       "soda"
     ],
     "popularDrink": "Tropical Twilight",
-    "mindfulReminder": "Hòa quyện hương sắc nhiệt đới rực rỡ, nhắc nhở ta hãy sống hết mình với đam mê nhưng luôn giữ cho tâm hồn một khoảng lặng dịu êm."
+    "mindfulReminder": "Hòa quyện hương sắc nhiệt đới rực rỡ, nhắc nhở ta hãy sống hết mình với đam mê nhưng luôn giữ cho tâm hồn một khoảng lặng dịu êm.",
+    "categoryLabel_en": "Organic Acid Balancing / Stress Relief",
+    "heritageOrigin_en": "Gia Lai & Central Highlands High Altitude Plateau",
+    "partUsed_en": "Fruit pulp and seeds (Passiflora edulis)",
+    "safeDailyDose_en": "1 – 2 fresh fruits (20 – 40g juice pulp)",
+    "bioAction_en": "Natural malic and citric acids provide crisp, fruity tang; trace passiflorine synergies with GABAergic pathways to ease tension.",
+    "maskingRules_en": [
+      "Natural fruit acid modulator; blends with Stevia to create a refreshing non-alcoholic spritzer base"
+    ],
+    "contraindications_en": [
+      "Patients with severe acid reflux (GERD) or acute gastroesophageal irritation"
+    ],
+    "mindfulReminder_en": "Exotic vibrancy reminds us of nature's abundant energy; savor the lively zest of every moment."
   },
   {
     "id": "bac_ha",
     "heritageOrigin": "Thung Lũng Thảo Mộc Sa Pa & Nam Định",
     "name": "Bạc Hà Nam",
     "sciName": "Mentha × piperita L.",
-    "enName": "Field Mint",
+    "enName": "Asian Field Mint",
     "image": "assets/bac_ha.jpg",
     "category": "huong_vi",
     "categoryLabel": "Khai vị / Mát lạnh / Giải cảm",
@@ -454,7 +625,9 @@ const MEDICINAL_DATABASE = [
       {
         "name": "L-Menthol",
         "class": "Monoterpene",
-        "action": "Kích hoạt thụ thể lạnh TRPM8, tạo cảm giác sảng khoái băng giá"
+        "action": "Kích hoạt thụ thể lạnh TRPM8, tạo cảm giác sảng khoái băng giá",
+        "class_en": "Monoterpene",
+        "action_en": "Activates TRPM8 cold receptors, creating an exhilarating ice-cool sensory surge"
       }
     ],
     "bioAction": "Đem lại hậu vị sảng khoái mát lạnh, kích thích tiêu hóa, thông thoáng đường thở và giải tỏa căng thẳng sau giờ làm việc mệt mỏi.",
@@ -468,7 +641,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 0,
       "astringency": 0,
       "sweetness": 1,
-      "aroma": "The mát bừng tỉnh não bộ"
+      "aroma": "The mát bừng tỉnh não bộ",
+      "aroma_en": "Crisp, icy botanical coolness that opens the sinuses instantly"
     },
     "maskingRules": [
       "Xóa tan mùi thảo mộc nồng, tạo cảm giác như đang thưởng thức Mojito"
@@ -481,14 +655,28 @@ const MEDICINAL_DATABASE = [
     ],
     "popularDrink": "Saigon Green Mojito 0.0",
     "mindfulReminder": "Một hơi thở sâu đưa làn gió mát vào lồng ngực, đánh thức sự tỉnh táo thuần khiết để nhìn nhận mọi việc một cách sáng suốt và nhẹ nhàng.",
-    "officialSource": "EMA/HMPC, European Union herbal monograph on Mentha x piperita L., folium, Final – Revision 1: https://ema.europa.eu/en/documents/herbal-monograph/european-union-herbal-monograph-mentha-x-piperita-l-folium-revision-1_en.pdf"
+    "officialSource": "EMA/HMPC, European Union herbal monograph on Mentha x piperita L., folium, Final – Revision 1: https://ema.europa.eu/en/documents/herbal-monograph/european-union-herbal-monograph-mentha-x-piperita-l-folium-revision-1_en.pdf",
+    "categoryLabel_en": "Cooling / Mental Focus / Digestive Refresh",
+    "heritageOrigin_en": "Hung Yen & Red River Delta Alluvial Soil",
+    "partUsed_en": "Leaves and flowering stems (Mentha arvensis)",
+    "safeDailyDose_en": "3 – 6g dried leaves",
+    "bioAction_en": "L-Menthol selectively stimulates TRPM8 cold-sensing receptors on the tongue and oral mucosa, producing an immediate cooling rush that clears mental fog.",
+    "maskingRules_en": [
+      "Essential top note for mocktails; neutralizes heavy earthy botanical odors"
+    ],
+    "contraindications_en": [
+      "Avoid in gastroesophageal reflux disease (GERD) as menthol relaxes the lower esophageal sphincter",
+      "Use cautiously with gallstones or biliary disorders",
+      "Do not administer concentrated essential oils to infants"
+    ],
+    "mindfulReminder_en": "Inhale crystalline cool clarity. Clear space within your thoughts and begin afresh."
   },
   {
     "id": "gung_ta",
     "heritageOrigin": "Gừng Núi Đá Kỳ Sơn (Nghệ An) & Hòa Bình",
-    "name": "Gừng (Gừng Núi)",
+    "name": "Gừng Núi",
     "sciName": "Zingiber officinale Roscoe",
-    "enName": "Vietnamese Organic Ginger",
+    "enName": "Mountain Ginger",
     "image": "assets/gung_ta.jpg",
     "category": "dieu_vi",
     "categoryLabel": "Ấm tỳ vị / Giảm nôn / Tăng tuần hoàn",
@@ -497,17 +685,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Gingerol ([6]-gingerol)",
         "class": "Phenolic ketone",
-        "action": "Kích thích thụ thể TRPV1, tăng tuần hoàn ngoại vi, chống co thắt dạ dày"
+        "action": "Kích thích thụ thể TRPV1, tăng tuần hoàn ngoại vi, chống co thắt dạ dày",
+        "class_en": "Phenolic Ketone",
+        "action_en": "Stimulates TRPV1 receptors, enhances microcirculation, prevents stomach cramps"
       },
       {
         "name": "Shogaol",
         "class": "Phenylalkylketone",
-        "action": "Kháng viêm mạnh mẽ, ấm kinh lạc, giảm đau đầu do lạnh"
+        "action": "Kháng viêm mạnh mẽ, ấm kinh lạc, giảm đau đầu do lạnh",
+        "class_en": "Phenylalkylketone",
+        "action_en": "Potent anti-inflammatory, warms meridians, relieves cold tension headaches"
       },
       {
         "name": "Zingiberene",
         "class": "Sesquiterpene",
-        "action": "Tạo hương thơm cay ấm quý phái, kích hoạt tiết enzyme tiêu hóa"
+        "action": "Tạo hương thơm cay ấm quý phái, kích hoạt tiết enzyme tiêu hóa",
+        "class_en": "Sesquiterpene",
+        "action_en": "Imparts noble spicy fragrance, activates digestive enzyme secretion"
       }
     ],
     "bioAction": "Làm ấm tỳ vị, đánh tan cảm giác ớn lạnh bụng khi uống nước đá, kích hoạt tuần hoàn máu não và giảm cảm giác buồn nôn, hồi hộp.",
@@ -521,7 +715,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 0,
       "astringency": 0,
       "sweetness": 1,
-      "aroma": "Cay nồng ấm áp, thơm dậy mùi tinh dầu bản địa"
+      "aroma": "Cay nồng ấm áp, thơm dậy mùi tinh dầu bản địa",
+      "aroma_en": "Deeply warming, spicy-sweet noble root aroma"
     },
     "maskingRules": [
       "Dùng độ cay ấm để trung hòa tính hàn trệ của Tâm Sen và Actisô",
@@ -536,14 +731,28 @@ const MEDICINAL_DATABASE = [
     "popularDrink": "Mekong Warming Mule",
     "mindfulReminder": "Hơi ấm từ đất mẹ xua tan mọi giá lạnh; sưởi ấm dạ dày và trái tim để luôn vững vàng trước những giông bão cuộc đời.",
     "officialSource": "EMA/HMPC, European Union herbal monograph on Zingiber officinale Roscoe, rhizoma, EMA/HMPC/885789/2022, Revision 1 (tháng 5/2025): https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-zingiber-officinale-roscoe-rhizoma-revision-1_en.pdf",
-    "clinicalDoseNote": "Tiêu đề nghiên cứu gừng (Viljoen 2014 và tiêu đề đã đổi) chưa được xác nhận; ghi nhận trạng thái 'chưa kiểm chứng'."
+    "clinicalDoseNote": "Tiêu đề nghiên cứu gừng (Viljoen 2014 và tiêu đề đã đổi) chưa được xác nhận; ghi nhận trạng thái 'chưa kiểm chứng'.",
+    "categoryLabel_en": "Digestive Warming / Peripheral Circulation",
+    "heritageOrigin_en": "Ky Son & Nghe An Rugged Mountain Plantations",
+    "partUsed_en": "Fresh & dried rhizomes (Zingiber officinale)",
+    "safeDailyDose_en": "3 – 9g fresh or 1 – 3g dried root",
+    "bioAction_en": "[6]-gingerol and shogaol stimulate TRPV1 thermoreceptors, boosting peripheral microcirculation, dispelling chills, and relieving gastrointestinal spasms.",
+    "maskingRules_en": [
+      "Balances cooling and bitter herbs (such as Lotus Plumule or Roselle), imparting a rounded warmth"
+    ],
+    "contraindications_en": [
+      "Requires medical consultation during pregnancy (EMA/HMPC 2012 on thromboxane synthetase inhibition)",
+      "Use caution when concurrently taking anticoagulant medications",
+      "Avoid during active peptic ulcers with heat symptoms"
+    ],
+    "mindfulReminder_en": "Inner warmth protects against external chills. Nurture your core vitality with gentle heat."
   },
   {
     "id": "sa_chanh",
     "heritageOrigin": "Vùng Nông Nghiệp Hữu Cơ Tây Nam Bộ",
-    "name": "Sả Chanh Bản Địa",
+    "name": "Sả Chanh",
     "sciName": "Cymbopogon citratus (DC.) Stapf",
-    "enName": "Lemongrass",
+    "enName": "Native Lemongrass",
     "image": "assets/sa_chanh.jpg",
     "category": "huong_vi",
     "categoryLabel": "Thư giãn thần kinh / Kháng khuẩn / Hạ Acid Uric",
@@ -552,17 +761,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Citral (Geranial & Neral)",
         "class": "Monoterpene aldehyde",
-        "action": "Tác động an thần thụ thể GABA, giải tỏa lo âu thần kinh tức thì"
+        "action": "Tác động an thần thụ thể GABA, giải tỏa lo âu thần kinh tức thì",
+        "class_en": "Monoterpene Aldehyde",
+        "action_en": "Modulates GABA neuro-receptors, rapidly dispels nervous tension"
       },
       {
         "name": "Myrcene",
         "class": "Terpene hydrocarbon",
-        "action": "Giảm đau nhức cơ bắp, tăng khả năng thẩm thấu dưỡng chất"
+        "action": "Giảm đau nhức cơ bắp, tăng khả năng thẩm thấu dưỡng chất",
+        "class_en": "Terpene Hydrocarbon",
+        "action_en": "Alleviates muscular aches, enhances botanical active absorption"
       },
       {
         "name": "Flavonoid Luteolin",
         "class": "Polyphenol",
-        "action": "Ức chế enzyme Xanthine oxidase hỗ trợ hạ acid uric trong máu"
+        "action": "Ức chế enzyme Xanthine oxidase hỗ trợ hạ acid uric trong máu",
+        "class_en": "Polyphenol",
+        "action_en": "Inhibits Xanthine oxidase to support healthy serum uric acid balance"
       }
     ],
     "bioAction": "Mang lại tầng hương Citrus thanh thoát quý phái, xua tan cảm giác ngột ngạt căng thẳng trong phòng máy lạnh, hỗ trợ thanh lọc đường tiết niệu.",
@@ -575,7 +790,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 0,
       "astringency": 1,
       "sweetness": 1,
-      "aroma": "Hương sả chanh tươi mát bừng tỉnh không gian"
+      "aroma": "Hương sả chanh tươi mát bừng tỉnh không gian",
+      "aroma_en": "Bright, uplifting citrus-herbal fragrance that refreshes tired minds"
     },
     "maskingRules": [
       "Cắt bay lập tức mùi ngái thuốc bắc của Lạc Tiên và rễ Đinh Lăng",
@@ -589,12 +805,25 @@ const MEDICINAL_DATABASE = [
     ],
     "popularDrink": "Indochine Citrus Fizz",
     "mindfulReminder": "Hương thơm mộc mạc của quê nhà nhắc ta nhớ về những điều bình dị thiêng liêng nhất, giải tỏa mọi căng thẳng nơi đô thị ồn ào.",
-    "officialSource": "Trích dẫn ANVISA (2021) qua Periódicos UFC: https://periodicos.ufc.br/medicinaeplantae/article/download/95312/251548/371600 . Nghiên cứu chuột 1986 (PMID: 3762195) không xác nhận tác dụng hạ sốt qua đường uống ở người."
+    "officialSource": "Trích dẫn ANVISA (2021) qua Periódicos UFC: https://periodicos.ufc.br/medicinaeplantae/article/download/95312/251548/371600 . Nghiên cứu chuột 1986 (PMID: 3762195) không xác nhận tác dụng hạ sốt qua đường uống ở người.",
+    "categoryLabel_en": "Stress Dissolving / De-bloating / Aromatherapy",
+    "heritageOrigin_en": "Dong Nai & Western Highland Foothills",
+    "partUsed_en": "Stems and leaf bases (Cymbopogon citratus)",
+    "safeDailyDose_en": "10 – 20g fresh stems or 5 – 10g dried",
+    "bioAction_en": "Citral (geranial and neral) triggers GABAergic neuro-receptors to swiftly relieve nervous anxiety; myrcene eases muscular stiffness.",
+    "maskingRules_en": [
+      "Binds seamlessly with ginger and citrus to craft an invigorating aromatic mocktail base"
+    ],
+    "contraindications_en": [
+      "Never consume undiluted pure essential oil",
+      "Exercise caution regarding kidney workload with chronic high doses"
+    ],
+    "mindfulReminder_en": "Let the refreshing aroma of lemongrass sweep away stagnant fatigue, bringing renewed zest."
   },
   {
     "id": "tao_do",
     "heritageOrigin": "Dược Thiện Dân Gian Bồi Bổ Khí Huyết",
-    "name": "Táo Đỏ (Đại Táo)",
+    "name": "Táo Đỏ",
     "sciName": "Ziziphus jujuba Mill.",
     "enName": "Red Jujube Date",
     "image": "assets/tao_do.jpg",
@@ -605,17 +834,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Cyclic AMP (cAMP)",
         "class": "Nucleotide",
-        "action": "Tăng cường năng lượng tế bào cơ tim, chống mệt mỏi suy nhược"
+        "action": "Tăng cường năng lượng tế bào cơ tim, chống mệt mỏi suy nhược",
+        "class_en": "Nucleotide",
+        "action_en": "Energizes myocardial cell respiration, combats chronic fatigue and weakness"
       },
       {
         "name": "Jujuboside (A & B)",
         "class": "Dammarane triterpenoid",
-        "action": "Tác động an thần chọn lọc tại vùng đồi thị não bộ, kéo dài pha ngủ REM"
+        "action": "Tác động an thần chọn lọc tại vùng đồi thị não bộ, kéo dài pha ngủ REM",
+        "class_en": "Dammarane Triterpenoid",
+        "action_en": "Selective sedative action in the thalamus, extends restorative REM sleep phase"
       },
       {
         "name": "Polysaccharides ZP",
         "class": "Phức hợp đường",
-        "action": "Bảo vệ niêm mạc dạ dày, bồi bổ hồng cầu và miễn dịch"
+        "action": "Bảo vệ niêm mạc dạ dày, bồi bổ hồng cầu và miễn dịch",
+        "class_en": "Sugar Complex",
+        "action_en": "Protects gastric mucosal lining, nourishes red blood cells and immunity"
       }
     ],
     "bioAction": "Dưỡng tâm an thần, cung cấp vị ngọt caramel tự nhiên béo nhẹ, giúp người làm việc trí óc căng thẳng tái tạo năng lượng tinh thần nhanh chóng mà không gây tăng đường huyết đột biến.",
@@ -627,7 +862,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 0,
       "astringency": 0,
       "sweetness": 4,
-      "aroma": "Ngọt đằm sâu lắng, thơm nồng caramel thảo mộc"
+      "aroma": "Ngọt đằm sâu lắng, thơm nồng caramel thảo mộc",
+      "aroma_en": "Rich caramel-like fruit sweetness with mellow undertones"
     },
     "maskingRules": [
       "Là chất làm ngọt và 'hòa hoãn' kinh điển nhất trong đông dược phương Đông",
@@ -640,12 +876,24 @@ const MEDICINAL_DATABASE = [
       "dinh_lang"
     ],
     "popularDrink": "Scholar Eye Calm",
-    "mindfulReminder": "Nuôi dưỡng khí huyết từ những quả ngọt chín mọng; bồi đắp năng lượng yêu thương cho chính mình để luôn tràn đầy nhiệt huyết sẻ chia."
+    "mindfulReminder": "Nuôi dưỡng khí huyết từ những quả ngọt chín mọng; bồi đắp năng lượng yêu thương cho chính mình để luôn tràn đầy nhiệt huyết sẻ chia.",
+    "categoryLabel_en": "Blood Nourishing / Heart Serenity / Deep REM Sleep",
+    "heritageOrigin_en": "Organic Certified Red River Basin Heritage Farms",
+    "partUsed_en": "Dried ripe fruit (Fructus Jujubae)",
+    "safeDailyDose_en": "6 – 15g dried fruit (3 – 5 whole dates)",
+    "bioAction_en": "Jujubosides act upon thalamic sleep pathways to prolong restful REM sleep; cyclic AMP (cAMP) energizes myocardial cellular vitality.",
+    "maskingRules_en": [
+      "Superb natural sweetener and texturizer; mellows bitter and astringent herbal decoctions"
+    ],
+    "contraindications_en": [
+      "Individuals suffering from severe abdominal bloating due to food stagnation or excessive phlegm-dampness"
+    ],
+    "mindfulReminder_en": "Savor the rich comfort of sweet dates. Deep nourishment requires patience and warm stillness."
   },
   {
     "id": "ky_tu",
     "heritageOrigin": "Dược Trà Cung Đình Cố Đô",
-    "name": "Kỷ Tử Đỏ (Câu Kỷ Tử)",
+    "name": "Kỷ Tử Đỏ",
     "sciName": "Lycium barbarum L.",
     "enName": "Organic Goji Berry",
     "image": "assets/ky_tu.jpg",
@@ -656,17 +904,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Zeaxanthin dipalmitate",
         "class": "Carotenoid",
-        "action": "Tập trung tại điểm vàng võng mạc, hấp thụ ánh sáng xanh độc hại từ màn hình laptop"
+        "action": "Tập trung tại điểm vàng võng mạc, hấp thụ ánh sáng xanh độc hại từ màn hình laptop",
+        "class_en": "Carotenoid",
+        "action_en": "Concentrates in retinal macula, filters harmful laptop blue light"
       },
       {
         "name": "Lycium barbarum Polysaccharides (LBP)",
         "class": "Glycoconjugate",
-        "action": "Kích hoạt tế bào miễn dịch T, chống lão hóa ty thể tế bào não"
+        "action": "Kích hoạt tế bào miễn dịch T, chống lão hóa ty thể tế bào não",
+        "class_en": "Glycoconjugate",
+        "action_en": "Activates T-immune cells, shields cerebral mitochondrial longevity"
       },
       {
         "name": "Betaine",
         "class": "Alkaloid tự nhiên",
-        "action": "Hỗ trợ chu trình methyl hóa tại gan, ức chế lắng đọng mỡ gan"
+        "action": "Hỗ trợ chu trình methyl hóa tại gan, ức chế lắng đọng mỡ gan",
+        "class_en": "Natural Alkaloid",
+        "action_en": "Supports hepatic methylation cycles, inhibits lipid accumulation in liver"
       }
     ],
     "bioAction": "Cứu tinh cho học sinh và lập trình viên nhìn màn hình liên tục 8-12 tiếng mỗi ngày; giảm khô nhức mắt, tăng sinh lực và dưỡng huyết an thần.",
@@ -679,7 +933,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 0,
       "astringency": 1,
       "sweetness": 3,
-      "aroma": "Ngọt chua thanh tao, hậu vị đầm ấm dễ chịu"
+      "aroma": "Ngọt chua thanh tao, hậu vị đầm ấm dễ chịu",
+      "aroma_en": "Sweet tartness with gentle woody berry fragrance"
     },
     "maskingRules": [
       "Tạo sắc nước màu đỏ cam hổ phách tự nhiên cực đẹp cho ly Mocktail",
@@ -692,14 +947,26 @@ const MEDICINAL_DATABASE = [
       "bac_ha"
     ],
     "popularDrink": "Scholar Eye Calm",
-    "mindfulReminder": "Sáng mắt, sáng lòng để thấy rõ con đường phía trước. Yêu thương bản thân từ những hạt đỏ ấm áp nhỏ bé của dược trà cung đình."
+    "mindfulReminder": "Sáng mắt, sáng lòng để thấy rõ con đường phía trước. Yêu thương bản thân từ những hạt đỏ ấm áp nhỏ bé của dược trà cung đình.",
+    "categoryLabel_en": "Vision Protection / Mitochondrial Anti-Aging",
+    "heritageOrigin_en": "High-Plateau Botanical Gardens & Red River Heritage Reserves",
+    "partUsed_en": "Dried ripe berries (Fructus Lycii)",
+    "safeDailyDose_en": "6 – 12g dried berries",
+    "bioAction_en": "Zeaxanthin dipalmitate selectively concentrates in the retinal macula, shielding against blue light from laptop screens; LBP polysaccharides protect cerebral mitochondria.",
+    "maskingRules_en": [
+      "Synergizes elegantly with Chrysanthemum and Red Date for daily vision and brain tonics"
+    ],
+    "contraindications_en": [
+      "Individuals experiencing acute infectious diarrhea or acute high fevers from external pathogens"
+    ],
+    "mindfulReminder_en": "Protect your vision and clarity. Give thanks for the light that guides your everyday thoughts."
   },
   {
     "id": "tra_xanh",
     "heritageOrigin": "Đệ Nhất Danh Trà Tân Cương (Thái Nguyên) & Suối Giàng",
     "name": "Trà Xanh",
     "sciName": "Camellia sinensis (L.) Kuntze",
-    "enName": "Vietnamese Heritage Green Tea",
+    "enName": "Vietnamese Green Tea",
     "image": "assets/tra_xanh.jpg",
     "category": "tinh_tao",
     "categoryLabel": "Tỉnh táo / Chống oxy hóa / Calm-Focus",
@@ -708,17 +975,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "L-Theanine",
         "class": "Amino acid tự nhiên",
-        "action": "Kích hoạt sóng não Alpha 8-12Hz, xoa dịu stress mà vẫn duy trì sự tập trung sắc bén"
+        "action": "Kích hoạt sóng não Alpha 8-12Hz, xoa dịu stress mà vẫn duy trì sự tập trung sắc bén",
+        "class_en": "Natural Amino Acid",
+        "action_en": "Generates 8-12Hz Alpha brainwaves, relieving stress while preserving laser focus"
       },
       {
         "name": "EGCG (Epigallocatechin gallate)",
         "class": "Catechin polyphenol",
-        "action": "Chống gốc tự do mạnh gấp 100 lần Vitamin C, bảo vệ nơ-ron thần kinh"
+        "action": "Chống gốc tự do mạnh gấp 100 lần Vitamin C, bảo vệ nơ-ron thần kinh",
+        "class_en": "Catechin Polyphenol",
+        "action_en": "Free radical defense 100x stronger than Vitamin C, protects cerebral neurons"
       },
       {
         "name": "Caffeine phức hợp",
         "class": "Methylxanthine",
-        "action": "Phóng thích chậm từ từ nhờ liên kết Tanin, tỉnh táo êm không ép tim"
+        "action": "Phóng thích chậm từ từ nhờ liên kết Tanin, tỉnh táo êm không ép tim",
+        "class_en": "Methylxanthine",
+        "action_en": "Sustained slow release via tannin bonds, producing calm alertness without heart palpitations"
       }
     ],
     "bioAction": "Tạo trạng thái 'Tỉnh Thức Trong Bình An' (Calm Alertness), gia tăng tập trung sâu cho não bộ trong 4-6 tiếng liên tục mà không có hiện tượng tụt năng lượng đột ngột (crash).",
@@ -731,7 +1004,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 3,
       "sweetness": 3,
-      "aroma": "Hương cốm non thơm ngát, tiền chát hậu ngọt sâu"
+      "aroma": "Hương cốm non thơm ngát, tiền chát hậu ngọt sâu",
+      "aroma_en": "Fresh young rice fragrance, delicate astringency with sweet throat finish"
     },
     "maskingRules": [
       "Ủ ở nước 80-85°C (không ủ nước sôi 100°C để tránh chát gắt)",
@@ -745,14 +1019,27 @@ const MEDICINAL_DATABASE = [
     ],
     "popularDrink": "Zen Theanine Elixir",
     "mindfulReminder": "Uống một ngụm trà sớm, lắng nghe hơi thở vào - ra; để L-Theanine làm dịu những suy nghĩ miên man, giữ tâm sáng như mặt hồ mùa thu.",
-    "officialSource": "EFSA ANS Panel, Scientific opinion on the safety of green tea catechins, EFSA Journal (2018): https://www.efsa.europa.eu/en/efsajournal/pub/5239"
+    "officialSource": "EFSA ANS Panel, Scientific opinion on the safety of green tea catechins, EFSA Journal (2018): https://www.efsa.europa.eu/en/efsajournal/pub/5239",
+    "categoryLabel_en": "Alpha-Wave Focus / Antioxidant Shield",
+    "heritageOrigin_en": "Tan Cuong Heritage Tea Plantations (Thai Nguyen)",
+    "partUsed_en": "Young buds and tender leaves (Camellia sinensis)",
+    "safeDailyDose_en": "3 – 8g dried leaves (brewed at 75-80°C)",
+    "bioAction_en": "L-Theanine induces 8-12Hz Alpha brain waves for calm mental clarity, while EGCG neutralizes free radicals 100x more effectively than Vitamin C.",
+    "maskingRules_en": [
+      "Brew below 80°C to avoid harsh tannin extraction; pair with Kumquat or Stevia for a silky finish"
+    ],
+    "contraindications_en": [
+      "Avoid concentrated high-dose EGCG extracts (≥800 mg/day) due to potential liver strain",
+      "Standard brewed tea is deemed safe by EFSA; caffeine-sensitive individuals should avoid concentrated brews before bed"
+    ],
+    "mindfulReminder_en": "In each cup of tea lies a universe of quiet focus. Breathe in clarity, exhale distraction."
   },
   {
     "id": "ha_thu_o",
     "heritageOrigin": "Dãy Rừng Nguyên Sinh Hoàng Liên Sơn & Hà Giang",
-    "name": "Hà Thủ Ô Đỏ (Dạ Giao Đằng)",
+    "name": "Hà Thủ Ô Đỏ",
     "sciName": "Fallopia multiflora (Thunb.) Haraldson",
-    "enName": "Red Fleeceflower / He Shou Wu",
+    "enName": "Red Fleeceflower",
     "image": "assets/ha_thu_o.jpg",
     "category": "boi_bo",
     "categoryLabel": "Bổ can thận / Dưỡng huyết / Sống thọ",
@@ -761,17 +1048,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "TSG (Tetrahydroxystilbene glucoside)",
         "class": "Stilbene glycoside",
-        "action": "Bảo vệ tế bào thần kinh, chống xơ vữa động mạch và thoái hóa myelin"
+        "action": "Bảo vệ tế bào thần kinh, chống xơ vữa động mạch và thoái hóa myelin",
+        "class_en": "Stilbene Glycoside",
+        "action_en": "Protects neural cells, combats arterial atherosclerosis and myelin degeneration"
       },
       {
         "name": "Emodin & Physcion",
         "class": "Anthraquinone",
-        "action": "Hỗ trợ nhuận tràng, bảo vệ gan và kháng viêm"
+        "action": "Hỗ trợ nhuận tràng, bảo vệ gan và kháng viêm",
+        "class_en": "Anthraquinone",
+        "action_en": "Supports healthy bowel motility, delivers hepatoprotective and anti-inflammatory effects"
       },
       {
         "name": "Phospholipid & Lecithin",
         "class": "Lipid sinh học",
-        "action": "Bồi bổ tủy não, nuôi dưỡng chân tóc và tăng cường hồng cầu"
+        "action": "Bồi bổ tủy não, nuôi dưỡng chân tóc và tăng cường hồng cầu",
+        "class_en": "Bioactive Lipids",
+        "action_en": "Enriches cerebral myelin sheath, nourishes hair roots and boosts red blood cells"
       }
     ],
     "bioAction": "Dược điển Tuệ Tĩnh ghi nhận: 'Uống lâu sống thọ, đen râu tóc, bổ can thận ích khí huyết'. Bồi bổ khí huyết toàn diện, giảm rụng tóc và suy kiệt do thức đêm cày cuốc.",
@@ -784,7 +1077,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 3,
       "astringency": 4,
       "sweetness": 2,
-      "aroma": "Thơm nồng thảo mộc đại ngàn, hậu vị bùi ấm"
+      "aroma": "Thơm nồng thảo mộc đại ngàn, hậu vị bùi ấm",
+      "aroma_en": "Deep herbal aroma, mildly astringent finish"
     },
     "maskingRules": [
       "Cần sao chế cửu chưng cửu sái với nước đỗ đen để triệt tiêu vị chát độc tính",
@@ -798,14 +1092,27 @@ const MEDICINAL_DATABASE = [
       "cat_sam"
     ],
     "popularDrink": "Immortal Vitality Brew",
-    "mindfulReminder": "Dưỡng khí từ gốc rễ: đừng để những đêm dài thi cử vắt kiệt sinh lực tuổi trẻ; hãy trân trọng mái tóc và giấc ngủ của chính mình."
+    "mindfulReminder": "Dưỡng khí từ gốc rễ: đừng để những đêm dài thi cử vắt kiệt sinh lực tuổi trẻ; hãy trân trọng mái tóc và giấc ngủ của chính mình.",
+    "categoryLabel_en": "Nourish Liver & Kidney / Enrich Blood / Longevity",
+    "heritageOrigin_en": "Hoang Lien Son & Ha Giang Virgin Mountain Ranges",
+    "partUsed_en": "Prepared root tuber (Radix Polygoni multiflori praeparata)",
+    "safeDailyDose_en": "6 – 12g (traditionally steamed & sun-dried 9 times with black beans)",
+    "bioAction_en": "Directly activates SIRT1 longevity pathway and neuronal protection via TSG stilbene glycosides, scavenging reactive oxygen species.",
+    "maskingRules_en": [
+      "Paired with black beans and licorice to buffer tannins, eliminating astringency"
+    ],
+    "contraindications_en": [
+      "Individuals with loose watery stool (due to mild laxative properties)",
+      "Never consume raw, unprocessed roots; must be traditionally prepared with black beans"
+    ],
+    "mindfulReminder_en": "Patience in brewing mirrors patience in life; true inner vitality is nurtured gently each day through mindful nourishment."
   },
   {
     "id": "co_muc",
     "heritageOrigin": "Vùng Cù Lao Thảo Dược Sông Cửu Long & Nam Bộ",
-    "name": "Cỏ Nhọ Nồi (Cỏ Mực)",
+    "name": "Cỏ Nhọ Nồi",
     "sciName": "Eclipta prostrata (L.) L.",
-    "enName": "False Daisy / Eclipta",
+    "enName": "False Daisy",
     "image": "assets/co_muc.jpg",
     "category": "gan_mat",
     "categoryLabel": "Lương huyết / Mát gan / Bổ thận âm",
@@ -814,17 +1121,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Wedelolactone",
         "class": "Coumestan",
-        "action": "Bảo vệ tế bào gan hàng đầu, chống độc tố gan và kích thích tái tạo nhu mô gan"
+        "action": "Bảo vệ tế bào gan hàng đầu, chống độc tố gan và kích thích tái tạo nhu mô gan",
+        "class_en": "Coumestan",
+        "action_en": "Premier hepatoprotective agent, shields hepatocytes and stimulates parenchyma renewal"
       },
       {
         "name": "Demethylwedelolactone",
         "class": "Coumestan",
-        "action": "Chống viêm, chống oxy hóa mạch máu"
+        "action": "Chống viêm, chống oxy hóa mạch máu",
+        "class_en": "Coumestan",
+        "action_en": "Premier hepatoprotective agent, shields hepatocytes and stimulates parenchyma renewal"
       },
       {
         "name": "Ecliptine",
         "class": "Alkaloid tự nhiên",
-        "action": "Dịu thần kinh, hỗ trợ giấc ngủ an lành"
+        "action": "Dịu thần kinh, hỗ trợ giấc ngủ an lành",
+        "class_en": "Natural Alkaloid",
+        "action_en": "Soothes neural excitation, supporting deep restful sleep"
       }
     ],
     "bioAction": "Thanh nhiệt lương huyết, cầm máu tự nhiên (giảm nhiệt miệng, chảy máu cam do nóng trong), mát gan tiêu mụn nhọt, hỗ trợ giấc ngủ khi bị bốc hỏa bồn chồn.",
@@ -837,7 +1150,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Hương cỏ tươi đồng nội thanh khiết"
+      "aroma": "Hương cỏ tươi đồng nội thanh khiết",
+      "aroma_en": "Gentle herbal meadow notes, crisp vegetal aroma"
     },
     "maskingRules": [
       "Phối cùng Quất tươi và Chanh dây để át mùi nồng ngái của thảo dược hoang dã"
@@ -849,12 +1163,25 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "Eclipta Herbal Elixir (Thanh Can Lạc Hồng)",
-    "mindfulReminder": "Thanh lọc những cơn bốc hỏa, dịu mát tâm trí giữa áp lực cuộc sống bằng dòng dược chất lành dịu của đất phù sa Nam Bộ."
+    "mindfulReminder": "Thanh lọc những cơn bốc hỏa, dịu mát tâm trí giữa áp lực cuộc sống bằng dòng dược chất lành dịu của đất phù sa Nam Bộ.",
+    "categoryLabel_en": "Cool Blood / Liver Detox / Nourish Kidney Yin",
+    "heritageOrigin_en": "Mekong Delta Herbal Islands & Southern Plains",
+    "partUsed_en": "Aerial parts (Herba Ecliptae)",
+    "safeDailyDose_en": "8 – 16g dried (or 30 – 50g fresh aerial parts)",
+    "bioAction_en": "Wedelolactone and demethylwedelolactone protect hepatocytes against toxic insults, accelerating liver enzyme clearance.",
+    "maskingRules_en": [
+      "Blends smoothly with Chamomile and Kumquat to create a balanced herbaceous tea"
+    ],
+    "contraindications_en": [
+      "Individuals with severe spleen-deficiency diarrhea",
+      "Pregnant women should consult a qualified pharmacist"
+    ],
+    "mindfulReminder_en": "Sip slowly and allow the crisp green sweetness of native meadow herbs to cool away lingering mental heat."
   },
   {
     "id": "bo_cong_anh",
     "heritageOrigin": "Thung Lũng Dược Thảo Sa Pa (Lào Cai) & Mộc Châu",
-    "name": "Bồ Công Anh Nam (Rau Bồ Cóc)",
+    "name": "Bồ Công Anh",
     "sciName": "Lactuca indica L.",
     "enName": "Vietnamese Wild Dandelion",
     "image": "assets/bo_cong_anh.jpg",
@@ -865,17 +1192,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Taraxasterol & Inulin",
         "class": "Triterpenoid & Prebiotic",
-        "action": "Kháng viêm tự nhiên và nuôi dưỡng hệ vi sinh đường ruột (Trục Não - Ruột)"
+        "action": "Kháng viêm tự nhiên và nuôi dưỡng hệ vi sinh đường ruột (Trục Não - Ruột)",
+        "class_en": "Triterpenoid & Prebiotic",
+        "action_en": "Natural anti-inflammatory and prebiotics nourishing the Gut-Brain Axis"
       },
       {
         "name": "Luteolin & Apigenin",
         "class": "Flavonoid",
-        "action": "Tiêu trừ mụn viêm, làm sạch máu và hạ men gan"
+        "action": "Tiêu trừ mụn viêm, làm sạch máu và hạ men gan",
+        "class_en": "Flavonoid",
+        "action_en": "Clears dermal blemishes, purifies blood, and optimizes liver enzyme levels"
       },
       {
         "name": "Acid Cichoric",
         "class": "Phenolic acid",
-        "action": "Kích thích tiết dịch tiêu hóa, chống đầy bụng khó tiêu"
+        "action": "Kích thích tiết dịch tiêu hóa, chống đầy bụng khó tiêu",
+        "class_en": "Phenolic Acid",
+        "action_en": "Stimulates digestive secretion, relieves abdominal fullness and dyspepsia"
       }
     ],
     "bioAction": "Tiêu độc tán kết, tiêu trừ các nốt mụn trứng cá và nhiệt miệng do ăn đồ cay nóng thức khuya, hỗ trợ cân bằng trục Não - Ruột (Gut-Brain Axis) giúp tinh thần phấn chấn.",
@@ -888,7 +1221,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 3,
       "astringency": 1,
       "sweetness": 1,
-      "aroma": "Thơm dịu hương thảo dược Tây Bắc"
+      "aroma": "Thơm dịu hương thảo dược Tây Bắc",
+      "aroma_en": "Delicate wild highland herbal aroma"
     },
     "maskingRules": [
       "Kết hợp cùng Cam Thảo và Bạc Hà để trung hòa độ đắng nhẹ của lá non"
@@ -900,14 +1234,27 @@ const MEDICINAL_DATABASE = [
       "quat_tac"
     ],
     "popularDrink": "Pure Bloom Detox",
-    "mindfulReminder": "Hệ tiêu hóa khỏe mạnh là cội nguồn của tinh thần sảng khoái; hãy lắng nghe chiếc bụng của bạn trước mỗi kỳ thi căng thẳng."
+    "mindfulReminder": "Hệ tiêu hóa khỏe mạnh là cội nguồn của tinh thần sảng khoái; hãy lắng nghe chiếc bụng của bạn trước mỗi kỳ thi căng thẳng.",
+    "categoryLabel_en": "Anti-inflammatory / Detox / Natural Antibacterial",
+    "heritageOrigin_en": "Sa Pa (Lao Cai) & Moc Chau Highland Valleys",
+    "partUsed_en": "Whole plant with roots (Herba Lactucae indicae)",
+    "safeDailyDose_en": "8 – 15g dried herb",
+    "bioAction_en": "Taraxasterol and luteolin downregulate inflammatory cytokines, cleansing dermal heat and promoting clear complexion.",
+    "maskingRules_en": [
+      "Balanced with Stevia and Kumquat citric acid to suppress sesquiterpene bitterness"
+    ],
+    "contraindications_en": [
+      "Patients with severe hypotension should reduce dosage",
+      "Avoid during acute abdominal coldness due to cold-dampness"
+    ],
+    "mindfulReminder_en": "A cup of clean dandelion tea purifies the mind from inner clutter, restoring clear focus and serene peace."
   },
   {
     "id": "dau_tam",
     "heritageOrigin": "Thủ Phủ Dâu Tằm Bảo Lộc (Lâm Đồng) & Bãi Bồi Sông Hồng",
-    "name": "Dâu Tằm (Tang Thầm & Tang Diệp)",
+    "name": "Dâu Tằm",
     "sciName": "Morus alba L.",
-    "enName": "Mulberry Berry & Leaf",
+    "enName": "Mulberry Leaf & Fruit",
     "image": "assets/dau_tam.jpg",
     "category": "an_than",
     "categoryLabel": "Dưỡng huyết / Chống lão hóa / Ngủ ngon",
@@ -916,17 +1263,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Cyanidin-3-glucoside",
         "class": "Anthocyanin tự nhiên",
-        "action": "Chống thoái hóa điểm vàng mắt và bảo vệ mạch máu vi tuần hoàn"
+        "action": "Chống thoái hóa điểm vàng mắt và bảo vệ mạch máu vi tuần hoàn",
+        "class_en": "Natural Anthocyanin",
+        "action_en": "Shields retinal macula and fortifies cerebral microcapillary circulation"
       },
       {
         "name": "Resveratrol",
         "class": "Polyphenol stilbenoid",
-        "action": "Kéo dài tuổi thọ tế bào, bảo vệ sức khỏe tim mạch"
+        "action": "Kéo dài tuổi thọ tế bào, bảo vệ sức khỏe tim mạch",
+        "class_en": "Stilbenoid Polyphenol",
+        "action_en": "Promotes cellular longevity, reinforces cardiovascular vitality"
       },
       {
         "name": "GABA tự nhiên & DNJ",
         "class": "Alkaloid đường & GABA",
-        "action": "Ổn định đường huyết sau bữa ăn, êm dịu thần kinh"
+        "action": "Ổn định đường huyết sau bữa ăn, êm dịu thần kinh",
+        "class_en": "Amino Acid & Sugar Alkaloid",
+        "action_en": "Stabilizes postprandial blood glucose, gently soothes nervous agitation"
       }
     ],
     "bioAction": "Cung cấp sắc tím ruby quý tộc cho thức uống Mocktail; bồi bổ can thận, dưỡng huyết sáng mắt, giúp giấc ngủ đến nhẹ nhàng êm ái.",
@@ -938,7 +1291,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 0,
       "astringency": 1,
       "sweetness": 4,
-      "aroma": "Hương dâu chín chua ngọt thanh tao, màu tím quyến rũ"
+      "aroma": "Hương dâu chín chua ngọt thanh tao, màu tím quyến rũ",
+      "aroma_en": "Ripe sun-ripened mulberry fragrance, sweet tartness"
     },
     "maskingRules": [
       "Tạo nền màu ruby và vị chua ngọt tự nhiên tuyệt đỉnh, không cần che giấu"
@@ -950,14 +1304,26 @@ const MEDICINAL_DATABASE = [
       "soda"
     ],
     "popularDrink": "Imperial Mulberry Spritz",
-    "mindfulReminder": "Sắc tím mọng nước của trái dâu tằm như lời nhắc về vẻ đẹp kiên trì; nuôi dưỡng từng tế bào từ những gì thuần khiết nhất của đất trời."
+    "mindfulReminder": "Sắc tím mọng nước của trái dâu tằm như lời nhắc về vẻ đẹp kiên trì; nuôi dưỡng từng tế bào từ những gì thuần khiết nhất của đất trời.",
+    "categoryLabel_en": "Enrich Blood / Anti-Aging / Deep Restful Sleep",
+    "heritageOrigin_en": "Bao Loc Mulberry Capital (Lam Dong) & Red River Basin",
+    "partUsed_en": "Ripe fruit (Fructus Mori) / Leaves (Folium Mori)",
+    "safeDailyDose_en": "12 – 20g dried berries (or 6 – 12g dried leaves)",
+    "bioAction_en": "Cyanidin-3-glucoside and resveratrol protect cerebral capillaries, promoting restful sleep and macular health.",
+    "maskingRules_en": [
+      "Natural malic acid pairs harmoniously with Passionflower and Roselle"
+    ],
+    "contraindications_en": [
+      "Patients with chronic colitis or frequent loose stools should avoid excessive consumption of raw berries"
+    ],
+    "mindfulReminder_en": "The delicate sweet tartness of ripe mulberries reminds us to slow down, nourish the body, and rest deeply."
   },
   {
     "id": "hoa_nhai",
     "heritageOrigin": "Làng Hoa Cổ Quảng Bá - Nghi Tàm (Hà Nội)",
-    "name": "Hoa Nhài (Hoa Lài)",
+    "name": "Hoa Nhài",
     "sciName": "Jasminum sambac (L.) Aiton",
-    "enName": "Arabian Jasmine Flower",
+    "enName": "Arabian Jasmine",
     "image": "assets/hoa_nhai.jpg",
     "category": "huong_vi",
     "categoryLabel": "Giải tỏa stress / Khai khiếu / Hạ Cortisol",
@@ -966,17 +1332,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Linalool",
         "class": "Monoterpene alcohol",
-        "action": "Giảm kích thích thần kinh, hạ huyết áp tâm thu tức thì"
+        "action": "Giảm kích thích thần kinh, hạ huyết áp tâm thu tức thì",
+        "class_en": "Monoterpene Alcohol",
+        "action_en": "Reduces neural hyper-reactivity, supports immediate systolic blood pressure relaxation"
       },
       {
         "name": "Benzyl acetate",
         "class": "Ester tinh dầu",
-        "action": "Kích hoạt khứu giác tác động trực tiếp lên hệ viền Limbic, giảm cortisol trong 60 giây"
+        "action": "Kích hoạt khứu giác tác động trực tiếp lên hệ viền Limbic, giảm cortisol trong 60 giây",
+        "class_en": "Essential Oil Ester",
+        "action_en": "Olfactory stimulation triggers the limbic system, lowering cortisol within 60 seconds"
       },
       {
         "name": "Jasmine Lactone",
         "class": "Lactone thơm",
-        "action": "Hương thơm êm dịu quý tộc tạo cảm giác thư thái hạnh phúc"
+        "action": "Hương thơm êm dịu quý tộc tạo cảm giác thư thái hạnh phúc",
+        "class_en": "Aromatic Lactone",
+        "action_en": "Delivers an elegant soothing floral bouquet, eliciting serene contentment"
       }
     ],
     "bioAction": "Hương liệu trị liệu (Aromatherapy) tự nhiên mạnh mẽ nhất trong dược trà Việt. Giảm lo âu xã hội, giải phóng áp lực tâm lý trong tích tắc.",
@@ -988,7 +1360,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 1,
       "astringency": 1,
       "sweetness": 3,
-      "aroma": "Hương hoa ngát ngào, quyến rũ vương giả"
+      "aroma": "Hương hoa ngát ngào, quyến rũ vương giả",
+      "aroma_en": "Intensely elegant jasmine blossom aroma, deep relaxing"
     },
     "maskingRules": [
       "Dùng nhiệt độ nước 80-85°C để giữ trọn vẹn tầng tinh dầu hoa bay bổng"
@@ -1000,12 +1373,24 @@ const MEDICINAL_DATABASE = [
       "co_ngot"
     ],
     "popularDrink": "Zen Theanine Elixir",
-    "mindfulReminder": "Dừng lại 10 giây, hít sâu hương hoa nhài ngát ngào, cảm nhận sự nhẹ nhõm đang lan tỏa từ lồng ngực đến tận các đầu ngón tay."
+    "mindfulReminder": "Dừng lại 10 giây, hít sâu hương hoa nhài ngát ngào, cảm nhận sự nhẹ nhõm đang lan tỏa từ lồng ngực đến tận các đầu ngón tay.",
+    "categoryLabel_en": "Stress Relief / Cognitive Awakening / Lower Cortisol",
+    "heritageOrigin_en": "Quang Ba Ancient Floral Village (Hanoi Heritage)",
+    "partUsed_en": "Dried unopened flower buds (Flos Jasmini)",
+    "safeDailyDose_en": "3 – 6g dried flower buds",
+    "bioAction_en": "Volatile linalool and benzyl acetate stimulate parasympathetic tone, reducing salivary cortisol within minutes.",
+    "maskingRules_en": [
+      "Infuses warm floral luxury that masks bitter botanical notes naturally"
+    ],
+    "contraindications_en": [
+      "Pregnant women in the first trimester should avoid inhaling hyper-concentrated essential oils"
+    ],
+    "mindfulReminder_en": "The noble fragrance of jasmine blossoms dissolves heavy burdens, opening space for gentle mindful breathing."
   },
   {
     "id": "bach_chi",
     "heritageOrigin": "Vùng Dược Liệu Dãy Núi Tam Đảo (Vĩnh Phúc)",
-    "name": "Bạch Chỉ Nam (Hương Bạch Chỉ)",
+    "name": "Bạch Chỉ",
     "sciName": "Angelica dahurica (Hoffm.) Benth.",
     "enName": "Dahurian Angelica Root",
     "image": "assets/bach_chi.jpg",
@@ -1016,17 +1401,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Imperatorin & Isoimperatorin",
         "class": "Furanocoumarin",
-        "action": "Ức chế chọn lọc COX-2, giảm đau nhức đầu do căng thẳng thần kinh"
+        "action": "Ức chế chọn lọc COX-2, giảm đau nhức đầu do căng thẳng thần kinh",
+        "class_en": "Furanocoumarin",
+        "action_en": "Selectively suppresses COX-2 enzymes, relieving tension headaches and ocular strain"
       },
       {
         "name": "Byakangelicin",
         "class": "Coumarin",
-        "action": "Giãn mạch máu vùng thái dương, giảm nhức hốc mắt do nhìn màn hình"
+        "action": "Giãn mạch máu vùng thái dương, giảm nhức hốc mắt do nhìn màn hình",
+        "class_en": "Coumarin",
+        "action_en": "Relaxes temporal vascular spasms, easing computer screen eye headaches"
       },
       {
         "name": "Phellandrene",
         "class": "Tinh dầu Terpene",
-        "action": "Thông mũi họng, sảng khoái đường thở"
+        "action": "Thông mũi họng, sảng khoái đường thở",
+        "class_en": "Terpene Essential Oil",
+        "action_en": "Clears nasal congestion, promotes refreshing and open breathing"
       }
     ],
     "bioAction": "Trấn thống chỉ thống kinh điển: đánh bay cơn đau nhức đầu vùng trán và thái dương do nhìn màn hình vi tính quá lâu hoặc căng thẳng stress deadline.",
@@ -1039,7 +1430,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 2,
-      "aroma": "Cay ấm nhẹ, thơm nồng đặc trưng họ Hoa tán"
+      "aroma": "Cay ấm nhẹ, thơm nồng đặc trưng họ Hoa tán",
+      "aroma_en": "Noble, pungent botanical warmth that opens the sinuses"
     },
     "maskingRules": [
       "Cắt lát mỏng, phối cùng Táo Đỏ và Quất Tươi để cân bằng hương ấm dịu"
@@ -1051,12 +1443,25 @@ const MEDICINAL_DATABASE = [
       "gung_ta"
     ],
     "popularDrink": "Scholar Eye Calm",
-    "mindfulReminder": "Thả lỏng đôi chân mày và cơ hàm; để thảo mộc tự nhiên nâng đỡ những cơn đau mỏi đầu gáy sau nhiều giờ liền tập trung."
+    "mindfulReminder": "Thả lỏng đôi chân mày và cơ hàm; để thảo mộc tự nhiên nâng đỡ những cơn đau mỏi đầu gáy sau nhiều giờ liền tập trung.",
+    "categoryLabel_en": "Headache Relief / Open Meridians / Muscle Relaxation",
+    "heritageOrigin_en": "Tam Dao Alpine Foothills & Northern Highlands",
+    "partUsed_en": "Dried root (Radix Angelicae dahuricae)",
+    "safeDailyDose_en": "3 – 9g dried root",
+    "bioAction_en": "Imperatorin selectively inhibits COX-2, reducing tension headaches; byakangelicin relieves temporal vascular spasms.",
+    "maskingRules_en": [
+      "Pair with Licorice and Peppermint to soften pungent earthy warmth"
+    ],
+    "contraindications_en": [
+      "Individuals with Yin-deficiency fire (excess internal heat, night sweats)",
+      "Patients experiencing acute hemorrhagic fever"
+    ],
+    "mindfulReminder_en": "Warm botanical vapors soothe facial tension, helping you find center and clarity amid bustling work."
   },
   {
     "id": "cat_sam",
     "heritageOrigin": "Vùng Núi Rừng Trà My & Tây Giang (Quảng Nam)",
-    "name": "Cát Sâm (Sâm Nam Trà My)",
+    "name": "Cát Sâm",
     "sciName": "Millettia speciosa Champ.",
     "enName": "Specious Callerya Root",
     "image": "assets/cat_sam.jpg",
@@ -1067,17 +1472,23 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Formononetin & Maackiain",
         "class": "Isoflavonoid",
-        "action": "Tăng cường sức đề kháng tế bào, chống oxy hóa cơ bắp"
+        "action": "Tăng cường sức đề kháng tế bào, chống oxy hóa cơ bắp",
+        "class_en": "Isoflavonoid",
+        "action_en": "Reinforces cellular antioxidant defenses, promotes muscular fatigue recovery"
       },
       {
         "name": "Polysaccharides thực vật MSP",
         "class": "Carbohydrate phức",
-        "action": "Bảo vệ biểu mô niêm mạc phổi và phế quản, sinh tân dịch"
+        "action": "Bảo vệ biểu mô niêm mạc phổi và phế quản, sinh tân dịch",
+        "class_en": "Complex Carbohydrate",
+        "action_en": "Protects respiratory and bronchial mucosa, replenishes vital body fluids"
       },
       {
         "name": "Saponin triterpenoid",
         "class": "Saponin",
-        "action": "Tăng cường dẻo dai thể lực, chống kiệt sức thể chất"
+        "action": "Tăng cường dẻo dai thể lực, chống kiệt sức thể chất",
+        "class_en": "Saponin",
+        "action_en": "Bolsters physical stamina, protects against severe metabolic exhaustion"
       }
     ],
     "bioAction": "Bổ trung ích khí, nhuận phế sinh tân dịch; giúp thanh giọng, giảm khô rát cổ họng do ngồi máy lạnh lâu ngày và bồi bổ năng lượng dẻo dai.",
@@ -1089,7 +1500,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 0,
       "astringency": 1,
       "sweetness": 4,
-      "aroma": "Thơm bùi béo nhẹ như khoai sâm, hậu ngọt sâu ngát"
+      "aroma": "Thơm bùi béo nhẹ như khoai sâm, hậu ngọt sâu ngát",
+      "aroma_en": "Mellow, subtly sweet root fragrance reminiscent of wild mountain ginseng"
     },
     "maskingRules": [
       "Vị rất ngọt bùi dễ uống, là vị thuốc dẫn nền tuyệt hảo cho mọi công thức Mocktail"
@@ -1101,13 +1513,25 @@ const MEDICINAL_DATABASE = [
       "ky_tu"
     ],
     "popularDrink": "Immortal Vitality Brew",
-    "mindfulReminder": "Uống từng ngụm chậm rãi, tiếp nhận năng lượng dẻo dai từ rễ sâm rừng già để bước tiếp chặng đường dài mà không kiệt sức."
+    "mindfulReminder": "Uống từng ngụm chậm rãi, tiếp nhận năng lượng dẻo dai từ rễ sâm rừng già để bước tiếp chặng đường dài mà không kiệt sức.",
+    "categoryLabel_en": "Lung Tonic / Rehydrate Vital Fluids / Physical Stamina",
+    "heritageOrigin_en": "Quang Nam (Tra My Highlands) & Ba Che Herbal Forest",
+    "partUsed_en": "Dried root tuber (Radix Calleryae speciosae)",
+    "safeDailyDose_en": "10 – 20g dried roots",
+    "bioAction_en": "Plant polysaccharides MSP protect bronchial mucosa; formononetin enhances physical endurance and cell resilience.",
+    "maskingRules_en": [
+      "Blends with Red Date and Goji Berry to create a luxurious nourishing wellness broth"
+    ],
+    "contraindications_en": [
+      "Individuals experiencing high acute fever from unexpressed wind-cold pathogens"
+    ],
+    "mindfulReminder_en": "Deep roots withstand all storms. Nourish your lungs and inner stamina with quiet persistence."
   },
   {
     "id": "la_han_qua",
     "name": "La Hán Quả",
     "sciName": "Siraitia grosvenorii",
-    "enName": "Monk Fruit / Luo Han Guo",
+    "enName": "Monk Fruit",
     "category": "flavor",
     "categoryLabel": "Chất Ngọt Tự Nhiên (0-Calorie) & Khử Đắng",
     "heritageOrigin": "Vùng núi cao phía Bắc Việt Nam (OCOP)",
@@ -1115,7 +1539,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 0,
       "astringency": 0,
       "sweetness": 5,
-      "aroma": "Thơm ngát quả chín tự nhiên, ngọt đậm sâu"
+      "aroma": "Thơm ngát quả chín tự nhiên, ngọt đậm sâu",
+      "aroma_en": "Deep honeyed sweetness, caramel aroma, completely sugar-free"
     },
     "traditionalTaste": "Vị ngọt đậm, tính mát; quy kinh phế và tỳ",
     "activeCompounds": "Mogroside V (ngọt gấp 300 lần đường mía, 0-calorie)",
@@ -1124,12 +1549,16 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Mogroside V",
         "class": "Triterpene Glycoside",
-        "action": "Ngọt gấp 300 lần đường mía, 0-calorie, GI=0, khử đắng thảo mộc trung ương"
+        "action": "Ngọt gấp 300 lần đường mía, 0-calorie, GI=0, khử đắng thảo mộc trung ương",
+        "class_en": "Triterpene Glycoside",
+        "action_en": "300x sweeter than sugar, 0 calories, zero glycemic index, centrally neutralizes herbal bitterness"
       },
       {
         "name": "Mogroside IV",
         "class": "Cucurbitane Glycoside",
-        "action": "Chống oxy hóa tế bào, bảo vệ phế quản và thanh quản"
+        "action": "Chống oxy hóa tế bào, bảo vệ phế quản và thanh quản",
+        "class_en": "Cucurbitane Glycoside",
+        "action_en": "Protects cellular tissues against free radicals, coats and soothes vocal cords"
       }
     ],
     "biologicalRole": "Tạo vị ngọt sâu tự nhiên, khử đắng thảo mộc trung ương mà hoàn toàn không tăng đường huyết (GI=0)",
@@ -1146,13 +1575,26 @@ const MEDICINAL_DATABASE = [
     "safeCulinaryDose": "1.0g – 2.0g sấy khô",
     "safeDailyDose": "1.0g – 2.0g sấy khô (Tối đa 3.0g/ngày)",
     "origin": "Vùng núi cao phía Bắc Việt Nam (OCOP)",
-    "image": "assets/la_han_qua.jpg"
+    "image": "assets/la_han_qua.jpg",
+    "categoryLabel_en": "0-Calorie Natural Sweetness / Lung Soothing (GI=0)",
+    "heritageOrigin_en": "High Mountain Limestone Valleys & Northern Border",
+    "partUsed_en": "Dried ripe fruit (Fructus Siraitiae grosvenorii)",
+    "safeDailyDose_en": "1/4 to 1/2 fruit (approx. 5 – 10g dried pulp)",
+    "bioAction_en": "Mogroside V delivers 300x the sweetness of sugar with zero calories and zero glycemic impact, while shielding vocal cords and throat.",
+    "maskingRules_en": [
+      "Ultimate masking agent for bitter medicinal botanicals without altering glycemic balance"
+    ],
+    "contraindications_en": [
+      "Exceptionally safe across all populations",
+      "Individuals with profound spleen-cold deficiency should consume in moderate portions (<3g/day)"
+    ],
+    "mindfulReminder_en": "Sweetness without excess brings true lightness. Let natural harmony soothe your throat and spirit."
   },
   {
     "id": "atiso_do",
-    "name": "Atiso Đỏ (Bụp Giấm / Roselle)",
+    "name": "Atiso Đỏ",
     "sciName": "Hibiscus sabdariffa",
-    "enName": "Roselle Hibiscus / Red Sorrel",
+    "enName": "Roselle Hibiscus",
     "category": "flavor",
     "categoryLabel": "Axit Hữu Cơ Ức Chế hTAS2R16 & Sắc Tố Ruby",
     "heritageOrigin": "Vùng Trồng Dược Liệu Bình Thuận & Đà Lạt (OCOP)",
@@ -1160,7 +1602,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 0,
       "astringency": 1,
       "sweetness": 1,
-      "aroma": "Thơm chua thanh mát hoa dâm bụt đỏ, hậu vị thanh lọc sảng khoái"
+      "aroma": "Thơm chua thanh mát hoa dâm bụt đỏ, hậu vị thanh lọc sảng khoái",
+      "aroma_en": "Vibrant berry-tart fragrance, stunning sparkling ruby color"
     },
     "traditionalTaste": "Vị chua thanh mát, tính bình; quy kinh can và đại tràng",
     "activeCompounds": "Anthocyanin, Axit Hibiscic, Axit Citric, Vitamin C",
@@ -1169,12 +1612,16 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Anthocyanin (Delphinidin-3-sambubioside)",
         "class": "Flavonoid Pigment",
-        "action": "Tạo sắc đỏ Ruby quý phái, chống oxy hóa cực mạnh, bảo vệ nội mô mạch máu"
+        "action": "Tạo sắc đỏ Ruby quý phái, chống oxy hóa cực mạnh, bảo vệ nội mô mạch máu",
+        "class_en": "Flavonoid Pigment",
+        "action_en": "Imparts royal ruby red color, delivers potent antioxidant protection to vascular endothelium"
       },
       {
         "name": "Hibiscic Acid & Citric Acid",
         "class": "Organic Acid",
-        "action": "Đưa pH về 4.2–4.5 trực tiếp ức chế thụ thể thụ cảm vị đắng hTAS2R16"
+        "action": "Đưa pH về 4.2–4.5 trực tiếp ức chế thụ thể thụ cảm vị đắng hTAS2R16",
+        "class_en": "Organic Acid",
+        "action_en": "Establishes ideal pH 4.2–4.5 to directly suppress hTAS2R16 bitter taste receptors"
       }
     ],
     "biologicalRole": "Tạo sắc đỏ Ruby tự nhiên cho mocktail; axit hữu cơ đưa pH về 4.2–4.5 trực tiếp ức chế thụ thể vị đắng hTAS2R16",
@@ -1191,13 +1638,26 @@ const MEDICINAL_DATABASE = [
     "safeCulinaryDose": "1.0g – 2.2g đài hoa khô",
     "safeDailyDose": "1.0g – 2.2g đài hoa khô (EFSA/EMA ngưỡng ẩm thực an toàn)",
     "origin": "Bình Thuận, Đà Lạt (OCOP)",
-    "image": "assets/atiso_do.jpg"
+    "image": "assets/atiso_do.jpg",
+    "categoryLabel_en": "Ruby Color / Organic Acid Bitter Masking / Vascular Health",
+    "heritageOrigin_en": "Phan Thiet & Central Coastal Sandy Soils",
+    "partUsed_en": "Dried calyces (Calyx Hibisci sabdariffae)",
+    "safeDailyDose_en": "3 – 5g dried calyces",
+    "bioAction_en": "Delphinidin-3-sambubioside creates striking ruby hue; hibiscic and citric acids optimize beverage pH to 4.2-4.5, suppressing hTAS2R16 bitterness.",
+    "maskingRules_en": [
+      "Primary visual and sensory modifier; masks earthy tones while delivering wine-like aesthetic without alcohol"
+    ],
+    "contraindications_en": [
+      "Severe hypotension patients should consume lower doses or pair with warming herbs",
+      "Acute peptic ulcer patients should drink after meals"
+    ],
+    "mindfulReminder_en": "A jewel-like ruby brew honors your body's vibrant life force. Celebrate each mindful sip."
   },
   {
     "id": "que_tra_bong",
-    "name": "Quế Trà Bồng (Cinnamon)",
+    "name": "Quế Trà Bồng",
     "sciName": "Cinnamomum cassia / C. loureiroi",
-    "enName": "Tra Bong Heritage Cinnamon",
+    "enName": "Tra Bong Cinnamon",
     "category": "flavor",
     "categoryLabel": "Nốt Hương Ấm Mulled Wine & Tuần Hoàn",
     "heritageOrigin": "Trà Bồng, Quảng Ngãi (Di Sản Chỉ Dẫn Địa Lý Quốc Gia)",
@@ -1205,7 +1665,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 0,
       "astringency": 1,
       "sweetness": 3,
-      "aroma": "Hương quế nồng ấm quý phái, vị cay ngọt đậm đà"
+      "aroma": "Hương quế nồng ấm quý phái, vị cay ngọt đậm đà",
+      "aroma_en": "Warm festive spice aroma, reminiscent of luxury holiday mulled wine"
     },
     "traditionalTaste": "Vị cay ngọt nồng, tính ấm; quy kinh thận, tỳ, tâm, can",
     "activeCompounds": "Cinnamaldehyde (hàm lượng tinh dầu cao)",
@@ -1219,12 +1680,16 @@ const MEDICINAL_DATABASE = [
       {
         "name": "Cinnamaldehyde",
         "class": "Phenylpropanoid",
-        "action": "Tạo nốt hương ấm quý phái phong cách rượu vang Mulled Wine (0% cồn), che mùi ngái"
+        "action": "Tạo nốt hương ấm quý phái phong cách rượu vang Mulled Wine (0% cồn), che mùi ngái",
+        "class_en": "Phenylpropanoid",
+        "action_en": "Delivers a luxurious warm festive aroma akin to mulled wine (0.0% alcohol), masking earthy odors"
       },
       {
         "name": "Coumarin (ngưỡng an toàn TDI)",
         "class": "Benzopyrone",
-        "action": "Kiểm soát liều nghiêm ngặt theo khuyến nghị BfR Đức (TDI 0.1 mg/kg/ngày)"
+        "action": "Kiểm soát liều nghiêm ngặt theo khuyến nghị BfR Đức (TDI 0.1 mg/kg/ngày)",
+        "class_en": "Benzopyrone",
+        "action_en": "Strictly dosed within German BfR safety limits (TDI 0.1 mg/kg body weight/day)"
       }
     ],
     "biologicalRole": "Tạo nốt hương ấm quý phái phong cách rượu vang Mulled Wine (0% cồn), che giấu mùi ngái thảo dược",
@@ -1237,13 +1702,26 @@ const MEDICINAL_DATABASE = [
     "origin": "Trà Bồng, Quảng Ngãi (Di sản chỉ dẫn địa lý)",
     "image": "assets/que_tra_bong.jpg",
     "safeDailyDose": "Không có liều dược liệu chính thức. Ngưỡng an toàn dựa trên TDI coumarin 0,1 mg/kg thể trọng/ngày (EFSA 2004). Người 60 kg: khoảng 6 mg coumarin/ngày. Quế Cassia chứa coumarin khoảng 2.100–4.400 mg/kg (BfR). Khuyến nghị ẩm thực VinaVita: 0.5g – 0.8g trong sachet 5.3g.",
-    "officialSource": "BfR (Đức), High daily intakes of cinnamon: health risk cannot be ruled out: https://www.BFR.bund.de/cm/349/high_daily_intakes_of_cinnamon_health_risk_cannot_be_ruled_out.pdf"
+    "officialSource": "BfR (Đức), High daily intakes of cinnamon: health risk cannot be ruled out: https://www.BFR.bund.de/cm/349/high_daily_intakes_of_cinnamon_health_risk_cannot_be_ruled_out.pdf",
+    "categoryLabel_en": "Noble Warmth / Mulled Wine Aroma (0.0% ABV) / Circulation",
+    "heritageOrigin_en": "Tra Bong Ancient Cinnamon Forests (Quang Ngai Heritage GI)",
+    "partUsed_en": "Dried stem bark (Cortex Cinnamomi)",
+    "safeDailyDose_en": "1 – 2g dried bark (strict TDI compliance)",
+    "bioAction_en": "Cinnamaldehyde imparts a rich festive aroma reminiscent of mulled wine while enhancing insulin sensitivity and warming circulation.",
+    "maskingRules_en": [
+      "Provides luxurious aroma that masks strong herbal earthy profiles"
+    ],
+    "contraindications_en": [
+      "Individuals with liver disease or taking statins/paracetamol should monitor coumarin intake (BfR TDI: 0.1 mg/kg/day)",
+      "Pregnant women should avoid high concentrated doses"
+    ],
+    "mindfulReminder_en": "Noble warmth brings comfort and togetherness. Celebrate life's gatherings in festive cheer with 0.0% alcohol."
   },
   {
     "id": "nghe",
     "name": "Nghệ Vàng",
     "sciName": "Curcuma longa L.",
-    "enName": "Nghệ Vàng",
+    "enName": "Yellow Turmeric",
     "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
     "category": "tieu_hoa",
     "categoryLabel": "Tiêu hóa & Chống viêm",
@@ -1251,9 +1729,25 @@ const MEDICINAL_DATABASE = [
     "image": "assets/nghe.jpg",
     "keyCompounds": [
       {
-        "name": "Hoạt chất chuẩn hóa",
-        "class": "Phytochemical",
-        "action": "Tác dụng sinh học theo Dược điển"
+        "name": "Curcumin",
+        "class": "Curcuminoid",
+        "class_en": "Curcuminoid",
+        "action": "Potent anti-inflammatory, accelerates gastric mucosal healing and shields hepatocytes",
+        "action_en": "Potent anti-inflammatory, accelerates gastric mucosal healing and shields hepatocytes"
+      },
+      {
+        "name": "Demethoxycurcumin",
+        "class": "Curcuminoid",
+        "class_en": "Curcuminoid",
+        "action": "Robust antioxidant protecting cellular neural membranes from lipid peroxidation",
+        "action_en": "Robust antioxidant protecting cellular neural membranes from lipid peroxidation"
+      },
+      {
+        "name": "Turmerone",
+        "class": "Sesquiterpene",
+        "class_en": "Sesquiterpene",
+        "action": "Stimulates bile production, optimizes dietary fat emulsification and digestion",
+        "action_en": "Stimulates bile production, optimizes dietary fat emulsification and digestion"
       }
     ],
     "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
@@ -1267,7 +1761,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Thơm thảo mộc tự nhiên"
+      "aroma": "Thơm thảo mộc tự nhiên",
+      "aroma_en": "Earthy, warm aromatic spice with golden sunshine hue"
     },
     "maskingRules": [
       "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
@@ -1279,13 +1774,26 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "VinaVita Wellness Infusion",
-    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể.",
+    "categoryLabel_en": "Gastric Mucosa Protection / Anti-Inflammatory",
+    "heritageOrigin_en": "Hung Yen & Nghe An Traditional Curcuma Basins",
+    "partUsed_en": "Dried rhizome (Rhizoma Curcumae longae)",
+    "safeDailyDose_en": "2 – 4g dried powder or 5 – 10g fresh rhizome",
+    "bioAction_en": "Curcuminoids downregulate COX-2 and TNF-alpha, protecting gastric and duodenal lining against stress-induced irritation and acid erosion.",
+    "maskingRules_en": [
+      "Pair with black pepper (piperine) for bioavailability and honey/kumquat to buffer earthiness"
+    ],
+    "contraindications_en": [
+      "Strictly contraindicated in complete biliary obstruction or gallstone attacks",
+      "Use cautiously when concurrently taking anticoagulant medications"
+    ],
+    "mindfulReminder_en": "Golden roots impart golden resilience. Guard your stomach and digestion with nature's timeless shield."
   },
   {
     "id": "rau_ma",
-    "name": "Rau Má Bản Địa",
+    "name": "Rau Má",
     "sciName": "Centella asiatica (L.) Urb.",
-    "enName": "Rau Má Bản Địa",
+    "enName": "Gotu Kola",
     "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
     "category": "thanh_nhiet",
     "categoryLabel": "Thanh nhiệt & Giải độc",
@@ -1293,9 +1801,25 @@ const MEDICINAL_DATABASE = [
     "image": "assets/rau_ma.jpg",
     "keyCompounds": [
       {
-        "name": "Hoạt chất chuẩn hóa",
-        "class": "Phytochemical",
-        "action": "Tác dụng sinh học theo Dược điển"
+        "name": "Asiaticoside",
+        "class": "Triterpenoid Saponin",
+        "class_en": "Triterpenoid Saponin",
+        "action": "Stimulates collagen synthesis, enhances cerebral microvascular repair and flexibility",
+        "action_en": "Stimulates collagen synthesis, enhances cerebral microvascular repair and flexibility"
+      },
+      {
+        "name": "Madecassoside",
+        "class": "Triterpenoid",
+        "class_en": "Triterpenoid",
+        "action": "Potent anti-inflammatory, reduces neural oxidative stress and calms central agitation",
+        "action_en": "Potent anti-inflammatory, reduces neural oxidative stress and calms central agitation"
+      },
+      {
+        "name": "Asiatic acid",
+        "class": "Triterpene",
+        "class_en": "Triterpene",
+        "action": "Hepatoprotective agent, clears internal heat and facilitates cellular detoxification",
+        "action_en": "Hepatoprotective agent, clears internal heat and facilitates cellular detoxification"
       }
     ],
     "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
@@ -1309,7 +1833,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Thơm thảo mộc tự nhiên"
+      "aroma": "Thơm thảo mộc tự nhiên",
+      "aroma_en": "Fresh, cool grassy aroma with crisp clean finish"
     },
     "maskingRules": [
       "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
@@ -1321,13 +1846,26 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "VinaVita Wellness Infusion",
-    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể.",
+    "categoryLabel_en": "Cognitive Clarity / Collagen Repair / Internal Cooling",
+    "heritageOrigin_en": "Cu Chi & Tien Giang Alluvial Green Plains",
+    "partUsed_en": "Whole plant (Herba Centellae asiaticae)",
+    "safeDailyDose_en": "15 – 30g fresh or 6 – 12g dried herb",
+    "bioAction_en": "Asiaticoside stimulates type-I collagen synthesis and brain microvascular elasticity, clearing somatic inflammation and internal heat.",
+    "maskingRules_en": [
+      "Pairs delightfully with fresh coconut water and kumquat to soften vegetal astringency"
+    ],
+    "contraindications_en": [
+      "Topical use is standard; oral ingestion should follow balanced moderation",
+      "Avoid excessive high doses during pregnancy or severe liver compromise"
+    ],
+    "mindfulReminder_en": "Cool emerald greenery purifies racing thoughts. Rest your mind in tranquil serenity."
   },
   {
     "id": "kim_ngan_hoa",
     "name": "Kim Ngân Hoa",
     "sciName": "Lonicera japonica Thunb.",
-    "enName": "Kim Ngân Hoa",
+    "enName": "Japanese Honeysuckle",
     "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
     "category": "thanh_nhiet",
     "categoryLabel": "Thanh nhiệt & Kháng khuẩn",
@@ -1335,9 +1873,25 @@ const MEDICINAL_DATABASE = [
     "image": "assets/kim_ngan_hoa.jpg",
     "keyCompounds": [
       {
-        "name": "Hoạt chất chuẩn hóa",
-        "class": "Phytochemical",
-        "action": "Tác dụng sinh học theo Dược điển"
+        "name": "Chlorogenic acid",
+        "class": "Phenolic Acid",
+        "class_en": "Phenolic Acid",
+        "action": "Broad-spectrum natural antibacterial, clears inflammatory heat and purifies systemic toxins",
+        "action_en": "Broad-spectrum natural antibacterial, clears inflammatory heat and purifies systemic toxins"
+      },
+      {
+        "name": "Lonicerin",
+        "class": "Flavonoid Glycoside",
+        "class_en": "Flavonoid Glycoside",
+        "action": "Inhibits respiratory viral attachment, soothes pharyngeal swelling and vocal fatigue",
+        "action_en": "Inhibits respiratory viral attachment, soothes pharyngeal swelling and vocal fatigue"
+      },
+      {
+        "name": "Luteolin-7-glucoside",
+        "class": "Flavonoid",
+        "class_en": "Flavonoid",
+        "action": "Suppresses histamine release, provides gentle anti-allergic respiratory relief",
+        "action_en": "Suppresses histamine release, provides gentle anti-allergic respiratory relief"
       }
     ],
     "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
@@ -1350,7 +1904,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Thơm thảo mộc tự nhiên"
+      "aroma": "Thơm thảo mộc tự nhiên",
+      "aroma_en": "Sweet, ethereal honeyed floral bouquet"
     },
     "maskingRules": [
       "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
@@ -1362,13 +1917,25 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "VinaVita Wellness Infusion",
-    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể.",
+    "categoryLabel_en": "Throat Comfort / Natural Antibacterial / Heat Clearing",
+    "heritageOrigin_en": "Lang Son & Northern Highland Valleys",
+    "partUsed_en": "Dried flower buds (Flos Lonicerae)",
+    "safeDailyDose_en": "4 – 8g dried flower buds",
+    "bioAction_en": "Chlorogenic acid and lonicerin inhibit upper respiratory pathogens, reducing pharyngeal swelling and soothing throat dryness.",
+    "maskingRules_en": [
+      "Pairs beautifully with Licorice and Monk Fruit to create a soothing throat tonic"
+    ],
+    "contraindications_en": [
+      "Individuals with pronounced cold-deficiency of the spleen and stomach (frequent loose stool) should drink warm and with ginger"
+    ],
+    "mindfulReminder_en": "Clear speech flows from a soothed throat. Savor the delicate sweetness of wild honeysuckle."
   },
   {
     "id": "xuyen_tam_lien",
     "name": "Xuyên Tâm Liên",
     "sciName": "Andrographis paniculata Nees",
-    "enName": "Xuyên Tâm Liên",
+    "enName": "Green Chiretta",
     "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
     "category": "khang_khuan",
     "categoryLabel": "Kháng viêm & Hô hấp",
@@ -1376,9 +1943,25 @@ const MEDICINAL_DATABASE = [
     "image": "assets/xuyen_tam_lien.jpg",
     "keyCompounds": [
       {
-        "name": "Hoạt chất chuẩn hóa",
-        "class": "Phytochemical",
-        "action": "Tác dụng sinh học theo Dược điển"
+        "name": "Andrographolide",
+        "class": "Diterpene Lactone",
+        "class_en": "Diterpene Lactone",
+        "action": "Potent NF-kB pathway inhibitor, powerful anti-inflammatory and bronchial protector",
+        "action_en": "Potent NF-kB pathway inhibitor, powerful anti-inflammatory and bronchial protector"
+      },
+      {
+        "name": "Neoandrographolide",
+        "class": "Diterpenoid Glycoside",
+        "class_en": "Diterpenoid Glycoside",
+        "action": "Enhances macrophage phagocytosis, exhibits natural antiviral activity",
+        "action_en": "Enhances macrophage phagocytosis, exhibits natural antiviral activity"
+      },
+      {
+        "name": "14-Deoxyandrographolide",
+        "class": "Diterpene Lactone",
+        "class_en": "Diterpene Lactone",
+        "action": "Antipyretic agent, soothes acute throat soreness and respiratory inflammation",
+        "action_en": "Antipyretic agent, soothes acute throat soreness and respiratory inflammation"
       }
     ],
     "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
@@ -1392,7 +1975,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Thơm thảo mộc tự nhiên"
+      "aroma": "Thơm thảo mộc tự nhiên",
+      "aroma_en": "Intense therapeutic bitterness with clean medicinal undertones"
     },
     "maskingRules": [
       "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
@@ -1404,13 +1988,26 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "VinaVita Wellness Infusion",
-    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể.",
+    "categoryLabel_en": "Intensive Respiratory Defense / Heat Clearance",
+    "heritageOrigin_en": "Bac Giang & Central Vietnam Standardized Farms",
+    "partUsed_en": "Aerial parts (Herba Andrographitis)",
+    "safeDailyDose_en": "2 – 5g dried herb (short-term targeted use)",
+    "bioAction_en": "Andrographolide downregulates NF-kB inflammatory cascades, offering intensive bronchial protection and fever relief.",
+    "maskingRules_en": [
+      "Requires strong masking via Stevia, Monk Fruit, and Kumquat citric acid to suppress intense hTAS2R bitterness"
+    ],
+    "contraindications_en": [
+      "Strictly contraindicated in pregnancy and lactation (potential anti-fertility and uterine contractive effects)",
+      "May induce hypersensitivity reactions in atopic individuals"
+    ],
+    "mindfulReminder_en": "Bitterness is nature's concentrated shield. Respect its potent protective strength."
   },
   {
     "id": "tia_to",
-    "name": "Tía Tô Bản Địa",
+    "name": "Tía Tô",
     "sciName": "Perilla frutescens (L.) Britton",
-    "enName": "Tía Tô Bản Địa",
+    "enName": "Perilla Leaf",
     "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
     "category": "giai_cam",
     "categoryLabel": "Giải cảm & Chống dị ứng",
@@ -1418,9 +2015,25 @@ const MEDICINAL_DATABASE = [
     "image": "assets/tia_to.jpg",
     "keyCompounds": [
       {
-        "name": "Hoạt chất chuẩn hóa",
-        "class": "Phytochemical",
-        "action": "Tác dụng sinh học theo Dược điển"
+        "name": "Rosmarinic acid",
+        "class": "Polyphenol",
+        "class_en": "Polyphenol",
+        "action": "Suppresses histamine release, relieves seasonal allergies and soothes airways",
+        "action_en": "Suppresses histamine release, relieves seasonal allergies and soothes airways"
+      },
+      {
+        "name": "Perillaldehyde",
+        "class": "Monoterpene Aldehyde",
+        "class_en": "Monoterpene Aldehyde",
+        "action": "Dispels wind-cold chills, stimulates digestive secretions and relieves bloating",
+        "action_en": "Dispels wind-cold chills, stimulates digestive secretions and relieves bloating"
+      },
+      {
+        "name": "Luteolin & Apigenin",
+        "class": "Flavonoid",
+        "class_en": "Flavonoid",
+        "action": "Anti-inflammatory, relaxes bronchial smooth muscle during tense breathing",
+        "action_en": "Anti-inflammatory, relaxes bronchial smooth muscle during tense breathing"
       }
     ],
     "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
@@ -1434,7 +2047,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Thơm thảo mộc tự nhiên"
+      "aroma": "Thơm thảo mộc tự nhiên",
+      "aroma_en": "Warm, distinctive herbaceous-peppery aroma with citrus nuances"
     },
     "maskingRules": [
       "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
@@ -1446,13 +2060,26 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "VinaVita Wellness Infusion",
-    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể.",
+    "categoryLabel_en": "Airway Soothing / Anti-Allergic / Digestive Comfort",
+    "heritageOrigin_en": "Nam Sach (Hai Duong) Traditional Herb Fields",
+    "partUsed_en": "Leaves and tender twigs (Folium Perillae)",
+    "safeDailyDose_en": "5 – 12g dried leaves (or 15 – 30g fresh)",
+    "bioAction_en": "Rosmarinic acid suppresses histamine release and airway allergies; perillaldehyde relieves wind-cold chills and nausea.",
+    "maskingRules_en": [
+      "Pairs nicely with ginger and brown sugar/monk fruit to create a traditional warming elixir"
+    ],
+    "contraindications_en": [
+      "Insufficient clinical safety data for high concentrated extracts during pregnancy",
+      "Individuals experiencing intense fever due to Yin-deficiency fire"
+    ],
+    "mindfulReminder_en": "Warm rustic perilla leaves dispel lingering chills, inviting comforting restoration."
   },
   {
     "id": "muop_dang",
-    "name": "Mướp Đắng (Khổ Qua)",
+    "name": "Mướp Đắng",
     "sciName": "Momordica charantia L.",
-    "enName": "Mướp Đắng (Khổ Qua)",
+    "enName": "Bitter Melon",
     "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
     "category": "chuyen_hoa",
     "categoryLabel": "Đường huyết & Chuyển hóa",
@@ -1460,9 +2087,25 @@ const MEDICINAL_DATABASE = [
     "image": "assets/muop_dang.jpg",
     "keyCompounds": [
       {
-        "name": "Hoạt chất chuẩn hóa",
-        "class": "Phytochemical",
-        "action": "Tác dụng sinh học theo Dược điển"
+        "name": "Charantin",
+        "class": "Steroidal Saponin",
+        "class_en": "Steroidal Saponin",
+        "action": "Natural hypoglycemic agent, mimics insulin action to optimize glucose uptake",
+        "action_en": "Natural hypoglycemic agent, mimics insulin action to optimize glucose uptake"
+      },
+      {
+        "name": "Momordicin",
+        "class": "Triterpenoid",
+        "class_en": "Triterpenoid",
+        "action": "Activates hTAS2R bitter receptors, purifies systemic heat and detoxifies liver",
+        "action_en": "Activates hTAS2R bitter receptors, purifies systemic heat and detoxifies liver"
+      },
+      {
+        "name": "Polypeptide-p",
+        "class": "Plant Insulin Protein",
+        "class_en": "Plant Insulin Protein",
+        "action": "Plant-derived insulin analog, supports pancreatic function and carbohydrate balance",
+        "action_en": "Plant-derived insulin analog, supports pancreatic function and carbohydrate balance"
       }
     ],
     "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
@@ -1476,7 +2119,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Thơm thảo mộc tự nhiên"
+      "aroma": "Thơm thảo mộc tự nhiên",
+      "aroma_en": "Deeply clean, refreshing vegetative bitterness"
     },
     "maskingRules": [
       "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
@@ -1488,13 +2132,26 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "VinaVita Wellness Infusion",
-    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể.",
+    "categoryLabel_en": "Metabolic Balance / Blood Sugar Harmony / Heat Clearing",
+    "heritageOrigin_en": "Hoc Mon & Mekong Delta Agro-Ecological Farms",
+    "partUsed_en": "Dried fruit slices (Fructus Momordicae charantiae)",
+    "safeDailyDose_en": "3 – 6g dried fruit slices",
+    "bioAction_en": "Charantin and polypeptide-p emulate insulin activity to optimize cellular glucose uptake; activates hTAS2R bitter receptors for liver cleansing.",
+    "maskingRules_en": [
+      "Pair with Stevia, Monk Fruit, and Kumquat to round out the bitter profile into a sophisticated bittersweet aperitif"
+    ],
+    "contraindications_en": [
+      "May cause excessive hypoglycemia when combined with prescription diabetic medications",
+      "Contraindicated during pregnancy (secondary literature reports abortifacient risk)"
+    ],
+    "mindfulReminder_en": "Embrace the purifying depth of wholesome bitterness. Balance restores bodily equilibrium."
   },
   {
     "id": "voi",
-    "name": "Nụ Vối Bản Địa",
+    "name": "Nụ Vối",
     "sciName": "Cleistocalyx operculatus (Roxb.) Merr. & Perry",
-    "enName": "Nụ Vối Bản Địa",
+    "enName": "Cleistocalyx Buds",
     "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
     "category": "tieu_hoa",
     "categoryLabel": "Tiêu hóa & Chống oxy hóa",
@@ -1502,9 +2159,25 @@ const MEDICINAL_DATABASE = [
     "image": "assets/voi.jpg",
     "keyCompounds": [
       {
-        "name": "Hoạt chất chuẩn hóa",
-        "class": "Phytochemical",
-        "action": "Tác dụng sinh học theo Dược điển"
+        "name": "2',4'-Dihydroxy-6'-methoxy-3',5'-dimethylchalcone",
+        "class": "Chalcone",
+        "class_en": "Chalcone",
+        "action": "Gram-positive antibacterial, preserves intestinal barrier integrity",
+        "action_en": "Gram-positive antibacterial, preserves intestinal barrier integrity"
+      },
+      {
+        "name": "Betulinic acid",
+        "class": "Triterpene",
+        "class_en": "Triterpene",
+        "action": "Gastrointestinal anti-inflammatory, inhibits alpha-glucosidase for metabolic health",
+        "action_en": "Gastrointestinal anti-inflammatory, inhibits alpha-glucosidase for metabolic health"
+      },
+      {
+        "name": "Tannins thực vật",
+        "class": "Polyphenol",
+        "class_en": "Polyphenol",
+        "action": "Astringent action, enhances lipid breakdown and eases post-meal digestion",
+        "action_en": "Astringent action, enhances lipid breakdown and eases post-meal digestion"
       }
     ],
     "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
@@ -1517,7 +2190,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Thơm thảo mộc tự nhiên"
+      "aroma": "Thơm thảo mộc tự nhiên",
+      "aroma_en": "Rustic country tea aroma, warm woody earthy scent with refreshing aftertaste"
     },
     "maskingRules": [
       "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
@@ -1529,13 +2203,25 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "VinaVita Wellness Infusion",
-    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể.",
+    "categoryLabel_en": "Digestive Aid / Post-Meal Lightness / Traditional Tea",
+    "heritageOrigin_en": "Bac Ninh & Red River Traditional Countryside Basins",
+    "partUsed_en": "Dried flower buds (Flos Cleistocalycis operculati)",
+    "safeDailyDose_en": "5 – 10g dried buds",
+    "bioAction_en": "Chalcones and tannins stimulate digestive motility, break down dietary lipids, and protect intestinal mucosa against opportunistic bacteria.",
+    "maskingRules_en": [
+      "Brew with boiling water; naturally balanced without requiring added sweeteners"
+    ],
+    "contraindications_en": [
+      "Long-term clinical pharmacology safety data is sparse; enjoy in traditional moderate tea infusions"
+    ],
+    "mindfulReminder_en": "A warm cup of country tea evokes peaceful courtyards and grounded simplicity."
   },
   {
     "id": "hoac_huong",
     "name": "Hoắc Hương",
     "sciName": "Pogostemon cablin (Blanco) Benth.",
-    "enName": "Hoắc Hương",
+    "enName": "Patchouli Leaf",
     "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
     "category": "tieu_hoa",
     "categoryLabel": "Kiện tỳ & Tinh dầu",
@@ -1543,9 +2229,25 @@ const MEDICINAL_DATABASE = [
     "image": "assets/hoac_huong.jpg",
     "keyCompounds": [
       {
-        "name": "Hoạt chất chuẩn hóa",
-        "class": "Phytochemical",
-        "action": "Tác dụng sinh học theo Dược điển"
+        "name": "Patchouli alcohol",
+        "class": "Tricyclic Sesquiterpene",
+        "class_en": "Tricyclic Sesquiterpene",
+        "action": "Antifungal, warms stomach and spleen, rapidly relieves nausea and motion sickness",
+        "action_en": "Antifungal, warms stomach and spleen, rapidly relieves nausea and motion sickness"
+      },
+      {
+        "name": "Pogostone",
+        "class": "Alpha-Pyrone",
+        "class_en": "Alpha-Pyrone",
+        "action": "Antimicrobial against enteric pathogens, eliminates gas and abdominal distension",
+        "action_en": "Antimicrobial against enteric pathogens, eliminates gas and abdominal distension"
+      },
+      {
+        "name": "Seychellene",
+        "class": "Sesquiterpene",
+        "class_en": "Sesquiterpene",
+        "action": "Imparts grounding aroma, settles autonomic nervous system during stress",
+        "action_en": "Imparts grounding aroma, settles autonomic nervous system during stress"
       }
     ],
     "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
@@ -1559,7 +2261,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Thơm thảo mộc tự nhiên"
+      "aroma": "Thơm thảo mộc tự nhiên",
+      "aroma_en": "Intensely earthy, grounding aromatic herbal scent"
     },
     "maskingRules": [
       "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
@@ -1571,13 +2274,26 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "VinaVita Wellness Infusion",
-    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể.",
+    "categoryLabel_en": "Digestive De-bloating / Spleen Warming / Anti-Nausea",
+    "heritageOrigin_en": "Ha Nam & Red River Valley Herb Plantations",
+    "partUsed_en": "Dried aerial parts (Herba Pogostemonis)",
+    "safeDailyDose_en": "4 – 8g dried herb",
+    "bioAction_en": "Patchouli alcohol and pogostone warm digestive pathways, dispel damp-heat, eliminate stomach bloat, and relieve motion sickness.",
+    "maskingRules_en": [
+      "Combine with lemongrass and mint to create an uplifting digestive cordial"
+    ],
+    "contraindications_en": [
+      "Pure essential oil may provoke dermal sensitivity in atopic skin",
+      "Insufficient comprehensive safety data during pregnancy and breastfeeding"
+    ],
+    "mindfulReminder_en": "Grounding aromas bring calm stability to unsettled digestion and turbulent thoughts."
   },
   {
     "id": "day_thia_canh",
     "name": "Dây Thìa Canh",
     "sciName": "Gymnema sylvestre (Retz.) R.Br. ex Schult.",
-    "enName": "Dây Thìa Canh",
+    "enName": "Gymnema Sylvestre",
     "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
     "category": "chuyen_hoa",
     "categoryLabel": "Ổn định đường huyết",
@@ -1585,9 +2301,25 @@ const MEDICINAL_DATABASE = [
     "image": "assets/day_thia_canh.jpg",
     "keyCompounds": [
       {
-        "name": "Hoạt chất chuẩn hóa",
-        "class": "Phytochemical",
-        "action": "Tác dụng sinh học theo Dược điển"
+        "name": "Gymnemic acid",
+        "class": "Triterpenoid Saponin",
+        "class_en": "Triterpenoid Saponin",
+        "action": "Temporarily suppresses T1R2/T1R3 sweet taste receptors, blocks intestinal glucose uptake",
+        "action_en": "Temporarily suppresses T1R2/T1R3 sweet taste receptors, blocks intestinal glucose uptake"
+      },
+      {
+        "name": "Gurmarin",
+        "class": "Polypeptide",
+        "class_en": "Polypeptide",
+        "action": "Suppresses sugar cravings at the tongue receptor level, aids weight management",
+        "action_en": "Suppresses sugar cravings at the tongue receptor level, aids weight management"
+      },
+      {
+        "name": "Gymnemasaponins",
+        "class": "Saponin Glycoside",
+        "class_en": "Saponin Glycoside",
+        "action": "Stimulates pancreatic beta-cell repair, optimizing natural insulin synthesis",
+        "action_en": "Stimulates pancreatic beta-cell repair, optimizing natural insulin synthesis"
       }
     ],
     "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
@@ -1601,7 +2333,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Thơm thảo mộc tự nhiên"
+      "aroma": "Thơm thảo mộc tự nhiên",
+      "aroma_en": "Earthy, leafy botanical scent with neutral palate"
     },
     "maskingRules": [
       "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
@@ -1613,13 +2346,26 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "VinaVita Wellness Infusion",
-    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể.",
+    "categoryLabel_en": "Sugar Craving Blocker / Glucose Metabolism / Pancreatic Support",
+    "heritageOrigin_en": "Hai Hau & Nam Dinh Certified GACP Reserves",
+    "partUsed_en": "Dried stems and leaves (Folium Gymnatis)",
+    "safeDailyDose_en": "3 – 6g dried botanical",
+    "bioAction_en": "Gymnemic acids physically block sweet taste receptors T1R2/T1R3 on the tongue, diminishing sugar cravings and slowing intestinal glucose uptake.",
+    "maskingRules_en": [
+      "Pairs effectively with Green Tea and Lemongrass for metabolic wellness teas"
+    ],
+    "contraindications_en": [
+      "May precipitate hypoglycemia when taken concurrently with prescription insulin or oral antidiabetic drugs",
+      "Insufficient safety evidence for pregnant women"
+    ],
+    "mindfulReminder_en": "Free yourself from artificial sugar dependence. True energy stems from clean physiological balance."
   },
   {
     "id": "sai_dat",
-    "name": "Sài Đất Bản Địa",
+    "name": "Sài Đất",
     "sciName": "Sphagneticola calendulacea (L.) Pruski",
-    "enName": "Sài Đất Bản Địa",
+    "enName": "Chinese Wedelia",
     "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
     "category": "thanh_nhiet",
     "categoryLabel": "Thanh nhiệt & Tiêu độc",
@@ -1627,9 +2373,25 @@ const MEDICINAL_DATABASE = [
     "image": "assets/sai_dat.jpg",
     "keyCompounds": [
       {
-        "name": "Hoạt chất chuẩn hóa",
-        "class": "Phytochemical",
-        "action": "Tác dụng sinh học theo Dược điển"
+        "name": "Wedelolactone",
+        "class": "Coumestan",
+        "class_en": "Coumestan",
+        "action": "Detoxifies systemic heat, combats pharyngeal inflammation and allergic dermatitis",
+        "action_en": "Detoxifies systemic heat, combats pharyngeal inflammation and allergic dermatitis"
+      },
+      {
+        "name": "Norwedelic acid",
+        "class": "Phenolic Compound",
+        "class_en": "Phenolic Compound",
+        "action": "Antioxidant, shields liver cells against inflammatory insults",
+        "action_en": "Antioxidant, shields liver cells against inflammatory insults"
+      },
+      {
+        "name": "Triterpenoid saponin",
+        "class": "Saponin",
+        "class_en": "Saponin",
+        "action": "Natural anti-inflammatory, promotes hepatic and renal metabolic clearance",
+        "action_en": "Natural anti-inflammatory, promotes hepatic and renal metabolic clearance"
       }
     ],
     "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
@@ -1642,7 +2404,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Thơm thảo mộc tự nhiên"
+      "aroma": "Thơm thảo mộc tự nhiên",
+      "aroma_en": "Gentle grassy, herbal tea fragrance with mild sweet finish"
     },
     "maskingRules": [
       "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
@@ -1654,13 +2417,25 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "VinaVita Wellness Infusion",
-    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể.",
+    "categoryLabel_en": "Heat Purifying / Liver Detox / Skin Soothing",
+    "heritageOrigin_en": "Bac Giang & Northern Countryside Alluvial Fields",
+    "partUsed_en": "Whole plant (Herba Wedeliae)",
+    "safeDailyDose_en": "10 – 20g dried (or 30 – 50g fresh)",
+    "bioAction_en": "Wedelolactone and norwedelic acid scavenge free radicals, clear inflammatory blood heat, and soothe allergic skin outbreaks.",
+    "maskingRules_en": [
+      "Pairs well with Chrysanthemum and Licorice for a light refreshing summer infusion"
+    ],
+    "contraindications_en": [
+      "Human pharmacokinetics data is limited; recommended for moderate short-term use per folk wisdom"
+    ],
+    "mindfulReminder_en": "Gentle meadow blossoms clear away inflammatory friction. Let simplicity restore inner calm."
   },
   {
     "id": "kim_tien_thao",
     "name": "Kim Tiền Thảo",
     "sciName": "Desmodium styracifolium (Osbeck) Merr.",
-    "enName": "Kim Tiền Thảo",
+    "enName": "Desmodium Herb",
     "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
     "category": "tiet_nieu",
     "categoryLabel": "Tiết niệu & Bài thạch",
@@ -1668,9 +2443,25 @@ const MEDICINAL_DATABASE = [
     "image": "assets/kim_tien_thao.jpg",
     "keyCompounds": [
       {
-        "name": "Hoạt chất chuẩn hóa",
-        "class": "Phytochemical",
-        "action": "Tác dụng sinh học theo Dược điển"
+        "name": "Desmodimin",
+        "class": "Flavonoid C-glycoside",
+        "class_en": "Flavonoid C-glycoside",
+        "action": "Promotes diuresis, relaxes ureteral smooth muscle to facilitate stone transit",
+        "action_en": "Promotes diuresis, relaxes ureteral smooth muscle to facilitate stone transit"
+      },
+      {
+        "name": "Vicenin-2",
+        "class": "Flavonoid Bisglycoside",
+        "class_en": "Flavonoid Bisglycoside",
+        "action": "Antispasmodic for urinary tract, eases dysuria and pelvic discomfort",
+        "action_en": "Antispasmodic for urinary tract, eases dysuria and pelvic discomfort"
+      },
+      {
+        "name": "Polysaccharides",
+        "class": "Complex Carbohydrate",
+        "class_en": "Complex Carbohydrate",
+        "action": "Inhibits calcium oxalate crystallization, preventing urinary sediment buildup",
+        "action_en": "Inhibits calcium oxalate crystallization, preventing urinary sediment buildup"
       }
     ],
     "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
@@ -1685,7 +2476,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Thơm thảo mộc tự nhiên"
+      "aroma": "Thơm thảo mộc tự nhiên",
+      "aroma_en": "Subtle toasted hay and dry meadow herbal fragrance"
     },
     "maskingRules": [
       "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
@@ -1697,13 +2489,26 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "VinaVita Wellness Infusion",
-    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể.",
+    "categoryLabel_en": "Urinary Tract Health / Kidney Flush / Smooth Muscle Relaxation",
+    "heritageOrigin_en": "Phu Tho & Northern Highland Plantations",
+    "partUsed_en": "Aerial parts (Herba Desmodii styracifolii)",
+    "safeDailyDose_en": "10 – 20g dried herb",
+    "bioAction_en": "Flavonoids desmodimin and vicenin-2 promote diuresis, relax ureteral smooth muscles, and inhibit calcium oxalate crystal aggregation.",
+    "maskingRules_en": [
+      "Combine with Monk Fruit and Kumquat to create an easy-drinking daily renal flush tea"
+    ],
+    "contraindications_en": [
+      "Phase III clinical trial (606 adults): Ureteral stone transit rate was 44.6–45% vs 33.8–34% placebo; severe renal colic or hematuria demands immediate emergency hospital care",
+      "Contraindicated during pregnancy, lactation, or severe renal hydronephrosis"
+    ],
+    "mindfulReminder_en": "Flowing water leaves no stagnant debris. Nourish your system with steady hydration and pure herbs."
   },
   {
     "id": "che_day",
     "name": "Chè Dây Rừng",
     "sciName": "Ampelopsis grossedentata (Hand.-Mazz.) W.T.Wang",
-    "enName": "Chè Dây Rừng",
+    "enName": "Wild Ampelopsis Tea",
     "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
     "category": "tieu_hoa",
     "categoryLabel": "Bảo vệ dạ dày & Chống viêm",
@@ -1711,9 +2516,25 @@ const MEDICINAL_DATABASE = [
     "image": "assets/che_day.jpg",
     "keyCompounds": [
       {
-        "name": "Hoạt chất chuẩn hóa",
-        "class": "Phytochemical",
-        "action": "Tác dụng sinh học theo Dược điển"
+        "name": "Dihydromyricetin - DHM (Ampelopsin)",
+        "class": "Flavanonol",
+        "class_en": "Flavanonol",
+        "action": "Inhibits Helicobacter pylori colonization, accelerates gastric ulcer epithelial healing",
+        "action_en": "Inhibits Helicobacter pylori colonization, accelerates gastric ulcer epithelial healing"
+      },
+      {
+        "name": "Myricetin",
+        "class": "Flavonol",
+        "class_en": "Flavonol",
+        "action": "Protects gastric mucosal lining against excess acidity and stress-induced lesions",
+        "action_en": "Protects gastric mucosal lining against excess acidity and stress-induced lesions"
+      },
+      {
+        "name": "Tannins pyrocatechic",
+        "class": "Polyphenol",
+        "class_en": "Polyphenol",
+        "action": "Astringent anti-inflammatory, tightens mucosal junctions in upper GI tract",
+        "action_en": "Astringent anti-inflammatory, tightens mucosal junctions in upper GI tract"
       }
     ],
     "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
@@ -1726,7 +2547,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Thơm thảo mộc tự nhiên"
+      "aroma": "Thơm thảo mộc tự nhiên",
+      "aroma_en": "Distinctive sweet wild mountain tea flavor with clean soothing throat feel"
     },
     "maskingRules": [
       "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
@@ -1738,13 +2560,25 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "VinaVita Wellness Infusion",
-    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể.",
+    "categoryLabel_en": "Gastric Ulcer Healing / H. pylori Inhibition / Heartburn Relief",
+    "heritageOrigin_en": "Cao Bang & Sapa Pristine Mountain Forests",
+    "partUsed_en": "Dried leaves and tender shoots covered in natural white bloom (Folium Ampelopsis)",
+    "safeDailyDose_en": "10 – 20g dried tea",
+    "bioAction_en": "Dihydromyricetin (DHM, Ampelopsin) inhibits Helicobacter pylori bacterial colonization, buffers excess gastric acidity, and heals peptic ulcers.",
+    "maskingRules_en": [
+      "Naturally pleasant with an innate sweet finish; excellent served warm after meals"
+    ],
+    "contraindications_en": [
+      "LiverTox records no clear liver injury cases with DHM in clinical trials, but caution is warranted with hyper-concentrated purified supplements"
+    ],
+    "mindfulReminder_en": "From misty highland peaks comes gentle gastric healing. Savor every sip in quiet relief."
   },
   {
     "id": "huong_nhu",
     "name": "Hương Nhu Tía",
     "sciName": "Ocimum gratissimum L.",
-    "enName": "Hương Nhu Tía",
+    "enName": "Purple Holy Basil",
     "heritageOrigin": "Dược liệu bản địa Việt Nam (OCOP / VietGAP)",
     "category": "giai_cam",
     "categoryLabel": "Giải cảm & Kháng khuẩn",
@@ -1752,9 +2586,25 @@ const MEDICINAL_DATABASE = [
     "image": "assets/huong_nhu.jpg",
     "keyCompounds": [
       {
-        "name": "Hoạt chất chuẩn hóa",
-        "class": "Phytochemical",
-        "action": "Tác dụng sinh học theo Dược điển"
+        "name": "Eugenol",
+        "class": "Phenylpropanoid",
+        "class_en": "Phenylpropanoid",
+        "action": "Mild pharyngeal topical analgesic, oral antiseptic, dispels cold fevers",
+        "action_en": "Mild pharyngeal topical analgesic, oral antiseptic, dispels cold fevers"
+      },
+      {
+        "name": "Ocimene",
+        "class": "Monoterpene",
+        "class_en": "Monoterpene",
+        "action": "Clears respiratory passages, relieves summer heat stroke and tension headache",
+        "action_en": "Clears respiratory passages, relieves summer heat stroke and tension headache"
+      },
+      {
+        "name": "Caryophyllene",
+        "class": "Sesquiterpene",
+        "class_en": "Sesquiterpene",
+        "action": "Cannabinoid CB2 receptor agonist, delivers soothing systemic anti-inflammatory benefits",
+        "action_en": "Cannabinoid CB2 receptor agonist, delivers soothing systemic anti-inflammatory benefits"
       }
     ],
     "bioAction": "Hỗ trợ điều hòa sinh học và bảo vệ tế bào theo Dược điển Việt Nam và các tài liệu chuyên khảo quốc tế (EMA/HMPC, EFSA).",
@@ -1768,7 +2618,8 @@ const MEDICINAL_DATABASE = [
       "bitterness": 2,
       "astringency": 2,
       "sweetness": 1,
-      "aroma": "Thơm thảo mộc tự nhiên"
+      "aroma": "Thơm thảo mộc tự nhiên",
+      "aroma_en": "Pungent, warm clove-like spicy aroma that awakens the senses"
     },
     "maskingRules": [
       "Phối hợp với acid hữu cơ pH 4.2–4.5 để ức chế thụ thể đắng hTAS2R16",
@@ -1780,7 +2631,20 @@ const MEDICINAL_DATABASE = [
       "hoa_cuc"
     ],
     "popularDrink": "VinaVita Wellness Infusion",
-    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể."
+    "mindfulReminder": "Sử dụng thảo mộc đúng liều lượng và nguồn gốc là biểu hiện của lối sống chánh niệm và yêu thương cơ thể.",
+    "categoryLabel_en": "Dispels Summer Heat / Antiseptic / Headache Relief",
+    "heritageOrigin_en": "Hung Yen & Red River Delta Traditional Gardens",
+    "partUsed_en": "Aerial parts harvested while flowering (Herba Ocimi gratissimi)",
+    "safeDailyDose_en": "6 – 12g dried herb",
+    "bioAction_en": "Eugenol delivers mild topical pharyngeal analgesia and antimicrobial protection; ocimene clears sinus congestion and tension.",
+    "maskingRules_en": [
+      "Use in light delicate proportions with ginger and honey to create an invigorating respiratory steam tea"
+    ],
+    "contraindications_en": [
+      "Essential oil contains high concentrations of Eugenol; never swallow undiluted pure essential oil",
+      "Long-term excessive consumption is discouraged without clinical supervision"
+    ],
+    "mindfulReminder_en": "Invigorating clove-basil warmth opens the breath. Let fresh air restore your vitality."
   }
 ];
 

@@ -1641,17 +1641,19 @@ document.addEventListener("DOMContentLoaded", () => {
       card.onclick = () => window.openHerbDetailModal(herb.id);
 
       const i18n = HERB_I18N[herb.id] || {};
-      const catLabel = isEn ? (i18n.cat_en || herb.categoryLabel) : herb.categoryLabel;
-      const origin = isEn ? (i18n.origin_en || herb.heritageOrigin) : (herb.heritageOrigin || 'Vùng Dược Liệu Bản Địa Đại Việt');
-      const aroma = isEn ? (i18n.aroma_en || herb.tasteProfile.aroma) : herb.tasteProfile.aroma;
-      const safeDose = isEn ? (i18n.safe_en || herb.safeDailyDose) : herb.safeDailyDose;
-      const herbTitle = isEn ? `${herb.enName} (${herb.name})` : herb.name;
-      const herbSubtitle = isEn ? `${herb.sciName}` : `${herb.sciName} • ${herb.enName}`;
+      const catLabel = isEn ? (herb.categoryLabel_en || i18n.cat_en || herb.categoryLabel) : herb.categoryLabel;
+      const origin = isEn ? (herb.heritageOrigin_en || i18n.origin_en || herb.heritageOrigin) : (herb.heritageOrigin || 'Vùng Dược Liệu Bản Địa Đại Việt');
+      const aroma = isEn ? ((herb.tasteProfile && herb.tasteProfile.aroma_en) || i18n.aroma_en || (herb.tasteProfile && herb.tasteProfile.aroma)) : (herb.tasteProfile && herb.tasteProfile.aroma);
+      const safeDose = isEn ? (herb.safeDailyDose_en || i18n.safe_en || herb.safeDailyDose) : herb.safeDailyDose;
+      const cleanVi = (herb.name || '').replace(/\s*\([^)]*\)/g, '').trim();
+      const cleanEn = (herb.enName || cleanVi).replace(/\s*\([^)]*\)/g, '').trim();
+      const herbTitle = isEn ? `${cleanEn} (${cleanVi})` : cleanVi;
+      const herbSubtitle = isEn ? `${herb.sciName}` : `${herb.sciName} • ${cleanEn}`;
 
       // Top 2 active phytochemical constituents as sleek pill badges
       const topPills = (herb.keyCompounds || []).slice(0, 2).map(c => `
         <span class="herb-pill-tag">
-          <strong>${c.name}</strong> <small>(${c.class || (isEn ? 'Bioactive' : 'Hoạt chất')})</small>
+          <strong>${c.name}</strong> <small>(${isEn ? (c.class_en || c.class || 'Bioactive') : (c.class || 'Hoạt chất')})</small>
         </span>
       `).join("");
 
@@ -1719,27 +1721,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const isEn = (window.currentLang === "en");
     const i18n = HERB_I18N[herb.id] || {};
 
-    const catLabel = isEn ? (i18n.cat_en || herb.categoryLabel) : herb.categoryLabel;
-    const origin = isEn ? (i18n.origin_en || herb.heritageOrigin) : (herb.heritageOrigin || 'Vùng Dược Liệu Bản Địa Đại Việt');
-    const aroma = isEn ? (i18n.aroma_en || herb.tasteProfile.aroma) : herb.tasteProfile.aroma;
-    const safeDose = isEn ? (i18n.safe_en || herb.safeDailyDose) : herb.safeDailyDose;
-    const partUsed = isEn ? (i18n.part_en || herb.partUsed) : herb.partUsed;
-    const bioAction = isEn ? (i18n.bioAction_en || herb.bioAction) : (herb.bioAction || 'Thuật toán VinaVita AI đối soát trực tiếp nồng độ hoạt chất với thụ thể thần kinh, bảo toàn hoạt tính sinh học theo tiêu chuẩn Dược điển Việt Nam.');
+    const cleanVi = (herb.name || '').replace(/\s*\([^)]*\)/g, '').trim();
+    const cleanEn = (herb.enName || cleanVi).replace(/\s*\([^)]*\)/g, '').trim();
+    const herbTitle = isEn ? `${cleanEn} (${cleanVi})` : cleanVi;
+
+    const catLabel = isEn ? (herb.categoryLabel_en || i18n.cat_en || herb.categoryLabel) : herb.categoryLabel;
+    const origin = isEn ? (herb.heritageOrigin_en || i18n.origin_en || herb.heritageOrigin) : (herb.heritageOrigin || 'Vùng Dược Liệu Bản Địa Đại Việt');
+    const aroma = isEn ? ((herb.tasteProfile && herb.tasteProfile.aroma_en) || i18n.aroma_en || (herb.tasteProfile && herb.tasteProfile.aroma)) : (herb.tasteProfile && herb.tasteProfile.aroma);
+    const safeDose = isEn ? (herb.safeDailyDose_en || i18n.safe_en || herb.safeDailyDose) : herb.safeDailyDose;
+    const partUsed = isEn ? (herb.partUsed_en || i18n.part_en || herb.partUsed) : herb.partUsed;
+    const bioAction = isEn ? (herb.bioAction_en || i18n.bioAction_en || herb.bioAction) : (herb.bioAction || 'Thuật toán VinaVita AI đối soát trực tiếp nồng độ hoạt chất với thụ thể thần kinh, bảo toàn hoạt tính sinh học theo tiêu chuẩn Dược điển Việt Nam.');
     const masking = isEn
-      ? (i18n.masking_en || (Array.isArray(herb.maskingRules) ? herb.maskingRules.join('. ') : (herb.maskingRules || 'Natural food science synergy.')))
+      ? (herb.maskingRules_en ? (Array.isArray(herb.maskingRules_en) ? herb.maskingRules_en.join('. ') : herb.maskingRules_en) : (i18n.masking_en || (Array.isArray(herb.maskingRules) ? herb.maskingRules.join('. ') : (herb.maskingRules || 'Natural food science synergy.'))))
       : (Array.isArray(herb.maskingRules) ? herb.maskingRules.join('. ') : (herb.maskingRules || 'Quy tắc phối vị điều hòa vị đắng.'));
 
-    const compoundsRows = herb.keyCompounds.map(c => `
+    const compoundsRows = (herb.keyCompounds || []).map(c => `
       <tr>
         <td><strong style="color:#a7f3d0; font-size:0.92rem;">${c.name}</strong></td>
-        <td><span class="compound-class-badge">${c.class || (isEn ? 'Bioactive' : 'Hoạt chất')}</span></td>
-        <td style="color:#cbd5e1; font-size:0.86rem; line-height:1.45;">${c.action}</td>
+        <td><span class="compound-class-badge">${isEn ? (c.class_en || c.class || 'Bioactive') : (c.class || 'Hoạt chất')}</span></td>
+        <td style="color:#cbd5e1; font-size:0.86rem; line-height:1.45;">${isEn ? (c.action_en || c.action) : c.action}</td>
       </tr>
     `).join("");
 
-    const warningsList = Array.isArray(herb.contraindications)
-      ? herb.contraindications.join("; ")
-      : (herb.contraindications || "");
+    const warningsList = isEn
+      ? (herb.contraindications_en ? (Array.isArray(herb.contraindications_en) ? herb.contraindications_en.join("; ") : herb.contraindications_en) : (Array.isArray(herb.contraindications) ? herb.contraindications.join("; ") : (herb.contraindications || "Standard precautions apply.")))
+      : (Array.isArray(herb.contraindications) ? herb.contraindications.join("; ") : (herb.contraindications || ""));
+
+    const mindfulNote = isEn ? (herb.mindfulReminder_en || i18n.mindful_en || herb.mindfulReminder) : herb.mindfulReminder;
 
     herbModalContent.innerHTML = `
       <!-- Top Hero Banner with Botanical Photo -->
@@ -1749,7 +1757,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <span class="herb-badge-overlay">${catLabel}</span>
         </div>
         <div class="herb-modal-hero-info">
-          <div class="herb-modal-title">${isEn ? `${herb.enName} (${herb.name})` : herb.name}</div>
+          <div class="herb-modal-title">${herbTitle}</div>
           <div class="herb-modal-sci">${herb.sciName}</div>
           <div class="herb-modal-tags">
             <span class="heritage-origin-tag"><span>📍</span> ${origin}</span>
@@ -1862,22 +1870,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const isEn = (window.currentLang === "en");
     const i18n = (typeof HERB_I18N !== "undefined" && HERB_I18N[herb.id]) ? HERB_I18N[herb.id] : {};
 
-    const herbTitle = isEn ? `${herb.enName} (${herb.name})` : `${herb.name} (${herb.enName})`;
-    const catLabel = isEn ? (i18n.cat_en || herb.categoryLabel) : herb.categoryLabel;
-    const origin = isEn ? (i18n.origin_en || herb.heritageOrigin) : (herb.heritageOrigin || 'Đại Việt Heritage Botanical Region');
-    const aroma = isEn ? (i18n.aroma_en || (herb.tasteProfile && herb.tasteProfile.aroma) || '') : ((herb.tasteProfile && herb.tasteProfile.aroma) || '');
-    const safeDose = isEn ? (i18n.safe_en || herb.safeDailyDose) : herb.safeDailyDose;
-    const partUsed = isEn ? (i18n.part_en || herb.partUsed) : herb.partUsed;
-    const bioAction = isEn ? (i18n.bioAction_en || herb.bioAction) : (herb.bioAction || 'Thuật toán VinaVita AI chuẩn hóa nồng độ hoạt chất theo Dược điển Việt Nam V.');
-    const masking = isEn ? (i18n.masking_en || (Array.isArray(herb.maskingRules) ? herb.maskingRules.join('. ') : (herb.maskingRules || 'Natural pH 4.2-4.5 taste modulation.'))) : (Array.isArray(herb.maskingRules) ? herb.maskingRules.join('. ') : (herb.maskingRules || 'Quy tắc phối vị khử đắng tự nhiên.'));
-    const warnings = Array.isArray(herb.contraindications) ? herb.contraindications.join('; ') : (herb.contraindications || (isEn ? 'Standard culinary safety precautions apply.' : 'Sử dụng đúng liều khuyến nghị.'));
-    const mindfulQuote = isEn ? (i18n.mindful_en || herb.mindfulReminder_en || 'Mindful herbal nourishment connects us to ancestral wisdom and gentle restorative peace.') : (herb.mindfulReminder || 'Thưởng thức thảo mộc trong chánh niệm là biểu hiện của sự trân quý sức khỏe.');
+    const cleanVi = (herb.name || '').replace(/\s*\([^)]*\)/g, '').trim();
+    const cleanEn = (herb.enName || cleanVi).replace(/\s*\([^)]*\)/g, '').trim();
+    const herbTitle = isEn ? `${cleanEn} (${cleanVi})` : `${cleanVi} (${cleanEn})`;
+    const catLabel = isEn ? (herb.categoryLabel_en || i18n.cat_en || herb.categoryLabel) : herb.categoryLabel;
+    const origin = isEn ? (herb.heritageOrigin_en || i18n.origin_en || herb.heritageOrigin) : (herb.heritageOrigin || 'Đại Việt Heritage Botanical Region');
+    const aroma = isEn ? ((herb.tasteProfile && herb.tasteProfile.aroma_en) || i18n.aroma_en || (herb.tasteProfile && herb.tasteProfile.aroma) || '') : ((herb.tasteProfile && herb.tasteProfile.aroma) || '');
+    const safeDose = isEn ? (herb.safeDailyDose_en || i18n.safe_en || herb.safeDailyDose) : herb.safeDailyDose;
+    const partUsed = isEn ? (herb.partUsed_en || i18n.part_en || herb.partUsed) : herb.partUsed;
+    const bioAction = isEn ? (herb.bioAction_en || i18n.bioAction_en || herb.bioAction) : (herb.bioAction || 'Thuật toán VinaVita AI chuẩn hóa nồng độ hoạt chất theo Dược điển Việt Nam V.');
+    const masking = isEn ? (herb.maskingRules_en ? (Array.isArray(herb.maskingRules_en) ? herb.maskingRules_en.join('. ') : herb.maskingRules_en) : (i18n.masking_en || (Array.isArray(herb.maskingRules) ? herb.maskingRules.join('. ') : (herb.maskingRules || 'Natural pH 4.2-4.5 taste modulation.')))) : (Array.isArray(herb.maskingRules) ? herb.maskingRules.join('. ') : (herb.maskingRules || 'Quy tắc phối vị khử đắng tự nhiên.'));
+    const warnings = isEn
+      ? (herb.contraindications_en ? (Array.isArray(herb.contraindications_en) ? herb.contraindications_en.join('; ') : herb.contraindications_en) : (Array.isArray(herb.contraindications) ? herb.contraindications.join('; ') : 'Standard culinary safety precautions apply.'))
+      : (Array.isArray(herb.contraindications) ? herb.contraindications.join('; ') : (herb.contraindications || 'Sử dụng đúng liều khuyến nghị.'));
+    const mindfulQuote = isEn ? (herb.mindfulReminder_en || i18n.mindful_en || 'Mindful herbal nourishment connects us to ancestral wisdom and gentle restorative peace.') : (herb.mindfulReminder || 'Thưởng thức thảo mộc trong chánh niệm là biểu hiện của sự trân quý sức khỏe.');
 
     const compoundsRows = (herb.keyCompounds || []).map(c => `
       <tr>
         <td style="padding:6px 10px; font-weight:700; color:#064e3b; border-bottom:1px solid #e2e8f0;">${c.name}</td>
-        <td style="padding:6px 10px; color:#475569; border-bottom:1px solid #e2e8f0;"><span style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:0.78rem;">${c.class || (isEn ? 'Bioactive' : 'Hoạt chất')}</span></td>
-        <td style="padding:6px 10px; color:#334155; border-bottom:1px solid #e2e8f0; font-size:0.82rem; line-height:1.45;">${c.action}</td>
+        <td style="padding:6px 10px; color:#475569; border-bottom:1px solid #e2e8f0;"><span style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:0.78rem;">${isEn ? (c.class_en || c.class || 'Bioactive') : (c.class || 'Hoạt chất')}</span></td>
+        <td style="padding:6px 10px; color:#334155; border-bottom:1px solid #e2e8f0; font-size:0.82rem; line-height:1.45;">${isEn ? (c.action_en || c.action) : c.action}</td>
       </tr>
     `).join('');
 
@@ -1885,7 +1897,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <html>
 <head>
   <meta charset="utf-8">
-  <title>VinaVita Botanical Monograph — ${herb.name}</title>
+  <title>VinaVita Botanical Monograph — ${cleanVi}</title>
   <style>
     @page { size: A4 portrait; margin: 12mm 15mm; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1e293b; background: #fff; margin: 0; padding: 0; font-size: 9.5pt; line-height: 1.45; }
