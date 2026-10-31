@@ -8,7 +8,7 @@ const I18N = {
   vi: {
     // Brand & Navigation
     "brand.tagline": "Dược Liệu Việt • Quốc Hồn Trà",
-    "brand.title": "VinaVita AI — Nền Tảng Mocktail Dược Liệu Việt",
+    "brand.title": "VinaVita — Nền Tảng Mocktail Dược Liệu Việt",
     "nav.mixologist": "🍸 AI Mixologist",
     "nav.signatures": "⭐ Menu & Gói Sachet Gen-Z",
     "nav.database": "📚 Bách Khoa Dược Liệu",
@@ -18,7 +18,7 @@ const I18N = {
     // Hero Section
     "hero.initiative": "SÁNG KIẾN KINH DOANH RMIT 2026",
     "hero.headline": "Hồi Sinh <span class=\"gradient-text\">Dược Liệu Việt</span> Cho Giới Trẻ",
-    "hero.lead": "VinaVita AI tiên phong kết hợp dược liệu dân tộc cùng khoa học hiện đại, tạo nên thức uống thư giãn xã hội <strong>0.0% Cồn</strong>. Giải pháp giúp các bạn trẻ xả stress, ngủ ngon sau giờ học và tự tin \"chill\" cùng bạn bè mà không say xỉn, không độc gan, không ép tim — nhờ công thức giảm đắng tự nhiên và gợi ý vị thông minh.",
+    "hero.lead": "VinaVita tiên phong kết hợp dược liệu dân tộc cùng khoa học hiện đại, tạo nên thức uống thư giãn xã hội <strong>0.0% Cồn</strong>. Giải pháp giúp các bạn trẻ xả stress, ngủ ngon sau giờ học và tự tin \"chill\" cùng bạn bè mà không say xỉn, không độc gan, không ép tim — nhờ công thức giảm đắng tự nhiên và gợi ý vị thông minh.",
     "hero.quote_text": "\"Nam Dược Trị Nam Nhân\" — Thiền sư Tuệ Tĩnh • Di Sản Dược Liệu Việt x Sáng Kiến Gen Z",
     "hero.quote_tag": "Bản Sắc Việt",
     "hero.stat1_title": "100% IF–THEN Safety",
@@ -48,7 +48,7 @@ const I18N = {
     "hero.pill_btn": "Pha Thử ➔",
 
     // 4-Module Portal on Home View
-    "brand.home_title": "VinaVita AI — Nhấp để về Trang Chủ",
+    "brand.home_title": "VinaVita — Nhấp để về Trang Chủ",
     "portal.section_tag": "CÁC CHỨC NĂNG NỀN TẢNG • TƯƠNG TÁC NGAY",
     "portal.mixologist_title": "AI Mixologist Studio",
     "portal.mixologist_desc": "Phối chế mocktail thảo mộc cá nhân hóa, tự động bảo vệ bởi rào chắn sinh học 5 tầng.",
@@ -177,13 +177,13 @@ const I18N = {
     "db.search_placeholder": "🔍 Gõ tên cây thuốc (Lạc Tiên, Đinh Lăng, Tâm Sen...), công dụng (ngủ ngon, giảm mỏi mắt) hoặc hương vị...",
 
     // View 4: About & Team
-    "about.title": "Câu Chuyện Dự Án: <span class=\"gradient-text\">VinaVita AI x RMIT RBPC 2026</span>",
+    "about.title": "Câu Chuyện Dự Án: <span class=\"gradient-text\">VinaVita x RMIT RBPC 2026</span>",
     "about.p_intro": "<strong>Kính thưa Quý Ban Giám khảo và Quý Thầy Cô,</strong>",
     "about.p_team": "Chúng em là nhóm 4 học sinh THPT bước vào cuộc thi <strong>RMIT Business Plan Competition 2026</strong> với một trăn trở rất thật từ cuộc sống hàng ngày: <em>Làm sao để học sinh, sinh viên có thể học tập và cống hiến hết mình mà không phải đánh đổi bằng sức khỏe và giấc ngủ?</em>",
-    "about.p_teacher": "Ý tưởng về <strong>VinaVita AI</strong> không đến từ sách vở hay những ý niệm kinh doanh xa vời. Nó bắt đầu từ một buổi chiều đầu tháng 10, khi một người cô giáo dạy Tin học ngồi lại tâm sự cùng chúng em. Cô kể rằng cô từng có quãng thời gian kiệt sức vì công việc, suy nhược thần kinh đến mức não bộ báo động đỏ. Cô từng tìm đến thuốc tây, nhưng uống vào lại bị phản tác dụng và mệt mỏi thêm. Cho đến khi cô được một người bạn bốc cho thang thuốc Đông Y cổ truyền: chính những vị thảo mộc mộc mạc ấy đã cứu cô, giúp cô an thần, có lại giấc ngủ sâu thực sự, để từng tế bào trong cơ thể tự chữa lành và phục hồi năng lượng sống. Lời dặn dò chân thành của cô hôm đó đã chạm thẳng vào tâm can chúng em: <em>\"Cơ thể mình có giới hạn sinh học, nếu để nó bị phạt một lần thì hậu quả sẽ rất lớn. Điều quan trọng nhất là mình phải còn hiện diện khỏe mạnh ở đây.\"</em>",
+    "about.p_teacher": "Ý tưởng về <strong>VinaVita</strong> không đến từ sách vở hay những ý niệm kinh doanh xa vời. Nó bắt đầu từ một buổi chiều đầu tháng 10, khi một người cô giáo dạy Tin học ngồi lại tâm sự cùng chúng em. Cô kể rằng cô từng có quãng thời gian kiệt sức vì công việc, suy nhược thần kinh đến mức não bộ báo động đỏ. Cô từng tìm đến thuốc tây, nhưng uống vào lại bị phản tác dụng và mệt mỏi thêm. Cho đến khi cô được một người bạn bốc cho thang thuốc Đông Y cổ truyền: chính những vị thảo mộc mộc mạc ấy đã cứu cô, giúp cô an thần, có lại giấc ngủ sâu thực sự, để từng tế bào trong cơ thể tự chữa lành và phục hồi năng lượng sống. Lời dặn dò chân thành của cô hôm đó đã chạm thẳng vào tâm can chúng em: <em>\"Cơ thể mình có giới hạn sinh học, nếu để nó bị phạt một lần thì hậu quả sẽ rất lớn. Điều quan trọng nhất là mình phải còn hiện diện khỏe mạnh ở đây.\"</em>",
     "about.p_status_quo": "Nhìn quanh giảng đường và bàn học mỗi đêm, chúng em thấy quá nhiều bạn bè đang tự \"phạt\" cơ thể mình bằng những lon nước tăng lực đặc quánh đường hóa học hay cà phê đậm đặc, dẫn đến ép tim, hoặc tệ hơn là đau tim, run tay, cồn cào dạ dày và kiệt sức vào sáng hôm sau. Kho tàng Nam Dược ngàn năm của dân tộc mình — từ ngọn Lạc Tiên bờ rào, lá Đinh Lăng trong vườn cho đến bông Cúc trắng cố đô — vốn dĩ lành tính và xoa dịu thần kinh kỳ diệu như thế. Tại sao thế hệ trẻ lại ngại sử dụng chỉ vì vị đắng và cách đun sắc cổ truyền rườm rà, mà chỉ đinh ninh sử dụng thuốc tây hay nước tăng lực mà hiếm khi biết thành phần hay những hệ lụy lâu dài đang âm thầm bào mòn cơ thể từng ngày?",
     "about.p_solution": "Đây chính là lý do chúng em đã làm ra VinaVita. Bằng cách dùng thuật toán để tính toán tỷ lệ vị giúp triệt tiêu vị đắng tự nhiên mà không cần đến một gam đường tinh luyện nào, rồi đóng thành từng gói trà nhỏ gọn tiện lợi chỉ mất 3 phút rót nước sôi ngay tại bàn học, chúng em muốn đưa Nam Dược bước ra khỏi những ấm sắc nặng nề để đến gần hơn với người trẻ. Đó là một giải pháp thiết thực và lành tính — để những đêm ôn thi hay chạy deadline của học sinh, sinh viên không còn là những cuộc đánh cược với sức khỏe của chính mình.",
-    "about.showcase_title": "Đội Ngũ Đồng Sáng Lập VinaVita AI (Nhóm RChim — Vinschool Central Park)",
+    "about.showcase_title": "Đội Ngũ Đồng Sáng Lập VinaVita (Nhóm RChim — Vinschool Central Park)",
     "about.showcase_desc": "(Từ trái sang phải: Trương Quang Hiếu • Ngô Minh Thiên Bảo • Huỳnh Hữu Anh Khoa • Nguyễn Minh Dũng) — 4 học sinh THPT Vinschool Central Park mang khát vọng hiện đại hóa dược liệu dân tộc bằng khoa học và công nghệ AI.",
     "about.showcase_badge": "Đội Ngũ Sáng Lập 2026",
     "about.team_title": "Cơ Cấu Đội Ngũ Tác Chiến",
@@ -200,14 +200,14 @@ const I18N = {
     "about.alex_bio": "Người khởi xướng ý tưởng VinaVita, Trưởng nhóm Nghiên cứu Công nghệ Sinh học. Có thế mạnh và niềm đam mê lớn với Hóa học cùng Sinh học, định hướng tương lai theo đuổi Công nghệ Sinh học và Y khoa. Anh Khoa trực tiếp kết nối phản hồi từ người dùng, nghiên cứu Khoa học Thực phẩm và phát triển mô hình kinh doanh dược liệu OCOP bền vững.",
     "about.bao_role": "SYSTEM ARCHITECT — SOFTWARE & AI ENGINEER",
     "about.bao_name": "Ngô Minh Thiên Bảo",
-    "about.bao_bio": "Kiến trúc sư trưởng Hệ thống, Kỹ sư Phần mềm và Kỹ sư AI. Trực tiếp lập trình và phát triển toàn bộ website nền tảng, xây dựng mô hình AI và thuật toán lọc an toàn sinh học, thiết kế toàn diện giao diện UI/UX Cyber-Botanical và logic phối trộn công thức của VinaVita AI.",
+    "about.bao_bio": "Kiến trúc sư trưởng Hệ thống, Kỹ sư Phần mềm và Kỹ sư AI. Trực tiếp lập trình và phát triển toàn bộ website nền tảng, xây dựng mô hình AI và thuật toán lọc an toàn sinh học, thiết kế toàn diện giao diện UI/UX Cyber-Botanical và logic phối trộn công thức của VinaVita.",
     "about.hieu_role": "PHARMACOLOGIST",
     "about.school": "Vinschool Central Park High School",
     "about.hieu_name": "Trương Quang Hiếu",
     "about.hieu_bio": "Chuyên gia Dược học, người đặt nền móng dữ liệu ban đầu cho VinaVita từ trang web lưu trữ trước khi hệ thống được phát triển toàn diện. Tỉ mỉ đối chiếu từng vị thuốc từ Dược điển Việt Nam và các nghiên cứu lâm sàng quốc tế để đảm bảo mỗi công thức gợi ý ra đều an toàn tuyệt đối và có cơ sở khoa học vững chắc.",
     "about.dung_role": "DATA INTELLIGENCE LEAD",
     "about.dung_name": "Nguyễn Minh Dũng",
-    "about.dung_bio": "Đồng sáng lập phụ trách phân tích dữ liệu và luồng trải nghiệm người dùng. Sở hữu nền tảng kỹ thuật công nghệ vững chắc, Dũng trực tiếp thiết kế khảo sát, thu thập và bóc tách dữ liệu hành vi thực tế từ 60 bạn trẻ. Thông qua các mô hình trực quan hóa và phân tích sâu sắc, Dũng giúp đội ngũ thấu hiểu trọn vẹn nhu cầu người dùng, hoàn thiện cơ sở dữ liệu thực nghiệm và tối ưu hóa hệ thống VinaVita AI.",
+    "about.dung_bio": "Đồng sáng lập phụ trách phân tích dữ liệu và luồng trải nghiệm người dùng. Sở hữu nền tảng kỹ thuật công nghệ vững chắc, Dũng trực tiếp thiết kế khảo sát, thu thập và bóc tách dữ liệu hành vi thực tế từ 60 bạn trẻ. Thông qua các mô hình trực quan hóa và phân tích sâu sắc, Dũng giúp đội ngũ thấu hiểu trọn vẹn nhu cầu người dùng, hoàn thiện cơ sở dữ liệu thực nghiệm và tối ưu hóa hệ thống VinaVita.",
     "about.ref_title": "Tài Liệu Tham Khảo Học Thuật",
     "about.ref_list": "<li>Appel, K, Rose, T, Fiebich, B, Kammler, T, Hoffmann, C &amp; Weiss, G 2011, 'Modulation of the γ-aminobutyric acid (GABA) system by Passiflora incarnata L.', <em>Phytotherapy Research</em>, vol. 25, no. 6, pp. 838–843.</li><li>Breslin, PAS &amp; Beauchamp, GK 1997, 'Salt enhances flavour by suppressing bitterness', <em>Nature</em>, vol. 387, no. 6633, p. 563.</li><li>Chiavaroli, L, Mirrahimi, A, Sievenpiper, JL, Jenkins, DJA &amp; Leiter, LA 2020, 'Cardiovascular and glycemic impacts of non-nutritive botanical sweeteners Stevia and Monk Fruit in adolescents and young adults', <em>Nutrients</em>, vol. 12, no. 11, p. 3408.</li><li>Government of Vietnam 2024, <em>Decree No. 168/2024/ND-CP: Regulatory framework and penalties for alcohol concentration in transport and road safety</em>, Hanoi.</li><li>Do, TL 2004, <em>Medicinal Plants and Traditional Remedies of Vietnam</em>, Medical Publishing House, Hanoi.</li><li>Nguyen, TTH, Nguyen, QH &amp; Tran, VS 2020, 'Phytochemical constituents and biological activities of Passiflora foetida L. in Vietnam', <em>Vietnam Journal of Science and Technology</em>, vol. 58, no. 4, pp. 412–420.</li><li>Sakurai, T, Misaka, T, Ueno, Y, Ishiguro, M, Matsuo, S &amp; Abe, K 2010, 'The human bitter taste receptor hTAS2R16 is activated by natural glucopyranosides and suppressed at mildly acidic pH', <em>Biochemical and Biophysical Research Communications</em>, vol. 400, no. 3, pp. 434–439.</li><li>Sotoyama, M, Misaka, T &amp; Abe, K 2017, 'pH-dependent modulation of human bitter taste receptor responses: Molecular insights into beverage formulation', <em>Journal of Agricultural and Food Chemistry</em>, vol. 65, no. 18, pp. 3704–3711.</li><li>Tan, L, Liu, Y, Wang, Y, Zhang, H &amp; Chen, Z 2024, 'Flavonoid vitexin from Passiflora species modulates GABAA receptors to attenuate neuro-stress and reduce cortisol levels in young adults', <em>Food &amp; Function</em>, vol. 15, no. 4, pp. 1982–1994.</li><li>World Health Organization (WHO) 2024, <em>Global status report on alcohol and health and treatment of substance use disorders</em>, World Health Organization, Geneva.</li>",
     "modal.close": "Đóng hồ sơ",
@@ -233,7 +233,7 @@ const I18N = {
     "order.receipt_btn": "Hoàn Tất & Quay Lại",
 
     // Footer
-    "footer.brand": "VinaVita AI",
+    "footer.brand": "VinaVita",
     "footer.tagline": "Nền Tảng Pha Chế Dược Liệu & Mocktail Thảo Mộc Việt Nam — 0.0% Cồn",
     "footer.team": "Huỳnh Hữu Anh Khoa — Leader & Biotech Researcher, Ngô Minh Thiên Bảo — Lead System Architect, Trương Quang Hiếu — Pharmacologist & Nguyễn Minh Dũng — Data Intelligence Lead • Team Thinking Space — RMIT RBPC 2026",
     "footer.disclaimer": "Dự án nghiên cứu phục vụ cuộc thi RMIT Business Plan Competition 2026. Các thông tin công thức dựa trên y học cổ truyền và dược lý học thực nghiệm, không nhằm mục đích thay thế chẩn đoán hoặc điều trị y tế chuyên sâu.",
@@ -318,17 +318,17 @@ const I18N = {
   en: {
     // Brand & Navigation
     "brand.tagline": "Vietnamese Herbs • Soul of Herbal Tea",
-    "brand.title": "VinaVita AI — Vietnamese Heritage Herbal Mocktail Platform",
+    "brand.title": "VinaVita — Vietnamese Heritage Herbal Mocktail Platform",
     "nav.mixologist": "🍸 AI Mixologist",
     "nav.signatures": "⭐ Menu & Gen-Z Sachets",
     "nav.database": "📚 Herb Encyclopedia",
     "nav.about": "🏛️ Project & Team",
-    "nav.ai_node_title": "Cloud AI Node Active (Click to open AI Pharmacist, VinaVita)",
+    "nav.ai_node_title": "Cloud AI Node Active (Click to open VinaVita AI Pharmacist)",
 
     // Hero Section
     "hero.initiative": "RMIT RBPC 2026 BUSINESS INITIATIVE",
     "hero.headline": "Revitalizing <span class=\"gradient-text\">Vietnamese Herbs</span> for Youth",
-    "hero.lead": "VinaVita AI pioneers the fusion of ethnic Vietnamese herbs with modern food science to create <strong>0.0% Alcohol</strong> social relaxation mocktails. Empowering youth to de-stress, sleep deeply, and socialize hangover-free with no hepatic toxicity or heart racing — powered by natural bitterness modulation and smart flavor AI.",
+    "hero.lead": "VinaVita pioneers the fusion of ethnic Vietnamese herbs with modern food science to create <strong>0.0% Alcohol</strong> social relaxation mocktails. Empowering youth to de-stress, sleep deeply, and socialize hangover-free with no hepatic toxicity or heart racing — powered by natural bitterness modulation and smart flavor AI.",
     "hero.quote_text": "\"Southern Herbs Cure Southern People\" — Master Tuệ Tĩnh • Heritage x Gen Z Innovation",
     "hero.quote_tag": "Heritage",
     "hero.stat1_title": "100% IF–THEN Safety",
@@ -358,7 +358,7 @@ const I18N = {
     "hero.pill_btn": "Brew Now ➔",
 
     // 4-Module Portal on Home View
-    "brand.home_title": "VinaVita AI — Return to Home",
+    "brand.home_title": "VinaVita — Return to Home",
     "portal.section_tag": "CORE PLATFORM MODULES • INTERACT NOW",
     "portal.mixologist_title": "AI Mixologist Studio",
     "portal.mixologist_desc": "Formulate custom herbal mocktails guarded by our 5-stage biochemical safety shield.",
@@ -487,13 +487,13 @@ const I18N = {
     "db.search_placeholder": "🔍 Search herbs (Passionflower, Polyscias, Lotus Plumule...), function (sleep, eye strain) or flavor...",
 
     // View 4: About & Team
-    "about.title": "Project Genesis: <span class=\"gradient-text\">VinaVita AI x RMIT RBPC 2026</span>",
+    "about.title": "Project Genesis: <span class=\"gradient-text\">VinaVita x RMIT RBPC 2026</span>",
     "about.p_intro": "<strong>Dear Distinguished Judges and Honored Teachers,</strong>",
     "about.p_team": "We are a team of 4 high school seniors participating in the <strong>RMIT Business Plan Competition 2026</strong> driven by an urgent real-world struggle: <em>How can students study and excel passionately without sacrificing their health, mental well-being, and sleep?</em>",
-    "about.p_teacher": "The concept of <strong>VinaVita AI</strong> was not born from dry textbooks or abstract business theories. It began on an October afternoon, when our Computer Science teacher shared her personal story. She recounted experiencing severe burnout and nervous exhaustion from work overload until her brain sounded red alarms. She turned to Western pharmaceuticals, but experienced harsh side effects and compounded fatigue. Not until a close friend prescribed traditional Vietnamese herbal medicine did she find relief: humble native botanicals restored her deep, restorative sleep, allowing her cellular repair mechanisms to naturally rejuvenate her vitality. Her sincere advice moved us deeply: <em>\"Our bodies have biological limits; if we push them past the breaking point, the consequences are irreversible. Above all, we must remain healthy and truly present.\"</em>",
+    "about.p_teacher": "The concept of <strong>VinaVita</strong> was not born from dry textbooks or abstract business theories. It began on an October afternoon, when our Computer Science teacher shared her personal story. She recounted experiencing severe burnout and nervous exhaustion from work overload until her brain sounded red alarms. She turned to Western pharmaceuticals, but experienced harsh side effects and compounded fatigue. Not until a close friend prescribed traditional Vietnamese herbal medicine did she find relief: humble native botanicals restored her deep, restorative sleep, allowing her cellular repair mechanisms to naturally rejuvenate her vitality. Her sincere advice moved us deeply: <em>\"Our bodies have biological limits; if we push them past the breaking point, the consequences are irreversible. Above all, we must remain healthy and truly present.\"</em>",
     "about.p_status_quo": "Looking across classrooms and study desks every night, we witness countless peers punishing their bodies with sugary energy drinks or excessive coffee, triggering heart palpitations, tremors, stomach burning, and next-day exhaustion. Vietnam's thousand-year-old Southern Medicine heritage — from hedgerow Passionflower to garden Polyscias and imperial Chrysanthemum — is inherently gentle and restorative. Why do young people avoid traditional herbs simply because of bitterness and cumbersome boiling rituals, while relying on synthetic stimulants whose long-term health toll silently erodes their bodies?",
     "about.p_solution": "This is precisely why we created VinaVita. By leveraging algorithmic flavor science to naturally neutralize bitterness with zero refined sugar, and packaging herbs into convenient pyramid sachets ready in 3 minutes right at your study desk, we bring Vietnamese herbal medicine out of cumbersome clay pots and into youth daily life. A gentle, empowering solution — so that cramming for exams is never again a gamble with one's health.",
-    "about.showcase_title": "The VinaVita AI Founding Team (RChim — Vinschool Central Park)",
+    "about.showcase_title": "The VinaVita Founding Team (RChim — Vinschool Central Park)",
     "about.showcase_desc": "(From left to right: Truong Quang Hieu • Ngo Minh Thien Bao • Huynh Huu Anh Khoa • Nguyen Minh Dung) — 4 high school founders from Vinschool Central Park revitalizing Vietnamese herbal medicine through human food science and frontier AI.",
     "about.showcase_badge": "Founding Team 2026",
     "about.team_title": "Operational Team Structure",
@@ -502,14 +502,14 @@ const I18N = {
     "about.alex_bio": "Initiator of VinaVita concept, Head of Biotechnology Research. Possesses a deep passion for Chemistry and Biology, pursuing future degrees in Biotechnology and Medicine. Anh Khoa directly bridges user feedback, food science research, and sustainable OCOP herbal business modeling.",
     "about.bao_role": "SYSTEM ARCHITECT — SOFTWARE & AI ENGINEER",
     "about.bao_name": "Ngô Minh Thiên Bảo",
-    "about.bao_bio": "Lead Systems Architect, Software & AI Engineer. Engineered the full web platform, algorithmic bio-safety filtration models, Cyber-Botanical UI/UX interface, and formulation kinetics for VinaVita AI.",
+    "about.bao_bio": "Lead Systems Architect, Software & AI Engineer. Engineered the full web platform, algorithmic bio-safety filtration models, Cyber-Botanical UI/UX interface, and formulation kinetics for VinaVita.",
     "about.hieu_role": "PHARMACOLOGIST",
     "about.school": "Vinschool Central Park High School",
     "about.hieu_name": "Trương Quang Hiếu",
     "about.hieu_bio": "Pharmacology Specialist, laid the foundational herbal database for VinaVita. Rigorously cross-references the Pharmacopoeia of Vietnam and international clinical studies to ensure every recommended formula is strictly safe and scientifically validated.",
     "about.dung_role": "DATA INTELLIGENCE LEAD",
     "about.dung_name": "Nguyễn Minh Dũng",
-    "about.dung_bio": "Co-founder leading Data Analytics & UX Flow. Possessing strong technical engineering expertise, Dũng designed user surveys, gathered and dissected behavioral datasets from 60 youth respondents, and optimized the VinaVita AI interaction pipeline.",
+    "about.dung_bio": "Co-founder leading Data Analytics & UX Flow. Possessing strong technical engineering expertise, Dũng designed user surveys, gathered and dissected behavioral datasets from 60 youth respondents, and optimized the VinaVita interaction pipeline.",
     "about.ref_title": "Academic References & Literature",
     "about.ref_list": "<li>Appel, K, Rose, T, Fiebich, B, Kammler, T, Hoffmann, C &amp; Weiss, G 2011, 'Modulation of the γ-aminobutyric acid (GABA) system by Passiflora incarnata L.', <em>Phytotherapy Research</em>, vol. 25, no. 6, pp. 838–843.</li><li>Breslin, PAS &amp; Beauchamp, GK 1997, 'Salt enhances flavour by suppressing bitterness', <em>Nature</em>, vol. 387, no. 6633, p. 563.</li><li>Chiavaroli, L, Mirrahimi, A, Sievenpiper, JL, Jenkins, DJA &amp; Leiter, LA 2020, 'Cardiovascular and glycemic impacts of non-nutritive botanical sweeteners Stevia and Monk Fruit in adolescents and young adults', <em>Nutrients</em>, vol. 12, no. 11, p. 3408.</li><li>Government of Vietnam 2024, <em>Decree No. 168/2024/ND-CP: Regulatory framework and penalties for alcohol concentration in transport and road safety</em>, Hanoi.</li><li>Do, TL 2004, <em>Medicinal Plants and Traditional Remedies of Vietnam</em>, Medical Publishing House, Hanoi.</li><li>Nguyen, TTH, Nguyen, QH &amp; Tran, VS 2020, 'Phytochemical constituents and biological activities of Passiflora foetida L. in Vietnam', <em>Vietnam Journal of Science and Technology</em>, vol. 58, no. 4, pp. 412–420.</li><li>Sakurai, T, Misaka, T, Ueno, Y, Ishiguro, M, Matsuo, S &amp; Abe, K 2010, 'The human bitter taste receptor hTAS2R16 is activated by natural glucopyranosides and suppressed at mildly acidic pH', <em>Biochemical and Biophysical Research Communications</em>, vol. 400, no. 3, pp. 434–439.</li><li>Sotoyama, M, Misaka, T &amp; Abe, K 2017, 'pH-dependent modulation of human bitter taste receptor responses: Molecular insights into beverage formulation', <em>Journal of Agricultural and Food Chemistry</em>, vol. 65, no. 18, pp. 3704–3711.</li><li>Tan, L, Liu, Y, Wang, Y, Zhang, H &amp; Chen, Z 2024, 'Flavonoid vitexin from Passiflora species modulates GABAA receptors to attenuate neuro-stress and reduce cortisol levels in young adults', <em>Food &amp; Function</em>, vol. 15, no. 4, pp. 1982–1994.</li><li>World Health Organization (WHO) 2024, <em>Global status report on alcohol and health and treatment of substance use disorders</em>, World Health Organization, Geneva.</li>",
     "modal.close": "Close Dossier",
@@ -535,16 +535,16 @@ const I18N = {
     "order.receipt_btn": "Done & Return",
 
     // Footer
-    "footer.brand": "VinaVita AI",
+    "footer.brand": "VinaVita",
     "footer.tagline": "Vietnamese Botanical Infusion & Herbal Mocktail Platform — 0.0% Alcohol",
     "footer.team": "Huỳnh Hữu Anh Khoa — Leader & Biotech Researcher, Ngô Minh Thiên Bảo — Lead System Architect, Trương Quang Hiếu — Pharmacologist & Nguyễn Minh Dũng — Data Intelligence Lead • Team Thinking Space — RMIT RBPC 2026",
     "footer.disclaimer": "Research initiative for RMIT Business Plan Competition 2026. Formulas are based on traditional ethnobotany and experimental pharmacology; not intended to replace professional medical treatment.",
     "footer.ai_warning": "⚠️ AI may produce inaccuracies; please verify critical information. Please do also consult a specialist regarding advices and medicine as well.",
 
     // AI Pharmacist Chatbot
-    "chat.fab_label": "AI Pharmacist, VinaVita",
-    "chat.fab_title": "Chat with AI Pharmacist, VinaVita",
-    "chat.bot_name": "AI Pharmacist, VinaVita",
+    "chat.fab_label": "VinaVita AI Pharmacist",
+    "chat.fab_title": "Chat with VinaVita AI Pharmacist",
+    "chat.bot_name": "VinaVita AI Pharmacist",
     "chat.status_text": "🟢 Cloud Neural AI Online (Gemini 2.5 Flash + Pharmacopoeia RAG) • AI may make errors, verify info",
     "chat.disclaimer": "⚠️ AI may produce errors. Please do also consult a specialist regarding advices and medicine as well.",
     "chat.prompts_label": "💡 Quick queries:",
@@ -554,7 +554,7 @@ const I18N = {
     "chat.chip4": "🍵 TAS2R Bitter Suppression",
     "chat.chip5": "📦 5-Sachet Combo Box",
     "chat.chip6": "🛡️ Gastritis & Reflux",
-    "chat.welcome_full": "<p>Hello! I am <strong>AI Pharmacist, VinaVita</strong>. I interface directly with our Pharmacopoeia botanical repository, analyzing bioactive compounds (GABA, Flavonoids, Alkaloids, Saponins, L-Theanine) and physiological health guardrails.</p><p style=\"margin-top:6px;\">Feel free to ask anything: <em>\"What does Lotus Plumule do?\", \"Formula for pulling all-nighters without jitters?\", \"What to drink with gastritis?\", or \"How much is the 5-sachet box?\"</em>.</p>",
+    "chat.welcome_full": "<p>Hello! I am <strong>VinaVita AI Pharmacist</strong>. I interface directly with our Pharmacopoeia botanical repository, analyzing bioactive compounds (GABA, Flavonoids, Alkaloids, Saponins, L-Theanine) and physiological health guardrails.</p><p style=\"margin-top:6px;\">Feel free to ask anything: <em>\"What does Lotus Plumule do?\", \"Formula for pulling all-nighters without jitters?\", \"What to drink with gastritis?\", or \"How much is the 5-sachet box?\"</em>.</p>",
     "chat.input_placeholder": "Ask a question (insomnia, deadline, gastritis)...",
     "chat.send_btn": "Send",
     // Seal & Recipe Defaults
